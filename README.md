@@ -1,5 +1,5 @@
 # felt-ui
 
-## license
+## license 🐦
 
 [MIT](LICENSE)
