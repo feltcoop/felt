@@ -35,3 +35,4 @@ node build
 ## license 🐦
 
 [MIT](LICENSE)
+> work in progress 💚 good ui for [svelte](https://github.com/sveltejs/svelte)
