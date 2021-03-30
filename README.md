@@ -1,6 +1,6 @@
 # felt-ui
 
-> work in progress 💚 [svelte](https://github.com/sveltejs/svelte) ui that feels good
+> work in progress 💚 [Svelte](https://github.com/sveltejs/svelte) UI that feels good
 
 ## usage
 
