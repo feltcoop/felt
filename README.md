@@ -4,9 +4,22 @@
 
 ## usage
 
+### in your projects
+
+> TODO publish to npm
+
+### develop
+
 ```bash
 npm i
 npm run dev
+```
+
+### build
+
+```bash
+npm run build
+node build
 ```
 
 # :turtle: <sub>:turtle:</sub><sub><sub>:turtle:</sub></sub>
@@ -18,13 +31,6 @@ npm run dev
 [TypeScript](https://github.com/microsoft/TypeScript) ∙
 [Prettier](https://github.com/prettier/prettier) ∙
 & [more](package.json)
-
-## build
-
-```bash
-npm run build
-node build
-```
 
 ## license 🐦
 
