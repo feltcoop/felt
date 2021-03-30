@@ -1,6 +1,6 @@
 # felt-ui
 
-> work in progress
+> work in progress 💚 good ui for [svelte](https://github.com/sveltejs/svelte)
 
 ## usage
 
@@ -35,4 +35,3 @@ node build
 ## license 🐦
 
 [MIT](LICENSE)
-> work in progress 💚 good ui for [svelte](https://github.com/sveltejs/svelte)
