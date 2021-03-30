@@ -1,7 +1,7 @@
 {
   "name": "@feltcoop/felt-ui",
   "license": "MIT",
-  "description": "good ui for svelte",
+  "description": "svelte ui that feels good",
   "version": "0.0.0",
   "scripts": {
     "dev": "svelte-kit dev",
