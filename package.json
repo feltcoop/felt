@@ -8,6 +8,7 @@
     "lint": "prettier --check .",
     "format": "prettier --write ."
   },
+  "dependencies": {},
   "devDependencies": {
     "@sveltejs/adapter-node": "next",
     "@sveltejs/kit": "next",
@@ -39,6 +40,5 @@
         }
       }
     ]
-  },
-  "dependencies": {}
+  }
 }
