@@ -1,7 +1,7 @@
-export const feltIcon = '💚';
-export const greenHeartIcon = feltIcon;
-export const groIcon = '🌰';
-export const chestnutIcon = groIcon;
+export const greenHeartIcon = '💚';
+export const feltIcon = greenHeartIcon;
+export const chestnutIcon = '🌰';
+export const groIcon = chestnutIcon;
 export const grinIcon = '😁';
 export const roflIcon = '🤣';
 export const upsideDownIcon = '🙃';

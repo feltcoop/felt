@@ -1,9 +1,12 @@
 <script lang="ts">
 	import Counter from '$lib/Counter.svelte';
+	import * as icons from '$lib/icons.ts';
 </script>
 
 <main>
-	<h1>Hello world!</h1>
+	<h1>{icons.feltIcon} Hello world! {icons.feltIcon}</h1>
+
+	<h2>{icons.mushroomIcon}{icons.eggIcon}{icons.spicyIcon}{icons.shipIcon}</h2>
 
 	<Counter />
 
