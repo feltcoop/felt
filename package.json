@@ -1,8 +1,13 @@
 {
   "name": "@feltcoop/felt",
+  "version": "0.0.0",
   "license": "MIT",
   "description": "Svelte UI that feels good",
-  "version": "0.0.0",
+  "author": {
+    "name": "Felt.coop",
+    "email": "team@felt.social",
+    "url": "https://felt.social"
+  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
