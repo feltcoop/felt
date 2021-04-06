@@ -2,8 +2,6 @@ const {typescript} = require('svelte-preprocess-esbuild');
 const staticAdapter = require('@sveltejs/adapter-static');
 const pkg = require('./package.json');
 
-// console.log('staticAdapter', staticAdapter());
-
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	preprocess: typescript(),
