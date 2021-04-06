@@ -1,9 +1,13 @@
-<script lang="ts">	
+<script lang="ts">
 	import Icons from '$lib/Icons.svelte';
-	import * as icons from '$lib/icons.ts';
+	import * as iconsByName from '$lib/icons';
+
+	$: icons = Object.entries(iconsByName)
+		.map(([name, icon]) => ({name, icon}))
+		.sort((a, b) => a.name.localeCompare(b.name));
 </script>
 
-<main>					    
+<main>
 	<Icons {icons} />
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
@@ -16,16 +20,6 @@
 		margin: 0 auto;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4rem;
-		font-weight: 100;
-		line-height: 1.1;
-		margin: 4rem auto;
-		max-width: 14rem;
-	}
-
 	p {
 		max-width: 14rem;
 		margin: 2rem auto;
@@ -33,10 +27,6 @@
 	}
 
 	@media (min-width: 480px) {
-		h1 {
-			max-width: none;
-		}
-
 		p {
 			max-width: none;
 		}
