@@ -1,12 +1,14 @@
 const {typescript} = require('svelte-preprocess-esbuild');
-const node = require('@sveltejs/adapter-node');
+const staticAdapter = require('@sveltejs/adapter-static');
 const pkg = require('./package.json');
+
+// console.log('staticAdapter', staticAdapter());
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	preprocess: typescript(),
 	kit: {
-		adapter: node(),
+		adapter: staticAdapter(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
