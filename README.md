@@ -19,7 +19,7 @@ npm run dev
 
 ```bash
 npm run build
-node build
+npm start
 ```
 
 # :turtle:<sub>:turtle:</sub><sub><sub>:turtle:</sub></sub>
