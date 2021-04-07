@@ -1,6 +1,9 @@
 <script lang="ts">
+	import Counter from '$lib/Counter.svelte';
 	import Icons from '$lib/Icons.svelte';
 	import * as iconsByName from '$lib/icons';
+	import Markup from '$lib/Markup.svelte';
+	import {sampleMarkupNode1} from '$lib/sampleMarkup';
 
 	$: icons = Object.entries(iconsByName)
 		.map(([name, icon]) => ({name, icon}))
@@ -9,6 +12,10 @@
 
 <main>
 	<Icons {icons} />
+
+	<Counter />
+
+	<Markup node={sampleMarkupNode1} />
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 </main>
