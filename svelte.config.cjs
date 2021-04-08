@@ -8,6 +8,12 @@ module.exports = {
 	kit: {
 		adapter: staticAdapter(),
 
+		appDir: 'app', // because _app is ignored by GitHub pages by default
+		paths: {
+			// TODO derive from `package.json`, stripping namespace as necessary
+			base: process.env.NODE_ENV === 'production' ? '/felt' : '',
+		},
+
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 
