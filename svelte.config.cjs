@@ -8,7 +8,9 @@ module.exports = {
 	kit: {
 		adapter: staticAdapter(),
 
-		appDir: 'app', // because _app is ignored by GitHub pages by default
+		// because the default '_app' is ignored by GitHub pages by default
+		appDir: 'app',
+		// because we're mounted in production at feltcoop.github.io/felt
 		paths: {base: process.env.NODE_ENV === 'production' ? '/felt' : ''},
 
 		// hydrate the <div id="svelte"> element in src/app.html
