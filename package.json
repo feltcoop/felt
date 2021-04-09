@@ -28,6 +28,10 @@
     "vite": "^2.1.0"
   },
   "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">= 14.16.0"
   },
