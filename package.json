@@ -15,7 +15,6 @@
     "lint": "prettier --check .",
     "format": "prettier --write ."
   },
-  "dependencies": {},
   "devDependencies": {
     "@feltcoop/gro": "^0.17.0",
     "@sveltejs/adapter-static": "^1.0.0-next.4",
