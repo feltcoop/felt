@@ -8,9 +8,10 @@
 </script>
 
 <main>
+	<h1>here's the <a href="https://feltcoop.github.io/felt-mockup">Felt mockup</a> we made last year. more soon</h1>
+
 	<Icons {icons} />
 
-	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 </main>
 
 <style>
