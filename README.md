@@ -2,7 +2,8 @@
 
 [<img src="src/static/felt.png" align="right" width="192" height="178">](https://felt.dev)
 
-> work in progress 💚 [Svelte](https://github.com/sveltejs/svelte) UI that feels good
+> [Svelte](https://github.com/sveltejs/svelte) UI that feels good 💚
+> [felt.dev](https://www.felt.dev) (work in progress)
 
 ## usage
 
