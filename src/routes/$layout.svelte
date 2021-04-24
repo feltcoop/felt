@@ -19,6 +19,8 @@
 		top: 0;
 		width: 100%;
 		height: var(--nav_height);
+		display: flex;
+		justify-content: center;
 	}
 	main {
 		height: 100%;
