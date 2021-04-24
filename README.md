@@ -1,5 +1,7 @@
 # felt
 
+[<img src="src/static/felt.png" align="right" width="192" height="178">](https://felt.dev)
+
 > work in progress 💚 [Svelte](https://github.com/sveltejs/svelte) UI that feels good
 
 ## usage
