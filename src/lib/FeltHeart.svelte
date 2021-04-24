@@ -1,8 +1,1 @@
-<img src="felt.png" alt="felt heart" />
-
-<style>
-	img {
-		width: 192px;
-		height: 178px;
-	}
-</style>
+<img src="felt.png" alt="felt heart" width={192} height={178} />
