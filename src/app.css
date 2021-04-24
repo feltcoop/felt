@@ -6,3 +6,21 @@
 li {
 	list-style: none;
 }
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*  TODO import standard stylesheet */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+#svelte {
+	height: 100%;
+}
