@@ -26,7 +26,6 @@
 		height: 100%;
 		padding-top: var(--nav_height);
 		text-align: center;
-		padding: 1em;
 		margin: 0 auto;
 	}
 </style>
