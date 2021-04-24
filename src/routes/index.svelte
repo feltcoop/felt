@@ -1,8 +1,12 @@
+<script lang="ts">
+	import FeltHeart from '$lib/FeltHeart.svelte';
+</script>
+
 <h1>@feltcoop/felt</h1>
 <!-- TODO publish and link the above to npm -->
 <a href="https://github.com/feltcoop/felt"
 	><h1>source code on GitHub</h1>
-	<img src="felt.png" alt="felt heart" /></a
+	<FeltHeart /></a
 >
 <h1>
 	@feltcoop on
