@@ -25,7 +25,9 @@ li {
 	list-style: none;
 }
 
-h1 {
+h1,
+h2,
+h3 {
 	font-weight: 300;
 	margin: 0;
 }

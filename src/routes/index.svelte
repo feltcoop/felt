@@ -5,17 +5,18 @@
 <h1>@feltcoop/felt</h1>
 <!-- TODO publish and link the above to npm -->
 <a href="https://github.com/feltcoop/felt"
-	><h1>source code on GitHub</h1>
+	><h2>source code on GitHub</h2>
 	<FeltHeart /></a
 >
-<h1>
+<h2>
 	@feltcoop on
 	<a href="https://github.com/feltcoop">GitHub</a> and
 	<a href="https://twitter.com/feltcoop">Twitter</a>
-</h1>
+</h2>
 
 <style>
-	h1 {
+	h1,
+	h2 {
 		margin: 20px 0;
 	}
 </style>
