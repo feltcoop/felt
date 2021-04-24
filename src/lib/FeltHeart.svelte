@@ -1,1 +1,6 @@
-<img src="felt.png" alt="felt heart" width={192} height={178} />
+<script>
+	export let width = 192;
+	export let height = 178;
+</script>
+
+<img src="felt.png" alt="felt heart" {width} {height} />
