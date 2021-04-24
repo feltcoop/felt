@@ -27,7 +27,6 @@
 		align-items: center;
 		text-decoration: none;
 		padding: 0 10px;
-		opacity: 0.6;
 	}
 	a:hover,
 	.active {
@@ -35,5 +34,6 @@
 	}
 	.active {
 		opacity: 1;
+		color: var(--text_color);
 	}
 </style>
