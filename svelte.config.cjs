@@ -7,13 +7,9 @@ module.exports = {
 	preprocess: typescript(),
 	kit: {
 		adapter: staticAdapter(),
-
-		// because the default '_app' is ignored by GitHub pages by default
-		appDir: 'app',
-
-		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-
+		appDir: 'app', // because the default '_app' is ignored by GitHub pages by default
+		files: {assets: 'src/static'},
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {}),
