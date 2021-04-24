@@ -3,10 +3,6 @@
 		'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-li {
-	list-style: none;
-}
-
 html,
 body {
 	height: 100%;
@@ -23,4 +19,13 @@ body {
 
 #svelte {
 	height: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+h1 {
+	font-weight: 300;
+	margin: 0;
 }

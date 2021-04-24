@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="favicon.ico" />
+	<link rel="shortcut icon" href="favicon.png" />
 </svelte:head>
 
 <div id="nav"><Nav /></div>
