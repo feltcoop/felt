@@ -3,6 +3,7 @@
 </script>
 
 <h1>@feltcoop/felt</h1>
+<!-- TODO publish and link the above to npm -->
 
 <section>
 	<div>
@@ -14,7 +15,6 @@
 </section>
 
 <section>
-	<!-- TODO publish and link the above to npm -->
 	<a href="https://github.com/feltcoop/felt"><h2>source code on GitHub</h2> </a>
 	<h2>
 		@feltcoop on
