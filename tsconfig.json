@@ -15,6 +15,7 @@
 		"sourceMap": true,
 		"importHelpers": true,
 		"esModuleInterop": true,
+		"skipLibCheck": true,
 		"baseUrl": ".",
 		"checkJs": true,
 		"paths": {
