@@ -1,5 +1,5 @@
-// The existence of this file tells Gro that we're in a library project by default.
-// With no further config, this entrypoint will be bundled into `dist/` by the default adapter.
+// The existence of this file tells Gro that we're in a library project by default,
+// and this defines the package's public API:
 
 export {default as FeltHeart} from './lib/FeltHeart.svelte';
 export {default as Icons} from './lib/Icons.svelte';
