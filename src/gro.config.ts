@@ -35,6 +35,7 @@ export const config: GroConfigCreator = async () => {
 		// by default, Gro bundles libraries, but Felt is published as individual modules
 		adapt: async () =>
 			(await import('@feltcoop/gro/dist/adapt/gro-adapter-node-library.js')).createAdapter({
+				// TODO remove these options, no longer needed
 				builds: [{name: 'lib', type: 'unbundled'}],
 			}),
 	};
