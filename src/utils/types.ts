@@ -10,8 +10,6 @@ TODO probably make this `.d.ts` when we make a proper build process
 
 export type Falsy = false | '' | null | undefined | 0 | -0 | typeof NaN;
 
-export type Obj<T = any> = {[key: string]: T};
-
 export type OmitStrict<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 // these were thrown together quickly - is there a better way to do this?
