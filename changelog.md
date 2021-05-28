@@ -1,5 +1,10 @@
 # changelog
 
+## 0.1.3
+
+- move utils from `@feltcoop/gro`
+  ([#30](https://github.com/feltcoop/felt/pull/30))
+
 ## 0.1.2
 
 - remove remaining Svelte components from public API until the full process is ready
