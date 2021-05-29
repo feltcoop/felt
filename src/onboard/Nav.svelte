@@ -9,7 +9,7 @@
 
 <nav>
 	<section class="buttons">
-		<MachineControls events={onboardMachine.events} {send} />
+		<MachineControls machine={onboardMachine} {state} {send} />
 	</section>
 	<h2>{$state.value}</h2>
 	<pre>{JSON.stringify($state, null, 2)}</pre>

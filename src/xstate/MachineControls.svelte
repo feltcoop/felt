@@ -1,10 +1,16 @@
 <script lang="ts">
-	import type {Send} from './machine';
+	import type {StateMachine, State, Send} from './machine';
 
-	export let events: string[]; // TODO maybe change API to accept $state ?
+	export let machine: StateMachine;
+	export let state: State;
 	export let send: Send;
+
+	$: stateNode = machine.states[$state.value as any];
+	$: console.log('stateNode', stateNode);
 </script>
 
-{#each events as eventName (eventName)}
-	<button on:click={() => send(eventName)}>{eventName}</button>
+{#each machine.events as eventName (eventName)}
+	<button on:click={() => send(eventName)} disabled={!stateNode.handles(eventName)}>
+		{eventName}
+	</button>
 {/each}
