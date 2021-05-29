@@ -3,7 +3,7 @@
 # felt
 
 > web tech that feels good 💚
-> [www.felt.dev](https://www.felt.dev)
+> [felt.dev](https://www.felt.dev)
 
 > **work in progress**
 
