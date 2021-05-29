@@ -12,6 +12,7 @@
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
 	--font_size_rg: 16px;
+	--spacing_xl: 32px;
 	--spacing_lg: 20px;
 	--spacing_md: 10px;
 	--spacing_rg: 8px;
@@ -81,4 +82,14 @@ input {
 	border-width: var(--spacing_xxs);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
+}
+
+input[type='checkbox'] {
+	width: var(--spacing_xl);
+}
+
+label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

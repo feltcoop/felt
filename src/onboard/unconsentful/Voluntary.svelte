@@ -72,8 +72,9 @@
 	let phone_number = '';
 	let home_address = '';
 	let anything_else = '';
+	let consenting = true; // :-)
 
-	$: enable_signup_button = phone_number && home_address && anything_else;
+	$: enable_signup_button = consenting && phone_number && home_address && anything_else;
 </script>
 
 <form>
@@ -117,10 +118,16 @@
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
-				I consent to everything I did/did not read and/or understand
+				signup with {selected_provider === providers.$SOCIAL
+					? providers.$TRACKER.id
+					: providers.$SOCIAL.id}
 			</button>
+			<label>
+				<input type="checkbox" bind:checked={consenting} />
+				I consent to everything I did/did not read and/or understand</label
+			>
 		{/if}
-	{:else}
+	{:else if selected_provider}
 		<Error_Message text={signup_error_message} />
 	{/if}
 </form>
