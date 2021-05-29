@@ -4,6 +4,7 @@
 	import OnboardUnconsentful from './unconsentful/OnboardUnconsentful.svelte';
 	import OnboardConsentful from './consentful/OnboardConsentful.svelte';
 	import {onboardMachine} from './onboard';
+	import Nav from './Nav.svelte';
 
 	// TODO types - see ./onboard.ts
 	const onboard = useMachine(onboardMachine);
@@ -11,20 +12,24 @@
 </script>
 
 <div class="onboard">
-	<section class="left">
-		<button on:click={() => send('NEXT')}>send 'NEXT'</button>
-		<button on:click={() => send('PREVIOUS')}>send 'PREVIOUS'</button>
-		<h2>{$state.value}</h2>
-		<pre>{JSON.stringify($state, null, 2)}</pre>
-		<OnboardUnconsentful />
-	</section>
-	<section class="right">
-		<OnboardConsentful />
-	</section>
+	<Nav {state} {send} />
+	<div class="content">
+		<section class="left">
+			<OnboardUnconsentful />
+		</section>
+		<section class="right">
+			<OnboardConsentful />
+		</section>
+	</div>
 </div>
 
 <style>
 	.onboard {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.content {
 		height: 100%;
 		display: flex;
 	}
