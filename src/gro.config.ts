@@ -30,7 +30,7 @@ const files = [
 
 export const config: GroConfigCreator = async () => {
 	const partial: GroConfigPartial = {
-		builds: [{name: 'lib', platform: 'node', input: files}],
+		builds: [{name: 'library', platform: 'node', input: files}],
 		adapt: async () =>
 			(await import('@feltcoop/gro/dist/adapt/gro-adapter-node-library.js')).createAdapter(),
 	};
