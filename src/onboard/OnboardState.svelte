@@ -11,4 +11,4 @@
 	const done = () => {};
 </script>
 
-<svelte:component this={data.component} {done} />
+<svelte:component this={data.component} {data} {done} />
