@@ -8,7 +8,9 @@
 
 	// TODO types - see ./onboard.ts
 	const onboard = useMachine(onboardMachine);
+	console.log('onboard', onboard);
 	const {state, send} = onboard;
+	$: console.log('$state', $state);
 </script>
 
 <div class="onboard">

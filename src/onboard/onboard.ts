@@ -40,3 +40,5 @@ export const onboardMachine = createMachine({
 		},
 	},
 });
+
+console.log('onboardMachine', onboardMachine);

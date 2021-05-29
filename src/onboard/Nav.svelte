@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type {OnboardSend, OnboardState} from './onboard';
 	import MachineControls from '../xstate/MachineControls.svelte';
+	import {onboardMachine} from './onboard';
 
 	export let state: OnboardState;
 	export let send: OnboardSend;
@@ -8,7 +9,7 @@
 
 <nav>
 	<section class="buttons">
-		<MachineControls events={['NEXT', 'PREVIOUS']} {send} />
+		<MachineControls events={onboardMachine.events} {send} />
 	</section>
 	<h2>{$state.value}</h2>
 	<pre>{JSON.stringify($state, null, 2)}</pre>
