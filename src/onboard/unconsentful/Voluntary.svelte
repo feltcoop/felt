@@ -27,9 +27,9 @@
 
 	const create = (username: string, _password: string) => {
 		selected_provider = null;
-		create_error_message = `We are so very sorry${
+		create_error_message = `We apologize for the inconvenience${
 			username ? `, ${username}` : ''
-		}! Our systems are acting up. We apologize for the inconvenience. Please click one of the buttons below. :-)`;
+		}! Our systems are acting up. Please click one of the buttons below. :-)`;
 	};
 	const signup_with = (provider: Service_Provider_Data) => {
 		console.log('signup_with name', provider, data);
