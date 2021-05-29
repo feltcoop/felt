@@ -24,4 +24,5 @@
 	</button>
 {/each}
 
+<!-- TODO make this compose -->
 <svelte:window on:keydown={onKeyDown} />

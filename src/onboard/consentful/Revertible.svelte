@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type {OnboardData} from '../onboard';
+	import type {Onboard_Data} from '../onboard';
 
-	export let data: OnboardData;
-	export let done: () => void;
+	export let data: Onboard_Data;
+	export let done: (data: Onboard_Data) => void;
 </script>
 
 <h1>consentful</h1>

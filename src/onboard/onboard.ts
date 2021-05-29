@@ -1,35 +1,36 @@
-import {createMachine} from 'xstate';
+import {createMachine as create_machine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 import type {SvelteComponent} from 'svelte';
 
-import ContentfulBegin from './consentful/Begin.svelte';
-import ContentfulVoluntary from './consentful/Voluntary.svelte';
-import ContentfulInformed from './consentful/Informed.svelte';
-import ContentfulRevertible from './consentful/Revertible.svelte';
-import ContentfulSpecific from './consentful/Specific.svelte';
-import ContentfulUnburdensome from './consentful/Unburdensome.svelte';
-import ContentfulEnd from './consentful/End.svelte';
-import UncontentfulBegin from './unconsentful/Begin.svelte';
-import UncontentfulVoluntary from './unconsentful/Voluntary.svelte';
-import UncontentfulInformed from './unconsentful/Informed.svelte';
-import UncontentfulRevertible from './unconsentful/Revertible.svelte';
-import UncontentfulSpecific from './unconsentful/Specific.svelte';
-import UncontentfulUnburdensome from './unconsentful/Unburdensome.svelte';
-import UncontentfulEnd from './unconsentful/End.svelte';
+import Contentful_Begin from './consentful/Begin.svelte';
+import Contentful_Voluntary from './consentful/Voluntary.svelte';
+import Contentful_Informed from './consentful/Informed.svelte';
+import Contentful_Revertible from './consentful/Revertible.svelte';
+import Contentful_Specific from './consentful/Specific.svelte';
+import Contentful_Unburdensome from './consentful/Unburdensome.svelte';
+import Contentful_End from './consentful/End.svelte';
+import Uncontentful_Begin from './unconsentful/Begin.svelte';
+import Uncontentful_Voluntary from './unconsentful/Voluntary.svelte';
+import Uncontentful_Informed from './unconsentful/Informed.svelte';
+import Uncontentful_Revertible from './unconsentful/Revertible.svelte';
+import Uncontentful_Specific from './unconsentful/Specific.svelte';
+import Uncontentful_Unburdensome from './unconsentful/Unburdensome.svelte';
+import Uncontentful_End from './unconsentful/End.svelte';
 
 // TODO copypasta with src/xstate/machine.ts
 
 // TODO types
-export interface OnboardContext {}
-export type OnboardEvent = any;
-export type OnboardTypestate = any;
+export interface Onboard_Context {}
+export type Onboard_Event = any;
+export type Onboard_Typestate = any;
 
-export type OnboardState = ReturnType<UseOnboardMachine>['state'];
-export type OnboardSend = ReturnType<UseOnboardMachine>['send'];
-type UseOnboardMachine = typeof typeWrapper;
-const typeWrapper = () => useMachine<OnboardContext, OnboardEvent, OnboardTypestate>(null as any);
+export type Onboard_State = ReturnType<Use_Onboard_Machine>['state'];
+export type Onboard_Send = ReturnType<Use_Onboard_Machine>['send'];
+type Use_Onboard_Machine = typeof type_wrapper;
+const type_wrapper = () =>
+	useMachine<Onboard_Context, Onboard_Event, Onboard_Typestate>(null as any);
 
-export const onboardMachine = createMachine({
+export const onboard_machine = create_machine({
 	id: 'onboard',
 	initial: 'voluntary', // TODO
 	states: {
@@ -57,10 +58,10 @@ export const onboardMachine = createMachine({
 	},
 });
 
-// console.log('onboardMachine', onboardMachine);
+// console.log('onboard_machine', onboard_machine);
 
 // TODO derive?
-export type OnboardStateName =
+export type Onboard_State_Name =
 	| 'begin'
 	| 'voluntary'
 	| 'informed'
@@ -68,72 +69,72 @@ export type OnboardStateName =
 	| 'specific'
 	| 'unburdensome'
 	| 'end';
-export type ConsentType = 'consentful' | 'unconsentful';
-export interface OnboardData {
+export type Consent_Type = 'consentful' | 'unconsentful';
+export interface Onboard_Data {
 	id: string;
 	component: typeof SvelteComponent;
 }
 
 // TODO does this belong in the machine context?
-export const onboardData: Record<ConsentType, Record<OnboardStateName, OnboardData>> = {
+export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboard_Data>> = {
 	consentful: {
 		begin: {
 			id: 'begin',
-			component: ContentfulBegin,
+			component: Contentful_Begin,
 		},
 		voluntary: {
 			id: 'voluntary',
-			component: ContentfulVoluntary,
+			component: Contentful_Voluntary,
 		},
 		informed: {
 			id: 'informed',
-			component: ContentfulInformed,
+			component: Contentful_Informed,
 		},
 		revertible: {
 			id: 'revertible',
-			component: ContentfulRevertible,
+			component: Contentful_Revertible,
 		},
 		specific: {
 			id: 'specific',
-			component: ContentfulSpecific,
+			component: Contentful_Specific,
 		},
 		unburdensome: {
 			id: 'unburdensome',
-			component: ContentfulUnburdensome,
+			component: Contentful_Unburdensome,
 		},
 		end: {
 			id: 'end',
-			component: ContentfulEnd,
+			component: Contentful_End,
 		},
 	},
 	unconsentful: {
 		begin: {
 			id: 'begin',
-			component: UncontentfulBegin,
+			component: Uncontentful_Begin,
 		},
 		voluntary: {
 			id: 'voluntary',
-			component: UncontentfulVoluntary,
+			component: Uncontentful_Voluntary,
 		},
 		informed: {
 			id: 'informed',
-			component: UncontentfulInformed,
+			component: Uncontentful_Informed,
 		},
 		revertible: {
 			id: 'revertible',
-			component: UncontentfulRevertible,
+			component: Uncontentful_Revertible,
 		},
 		specific: {
 			id: 'specific',
-			component: UncontentfulSpecific,
+			component: Uncontentful_Specific,
 		},
 		unburdensome: {
 			id: 'unburdensome',
-			component: UncontentfulUnburdensome,
+			component: Uncontentful_Unburdensome,
 		},
 		end: {
 			id: 'end',
-			component: UncontentfulEnd,
+			component: Uncontentful_End,
 		},
 	},
 };

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import {useMachine} from '@xstate/svelte';
 
-	import {onboardMachine} from './onboard';
+	import {onboard_machine} from './onboard';
 	import Nav from './Nav.svelte';
-	// import MachineState from '../xstate/MachineState.svelte';
-	import OnboardState from './OnboardState.svelte';
+	// import Machine_State from '../xstate/Machine_State.svelte';
+	import Onboard_State from './Onboard_State.svelte';
 
 	// TODO types - see ./onboard.ts
-	const onboard = useMachine(onboardMachine);
+	const onboard = useMachine(onboard_machine);
 	// console.log('onboard', onboard);
 	const {state, send} = onboard;
 	// $: console.log('$state', $state);
@@ -17,13 +17,13 @@
 	<Nav {state} {send} />
 	<div class="content">
 		<!-- TODO add a dev mode or smth <section>
-			<MachineState {state} />
+			<Machine_State {state} />
 		</section> -->
 		<section>
-			<OnboardState consentType="unconsentful" {state} {send} />
+			<Onboard_State consent_type="unconsentful" {state} {send} />
 		</section>
 		<section>
-			<OnboardState consentType="consentful" {state} {send} />
+			<Onboard_State consent_type="consentful" {state} {send} />
 		</section>
 	</div>
 </div>

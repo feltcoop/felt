@@ -2,9 +2,27 @@
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--nav_height: 32px;
+	--red_hue: 0;
+	--green_hue: 120;
+	--color_help: hsl(var(--green_hue), 50%, 50%);
 	--link_color_hue: 278;
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
-	--text_color: #333;
+	--text_color: hsl(0, 10%, 16%);
+	--font_size_xl: 32px;
+	--font_size_lg: 24px;
+	--font_size_md: 20px;
+	--font_size_rg: 16px;
+	--spacing_lg: 20px;
+	--spacing_md: 10px;
+	--spacing_rg: 8px;
+	--spacing_sm: 6px;
+	--spacing_xs: 4px;
+	--spacing_xxs: 2px;
+	--faded_rg: 62%;
+	--faded_md: 38%;
+	--border_alert: var(--spacing_xs) dashed hsla(var(--red_hue), 100%, 50%, var(--faded_md));
+	--border_help: var(--spacing_xs) dashed hsla(var(--green_hue), 100%, 25%, var(--faded_md));
+	--border_plain: var(--spacing_xs) dashed hsla(0, 0%, 80%, var(--faded_md));
 }
 
 html,
@@ -14,11 +32,12 @@ body {
 	padding: 0;
 }
 
-/*  TODO import standard stylesheet */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 #svelte {
@@ -31,6 +50,9 @@ a {
 	color: var(--link_color);
 }
 
+ul {
+}
+
 li {
 	list-style: none;
 }
@@ -39,11 +61,24 @@ h1,
 h2,
 h3 {
 	font-weight: 300;
-	margin: 0;
 }
 
 form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+button {
+	font-size: var(--font_size_md);
+	border-width: var(--spacing_xxs);
+	padding: var(--spacing_sm) var(--spacing_md);
+}
+
+input {
+	/* TODO */
+	width: 400px;
+	border-width: var(--spacing_xxs);
+	font-size: var(--font_size_md);
+	padding: var(--spacing_sm) var(--spacing_md);
 }
