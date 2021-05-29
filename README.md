@@ -9,20 +9,27 @@
 
 ## usage
 
-### in your projects
-
-> TODO publish to npm
-
-### develop
-
 ```bash
-npm i
-npm run dev
+npm i @feltcoop/felt
 ```
 
-### build
+```ts
+// the top-level API is a work in progress:
+import {icons} from '@feltcoop/felt';
+
+// for now, you'll typically use deep imports to specific modules:
+import {randomInt} from '@feltcoop/felt/utils/random.js';
+```
+
+## develop
 
 ```bash
+npm i # node >= 14.16
+
+# development
+npm run dev
+
+# production
 npm run build
 npm start
 ```
