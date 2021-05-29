@@ -7,6 +7,15 @@
 
 	$: stateNode = machine.states[$state.value as any];
 	$: console.log('stateNode', stateNode);
+
+	// keyboard controls - TODO refactor
+	const onKeyDown = (e: KeyboardEvent) => {
+		if (e.key === 'ArrowRight') {
+			send('NEXT');
+		} else if (e.key === 'ArrowLeft') {
+			send('PREVIOUS');
+		}
+	};
 </script>
 
 {#each machine.events as eventName (eventName)}
@@ -14,3 +23,5 @@
 		{eventName}
 	</button>
 {/each}
+
+<svelte:window on:keydown={onKeyDown} />
