@@ -27,5 +27,9 @@
 	h1,
 	h2 {
 		margin: 20px 0;
+		text-align: center;
+	}
+	section {
+		text-align: center;
 	}
 </style>

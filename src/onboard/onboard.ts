@@ -1,5 +1,21 @@
 import {createMachine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
+import type {SvelteComponent} from 'svelte';
+
+import ContentfulBegin from './consentful/Begin.svelte';
+import ContentfulVoluntary from './consentful/Voluntary.svelte';
+import ContentfulInformed from './consentful/Informed.svelte';
+import ContentfulRevertible from './consentful/Revertible.svelte';
+import ContentfulSpecific from './consentful/Specific.svelte';
+import ContentfulUnburdensome from './consentful/Unburdensome.svelte';
+import ContentfulEnd from './consentful/End.svelte';
+import UncontentfulBegin from './unconsentful/Begin.svelte';
+import UncontentfulVoluntary from './unconsentful/Voluntary.svelte';
+import UncontentfulInformed from './unconsentful/Informed.svelte';
+import UncontentfulRevertible from './unconsentful/Revertible.svelte';
+import UncontentfulSpecific from './unconsentful/Specific.svelte';
+import UncontentfulUnburdensome from './unconsentful/Unburdensome.svelte';
+import UncontentfulEnd from './unconsentful/End.svelte';
 
 // TODO copypasta with src/xstate/machine.ts
 
@@ -42,3 +58,82 @@ export const onboardMachine = createMachine({
 });
 
 console.log('onboardMachine', onboardMachine);
+
+// TODO derive?
+export type OnboardStateName =
+	| 'begin'
+	| 'voluntary'
+	| 'informed'
+	| 'revertible'
+	| 'specific'
+	| 'unburdensome'
+	| 'end';
+export type ConsentType = 'consentful' | 'unconsentful';
+export interface OnboardData {
+	id: string;
+	component: typeof SvelteComponent;
+}
+
+// TODO does this belong in the machine context?
+export const onboardData: Record<ConsentType, Record<OnboardStateName, OnboardData>> = {
+	consentful: {
+		begin: {
+			id: 'begin',
+			component: ContentfulBegin,
+		},
+		voluntary: {
+			id: 'voluntary',
+			component: ContentfulVoluntary,
+		},
+		informed: {
+			id: 'informed',
+			component: ContentfulInformed,
+		},
+		revertible: {
+			id: 'revertible',
+			component: ContentfulRevertible,
+		},
+		specific: {
+			id: 'specific',
+			component: ContentfulSpecific,
+		},
+		unburdensome: {
+			id: 'unburdensome',
+			component: ContentfulUnburdensome,
+		},
+		end: {
+			id: 'end',
+			component: ContentfulEnd,
+		},
+	},
+	unconsentful: {
+		begin: {
+			id: 'begin',
+			component: UncontentfulBegin,
+		},
+		voluntary: {
+			id: 'voluntary',
+			component: UncontentfulVoluntary,
+		},
+		informed: {
+			id: 'informed',
+			component: UncontentfulInformed,
+		},
+		revertible: {
+			id: 'revertible',
+			component: UncontentfulRevertible,
+		},
+		specific: {
+			id: 'specific',
+			component: UncontentfulSpecific,
+		},
+		unburdensome: {
+			id: 'unburdensome',
+			component: UncontentfulUnburdensome,
+		},
+		end: {
+			id: 'end',
+			component: UncontentfulEnd,
+		},
+	},
+};
