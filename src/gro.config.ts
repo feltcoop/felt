@@ -33,8 +33,8 @@ export const config: GroConfigCreator = async () => {
 		builds: [{name: 'library', platform: 'node', input: files}],
 		adapt: async () => [
 			// TODO
-			// (await import('@feltcoop/gro/dist/adapt/gro-adapter-sveltekit-frontend.js')).createAdapter(),
-			(await import('@feltcoop/gro/dist/adapt/gro-adapter-node-library.js')).createAdapter(),
+			(await import('@feltcoop/gro/dist/adapt/gro-adapter-sveltekit-frontend.js')).createAdapter(),
+			// (await import('@feltcoop/gro/dist/adapt/gro-adapter-node-library.js')).createAdapter(),
 		],
 	};
 	return partial;
