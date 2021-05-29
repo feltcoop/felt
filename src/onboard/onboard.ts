@@ -1,6 +1,8 @@
 import {createMachine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 
+// TODO copypasta with src/xstate/machine.ts
+
 // TODO types
 export interface OnboardContext {}
 export type OnboardEvent = any;
