@@ -7,6 +7,8 @@
 	export let send: OnboardSend;
 
 	$: data = onboardData[consentType][$state.value as OnboardStateName]; // TODO fix type in ../onboard.ts
+
+	const done = () => {};
 </script>
 
-<svelte:component this={data.component} {state} {send} {data} />
+<svelte:component this={data.component} {done} />

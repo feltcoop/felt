@@ -31,7 +31,7 @@ const typeWrapper = () => useMachine<OnboardContext, OnboardEvent, OnboardTypest
 
 export const onboardMachine = createMachine({
 	id: 'onboard',
-	initial: 'begin',
+	initial: 'voluntary', // TODO
 	states: {
 		begin: {
 			on: {NEXT: 'voluntary'},
