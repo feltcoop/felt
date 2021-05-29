@@ -9,15 +9,38 @@
     "url": "https://felt.social"
   },
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json"
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./utils/array.js": "./utils/array.js",
+    "./utils/async.js": "./utils/async.js",
+    "./utils/env.js": "./utils/env.js",
+    "./utils/equal.js": "./utils/equal.js",
+    "./utils/error.js": "./utils/error.js",
+    "./utils/function.js": "./utils/function.js",
+    "./utils/json.js": "./utils/json.js",
+    "./utils/lock.js": "./utils/lock.js",
+    "./utils/log.js": "./utils/log.js",
+    "./utils/map.js": "./utils/map.js",
+    "./utils/math.js": "./utils/math.js",
+    "./utils/object.js": "./utils/object.js",
+    "./utils/obtainable.js": "./utils/obtainable.js",
+    "./utils/path.js": "./utils/path.js",
+    "./utils/print.js": "./utils/print.js",
+    "./utils/process.js": "./utils/process.js",
+    "./utils/random.js": "./utils/random.js",
+    "./utils/string.js": "./utils/string.js",
+    "./utils/terminal.js": "./utils/terminal.js",
+    "./utils/time.js": "./utils/time.js",
+    "./utils/uuid.js": "./utils/uuid.js"
   },
   "files": [
-    "dist",
-    "src"
+    "index.js",
+    "src",
+    "lib",
+    "utils"
   ],
   "scripts": {
     "dev": "gro dev",
