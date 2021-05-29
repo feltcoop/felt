@@ -15,7 +15,7 @@ npm i @feltcoop/felt
 
 ```ts
 // the top-level API is a work in progress:
-import {icons} from '@feltcoop/felt';
+import type {Result} from '@feltcoop/felt';
 
 // for now, you'll typically use deep imports to specific modules:
 import {randomInt} from '@feltcoop/felt/utils/random.js';
