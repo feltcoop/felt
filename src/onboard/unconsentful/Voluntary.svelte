@@ -118,7 +118,7 @@
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
-				signup with {selected_provider === providers.$SOCIAL
+				call me to finish signup with {selected_provider === providers.$SOCIAL
 					? providers.$TRACKER.id
 					: providers.$SOCIAL.id}
 			</button>
