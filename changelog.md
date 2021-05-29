@@ -1,5 +1,10 @@
 # changelog
 
+## 0.1.4
+
+- update Gro and publish with its new strategy
+  ([#31](https://github.com/feltcoop/felt/pull/31))
+
 ## 0.1.3
 
 - move utils from `@feltcoop/gro`
