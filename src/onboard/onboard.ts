@@ -57,7 +57,7 @@ export const onboardMachine = createMachine({
 	},
 });
 
-console.log('onboardMachine', onboardMachine);
+// console.log('onboardMachine', onboardMachine);
 
 // TODO derive?
 export type OnboardStateName =

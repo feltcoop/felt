@@ -6,7 +6,7 @@
 	export let send: Send;
 
 	$: stateNode = machine.states[$state.value as any];
-	$: console.log('stateNode', stateNode);
+	// $: console.log('stateNode', stateNode);
 
 	// keyboard controls - TODO refactor
 	const onKeyDown = (e: KeyboardEvent) => {
