@@ -3,7 +3,8 @@
 
 	const pathInfos = [
 		{path: '/', content: 'home'},
-		{path: '/onboard', content: 'onboard'},
+		// TODO add this back when we're ready to publish
+		// {path: '/onboard', content: 'onboard'},
 		{path: '/icons', content: 'icons'},
 	];
 
