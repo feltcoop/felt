@@ -18,7 +18,7 @@
     "test": "gro test"
   },
   "devDependencies": {
-    "@feltcoop/gro": "^0.26.1",
+    "@feltcoop/gro": "^0.26.2",
     "@sveltejs/adapter-static": "^1.0.0-next.11",
     "@sveltejs/kit": "^1.0.0-next.109",
     "prettier": "~2.2.1",
