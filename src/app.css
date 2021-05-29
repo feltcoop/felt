@@ -74,6 +74,11 @@ button {
 	font-size: var(--font_size_md);
 	border-width: var(--spacing_xxs);
 	padding: var(--spacing_sm) var(--spacing_md);
+	background: #ddd;
+}
+button:active,
+button[disabled] {
+	background: white;
 }
 
 input {
