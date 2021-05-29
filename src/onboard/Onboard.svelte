@@ -16,10 +16,13 @@
 <div class="onboard">
 	<Nav {state} {send} />
 	<div class="content">
-		<section class="left">
+		<section>
+			<pre>{JSON.stringify($state, null, 2)}</pre>
+		</section>
+		<section>
 			<OnboardUnconsentful />
 		</section>
-		<section class="right">
+		<section>
 			<OnboardConsentful />
 		</section>
 	</div>

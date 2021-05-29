@@ -12,7 +12,6 @@
 		<MachineControls machine={onboardMachine} {state} {send} />
 	</section>
 	<h2>{$state.value}</h2>
-	<pre>{JSON.stringify($state, null, 2)}</pre>
 </nav>
 
 <style>
