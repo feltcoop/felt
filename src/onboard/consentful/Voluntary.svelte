@@ -2,17 +2,18 @@
 	import type {Onboard_Data} from '../onboard';
 
 	export let data: Onboard_Data;
-	export let done: (data: Onboard_Data) => void;
+	export let done: () => void;
 
 	let username = '';
 	let password = '';
 
 	const create = () => {
 		console.log('create');
+		done();
 	};
 </script>
 
-<h1>consentful</h1>
+TODO validate
 
 <form>
 	<input bind:value={username} placeholder="username" />

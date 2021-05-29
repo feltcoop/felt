@@ -7,7 +7,7 @@
 	import {UnreachableError} from '../../utils/error';
 
 	export let data: Onboard_Data;
-	export let done: (data: Onboard_Data, provider: Service_Provider_Data) => void;
+	export let done: () => void;
 
 	let create_error_message: string | null = null;
 	let signup_error_message: string | null = null;
@@ -58,7 +58,7 @@
 
 	const signup = (data: Onboard_Data, provider: Service_Provider_Data | null) => {
 		console.log('signup data, provider', data, provider);
-		if (provider) done(data, provider);
+		if (provider) done();
 	};
 
 	const handle_keydown_create = (e: KeyboardEvent) => {
@@ -113,6 +113,10 @@
 			<input bind:value={phone_number} placeholder="phone number" />
 			<input bind:value={home_address} placeholder="home address" />
 			<input bind:value={anything_else} placeholder="anything else you would like to share? :-)" />
+			<label>
+				<input type="checkbox" bind:checked={consenting} />
+				I consent to everything I did/did not read and/or understand</label
+			>
 			<button
 				type="button"
 				on:click={() => signup(data, selected_provider)}
@@ -122,10 +126,6 @@
 					? providers.$TRACKER.id
 					: providers.$SOCIAL.id}
 			</button>
-			<label>
-				<input type="checkbox" bind:checked={consenting} />
-				I consent to everything I did/did not read and/or understand</label
-			>
 		{/if}
 	{:else if selected_provider}
 		<Error_Message text={signup_error_message} />
