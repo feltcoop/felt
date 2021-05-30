@@ -5,10 +5,10 @@
 	export let done: () => void;
 </script>
 
-<section>→</section>
+<button on:click={() => done()}>→</button>
 
 <style>
-	section {
+	button {
 		font-size: var(--spacing_xxxxxl);
 		text-align: center;
 		color: var(--text_disabled_color);
