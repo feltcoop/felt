@@ -139,13 +139,15 @@ textarea:hover,
 button:hover {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
-	outline: var(--spacing_rg) dotted var(--plain_color);
+	outline: var(--spacing_rg) dotted var(--interactive_hover_color);
 }
 
 a:focus,
 input:focus,
 textarea:focus,
 button:focus {
+	/* otherwise the outline can get hidden by siblings */
+	z-index: 1;
 	outline: var(--spacing_rg) dotted var(--selected_color);
 }
 

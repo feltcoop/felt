@@ -19,7 +19,9 @@
 <nav>
 	<section class="buttons">
 		<Machine_Controls machine={onboard_machine} {state} {send} let:event_name>
-			{event_name === 'PREVIOUS' ? '←' : ''}{event_name}{event_name === 'NEXT' ? '→' : ''}
+			{event_name === 'PREVIOUS' ? '←' : ''}
+			{event_name}
+			{event_name === 'NEXT' ? '→' : ''}
 		</Machine_Controls>
 	</section>
 	<section>
