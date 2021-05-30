@@ -9,4 +9,4 @@
 <Content>
 	<p>well this is awkward</p>
 </Content>
-<button on:click={() => done()}>todo -></button>
+<button on:click={() => done()}>todo --></button>

@@ -12,7 +12,13 @@
 	// $: console.log('$state.value', $state.value);
 
 	const select = (state_id: string) => {
-		alert(`todo: navigate to state_id "${state_id}"`);
+		const state_id_index = state_ids.indexOf(state_id);
+		const old_id_index = state_ids.indexOf($state.value as string);
+		const direction = old_id_index > state_id_index ? -1 : 1;
+		const event_name = direction > 0 ? 'NEXT' : 'PREVIOUS';
+		while ($state.value !== state_id) {
+			send(event_name);
+		}
 	};
 </script>
 
