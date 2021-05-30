@@ -9,7 +9,7 @@
 	// $: console.log('stateNode', stateNode);
 
 	// keyboard controls - TODO refactor
-	const onKeyDown = (e: KeyboardEvent) => {
+	const on_keydown = (e: KeyboardEvent) => {
 		if (e.key === 'ArrowRight') {
 			send('NEXT');
 		} else if (e.key === 'ArrowLeft') {
@@ -27,7 +27,7 @@
 {/each}
 
 <!-- TODO make this compose -->
-<svelte:window on:keydown={onKeyDown} />
+<svelte:window on:keydown={on_keydown} />
 
 <style>
 	button {

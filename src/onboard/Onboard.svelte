@@ -6,7 +6,6 @@
 	// import Machine_State from '../xstate/Machine_State.svelte';
 	import Onboard_State from './Onboard_State.svelte';
 
-	// TODO types - see ./onboard.ts
 	const onboard = useMachine(onboard_machine);
 	// console.log('onboard', onboard);
 	const {state, send} = onboard;
