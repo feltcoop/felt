@@ -20,7 +20,9 @@
 	<p>
 		Now click the win button!!! <button
 			on:click={() =>
-				alert('alert! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more prizes! :-)')}
+				alert(
+					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more prizes! :-)',
+				)}
 		>
 			win!!!
 		</button>
