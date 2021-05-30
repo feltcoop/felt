@@ -137,6 +137,8 @@ a:hover,
 input:hover,
 textarea:hover,
 button:hover {
+	/* otherwise the outline can get hidden by siblings */
+	z-index: 1;
 	outline: var(--spacing_rg) dotted var(--plain_color);
 }
 
