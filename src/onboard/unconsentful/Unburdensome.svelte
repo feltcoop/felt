@@ -44,10 +44,7 @@
 	</Content>
 </Checkbox>
 
-<button on:click={() => done()}>
-	<div>I acknowledge I am legally bound to the above</div>
-	<div>and my only recourse is complaining on social media</div>
-</button>
+<button on:click={() => done()}>blast those emails!</button>
 
 <Help_Message text="No worries! We'll only email the following people: :-)" />
 
