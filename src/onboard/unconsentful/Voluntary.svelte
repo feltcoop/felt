@@ -133,6 +133,4 @@
 	.message {
 		width: 100%;
 	}
-	button[disabled] {
-	}
 </style>

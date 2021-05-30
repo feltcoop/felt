@@ -4,5 +4,3 @@
 	export let data: Onboard_Data;
 	export let done: () => void;
 </script>
-
-<h1>unconsentful</h1>
