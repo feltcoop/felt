@@ -73,7 +73,9 @@
 	let password = '';
 	let phone_number = '';
 	let home_address = '';
+	let home_address_el: HTMLInputElement;
 	let anything_else = '';
+	let anything_else_el: HTMLInputElement;
 
 	$: enable_signup_button = phone_number && home_address && anything_else;
 </script>
@@ -111,11 +113,25 @@
 	{#if selected_provider === providers.SOCIAL_CO || selected_provider === providers.TRACKER_CO}
 		{#if selected_provider && selected_provider !== providers.TRUSTED_CO}
 			<Help_Message text={signup_helper_message} />
-			<input bind:value={phone_number} placeholder="phone number" />
-			<input bind:value={home_address} placeholder="home address" />
+			<input
+				bind:value={phone_number}
+				placeholder="your phone number"
+				on:keydown={(e) => {
+					if (e.key === 'Enter') home_address_el.focus();
+				}}
+			/>
+			<input
+				bind:value={home_address}
+				bind:this={home_address_el}
+				placeholder="your home address"
+				on:keydown={(e) => {
+					if (e.key === 'Enter') anything_else_el.focus();
+				}}
+			/>
 			<input bind:value={anything_else} placeholder="anything else you would like to share? :-)" />
 			<button
 				type="button"
+				bind:this={anything_else_el}
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>

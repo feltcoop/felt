@@ -4,13 +4,17 @@
 	--nav_height: 32px;
 	--red_hue: 0;
 	--green_hue: 120;
+	--blue_hue: 210;
 	--bg_color: #fff;
 	--plain_color: #ccc;
+	--blue_color: hsl(var(--blue_hue), 50%, 50%);
+	--green_color: hsl(var(--green_hue), 40%, 550%);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
 	--interactive_active_color: #fff;
-	--color_help: hsl(var(--green_hue), 50%, 50%);
+	--selected_color: var(--blue_color);
+	--color_help: var(--green_color);
 	--link_color_hue: 278;
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--text_color: hsl(0, 10%, 16%);

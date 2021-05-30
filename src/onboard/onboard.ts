@@ -16,6 +16,7 @@ import Uncontentful_Revertible from './unconsentful/Revertible.svelte';
 import Uncontentful_Specific from './unconsentful/Specific.svelte';
 import Uncontentful_Unburdensome from './unconsentful/Unburdensome.svelte';
 import Uncontentful_End from './unconsentful/End.svelte';
+import type {Consent_Type} from 'src/consent/consent';
 
 // TODO copypasta with src/xstate/machine.ts
 
@@ -32,7 +33,7 @@ const to_use_onboard_machine = () =>
 
 export const onboard_machine = create_machine({
 	id: 'onboard',
-	initial: 'voluntary', // TODO
+	initial: 'informed', // TODO
 	states: {
 		begin: {
 			on: {NEXT: 'voluntary'},
@@ -69,7 +70,6 @@ export type Onboard_State_Name =
 	| 'specific'
 	| 'unburdensome'
 	| 'end';
-export type Consent_Type = 'consentful' | 'unconsentful';
 export interface Onboard_Data {
 	id: string;
 	component: typeof SvelteComponent;

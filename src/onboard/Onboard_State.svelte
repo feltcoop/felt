@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type {Onboard_Send, Onboard_State, Onboard_State_Name, Consent_Type} from './onboard';
+	import type {Onboard_Send, Onboard_State, Onboard_State_Name} from './onboard';
+	import type {Consent_Type} from '../consent/consent';
 	import {onboard_data} from './onboard';
 
 	export let consent_type: Consent_Type;

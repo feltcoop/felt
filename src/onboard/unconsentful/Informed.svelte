@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
 	import Content from '$lib/Content.svelte';
+	import Checkbox from '$lib/Checkbox.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
 
 	export let data: Onboard_Data;
@@ -11,8 +12,22 @@
 	$: enable_continue_button = consenting;
 </script>
 
-<label>
-	<input type="checkbox" bind:checked={consenting} />
+<Content>
+	<p>
+		Here is our <small><a href="privacy">privacy policy</a></small> and
+		<small><a href="terms">terms of service</a></small>. We care about you, really.
+	</p>
+	<p>
+		Now click the win button!!! <button
+			on:click={() =>
+				alert('alert! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more prizes! :-)')}
+		>
+			win!!!
+		</button>
+	</p>
+</Content>
+
+<Checkbox bind:checked={consenting}>
 	<Content>
 		<div>I consent to:</div>
 		<ul>
@@ -21,10 +36,10 @@
 		</ul>
 		whether or not I understood anything
 	</Content>
-</label>
+</Checkbox>
 
-<Help_Message text="This is legally binding but don't worry about it. :-)" />
-
-<button type="button" on:click={() => done()} disabled={!enable_continue_button}>
+<button on:click={() => done()} disabled={!enable_continue_button}>
 	I acknowledge I am legally bound to the above and my only recourse is complaining on social media
 </button>
+
+<Help_Message text="This is legally binding but do not worry about it. :-)" />
