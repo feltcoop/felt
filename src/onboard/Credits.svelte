@@ -4,5 +4,5 @@
 <p>(TODO proper credits)</p>
 
 <p>
-	permissive open source code at <a href="https://github.com/feltcoop/felt">github</a>
+	permissive open source code at <a href="https://github.com/feltcoop/felt">github</a> 💚
 </p>
