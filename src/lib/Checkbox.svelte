@@ -3,10 +3,12 @@
 </script>
 
 <div class="checkbox" class:checked>
-	<label>
-		<input type="checkbox" bind:checked />
-		<slot />
-	</label>
+	<div class="wrapper" class:checked>
+		<label>
+			<input type="checkbox" bind:checked />
+			<slot />
+		</label>
+	</div>
 </div>
 
 <style>
@@ -16,6 +18,11 @@
 		color: var(--text_color);
 		font-size: var(--font_size_md);
 		padding: var(--spacing_lg) 0;
+		display: flex;
+		align-items: stretch;
+	}
+	.wrapper {
+		width: 100%;
 		border-top: 2px solid var(--text_color);
 		border-bottom: 2px solid var(--text_color);
 		display: flex;
