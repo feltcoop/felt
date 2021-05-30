@@ -13,9 +13,10 @@
 		</a>
 	</div>
 </section>
-
 <section>
 	<a href="https://github.com/feltcoop/felt">source code on GitHub</a>
+</section>
+<section>
 	<div class="links">
 		@feltcoop on
 		<a href="https://github.com/feltcoop">GitHub</a> and
@@ -31,6 +32,7 @@
 	}
 	section {
 		text-align: center;
+		padding: var(--spacing_lg) 0;
 	}
 	.learn {
 		display: flex;
@@ -38,14 +40,12 @@
 		align-items: center;
 		font-size: var(--font_size_lg);
 	}
-	.learn a {
+	a {
+		font-size: var(--font_size_lg);
 		font-weight: var(--font_weight_lt);
 	}
 	.links {
 		font-size: var(--font_size_lg);
-		font-weight: var(--font_weight_lt);
-	}
-	.links a {
 		font-weight: var(--font_weight_lt);
 	}
 </style>
