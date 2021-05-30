@@ -14,6 +14,10 @@
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
 	--interactive_active_color: #fff;
+	--font_weight_dk: 900;
+	--font_weight_md: 700;
+	--font_weight_rg: 500;
+	--font_weight_lt: 300;
 	--selected_color: var(--blue_color);
 	--color_help: var(--green_color);
 	--link_color_hue: var(--blue_hue);
