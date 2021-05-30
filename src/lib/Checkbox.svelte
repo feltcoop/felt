@@ -22,8 +22,8 @@
 		align-items: stretch;
 	}
 	label {
-		border-top: var(--border_width_md) var(--border_style) var(--border_plain_color);
-		border-bottom: var(--border_width_md) var(--border_style) var(--border_plain_color);
+		border-top: var(--border_width_md) var(--border_style) var(--border_lighter_color);
+		border-bottom: var(--border_width_md) var(--border_style) var(--border_lighter_color);
 		width: 100%;
 		padding: var(--spacing_md) 0;
 		display: flex;

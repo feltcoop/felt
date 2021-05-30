@@ -42,7 +42,11 @@
 	--spacing_xxxs: 1px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
+	--faded_sm: 24%;
+	--faded_xs: 15%;
 	--border_plain_color: rgba(0, 0, 0, var(--faded_md));
+	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
+	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
