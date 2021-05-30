@@ -42,8 +42,10 @@ npm start
 [SvelteKit](https://github.com/sveltejs/kit) ∙
 [Vite](https://github.com/vitejs/vite) ∙
 [Gro](https://github.com/feltcoop/gro) ∙
+[esbuild](https://github.com/evanw/esbuild) ∙
 [Rollup](https://github.com/rollup/rollup) ∙
-[Prettier](https://github.com/prettier/prettier)
+[Prettier](https://github.com/prettier/prettier) ∙
+[@lukeed\/\*](https://github.com/lukeed)
 & [more](package.json)
 
 ## license 🐦
