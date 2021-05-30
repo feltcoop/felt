@@ -42,6 +42,9 @@
 		height: 100%;
 		flex: 1;
 		padding-top: var(--spacing_lg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	section:first-child {
 		border-right: 1px solid var(--plain_color);
