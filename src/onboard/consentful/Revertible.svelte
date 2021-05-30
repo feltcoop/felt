@@ -12,7 +12,9 @@
 
 <Content>
 	<p>
-		Are you sure you understand the deal? <a>Click here</a> to test your knowledge.
+		Are you sure you understand the deal? <button on:click={() => confirm('TODO')}
+			>test my knowledge</button
+		>
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
 	<button on:click={() => done()}>yes I understand →</button>
