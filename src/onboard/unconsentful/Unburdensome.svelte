@@ -49,7 +49,7 @@
 	<div>and my only recourse is complaining on social media</div>
 </button>
 
-<Help_Message text="This is legally binding but do not worry about it. :-)" />
+<Help_Message text="No worries! We'll only email the following people: :-)" />
 
 <form>
 	{#if !consenting}
