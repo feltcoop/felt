@@ -1,4 +1,4 @@
-import type {StateMachine as BaseStateMachine} from 'xstate';
+import type {StateMachine as Base_State_Machine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 
 // TODO rethink this
@@ -11,9 +11,9 @@ export interface Context {}
 export type Event = any;
 export type Typestate = any;
 
-export type State = ReturnType<UseMachine>['state'];
-export type Send = ReturnType<UseMachine>['send'];
-type UseMachine = typeof typeWrapper;
-const typeWrapper = () => useMachine<Context, Event, Typestate>(null as any);
+export type State = ReturnType<Use_Machine>['state'];
+export type Send = ReturnType<Use_Machine>['send'];
+type Use_Machine = typeof to_use_machine; // TODO this is a hack to get generics working
+const to_use_machine = () => useMachine<Context, Event, Typestate>(null as any);
 
-export type StateMachine = BaseStateMachine<Context, Event, Typestate>;
+export type State_Machine = Base_State_Machine<Context, Event, Typestate>;

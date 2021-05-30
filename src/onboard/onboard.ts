@@ -26,9 +26,9 @@ export type Onboard_Typestate = any;
 
 export type Onboard_State = ReturnType<Use_Onboard_Machine>['state'];
 export type Onboard_Send = ReturnType<Use_Onboard_Machine>['send'];
-type Use_Onboard_Machine = typeof type_wrapper;
-const type_wrapper = () =>
-	useMachine<Onboard_Context, Onboard_Event, Onboard_Typestate>(null as any);
+type Use_Onboard_Machine = typeof to_use_onboard_machine; // TODO this is a hack to get generics working
+const to_use_onboard_machine = () =>
+	useMachine<Onboard_Context, Onboard_Event, Onboard_Typestate>(null!);
 
 export const onboard_machine = create_machine({
 	id: 'onboard',

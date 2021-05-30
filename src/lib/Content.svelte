@@ -4,7 +4,7 @@
 
 <style>
 	.content :global(ul) {
-		padding-left: var(--spacing_lg);
+		padding-left: var(--spacing_xl);
 	}
 	.content :global(li) {
 		list-style: disc;

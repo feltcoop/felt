@@ -19,6 +19,10 @@
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
 	--font_size_rg: 16px;
+	--spacing_xxxxxl: 128px;
+	--spacing_xxxxl: 96px;
+	--spacing_xxxl: 64px;
+	--spacing_xxl: 48px;
 	--spacing_xl: 32px;
 	--spacing_lg: 20px;
 	--spacing_md: 10px;
@@ -110,7 +114,7 @@ textarea {
 }
 
 input[type='checkbox'] {
-	width: var(--spacing_xl);
+	width: var(--spacing_xxl);
 }
 
 label {

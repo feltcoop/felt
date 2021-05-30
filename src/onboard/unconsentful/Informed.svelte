@@ -18,8 +18,8 @@
 		<ul>
 			<li>everything I read</li>
 			<li>everything I did not read</li>
-			<li>whether or not I understood anything</li>
 		</ul>
+		whether or not I understood anything
 	</Content>
 </label>
 

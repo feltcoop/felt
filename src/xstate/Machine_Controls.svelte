@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type {StateMachine, State, Send} from './machine';
+	import type {State_Machine, State, Send} from './machine';
 
-	export let machine: StateMachine;
+	export let machine: State_Machine;
 	export let state: State;
 	export let send: Send;
 
@@ -18,11 +18,17 @@
 	};
 </script>
 
-{#each machine.events as eventName (eventName)}
-	<button on:click={() => send(eventName)} disabled={!stateNode.handles(eventName)}>
-		{eventName}
+{#each machine.events as event_name (event_name)}
+	<button on:click={() => send(event_name)} disabled={!stateNode.handles(event_name)}>
+		{event_name === 'PREVIOUS' ? '←' : ''}{event_name}{event_name === 'NEXT' ? '→' : ''}
 	</button>
 {/each}
 
 <!-- TODO make this compose -->
 <svelte:window on:keydown={onKeyDown} />
+
+<style>
+	button {
+		text-transform: lowercase;
+	}
+</style>
