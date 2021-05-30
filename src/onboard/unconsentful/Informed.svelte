@@ -31,8 +31,8 @@
 	<Content>
 		<div>I consent to:</div>
 		<ul>
-			<li>everything I read</li>
 			<li>everything I did not read</li>
+			<li>everything I did read</li>
 		</ul>
 		whether or not I understood anything.
 	</Content>
