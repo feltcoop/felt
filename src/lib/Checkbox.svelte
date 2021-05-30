@@ -28,7 +28,6 @@
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
-		align-items: stretch;
 		justify-content: center;
 	}
 	.checked,
