@@ -19,20 +19,20 @@
 		selected: boolean;
 	}
 	const email_contacts: Writable<Contact[]> = writable([
-		{id: 'my_dentist', selected: true},
-		{id: 'alice', selected: true},
 		{id: 'mom', selected: true},
+		{id: 'alice', selected: true},
+		{id: 'my_dentist', selected: true},
 		{id: 'moms_email_from_the_90s', selected: true},
 		{id: 'childhood_friend_grandma', selected: true},
-		{id: 'local_supermarket', selected: true},
-		{id: 'barry', selected: true},
 		{id: 'noreply_at_every_website', selected: true},
-		{id: 'who', selected: true},
+		{id: 'local_supermarket', selected: true},
 		{id: 'are_you_serious_?', selected: true},
-		{id: 'spammer', selected: true},
-		{id: 'a_spammer', selected: true},
-		{id: 'spam_maker', selected: true},
-		{id: 'random_person_who_typod_your_address', selected: true},
+		{id: 'barry', selected: true},
+		{id: 'bank', selected: true},
+		{id: 'who', selected: true},
+		{id: 'a_spammer_x_1_000_000_000', selected: true},
+		{id: 'a_friend_who_i_want_to_share_with', selected: true},
+		{id: 'random_person_who_typod_your_address', selected: true}, // TODO reward
 		{id: 'that_guy_from_the_thing_last_week', selected: true},
 		{id: 'a_dog_on_the_internet', selected: true},
 	]);
