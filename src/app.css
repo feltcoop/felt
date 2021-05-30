@@ -110,6 +110,10 @@ textarea[disabled] {
 	background: var(--interactive_disabled_color);
 	color: var(--text_disabled_color);
 }
+button.selected {
+	border-color: var(--selected_color);
+	color: var(--selected_color);
+}
 
 input,
 textarea {
@@ -122,6 +126,24 @@ textarea {
 
 input[type='checkbox'] {
 	width: var(--spacing_xxl);
+}
+
+input:hover,
+textarea:hover,
+button:hover {
+	outline: var(--spacing_rg) dotted var(--plain_color);
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+	outline: var(--spacing_rg) dotted var(--selected_color);
+}
+
+input:hover[disabled],
+textarea:hover[disabled],
+button:hover[disabled] {
+	outline: none;
 }
 
 label {

@@ -34,7 +34,7 @@
 			<li>everything I read</li>
 			<li>everything I did not read</li>
 		</ul>
-		whether or not I understood anything
+		whether or not I understood anything.
 	</Content>
 </Checkbox>
 

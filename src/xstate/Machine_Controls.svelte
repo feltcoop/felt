@@ -20,7 +20,9 @@
 
 {#each machine.events as event_name (event_name)}
 	<button on:click={() => send(event_name)} disabled={!stateNode.handles(event_name)}>
-		{event_name === 'PREVIOUS' ? '←' : ''}{event_name}{event_name === 'NEXT' ? '→' : ''}
+		<slot {event_name}>
+			{event_name}
+		</slot>
 	</button>
 {/each}
 
@@ -29,6 +31,7 @@
 
 <style>
 	button {
+		width: 100%;
 		text-transform: lowercase;
 	}
 </style>

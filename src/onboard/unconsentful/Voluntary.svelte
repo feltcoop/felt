@@ -105,6 +105,7 @@
 			type="button"
 			on:click={() => signup_with(provider)}
 			disabled={!!selected_provider && selected_provider === provider}
+			class:selected={!!selected_provider && selected_provider === provider}
 		>
 			signup with {provider.id}</button
 		>
