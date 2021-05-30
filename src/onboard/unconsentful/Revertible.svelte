@@ -7,10 +7,10 @@
 </script>
 
 <Content>
-	<p>Great! We'll never bother you about those things again.</p>
+	<p>Great! We'll never bother you about those things again unless our lawyers make us.</p>
 	<p>
-		Settings are so annoying right! We're burying those annoying settings as deeply as we can, as we
-		speak!
+		Settings are so annoying right! We're burying those annoying options as deeply as we can, as we
+		speak! Software is hard, ha ha ha.
 	</p>
 	<button on:click={() => done()}>continue →</button>
 </Content>

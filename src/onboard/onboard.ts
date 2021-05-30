@@ -33,7 +33,7 @@ const to_use_onboard_machine = () =>
 
 export const onboard_machine = create_machine({
 	id: 'onboard',
-	initial: 'informed', // TODO
+	initial: 'begin',
 	states: {
 		begin: {
 			on: {NEXT: 'voluntary'},
