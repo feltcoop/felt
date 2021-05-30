@@ -14,9 +14,8 @@
 		min-height: var(--message_min_height);
 		width: 100%;
 		color: var(--text_color);
-		font-weight: bold;
 		font-size: var(--font_size_md);
-		margin: var(--spacing_lg) 0;
+		padding: var(--spacing_lg) 0;
 		border-top: 2px solid var(--text_color);
 		border-bottom: 2px solid var(--text_color);
 		display: flex;
