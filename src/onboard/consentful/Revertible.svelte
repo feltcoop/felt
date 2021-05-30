@@ -14,6 +14,6 @@
 	<p>
 		Are you sure you understand the deal? <a>Click here</a> to test your knowledge.
 	</p>
-	<button on:click={() => back()}>← go back</button>
-	<button on:click={() => done()}>continue →</button>
+	<button on:click={() => back()}>← go back and learn</button>
+	<button on:click={() => done()}>yes I understand →</button>
 </Content>
