@@ -152,3 +152,8 @@ label {
 	justify-content: center;
 	padding: var(--spacing_sm) var(--spacing_md);
 }
+
+blockquote {
+	padding: var(--spacing_lg);
+	border-left: var(--spacing_sm) solid var(--plain_color);
+}
