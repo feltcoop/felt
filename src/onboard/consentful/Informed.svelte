@@ -8,5 +8,5 @@
 
 <Content>
 	<p>well this is awkward</p>
-	<button on:click={() => done()}>continue</button>
 </Content>
+<button on:click={() => done()}>todo -></button>
