@@ -41,7 +41,8 @@
 
 <Checkbox bind:checked={consenting}>
 	<Content>
-		<p>send marketing emails to everyone I've ever emailed</p>
+		<div>send marketing emails to everyone I've ever emailed</div>
+		<div>so they can join in the fun!</div>
 	</Content>
 </Checkbox>
 
