@@ -90,7 +90,7 @@
 		disabled={!!create_error_message}>create account</button
 	>
 
-	<div class="message" style="--message_min_height: 80px;">
+	<div class="message" style="--message_min_height: 100px;">
 		{#if !selected_provider}
 			<Error_Message text={create_error_message} />
 		{:else if create_error_message}
