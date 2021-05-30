@@ -15,14 +15,14 @@
 	let signup_error_message: string | null = null;
 	let signup_helper_message: string | null = null;
 
-	type Service_Provider = '$SOCIAL' | '$TRACKER' | '$TRUSTED';
+	type Service_Provider = 'SOCIAL_CO' | 'TRACKER_CO' | 'TRUSTED_CO';
 	interface Service_Provider_Data {
 		id: Service_Provider;
 	}
 	const providers: Record<Service_Provider, Service_Provider_Data> = {
-		$SOCIAL: {id: '$SOCIAL'},
-		$TRACKER: {id: '$TRACKER'},
-		$TRUSTED: {id: '$TRUSTED'},
+		SOCIAL_CO: {id: 'SOCIAL_CO'},
+		TRACKER_CO: {id: 'TRACKER_CO'},
+		TRUSTED_CO: {id: 'TRUSTED_CO'},
 	};
 	const provider_list = Object.values(providers);
 	let selected_provider: Service_Provider_Data | null = null;
@@ -36,20 +36,20 @@
 	const signup_with = (provider: Service_Provider_Data) => {
 		console.log('signup_with name', provider, data);
 		switch (provider.id) {
-			case '$SOCIAL': {
-				selected_provider = providers.$SOCIAL;
+			case 'SOCIAL_CO': {
+				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with $TRACKER!`;
+				signup_helper_message = `Great! Let's sign you up with TRACKER_CO!`;
 				break;
 			}
-			case '$TRACKER': {
-				selected_provider = providers.$TRACKER;
+			case 'TRACKER_CO': {
+				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with $SOCIAL!`;
+				signup_helper_message = `Great! Let's sign you up with SOCIAL_CO!`;
 				break;
 			}
-			case '$TRUSTED': {
-				selected_provider = providers.$TRUSTED;
+			case 'TRUSTED_CO': {
+				selected_provider = providers.TRUSTED_CO;
 				signup_error_message = '404 not found :-)';
 				break;
 			}
@@ -108,8 +108,8 @@
 		>
 	{/each}
 
-	{#if selected_provider === providers.$SOCIAL || selected_provider === providers.$TRACKER}
-		{#if selected_provider && selected_provider !== providers.$TRUSTED}
+	{#if selected_provider === providers.SOCIAL_CO || selected_provider === providers.TRACKER_CO}
+		{#if selected_provider && selected_provider !== providers.TRUSTED_CO}
 			<Help_Message text={signup_helper_message} />
 			<input bind:value={phone_number} placeholder="phone number" />
 			<input bind:value={home_address} placeholder="home address" />
@@ -119,10 +119,9 @@
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
-				call me on my personal telephone to finish signup with {selected_provider ===
-				providers.$SOCIAL
-					? providers.$TRACKER.id
-					: providers.$SOCIAL.id}
+				call me on my telephone to finish signup with {selected_provider === providers.SOCIAL_CO
+					? providers.TRACKER_CO.id
+					: providers.SOCIAL_CO.id}
 			</button>
 		{/if}
 	{:else if selected_provider}
