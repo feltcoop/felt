@@ -17,6 +17,6 @@
 		list-style: disc;
 	}
 	.content :global(p) {
-		padding-top: var(--spacing_lg);
+		padding: var(--spacing_lg) 0;
 	}
 </style>

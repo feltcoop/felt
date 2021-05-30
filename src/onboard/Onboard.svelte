@@ -44,7 +44,7 @@
 		padding-top: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
 	}
 	section:first-child {
 		border-right: 1px solid var(--plain_color);
