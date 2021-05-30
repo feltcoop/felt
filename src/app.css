@@ -155,12 +155,6 @@ button:focus {
 	outline: var(--spacing_rg) dotted var(--selected_color);
 }
 
-input:hover[disabled],
-textarea:hover[disabled],
-button:hover[disabled] {
-	outline: none;
-}
-
 label {
 	display: flex;
 	align-items: center;
