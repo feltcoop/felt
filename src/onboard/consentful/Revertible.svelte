@@ -4,10 +4,7 @@
 
 	export let data: Onboard_Data;
 	export let done: () => void;
-
-	const back = () => {
-		console.log('TODO');
-	};
+	export let back: () => void;
 </script>
 
 <Content>

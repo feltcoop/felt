@@ -12,6 +12,9 @@
 	const done = () => {
 		send('NEXT');
 	};
+	const back = () => {
+		send('PREVIOUS');
+	};
 </script>
 
-<svelte:component this={data.component} {data} {done} />
+<svelte:component this={data.component} {data} {done} {back} />

@@ -15,7 +15,7 @@
 </section>
 
 <section>
-	<a href="https://github.com/feltcoop/felt"><h2>source code on GitHub</h2> </a>
+	<a href="https://github.com/feltcoop/felt">source code on GitHub</a>
 	<div class="links">
 		@feltcoop on
 		<a href="https://github.com/feltcoop">GitHub</a> and
