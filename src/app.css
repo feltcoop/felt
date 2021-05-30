@@ -163,7 +163,7 @@ input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
-	z-index: 1;
+	z-index: 2;
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 }
 
