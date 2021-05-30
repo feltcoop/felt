@@ -39,10 +39,13 @@
 	--spacing_sm: 6px;
 	--spacing_xs: 4px;
 	--spacing_xxs: 2px;
+	--spacing_xxxs: 1px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
 	--border_plain_color: rgba(0, 0, 0, var(--faded_md));
-	--border_width: var(--spacing_xxs);
+	--border_width_md: var(--spacing_xs);
+	--border_width_rg: var(--spacing_xxs);
+	--border_width_sm: var(--spacing_xxxs);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_rg);
 	--border_accent_style: dotted;
@@ -110,7 +113,7 @@ form {
 
 button {
 	font-size: var(--font_size_md);
-	border-width: var(--border_width);
+	border-width: var(--border_width_rg);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
 }
@@ -136,7 +139,7 @@ input,
 textarea {
 	/* TODO */
 	width: 400px;
-	border-width: var(--border_width);
+	border-width: var(--border_width_rg);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
 }
@@ -146,8 +149,8 @@ input[type='checkbox'] {
 }
 
 hr {
-	border-top-width: var(--border_width);
-	border-bottom-width: var(--border_width);
+	border-top-width: var(--border_width_rg);
+	border-bottom-width: var(--border_width_rg);
 }
 
 a:hover,

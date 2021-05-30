@@ -6,12 +6,10 @@
 </script>
 
 <div class="checkbox" class:checked>
-	<div class="wrapper" class:checked>
-		<label>
-			<input type="checkbox" bind:checked />
-			<slot />
-		</label>
-	</div>
+	<label>
+		<input type="checkbox" bind:checked />
+		<slot />
+	</label>
 </div>
 
 <style>
@@ -23,20 +21,14 @@
 		display: flex;
 		align-items: stretch;
 	}
-	.wrapper {
-		width: 100%;
-		border-top: var(--border_width) var(--border_style) var(--border_plain_color);
-		border-bottom: var(--border_width) var(--border_style) var(--border_plain_color);
-		display: flex;
-		align-items: stretch;
-	}
 	label {
+		border-top: var(--border_width_md) var(--border_style) var(--border_plain_color);
+		border-bottom: var(--border_width_md) var(--border_style) var(--border_plain_color);
 		width: 100%;
-		border-top: var(--border_accent_width) var(--border_accent_style) var(--border_plain_color);
-		border-bottom: var(--border_accent_width) var(--border_accent_style) var(--border_plain_color);
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
+		align-items: stretch;
 		justify-content: center;
 	}
 	.checked,

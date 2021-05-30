@@ -18,9 +18,9 @@
 		font-weight: bold;
 		font-size: var(--font_size_md);
 		margin: var(--spacing_lg) 0;
-		border-top: var(--border_width) var(--border_style)
+		border-top: var(--border_width_rg) var(--border_style)
 			var(--message_color, var(--border_plain_color));
-		border-bottom: var(--border_width) var(--border_style)
+		border-bottom: var(--border_width_rg) var(--border_style)
 			var(--message_color, var(--border_plain_color));
 		display: flex;
 		align-items: stretch;
