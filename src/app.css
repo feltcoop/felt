@@ -66,6 +66,9 @@ body {
 a {
 	color: var(--link_color);
 }
+a:hover {
+	text-decoration: underline;
+}
 
 ul {
 	display: flex;
