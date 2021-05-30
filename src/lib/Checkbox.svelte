@@ -17,7 +17,7 @@
 		width: 100%;
 		color: var(--text_color);
 		font-size: var(--font_size_md);
-		padding: var(--spacing_lg) 0;
+		padding: var(--vertical_padding, --spacing_lg) 0;
 		display: flex;
 		align-items: stretch;
 	}
