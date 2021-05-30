@@ -41,6 +41,12 @@
 	section {
 		height: 100%;
 		flex: 1;
-		border: 1px solid #ccc;
+		padding-top: var(--spacing_lg);
+	}
+	section:first-child {
+		border-right: 1px solid var(--plain_color);
+	}
+	section:nth-child(2) {
+		border-left: 1px solid var(--plain_color);
 	}
 </style>

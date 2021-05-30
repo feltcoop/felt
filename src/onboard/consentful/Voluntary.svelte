@@ -4,6 +4,8 @@
 	export let data: Onboard_Data;
 	export let done: () => void;
 
+	// TODO validate?
+
 	let username = '';
 	let password = '';
 
@@ -12,8 +14,6 @@
 		done();
 	};
 </script>
-
-TODO validate
 
 <form>
 	<input bind:value={username} placeholder="username" />

@@ -41,6 +41,7 @@
 	}
 	ul {
 		display: flex;
+		flex-direction: row;
 	}
 	li {
 		flex: 1;
