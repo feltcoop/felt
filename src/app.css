@@ -9,7 +9,7 @@
 	--plain_color: #ccc;
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
-	--green_text_color: hsl(var(--green_hue), 30%, 30%);
+	--green_text_color: hsl(var(--green_hue), 40%, 40%);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
