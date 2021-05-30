@@ -8,14 +8,15 @@
 	--bg_color: #fff;
 	--plain_color: #ccc;
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
-	--green_color: hsl(var(--green_hue), 40%, 550%);
+	--green_color: hsl(var(--green_hue), 45%, 55%);
+	--green_text_color: hsl(var(--green_hue), 30%, 30%);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
 	--interactive_active_color: #fff;
 	--selected_color: var(--blue_color);
 	--color_help: var(--green_color);
-	--link_color_hue: 278;
+	--link_color_hue: var(--blue_hue);
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--text_color: hsl(0, 10%, 16%);
 	--text_disabled_color: hsl(0, 10%, 38%);
@@ -65,9 +66,13 @@ body {
 
 a {
 	color: var(--link_color);
+	font-weight: bold;
 }
 a:hover {
 	text-decoration: underline;
+}
+a:active {
+	color: var(--green_text_color);
 }
 
 ul {
@@ -128,12 +133,14 @@ input[type='checkbox'] {
 	width: var(--spacing_xxl);
 }
 
+a:hover,
 input:hover,
 textarea:hover,
 button:hover {
 	outline: var(--spacing_rg) dotted var(--plain_color);
 }
 
+a:focus,
 input:focus,
 textarea:focus,
 button:focus {
