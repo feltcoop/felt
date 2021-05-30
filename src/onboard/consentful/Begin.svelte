@@ -8,6 +8,6 @@
 </script>
 
 <Content>
-	<p>welcome.</p>
+	<h1>welcome.</h1>
 	<Credits />
 </Content>

@@ -19,4 +19,7 @@
 	.content :global(p) {
 		padding: var(--spacing_lg) 0;
 	}
+	.content :global(h1) {
+		padding-bottom: var(--spacing_lg);
+	}
 </style>

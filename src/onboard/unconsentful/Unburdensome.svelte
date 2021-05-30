@@ -3,6 +3,7 @@
 	import Content from '$lib/Content.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
+	import Plain_Message from '$lib/Plain_Message.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
@@ -46,7 +47,11 @@
 
 <button on:click={() => done()}>blast those emails!</button>
 
-<Help_Message text="No worries! We'll only email the following people: :-)" />
+{#if consenting}
+	<Plain_Message text=":-)" />
+{:else}
+	<Help_Message text="No worries! We'll only email the following people:" />
+{/if}
 
 <form>
 	{#if !consenting}
