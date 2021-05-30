@@ -6,7 +6,7 @@
 	export let state: Onboard_State;
 	export let send: Onboard_Send;
 
-	console.log('onboard_machine', onboard_machine);
+	// console.log('onboard_machine', onboard_machine);
 	$: state_ids = Object.keys(onboard_machine.states);
 
 	// $: console.log('$state.value', $state.value);

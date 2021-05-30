@@ -6,6 +6,8 @@
 
 	import {UnreachableError} from '../../utils/error';
 
+	// TODO refactor to an xstate machine
+
 	export let data: Onboard_Data;
 	export let done: () => void;
 
@@ -72,9 +74,8 @@
 	let phone_number = '';
 	let home_address = '';
 	let anything_else = '';
-	let consenting = true; // :-)
 
-	$: enable_signup_button = consenting && phone_number && home_address && anything_else;
+	$: enable_signup_button = phone_number && home_address && anything_else;
 </script>
 
 <form>
@@ -113,16 +114,13 @@
 			<input bind:value={phone_number} placeholder="phone number" />
 			<input bind:value={home_address} placeholder="home address" />
 			<input bind:value={anything_else} placeholder="anything else you would like to share? :-)" />
-			<label>
-				<input type="checkbox" bind:checked={consenting} />
-				I consent to everything I did/did not read and/or understand</label
-			>
 			<button
 				type="button"
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
-				call me to finish signup with {selected_provider === providers.$SOCIAL
+				call me on my personal telephone to finish signup with {selected_provider ===
+				providers.$SOCIAL
 					? providers.$TRACKER.id
 					: providers.$SOCIAL.id}
 			</button>
@@ -135,5 +133,7 @@
 <style>
 	.message {
 		width: 100%;
+	}
+	button[disabled] {
 	}
 </style>

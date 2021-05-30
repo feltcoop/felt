@@ -4,10 +4,17 @@
 	--nav_height: 32px;
 	--red_hue: 0;
 	--green_hue: 120;
+	--bg_color: #fff;
+	--plain_color: #ccc;
+	--interactive_color: #ddd;
+	--interactive_hover_color: #eee;
+	--interactive_disabled_color: #f7f7f7;
+	--interactive_active_color: #fff;
 	--color_help: hsl(var(--green_hue), 50%, 50%);
 	--link_color_hue: 278;
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--text_color: hsl(0, 10%, 16%);
+	--text_disabled_color: hsl(0, 10%, 38%);
 	--font_size_xl: 32px;
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
@@ -31,6 +38,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: var(--bg_color);
 }
 
 *,
@@ -74,14 +82,24 @@ button {
 	font-size: var(--font_size_md);
 	border-width: var(--spacing_xxs);
 	padding: var(--spacing_sm) var(--spacing_md);
-	background: #ddd;
+	background: var(--interactive_color);
 }
-button:active,
-button[disabled] {
-	background: white;
+button:hover {
+	background: var(--interactive_hover_color);
+}
+button:active {
+	background: var(--interactive_active_color);
+}
+button[disabled],
+input[disabled],
+textarea[disabled] {
+	opacity: 1; /* for some browsers */
+	background: var(--interactive_disabled_color);
+	color: var(--text_disabled_color);
 }
 
-input {
+input,
+textarea {
 	/* TODO */
 	width: 400px;
 	border-width: var(--spacing_xxs);
