@@ -18,6 +18,7 @@
 		height: var(--nav_height);
 		display: flex;
 		justify-content: center;
+		flex-shrink: 0;
 	}
 	main {
 		flex: 1;

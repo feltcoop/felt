@@ -13,27 +13,35 @@
 </div>
 
 <style>
+	/* TODO review `custom_border_color` pattern below */
 	.checkbox {
 		width: 100%;
 		color: var(--text_color);
 		font-size: var(--font_size_md);
-		padding: var(--vertical_padding, --spacing_lg) 0;
+		padding: var(--vertical_padding, var(--spacing_lg)) 0;
 		display: flex;
 		align-items: stretch;
 	}
 	label {
-		border-top: var(--border_width_md) var(--border_style) var(--border_lighter_color);
-		border-bottom: var(--border_width_md) var(--border_style) var(--border_lighter_color);
+		border-top: var(--border_width_md) var(--border_style)
+			var(--custom_border_color, var(--border_lighter_color));
+		border-bottom: var(--border_width_md) var(--border_style)
+			var(--custom_border_color, var(--border_lighter_color));
 		width: 100%;
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.checked,
-	.checked label {
-		border-top-color: var(--selected_color);
-		border-bottom-color: var(--selected_color);
+	label:hover {
+		outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
+	}
+	.checked {
+		--custom_border_color: var(--selected_color);
+	}
+	.checkbox:active,
+	.checked:active {
+		--custom_border_color: var(--border_active_color);
 	}
 	input {
 		width: var(--spacing_xl);
