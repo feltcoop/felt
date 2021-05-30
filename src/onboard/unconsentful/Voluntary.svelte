@@ -72,6 +72,7 @@
 	let username = '';
 	let password = '';
 	let phone_number = '';
+	let phone_number_el: HTMLInputElement;
 	let home_address = '';
 	let home_address_el: HTMLInputElement;
 	let anything_else = '';
@@ -116,6 +117,7 @@
 			<Help_Message text={signup_helper_message} />
 			<input
 				bind:value={phone_number}
+				bind:this={phone_number_el}
 				placeholder="your phone number"
 				on:keydown={(e) => {
 					if (e.key === 'Enter') home_address_el.focus();
@@ -129,10 +131,20 @@
 					if (e.key === 'Enter') anything_else_el.focus();
 				}}
 			/>
-			<input bind:value={anything_else} placeholder="anything else you would like to share? :-)" />
+			<input
+				bind:value={anything_else}
+				bind:this={anything_else_el}
+				placeholder="anything else you would like to share? :-)"
+				on:keydown={(e) => {
+					if (enable_signup_button) {
+						signup(data, selected_provider);
+					} else if (e.key === 'Enter') {
+						phone_number_el.focus();
+					}
+				}}
+			/>
 			<button
 				type="button"
-				bind:this={anything_else_el}
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
