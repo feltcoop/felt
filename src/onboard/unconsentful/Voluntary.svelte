@@ -148,9 +148,12 @@
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 			>
-				call me on my telephone to finish signup with {selected_provider === providers.SOCIAL_CO
-					? providers.TRACKER_CO.id
-					: providers.SOCIAL_CO.id}
+				<div>call me on my telephone</div>
+				<div>
+					to finish signup with {selected_provider === providers.SOCIAL_CO
+						? providers.TRACKER_CO.id
+						: providers.SOCIAL_CO.id}
+				</div>
 			</button>
 		{/if}
 	{:else if selected_provider}
