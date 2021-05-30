@@ -21,7 +21,7 @@
 		Now click the win button!!! <button
 			on:click={() =>
 				alert(
-					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more prizes! :-)',
+					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more rewards! :-)',
 				)}
 		>
 			win!!!

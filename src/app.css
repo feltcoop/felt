@@ -41,9 +41,16 @@
 	--spacing_xxs: 2px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
-	--border_alert: var(--spacing_xs) dashed hsla(var(--red_hue), 100%, 50%, var(--faded_md));
-	--border_help: var(--spacing_xs) dashed hsla(var(--green_hue), 100%, 25%, var(--faded_md));
-	--border_plain: var(--spacing_xs) dashed hsla(0, 0%, 80%, var(--faded_md));
+	--border_width: var(--spacing_xxs);
+	--border_style: solid;
+	--border_accent_width: var(--spacing_rg);
+	--border_accent_style: dotted;
+	--border_alert: var(--border_accent_width) var(--border_accent_style)
+		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
+	--border_help: var(--border_accent_width) var(--border_accent_style)
+		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
+	--border_plain: var(--border_accent_width) var(--border_accent_style)
+		hsla(0, 0%, 80%, var(--faded_md));
 }
 
 html,
@@ -102,7 +109,7 @@ form {
 
 button {
 	font-size: var(--font_size_md);
-	border-width: var(--spacing_xxs);
+	border-width: var(--border_width);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
 }
@@ -128,7 +135,7 @@ input,
 textarea {
 	/* TODO */
 	width: 400px;
-	border-width: var(--spacing_xxs);
+	border-width: var(--border_width);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
 }
@@ -137,10 +144,15 @@ input[type='checkbox'] {
 	width: var(--spacing_xxl);
 }
 
+hr {
+	border-top-width: var(--border_width);
+	border-bottom-width: var(--border_width);
+}
+
 a:hover,
-input:hover,
-textarea:hover,
-button:hover {
+input:hover:not(:disabled),
+textarea:hover:not(:disabled),
+button:hover:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
 	outline: var(--spacing_rg) dotted var(--interactive_hover_color);
