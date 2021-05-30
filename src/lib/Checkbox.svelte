@@ -25,15 +25,15 @@
 	}
 	.wrapper {
 		width: 100%;
-		border-top: var(--border_width) var(--border_style) var(--text_color);
-		border-bottom: var(--border_width) var(--border_style) var(--text_color);
+		border-top: var(--border_width) var(--border_style) var(--border_plain_color);
+		border-bottom: var(--border_width) var(--border_style) var(--border_plain_color);
 		display: flex;
 		align-items: stretch;
 	}
 	label {
 		width: 100%;
-		border-top: var(--border_accent_width) var(--border_accent_style) var(--text_color);
-		border-bottom: var(--border_accent_width) var(--border_accent_style) var(--text_color);
+		border-top: var(--border_accent_width) var(--border_accent_style) var(--border_plain_color);
+		border-bottom: var(--border_accent_width) var(--border_accent_style) var(--border_plain_color);
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;

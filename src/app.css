@@ -41,6 +41,7 @@
 	--spacing_xxs: 2px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
+	--border_plain_color: rgba(0, 0, 0, var(--faded_md));
 	--border_width: var(--spacing_xxs);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_rg);
@@ -50,7 +51,7 @@
 	--border_help: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
 	--border_plain: var(--border_accent_width) var(--border_accent_style)
-		hsla(0, 0%, 80%, var(--faded_md));
+		hsla(0, 0%, 80%, var(--border_plain_color));
 }
 
 html,

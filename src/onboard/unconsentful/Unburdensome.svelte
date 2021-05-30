@@ -51,9 +51,10 @@
 			email_contact,
 			$email_contacts,
 		);
-		email_contacts.update((contacts) =>
-			contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
-		);
+		// TODO
+		// email_contacts.update((contacts) =>
+		// 	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
+		// );
 	};
 </script>
 
@@ -93,5 +94,8 @@
 <style>
 	form {
 		align-items: stretch;
+	}
+	p {
+		font-size: var(--font_size_md);
 	}
 </style>
