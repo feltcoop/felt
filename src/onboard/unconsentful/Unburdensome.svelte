@@ -51,7 +51,7 @@
 			email_contact,
 			$email_contacts,
 		);
-		// TODO
+		// TODO wontfix? lol
 		// email_contacts.update((contacts) =>
 		// 	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
 		// );

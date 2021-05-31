@@ -151,6 +151,9 @@ form {
 }
 
 button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
