@@ -31,7 +31,6 @@
 
 <style>
 	button {
-		width: 100%;
 		text-transform: lowercase;
 	}
 </style>

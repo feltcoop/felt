@@ -47,13 +47,4 @@
 		justify-content: stretch;
 		align-items: stretch;
 	}
-	nav {
-		display: flex;
-		flex-direction: row;
-	}
-	button {
-		flex: 1;
-		width: 100%;
-		height: 100%;
-	}
 </style>

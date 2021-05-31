@@ -25,8 +25,7 @@
 </section>
 
 <style>
-	h1,
-	h2 {
+	h1 {
 		margin: 20px 0;
 		text-align: center;
 	}

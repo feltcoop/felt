@@ -281,3 +281,14 @@ blockquote {
 	padding: var(--spacing_lg);
 	border-left: var(--spacing_sm) solid var(--plain_color);
 }
+
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: stretch;
+	align-items: center;
+	flex-wrap: wrap;
+}
+nav button {
+	flex: 1;
+}

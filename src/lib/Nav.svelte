@@ -18,10 +18,6 @@
 </nav>
 
 <style>
-	nav {
-		display: flex;
-		justify-content: stretch;
-	}
 	a {
 		display: flex;
 		justify-content: center;
