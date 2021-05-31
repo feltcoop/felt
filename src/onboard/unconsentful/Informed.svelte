@@ -41,8 +41,9 @@
 </Checkbox>
 
 <button on:click={() => done()} disabled={!enable_continue_button}>
-	<div>I acknowledge I am legally bound to the above</div>
-	<div>and my only recourse is complaining on social media</div>
+	I acknowledge I am legally bound to the above
+	<br />
+	and my only recourse is complaining on social bra
 </button>
 
 <Help_Message text="This is legally binding but do not worry about it. :-)" />
