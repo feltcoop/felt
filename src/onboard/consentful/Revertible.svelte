@@ -9,9 +9,7 @@
 
 <Content>
 	<p>
-		Are you sure you understand the deal? <button on:click={() => confirm('TODO')}
-			>test my knowledge!</button
-		>
+		Are you sure you understand the deal? <button disabled title="TODO">test my knowledge!</button>
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
 	<button on:click={() => done()}>yes I understand →</button>

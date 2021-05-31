@@ -64,6 +64,8 @@
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
 	--border_plain: var(--border_accent_width) var(--border_accent_style)
 		hsla(0, 0%, 80%, var(--border_plain_color));
+	--button_border_style: solid;
+	--input_border_style: solid;
 }
 
 html,
@@ -132,6 +134,7 @@ button {
 	border-width: var(--border_width_rg);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
+	border-style: var(--button_border_style);
 }
 button:hover {
 	background: var(--interactive_hover_color);
@@ -161,6 +164,7 @@ textarea {
 	border-width: var(--border_width_rg);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
+	border-style: var(--input_border_style);
 }
 
 input[type='checkbox'] {
