@@ -43,7 +43,7 @@
 <button on:click={() => done()} disabled={!enable_continue_button}>
 	I acknowledge I am legally bound to the above
 	<br />
-	and my only recourse is complaining on social bra
+	and my only recourse is complaining on social media
 </button>
 
 <Help_Message text="This is legally binding but do not worry about it. :-)" />
