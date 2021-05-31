@@ -4,4 +4,4 @@
 	export let text: string | null;
 </script>
 
-<Message {text} --message_color="green" />
+<Message {text} --message_color="var(--help_color)" />

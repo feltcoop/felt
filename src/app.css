@@ -2,7 +2,7 @@
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--nav_height: 32px;
-	--red_hue: 0;
+	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
 	--green_hue: 120;
 	--blue_hue: 210;
 	--bg_color: #fff;
@@ -10,6 +10,7 @@
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
+	--red_color: hsl(var(--red_hue), 50%, 50%);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
@@ -21,7 +22,8 @@
 	--font_weight_xlt: 100;
 	--selected_color: var(--blue_color);
 	--active_color: var(--green_color);
-	--color_help: var(--green_color);
+	--help_color: var(--green_color);
+	--error_color: var(--red_color);
 	--link_color_hue: var(--blue_hue);
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--text_color: hsl(0, 10%, 16%);
