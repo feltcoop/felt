@@ -41,7 +41,7 @@
 	--spacing_xs: 4px;
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
-	/* --column_width: 600px; hmm probably? */
+	--column_width: 600px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
 	--faded_sm: 24%;
@@ -193,7 +193,7 @@ button:focus:not(:disabled) {
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
-	outline: var(--spacing_rg) var(--border_accent_style) var(--active_color);
+	outline-color: var(--active_color);
 }
 
 label {

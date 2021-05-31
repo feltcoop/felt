@@ -28,10 +28,11 @@
 	}
 	.checkbox:hover {
 		z-index: 1;
-		outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
+		outline: var(--spacing_rg) var(--border_accent_style)
+			var(--custom_border_color, var(--interactive_hover_color));
 	}
 	label {
-		width: 500px;
+		width: var(--column_width);
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
