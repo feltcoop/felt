@@ -190,8 +190,7 @@ input[type='checkbox'] {
 	--custom_outline_style: dotted;
 }
 input[type='checkbox']::before {
-	content: '☻';
-	/* content: '•'; */
+	content: var(--custom_content, '•');
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -202,7 +201,7 @@ input[type='checkbox']::before {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	font-size: 55px;
+	font-size: var(--custom_font_size, 55px);
 	color: var(--selected_color);
 	line-height: 1;
 }
