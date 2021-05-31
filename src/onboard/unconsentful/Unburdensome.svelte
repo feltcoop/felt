@@ -69,7 +69,7 @@
 	</Content>
 </Checkbox>
 
-<button on:click={() => done()}>blast those emails to {selected_count} contacts!</button>
+<button on:click={() => done()}>email blast {selected_count} contacts!</button>
 
 {#if consenting}
 	<Plain_Message text=":-)" />
