@@ -203,6 +203,7 @@ input[type='checkbox']::before {
 	overflow: hidden;
 	font-size: var(--font_size_xxxl);
 	color: var(--selected_color);
+	line-height: 1;
 }
 input[type='checkbox']:checked::before {
 	visibility: visible;
