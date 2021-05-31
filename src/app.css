@@ -19,6 +19,7 @@
 	--font_weight_rg: 500;
 	--font_weight_lt: 300;
 	--selected_color: var(--blue_color);
+	--active_color: var(--green_color);
 	--color_help: var(--green_color);
 	--link_color_hue: var(--blue_hue);
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
@@ -40,6 +41,7 @@
 	--spacing_xs: 4px;
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
+	/* --column_width: 600px; hmm probably? */
 	--faded_rg: 62%;
 	--faded_md: 38%;
 	--faded_sm: 24%;
@@ -47,13 +49,13 @@
 	--border_plain_color: rgba(0, 0, 0, var(--faded_md));
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
-	--border_active_color: var(--green_color);
+	--border_active_color: var(--active_color);
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_sm);
-	--border_accent_style: dotted;
+	--border_accent_style: double;
 	--border_alert: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
 	--border_help: var(--border_accent_width) var(--border_accent_style)
@@ -168,12 +170,23 @@ button:hover:not(:disabled) {
 }
 
 a:focus,
+a:focus:not(:disabled),
 input:focus,
+input:focus:not(:disabled),
 textarea:focus,
-button:focus {
+textarea:focus:not(:disabled),
+button:focus,
+button:focus:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
 	outline: var(--spacing_rg) var(--border_accent_style) var(--selected_color);
+}
+
+a:active:not(:disabled),
+input:active:not(:disabled),
+textarea:active:not(:disabled),
+button:active:not(:disabled) {
+	outline: var(--spacing_rg) var(--border_accent_style) var(--active_color);
 }
 
 label {

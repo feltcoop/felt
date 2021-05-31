@@ -82,7 +82,6 @@
 		{#each $email_contacts as email_contact (email_contact.id)}
 			<Checkbox
 				checked={email_contact.selected}
-				--vertical_padding="0"
 				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}
 			>
 				{email_contact.id}

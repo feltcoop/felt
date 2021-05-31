@@ -18,9 +18,9 @@
 		width: 100%;
 		color: var(--text_color);
 		font-size: var(--font_size_md);
-		padding: var(--vertical_padding, var(--spacing_lg)) 0;
 		display: flex;
 		align-items: stretch;
+		justify-content: flex-start;
 	}
 	label {
 		border-top: var(--border_width_md) var(--border_style)
