@@ -81,8 +81,6 @@
 html,
 body {
 	height: 100%;
-	margin: 0;
-	padding: 0;
 	background-color: var(--bg_color);
 }
 
@@ -178,7 +176,7 @@ textarea {
 	-webkit-appearance: none;
 	appearance: none;
 	font-size: var(--font_size_md);
-	padding: var(--spacing_sm) var(--spacing_md);
+	padding: var(--input_padding_v, var(--spacing_sm)) var(--input_padding_h, var(--spacing_md));
 	border-color: var(--button_border_color);
 	border-style: var(--input_border_style);
 	border-width: var(--input_border_width);
@@ -189,8 +187,9 @@ input[type='checkbox'] {
 	position: relative;
 	width: var(--spacing_xxl);
 	height: var(--spacing_xxl);
-	padding: 0;
-	--custom_outline_style: dotted;
+	--input_padding_v: 0;
+	--input_padding_h: 0;
+	--outline_style: dotted;
 }
 input[type='checkbox']::before {
 	content: var(--custom_content, '•');
@@ -224,8 +223,8 @@ button:hover:not(:disabled) {
 	z-index: 2;
 	/* TODO refactor */
 	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--custom_outline_style, var(--border_accent_style))
-		var(--custom_outline_color, var(--interactive_hover_color));
+		var(--outline_style, var(--border_accent_style))
+		var(--outline_color, var(--interactive_hover_color));
 }
 
 .buttonlike:focus,
@@ -241,8 +240,7 @@ button:focus:not(:disabled) {
 	z-index: 1;
 	/* TODO refactor */
 	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--custom_outline_style, var(--border_accent_style))
-		var(--custom_outline_color, var(--selected_color));
+		var(--outline_style, var(--border_accent_style)) var(--outline_color, var(--selected_color));
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -258,7 +256,7 @@ textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 2;
 	--custom_outline_width: var(--spacing_md);
-	--custom_outline_color: var(--active_color);
+	--outline_color: var(--active_color);
 }
 
 label {
