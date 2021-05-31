@@ -93,9 +93,6 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-a:active {
-	color: var(--green_text_color);
-}
 
 ul {
 	display: flex;
