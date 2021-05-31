@@ -56,6 +56,7 @@
 	--border_style: solid;
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
+	--border_accent2_style: dotted;
 	--border_alert: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
 	--border_help: var(--border_accent_width) var(--border_accent_style)
@@ -92,6 +93,16 @@ a {
 }
 a:hover {
 	text-decoration: underline;
+	z-index: 2;
+	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
+}
+a:focus,
+a:focus:not(:disabled) {
+	z-index: 1;
+	outline: var(--spacing_rg) var(--border_accent2_style) var(--selected_color);
+}
+a:active:not(:disabled) {
+	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
 }
 
 ul {
@@ -159,7 +170,6 @@ hr {
 	border-bottom-width: var(--border_width_rg);
 }
 
-a:hover,
 input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
@@ -168,8 +178,6 @@ button:hover:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 }
 
-a:focus,
-a:focus:not(:disabled),
 input:focus,
 input:focus:not(:disabled),
 textarea:focus,
@@ -181,7 +189,6 @@ button:focus:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent_style) var(--selected_color);
 }
 
-a:active:not(:disabled),
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
