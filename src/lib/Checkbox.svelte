@@ -21,6 +21,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		--border_style: double;
 		border-top: var(--border_width_md) var(--border_style)
 			var(--custom_border_color, var(--border_lighter_color));
 		border-bottom: var(--border_width_md) var(--border_style)
