@@ -164,6 +164,7 @@ textarea {
 
 input[type='checkbox'] {
 	width: var(--spacing_xxl);
+	--custom_accent_style: dotted;
 }
 
 hr {
@@ -171,14 +172,18 @@ hr {
 	border-bottom-width: var(--border_width_rg);
 }
 
+.buttonlike:hover:not(:disabled),
 input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 2;
-	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
+	outline: var(--spacing_rg) var(--custom_accent_style, var(--border_accent_style))
+		var(--interactive_hover_color);
 }
 
+.buttonlike:focus,
+.buttonlike:focus:not(:disabled),
 input:focus,
 input:focus:not(:disabled),
 textarea:focus,
@@ -187,9 +192,11 @@ button:focus,
 button:focus:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
-	outline: var(--spacing_rg) var(--border_accent_style) var(--selected_color);
+	outline: var(--spacing_rg) var(--custom_accent_style, var(--border_accent_style))
+		var(--selected_color);
 }
 
+.buttonlike:active:not(:disabled),
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
