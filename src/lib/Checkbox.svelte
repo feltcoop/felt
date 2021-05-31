@@ -19,19 +19,19 @@
 		color: var(--text_color);
 		font-size: var(--font_size_md);
 		display: flex;
-		align-items: stretch;
-		justify-content: flex-start;
-	}
-	label {
+		align-items: center;
+		justify-content: center;
 		border-top: var(--border_width_md) var(--border_style)
 			var(--custom_border_color, var(--border_lighter_color));
 		border-bottom: var(--border_width_md) var(--border_style)
 			var(--custom_border_color, var(--border_lighter_color));
-		width: 100%;
+	}
+	label {
+		width: 500px;
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 	label:hover {
 		outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
