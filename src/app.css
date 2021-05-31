@@ -11,6 +11,7 @@
 	--green_color: hsl(var(--green_hue), 45%, 55%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
 	--red_color: hsl(var(--red_hue), 50%, 50%);
+	--blue_bg_lt: hsla(var(--blue_hue), 70%, 80%, 0.5);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
@@ -96,8 +97,7 @@ body {
 }
 
 ::selection {
-	/* TODO hmm */
-	background: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	background: var(--blue_bg_lt);
 }
 
 #svelte {
