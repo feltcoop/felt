@@ -29,6 +29,7 @@
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--link_text_decoration: none;
 	--link_hover_text_decoration: underline;
+	--link_font_weight: var(--font_weight_md);
 	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
 	--text_disabled_color: hsl(0, 10%, 38%);
@@ -111,7 +112,7 @@ body {
 
 a {
 	color: var(--link_color);
-	font-weight: bold;
+	font-weight: var(--link_font_weight);
 	text-decoration: var(--link_text_decoration);
 }
 a:hover {
