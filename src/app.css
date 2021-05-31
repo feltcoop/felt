@@ -59,6 +59,9 @@
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
+	--button_border_style: solid;
+	--button_border_disabled_style: dashed;
+	--input_border_style: solid;
 	--border_alert: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
 	--border_help: var(--border_accent_width) var(--border_accent_style)
@@ -66,8 +69,6 @@
 	--border_plain: var(--border_accent_width) var(--border_accent_style)
 		hsla(0, 0%, 80%, var(--border_plain_color));
 	--button_border_color: var(--border_plain_color);
-	--button_border_style: solid;
-	--input_border_style: solid;
 }
 
 html,
@@ -145,16 +146,20 @@ button:hover {
 button:active {
 	background: var(--interactive_active_color);
 }
-button[disabled],
-input[disabled],
-textarea[disabled] {
+button:disabled,
+input:disabled,
+textarea:disabled {
 	opacity: 1; /* for some browsers */
 	background: var(--interactive_disabled_color);
 	color: var(--text_disabled_color);
+	border-left-style: var(--button_border_disabled_style);
+	border-right-style: var(--button_border_disabled_style);
 }
 button.selected {
 	z-index: 1;
 	border-color: var(--selected_color);
+	border-left-style: var(--button_border_style);
+	border-right-style: var(--button_border_style);
 	color: var(--selected_color);
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 	text-decoration: underline;
