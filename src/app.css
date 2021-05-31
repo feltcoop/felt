@@ -165,6 +165,7 @@ textarea {
 
 input[type='checkbox'] {
 	width: var(--spacing_xxl);
+	height: var(--spacing_xxl);
 	--custom_outline_style: dotted;
 }
 
