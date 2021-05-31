@@ -1,11 +1,17 @@
 <script lang="ts">
 	export let text: string | null;
+	export let icon: string | null = null;
 </script>
 
 {#if text}
 	<div class="message">
 		<div class="text">
-			{text}
+			<span>
+				{#if icon}
+					<span class="icon">{icon}</span>
+				{/if}
+				{text}
+			</span>
 		</div>
 	</div>
 {/if}
@@ -23,6 +29,9 @@
 			var(--message_color, var(--border_lighter_color));
 		display: flex;
 		align-items: stretch;
+	}
+	.icon {
+		padding-right: var(--spacing_rg);
 	}
 	.text {
 		width: 100%;

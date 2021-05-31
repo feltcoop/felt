@@ -5,4 +5,4 @@
 </script>
 
 <!-- TODO auto forward props? -->
-<Message {text} --message_color="var(--error_color)" />
+<Message {text} icon="‼" --message_color="var(--error_color)" />

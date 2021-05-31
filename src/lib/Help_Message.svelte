@@ -4,5 +4,5 @@
 	export let text: string | null;
 </script>
 
-<!-- TODO auto forward props? -->
-<Message {text} --message_color="var(--help_color)" />
+<!-- TODO auto foward props? -->
+<Message {text} icon="ⓘ" --message_color="var(--help_color)" />

@@ -39,13 +39,13 @@
 			case 'SOCIAL_CO': {
 				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with TRACKER_CO!`;
+				signup_helper_message = `Great! Let's sign you up with TRACKER_CO`;
 				break;
 			}
 			case 'TRACKER_CO': {
 				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with SOCIAL_CO!`;
+				signup_helper_message = `Great! Let's sign you up with SOCIAL_CO`;
 				break;
 			}
 			case 'TRUSTED_CO': {
