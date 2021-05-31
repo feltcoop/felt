@@ -60,7 +60,7 @@
 
 <Content>
 	<p>You're almost there!</p>
-	<p>Let's email everyone you've ever emailed to let them know the good news:</p>
+	<p>Let's spread the good news:</p>
 </Content>
 
 <Checkbox bind:checked={consenting} --content="'☻'" --overflow="hidden">
