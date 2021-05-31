@@ -27,6 +27,8 @@
 	--error_color: var(--red_color);
 	--link_color_hue: var(--blue_hue);
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
+	--link_hover_text_decoration: underline;
+	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
 	--text_disabled_color: hsl(0, 10%, 38%);
 	--font_size_xxxxxl: 128px;
@@ -112,7 +114,7 @@ a {
 	text-decoration: none;
 }
 a:hover {
-	text-decoration: underline;
+	text-decoration: var(--link_hover_text_decoration);
 	z-index: 2;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
 }
@@ -176,7 +178,7 @@ button.selected {
 	border-right-style: var(--button_border_style);
 	color: var(--selected_color);
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
-	text-decoration: underline;
+	text-decoration: var(--selected_text_decoration);
 }
 
 input,
