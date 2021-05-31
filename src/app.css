@@ -76,7 +76,7 @@
 	--border_help: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
 	--border_plain: var(--border_accent_width) var(--border_accent_style)
-		hsla(0, 0%, 80%, var(--border_plain_color));
+		hsla(0, 0%, 80%, var(--faded_md));
 	--button_border_color: var(--border_plain_color);
 }
 
@@ -93,6 +93,11 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.2;
+}
+
+::selection {
+	/* TODO hmm */
+	background: hsla(var(--blue_hue), 70%, 80%, 0.5);
 }
 
 #svelte {
