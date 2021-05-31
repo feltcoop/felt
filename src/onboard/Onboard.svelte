@@ -1,6 +1,10 @@
 <script lang="ts">
 	import {useMachine} from '@xstate/svelte';
 
+	import {principles} from '../consent/consent';
+	import type {Consent_Principle_Type} from '../consent/consent';
+	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
+
 	import {onboard_machine} from './onboard';
 	import Nav from './Nav.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
@@ -10,9 +14,21 @@
 	// console.log('onboard', onboard);
 	const {state, send} = onboard;
 	// $: console.log('$state', $state);
+
+	$: principle =
+		($state.value as string) in principles
+			? principles[$state.value as Consent_Principle_Type]
+			: null;
 </script>
 
 <div class="onboard">
+	<header>
+		{#if principle}
+			<Consent_Principle_View {principle} />
+		{:else}
+			<h2>—</h2>
+		{/if}
+	</header>
 	<Nav {state} {send} />
 	<div class="content">
 		<!-- TODO add a dev mode or smth <section>
@@ -32,6 +48,11 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+	}
+	header {
+		display: flex;
+		align-items: center;
+		padding: var(--spacing_sm);
 	}
 	.content {
 		height: 100%;

@@ -32,7 +32,7 @@
 		{id: 'who', selected: true},
 		{id: '1000_spammers', selected: true},
 		{id: 'a_friend_who_i_want_to_share_with', selected: true},
-		{id: 'random_person_who_typod_your_address', selected: true}, // TODO reward
+		{id: 'random_stranger_who_typod_my_address', selected: true}, // TODO reward
 		{id: 'that_guy_from_the_thing_last_week', selected: true},
 		{id: 'a_dog_on_the_internet', selected: true},
 	]);
