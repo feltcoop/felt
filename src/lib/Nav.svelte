@@ -13,7 +13,7 @@
 
 <nav>
 	{#each pathInfos as pathInfo (pathInfo)}
-		<a class:active={path === pathInfo.path} href={pathInfo.path}>{pathInfo.content}</a>
+		<a class:selected={path === pathInfo.path} href={pathInfo.path}>{pathInfo.content}</a>
 	{/each}
 </nav>
 
@@ -29,11 +29,10 @@
 		text-decoration: none;
 		padding: 0 10px;
 	}
-	a:hover,
-	.active {
+	a:hover {
 		text-decoration: underline;
 	}
-	.active {
+	.selected {
 		opacity: 1;
 		color: var(--text_color);
 	}
