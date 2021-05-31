@@ -1,4 +1,4 @@
-<h3>TODO proper credits</h3>
+<strong>TODO proper credits</strong>
 <p>
 	this study is inspired by <a href="https://consentful.systems">consentful.systems</a>
 </p>
