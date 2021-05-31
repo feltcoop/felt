@@ -22,28 +22,24 @@
 	};
 </script>
 
-<nav>
-	<section class="buttons">
+<div>
+	<nav class="buttons">
 		<Machine_Controls machine={onboard_machine} {state} {send} let:event_name>
 			{event_name === 'PREVIOUS' ? '←' : ''}
 			{event_name}
 			{event_name === 'NEXT' ? '→' : ''}
 		</Machine_Controls>
-	</section>
-	<section>
-		<ul>
-			{#each state_ids as state_id (state_id)}
-				<li>
-					<button
-						disabled={state_id === $state.value}
-						class:selected={state_id === $state.value}
-						on:click={() => select(state_id)}>{state_id}</button
-					>
-				</li>
-			{/each}
-		</ul>
-	</section>
-</nav>
+	</nav>
+	<nav>
+		{#each state_ids as state_id (state_id)}
+			<button
+				disabled={state_id === $state.value}
+				class:selected={state_id === $state.value}
+				on:click={() => select(state_id)}>{state_id}</button
+			>
+		{/each}
+	</nav>
+</div>
 
 <style>
 	.buttons {
@@ -51,14 +47,12 @@
 		justify-content: stretch;
 		align-items: stretch;
 	}
-	ul {
+	nav {
 		display: flex;
 		flex-direction: row;
 	}
-	li {
-		flex: 1;
-	}
 	button {
+		flex: 1;
 		width: 100%;
 		height: 100%;
 	}
