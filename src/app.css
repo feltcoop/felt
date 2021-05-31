@@ -140,6 +140,7 @@ textarea[disabled] {
 button.selected {
 	border-color: var(--selected_color);
 	color: var(--selected_color);
+	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 }
 
 input,

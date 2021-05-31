@@ -34,8 +34,10 @@
 		<ul>
 			{#each state_ids as state_id (state_id)}
 				<li>
-					<button disabled={state_id === $state.value} on:click={() => select(state_id)}
-						>{state_id}</button
+					<button
+						disabled={state_id === $state.value}
+						class:selected={state_id === $state.value}
+						on:click={() => select(state_id)}>{state_id}</button
 					>
 				</li>
 			{/each}
