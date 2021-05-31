@@ -5,7 +5,7 @@
 	$: on_change && on_change(checked);
 </script>
 
-<div class="checkbox buttonlike" class:checked>
+<div class="checkbox buttonlike" class:selected={checked}>
 	<label>
 		<input type="checkbox" bind:checked />
 		<slot />
@@ -13,7 +13,6 @@
 </div>
 
 <style>
-	/* TODO review `custom_border_color` pattern below */
 	.checkbox {
 		width: 100%;
 		color: var(--text_color);
@@ -22,10 +21,15 @@
 		align-items: center;
 		justify-content: center;
 		--border_style: double;
-		border-top: var(--border_width_md) var(--border_style)
-			var(--custom_border_color, var(--border_lighter_color));
-		border-bottom: var(--border_width_md) var(--border_style)
-			var(--custom_border_color, var(--border_lighter_color));
+		/* TODO wait should this JUST set variables, and buttonlike uses them? yes! */
+		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
+		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
+	}
+	.selected {
+		border-color: var(--selected_color);
+	}
+	.selected:active {
+		border-color: var(--border_active_color);
 	}
 	label {
 		width: var(--column_width);
@@ -33,12 +37,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-	}
-	.checked {
-		--custom_border_color: var(--selected_color);
-	}
-	.checked:active {
-		--custom_border_color: var(--border_active_color);
 	}
 	input {
 		width: var(--spacing_xl);

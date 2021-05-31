@@ -185,6 +185,8 @@ button:hover:not(:disabled) {
 
 .buttonlike:focus,
 .buttonlike:focus:not(:disabled),
+.buttonlike:focus-within,
+.buttonlike:focus-within:not(:disabled),
 input:focus,
 input:focus:not(:disabled),
 textarea:focus,
@@ -198,6 +200,9 @@ button:focus:not(:disabled) {
 }
 
 .buttonlike:active:not(:disabled),
+.buttonlike:active:not(:disabled) input,
+.buttonlike:active:not(:disabled) textarea,
+.buttonlike:active:not(:disabled) button,
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
