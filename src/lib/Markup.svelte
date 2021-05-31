@@ -1,25 +1,25 @@
-<div class="content">
+<div class="markup">
 	<slot />
 </div>
 
 <style>
-	.content {
+	.markup {
 		padding: var(--spacing_lg);
 		/* hmm font-size: var(--font_size_md) */
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 	}
-	.content :global(ul) {
+	.markup :global(ul) {
 		padding-left: var(--spacing_xl);
 	}
-	.content :global(li) {
+	.markup :global(li) {
 		list-style: disc;
 	}
-	.content :global(p) {
+	.markup :global(p) {
 		padding: var(--spacing_lg) 0;
 	}
-	.content :global(h1) {
+	.markup :global(h1) {
 		padding-bottom: var(--spacing_lg);
 	}
 </style>

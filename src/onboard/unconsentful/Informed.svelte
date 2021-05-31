@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
-	import Content from '$lib/Content.svelte';
+	import Markup from '$lib/Markup.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
 
@@ -12,7 +12,7 @@
 	$: enable_continue_button = consenting;
 </script>
 
-<Content>
+<Markup>
 	<p>
 		Here is our <small><a href="privacy">privacy policy</a></small> and
 		<small><a href="terms">terms of service</a></small>. We care about you, really.
@@ -27,17 +27,17 @@
 			win!!!
 		</button>
 	</p>
-</Content>
+</Markup>
 
 <Checkbox bind:checked={consenting} --content="'✗'">
-	<Content>
+	<Markup>
 		<div>I consent to:</div>
 		<ul>
 			<li>everything I did not read</li>
 			<li>everything I did read</li>
 		</ul>
 		whether or not I understood anything.
-	</Content>
+	</Markup>
 </Checkbox>
 
 <button on:click={() => done()} disabled={!enable_continue_button}>

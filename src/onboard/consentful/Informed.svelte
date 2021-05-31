@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
-	import Content from '$lib/Content.svelte';
+	import Markup from '$lib/Markup.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
 </script>
 
-<Content>
+<Markup>
 	<p>well this is awkward</p>
-</Content>
+</Markup>
 <button on:click={() => done()}>todo --></button>

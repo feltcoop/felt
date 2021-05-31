@@ -3,7 +3,7 @@
 	import type {Writable} from 'svelte/store';
 
 	import type {Onboard_Data} from '../onboard';
-	import Content from '$lib/Content.svelte';
+	import Markup from '$lib/Markup.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
 	import Message from '$lib/Message.svelte';
@@ -58,17 +58,17 @@
 	};
 </script>
 
-<Content>
+<Markup>
 	<p>You're almost there!</p>
 	<p>Let's spread the good news:</p>
-</Content>
+</Markup>
 
 <Checkbox bind:checked={consenting} --content="'☻'" --overflow="hidden">
-	<Content>
+	<Markup>
 		<div>Send marketing emails to</div>
 		<small>everyone I've ever emailed</small>
 		<div>so they can join the fun!</div>
-	</Content>
+	</Markup>
 </Checkbox>
 
 <button on:click={() => done()}>email blast {selected_count} contacts!</button>
