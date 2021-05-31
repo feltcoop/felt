@@ -167,9 +167,6 @@ input[type='checkbox'] {
 	width: var(--spacing_xxl);
 	--custom_outline_style: dotted;
 }
-input[type='checkbox']:active {
-	--custom_outline_width: var(--spacing_sm);
-}
 
 hr {
 	border-top-width: var(--border_width_rg);
@@ -183,7 +180,8 @@ button:hover:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 2;
 	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--custom_outline_style, var(--border_accent_style)) var(--interactive_hover_color);
+		var(--custom_outline_style, var(--border_accent_style))
+		var(--custom_outline_color, var(--interactive_hover_color));
 }
 
 .buttonlike:focus,
@@ -199,7 +197,8 @@ button:focus:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
 	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--custom_outline_style, var(--border_accent_style)) var(--selected_color);
+		var(--custom_outline_style, var(--border_accent_style))
+		var(--custom_outline_color, var(--selected_color));
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -213,7 +212,8 @@ when the user hits spacebar it turns the outline to the active color, like on a 
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
-	outline-color: var(--active_color);
+	--custom_outline_width: var(--spacing_md);
+	--custom_outline_color: var(--active_color);
 }
 
 label {
