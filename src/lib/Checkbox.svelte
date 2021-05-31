@@ -26,15 +26,16 @@
 		border-bottom: var(--border_width_md) var(--border_style)
 			var(--custom_border_color, var(--border_lighter_color));
 	}
+	.checkbox:hover {
+		z-index: 1;
+		outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
+	}
 	label {
 		width: 500px;
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-	}
-	label:hover {
-		outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 	}
 	.checked {
 		--custom_border_color: var(--selected_color);
