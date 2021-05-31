@@ -64,8 +64,10 @@
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
+	--button_border_width: var(--border_width_rg);
 	--button_border_style: solid;
 	--button_border_disabled_style: dashed;
+	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
 	--border_alert: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
@@ -139,9 +141,9 @@ form {
 
 button {
 	font-size: var(--font_size_md);
-	border-width: var(--border_width_rg);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
+	border-width: var(--button_border_width);
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
 }
@@ -174,11 +176,11 @@ input,
 textarea {
 	-webkit-appearance: none;
 	appearance: none;
-	border-width: var(--border_width_rg);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
 	border-color: var(--button_border_color);
 	border-style: var(--input_border_style);
+	border-width: var(--input_border_width);
 	width: var(--input_width_rg);
 }
 
