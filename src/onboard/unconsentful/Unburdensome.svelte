@@ -6,7 +6,7 @@
 	import Content from '$lib/Content.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
-	import Plain_Message from '$lib/Plain_Message.svelte';
+	import Message from '$lib/Message.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
@@ -74,7 +74,7 @@
 <button on:click={() => done()}>email blast {selected_count} contacts!</button>
 
 {#if consenting}
-	<Plain_Message text=":-)" />
+	<Message text=":-)" />
 {:else}
 	<Help_Message text="No worries! We'll email only these contacts:" />
 {/if}

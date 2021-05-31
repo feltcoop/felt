@@ -2,7 +2,7 @@
 	import type {Onboard_Data} from '../onboard';
 	import Error_Message from '$lib/Error_Message.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
-	import Plain_Message from '$lib/Plain_Message.svelte';
+	import Message from '$lib/Message.svelte';
 
 	import {UnreachableError} from '../../utils/error';
 
@@ -94,10 +94,10 @@
 		{#if !selected_provider}
 			<Error_Message text={create_error_message} />
 		{:else if create_error_message}
-			<Plain_Message text=":-)" />
+			<Message text=":-)" />
 		{/if}
 		{#if !create_error_message}
-			<Plain_Message text="or" />
+			<Message text="or" />
 		{/if}
 	</div>
 
