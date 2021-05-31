@@ -26,6 +26,10 @@
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--text_color: hsl(0, 10%, 16%);
 	--text_disabled_color: hsl(0, 10%, 38%);
+	--font_size_xxxxxl: 128px;
+	--font_size_xxxxl: 96px;
+	--font_size_xxxl: 64px;
+	--font_size_xxl: 48px;
 	--font_size_xl: 32px;
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
@@ -43,6 +47,7 @@
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
+	--input_width_rg: 400px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
 	--faded_sm: 24%;
@@ -167,19 +172,40 @@ button.selected {
 
 input,
 textarea {
-	/* TODO */
-	width: 400px;
+	-webkit-appearance: none;
+	appearance: none;
 	border-width: var(--border_width_rg);
 	font-size: var(--font_size_md);
 	padding: var(--spacing_sm) var(--spacing_md);
 	border-color: var(--button_border_color);
 	border-style: var(--input_border_style);
+	width: var(--input_width_rg);
 }
 
 input[type='checkbox'] {
+	position: relative;
 	width: var(--spacing_xxl);
 	height: var(--spacing_xxl);
+	padding: 0;
 	--custom_outline_style: dotted;
+}
+input[type='checkbox']::before {
+	content: '•';
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	font-size: var(--font_size_xxxl);
+	color: var(--selected_color);
+}
+input[type='checkbox']:checked::before {
+	visibility: visible;
 }
 
 hr {
