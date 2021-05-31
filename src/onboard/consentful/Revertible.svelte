@@ -10,7 +10,7 @@
 <Content>
 	<p>
 		Are you sure you understand the deal? <button on:click={() => confirm('TODO')}
-			>test my knowledge</button
+			>test my knowledge!</button
 		>
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
