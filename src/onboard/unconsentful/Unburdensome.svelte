@@ -59,7 +59,8 @@
 </script>
 
 <Content>
-	<p>Let's email everyone you've ever emailed to let them know the good news!</p>
+	<p>You're almost there!</p>
+	<p>Let's email everyone you've ever emailed to let them know the good news:</p>
 </Content>
 
 <Checkbox bind:checked={consenting}>
