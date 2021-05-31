@@ -165,7 +165,10 @@ textarea {
 
 input[type='checkbox'] {
 	width: var(--spacing_xxl);
-	--custom_accent_style: dotted;
+	--custom_outline_style: dotted;
+}
+input[type='checkbox']:active {
+	--custom_outline_width: var(--spacing_sm);
 }
 
 hr {
@@ -179,8 +182,8 @@ textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 2;
-	outline: var(--spacing_rg) var(--custom_accent_style, var(--border_accent_style))
-		var(--interactive_hover_color);
+	outline: var(--custom_outline_width, var(--spacing_rg))
+		var(--custom_outline_style, var(--border_accent_style)) var(--interactive_hover_color);
 }
 
 .buttonlike:focus,
@@ -195,10 +198,14 @@ button:focus,
 button:focus:not(:disabled) {
 	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
-	outline: var(--spacing_rg) var(--custom_accent_style, var(--border_accent_style))
-		var(--selected_color);
+	outline: var(--custom_outline_width, var(--spacing_rg))
+		var(--custom_outline_style, var(--border_accent_style)) var(--selected_color);
 }
 
+/* TODO I'm failing to get this selector to apply to make it so
+when the user hits spacebar it turns the outline to the active color, like on a click
+.buttonlike:focus-within(input:active:not(:disabled)),
+ */
 .buttonlike:active:not(:disabled),
 .buttonlike:active:not(:disabled) input,
 .buttonlike:active:not(:disabled) textarea,

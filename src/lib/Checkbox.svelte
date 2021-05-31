@@ -1,19 +1,26 @@
+<script context="module" lang="ts">
+	let id_count = 0;
+	const to_id = (): string => `Checkbox_${id_count++}`;
+</script>
+
 <script lang="ts">
 	export let checked: boolean;
 	export let on_change: ((checked: boolean) => void) | null = null;
 
+	const id = to_id();
+
 	$: on_change && on_change(checked);
 </script>
 
-<div class="checkbox buttonlike" class:selected={checked}>
-	<label>
-		<input type="checkbox" bind:checked />
+<label class="checkbox buttonlike" class:selected={checked} for={id}>
+	<div class="content">
+		<input {id} type="checkbox" bind:checked />
 		<slot />
-	</label>
-</div>
+	</div>
+</label>
 
 <style>
-	.checkbox {
+	label {
 		width: 100%;
 		color: var(--text_color);
 		font-size: var(--font_size_md);
@@ -31,7 +38,7 @@
 	.selected:active {
 		border-color: var(--border_active_color);
 	}
-	label {
+	.content {
 		width: var(--column_width);
 		padding: var(--spacing_md) 0;
 		display: flex;
