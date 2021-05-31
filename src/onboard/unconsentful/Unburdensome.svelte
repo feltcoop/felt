@@ -63,7 +63,7 @@
 	<p>Let's email everyone you've ever emailed to let them know the good news:</p>
 </Content>
 
-<Checkbox bind:checked={consenting} --custom_content="'☻'">
+<Checkbox bind:checked={consenting} --content="'☻'" --overflow="hidden">
 	<Content>
 		<div>Send marketing emails to</div>
 		<small>everyone I've ever emailed</small>
@@ -85,7 +85,8 @@
 			<Checkbox
 				checked={email_contact.selected}
 				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}
-				--custom_content="'☻'"
+				--content="'☻'"
+				--overflow="hidden"
 			>
 				{email_contact.id}
 			</Checkbox>

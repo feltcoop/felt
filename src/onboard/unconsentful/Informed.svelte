@@ -29,7 +29,7 @@
 	</p>
 </Content>
 
-<Checkbox bind:checked={consenting}>
+<Checkbox bind:checked={consenting} --content="'✗'">
 	<Content>
 		<div>I consent to:</div>
 		<ul>

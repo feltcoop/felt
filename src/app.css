@@ -192,7 +192,7 @@ input[type='checkbox'] {
 	--outline_style: dotted;
 }
 input[type='checkbox']::before {
-	content: var(--custom_content, '•');
+	content: var(--content, '•');
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -202,8 +202,8 @@ input[type='checkbox']::before {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	font-size: var(--custom_font_size, 55px);
+	overflow: var(--overflow, visible);
+	font-size: var(--font_size, var(--font_size_xxxl));
 	color: var(--selected_color);
 	line-height: 1;
 }
@@ -222,8 +222,7 @@ textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 2;
 	/* TODO refactor */
-	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--outline_style, var(--border_accent_style))
+	outline: var(--outline_width, var(--spacing_rg)) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--interactive_hover_color));
 }
 
@@ -239,8 +238,8 @@ button:focus,
 button:focus:not(:disabled) {
 	z-index: 1;
 	/* TODO refactor */
-	outline: var(--custom_outline_width, var(--spacing_rg))
-		var(--outline_style, var(--border_accent_style)) var(--outline_color, var(--selected_color));
+	outline: var(--outline_width, var(--spacing_rg)) var(--outline_style, var(--border_accent_style))
+		var(--outline_color, var(--selected_color));
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -255,7 +254,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 2;
-	--custom_outline_width: var(--spacing_md);
+	--outline_width: var(--spacing_md);
 	--outline_color: var(--active_color);
 }
 
