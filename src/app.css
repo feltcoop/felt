@@ -185,8 +185,8 @@ hr {
 input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
-	/* otherwise the outline can get hidden by siblings */
 	z-index: 2;
+	/* TODO refactor */
 	outline: var(--custom_outline_width, var(--spacing_rg))
 		var(--custom_outline_style, var(--border_accent_style))
 		var(--custom_outline_color, var(--interactive_hover_color));
@@ -202,8 +202,8 @@ textarea:focus,
 textarea:focus:not(:disabled),
 button:focus,
 button:focus:not(:disabled) {
-	/* otherwise the outline can get hidden by siblings */
 	z-index: 1;
+	/* TODO refactor */
 	outline: var(--custom_outline_width, var(--spacing_rg))
 		var(--custom_outline_style, var(--border_accent_style))
 		var(--custom_outline_color, var(--selected_color));
