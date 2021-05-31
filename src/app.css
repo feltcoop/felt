@@ -18,6 +18,7 @@
 	--font_weight_md: 700;
 	--font_weight_rg: 500;
 	--font_weight_lt: 300;
+	--font_weight_xlt: 100;
 	--selected_color: var(--blue_color);
 	--active_color: var(--green_color);
 	--color_help: var(--green_color);
@@ -220,6 +221,7 @@ when the user hits spacebar it turns the outline to the active color, like on a 
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
+	z-index: 2;
 	--custom_outline_width: var(--spacing_md);
 	--custom_outline_color: var(--active_color);
 }
