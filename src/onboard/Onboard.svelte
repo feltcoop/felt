@@ -33,7 +33,6 @@
 		{/if}
 	</header>
 	<Nav {state} {send} />
-	<hr />
 	<div class="content">
 		<!-- TODO add a dev mode or smth <section>
 			<Machine_State {state} />

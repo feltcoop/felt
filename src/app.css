@@ -12,10 +12,10 @@
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
 	--red_color: hsl(var(--red_hue), 50%, 50%);
 	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
-	--interactive_color: #ddd;
-	--interactive_hover_color: #eee;
-	--interactive_disabled_color: #f7f7f7;
-	--interactive_active_color: #fff;
+	--interactive_color: hsl(0, 0%, 87%);
+	--interactive_hover_color: hsl(0, 0%, 93%);
+	--interactive_disabled_color: hsl(0, 0%, 97%);
+	--interactive_active_color: hsl(0, 0%, 100%);
 	--font_weight_dk: 900;
 	--font_weight_md: 700;
 	--font_weight_rg: 500;
@@ -60,7 +60,7 @@
 	--faded_md: 38%;
 	--faded_sm: 24%;
 	--faded_xs: 15%;
-	--border_plain_color: rgba(0, 0, 0, var(--faded_md));
+	--border_color: rgba(0, 0, 0, var(--faded_md));
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
 	--border_active_color: var(--active_color);
@@ -83,9 +83,8 @@
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
 	--border_help: var(--border_accent_width) var(--border_accent_style)
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
-	--border_plain: var(--border_accent_width) var(--border_accent_style)
-		hsla(0, 0%, 80%, var(--faded_md));
-	--button_border_color: var(--border_plain_color);
+	/* --border: var(--border_accent_width) var(--border_accent_style) hsla(0, 0%, 80%, var(--faded_md)); */
+	--button_border_color: var(--border_color);
 }
 
 html,
