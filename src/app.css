@@ -64,6 +64,7 @@
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
 	--border_active_color: var(--active_color);
+	--border_width_xl: var(--spacing_rg);
 	--border_width_lg: var(--spacing_sm);
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
@@ -73,8 +74,8 @@
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
 	--border_accent3_style: dashed;
-	--button_border_width: var(--border_width_rg);
-	--button_border_style: solid;
+	--button_border_width: var(--border_width_lg);
+	--button_border_style: double;
 	--button_border_disabled_style: dashed;
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
