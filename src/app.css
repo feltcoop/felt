@@ -190,7 +190,8 @@ button {
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
 	color: var(--button_text_color);
-	outline-width: 0;
+	--outline_width: 0;
+	outline-width: var(--outline_width);
 	outline-style: var(--outline_style);
 	outline-color: var(--outline_color);
 }
@@ -212,7 +213,7 @@ button:disabled::before {
 	outline-width: 0;
 }
 button.selected::before {
-	outline-width: var(--border_width_sm);
+	--outline_width: var(--border_width_sm);
 	--border_color: var(--selected_color);
 }
 button:hover {
@@ -304,7 +305,7 @@ hr {
 }
 
 .buttonlike {
-	outline-width: 0;
+	outline-width: var(--outline_width);
 	outline-style: var(--outline_style);
 	outline-color: var(--outline_color);
 }
@@ -347,7 +348,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 3;
-	--outline_width: var(--outline_width2);
+	--outline_width: calc(var(--spacing_md) + 2px);
 	--outline_color: var(--active_color);
 }
 
