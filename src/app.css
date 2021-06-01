@@ -11,7 +11,7 @@
 	--green_color: hsl(var(--green_hue), 45%, 55%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
 	--red_color: hsl(var(--red_hue), 50%, 50%);
-	--blue_bg_lt: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
 	--interactive_color: #ddd;
 	--interactive_hover_color: #eee;
 	--interactive_disabled_color: #f7f7f7;
@@ -102,7 +102,7 @@ body {
 }
 
 ::selection {
-	background: var(--blue_bg_lt);
+	background: var(--blue_light_alpha_color);
 }
 
 #svelte {
@@ -231,12 +231,7 @@ input[type='checkbox']:checked::before {
 }
 
 hr {
-	border-top-width: var(--border_width_md);
-	border-bottom-width: var(--border_width_md);
-	border-top-color: var(--interactive_hover_color);
-	border-bottom-color: var(--interactive_color);
-	border-top-style: var(--border_accent3_style);
-	border-bottom-style: var(--border_style);
+	border: var(--border_width_md) var(--border_accent_style) var(--border_light_color);
 }
 
 .buttonlike:hover:not(:disabled),
