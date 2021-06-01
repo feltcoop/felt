@@ -90,6 +90,8 @@
 	--button_border_style: double;
 	--button_border_selected_style: solid;
 	--button_border_disabled_style: dashed;
+	--button_font_weight: var(--font_weight_md);
+	--button_text_color: var(--text_light_color);
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
 	--border_alert: var(--border_accent_width) var(--border_accent_style)
@@ -171,12 +173,14 @@ button {
 	align-items: center;
 	justify-content: center;
 	font-size: var(--font_size_md);
+	font-weight: var(--button_font_weight);
 	min-height: var(--input_height);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
 	border-width: var(--button_border_width);
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
+	color: var(--button_text_color);
 }
 button:hover {
 	background: var(--interactive_hover_color);
