@@ -204,6 +204,9 @@ button::before {
 	border-width: var(--border_width_rg) 0;
 	border-style: var(--border_style);
 	border-color: var(--border_color);
+	outline: 1px;
+	outline-style: var(--border_accent3_style);
+	outline-color: var(--outline_color);
 }
 button.selected::before {
 	--border_color: var(--selected_color);
