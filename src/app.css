@@ -36,7 +36,8 @@
 	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
-	--text_disabled_color: hsl(0, 10%, 38%);
+	--text_lighter_color: hsl(0, 10%, 62%);
+	--text_disabled_color: var(var(--text_lighter_color));
 	--line_height: 1.2;
 	--font_size_xxxxxl: 128px;
 	--font_size_xxxxl: 96px;
