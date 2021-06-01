@@ -9,7 +9,9 @@
 
 <Markup>
 	<p>
-		Are you sure you understand the deal? <button disabled title="TODO">test my knowledge!</button>
+		Are you sure you understand the deal? <button disabled title="TODO" class="inline"
+			>test my knowledge!</button
+		>
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
 	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨✨</blockquote>

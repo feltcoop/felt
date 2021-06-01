@@ -168,6 +168,9 @@ button:hover {
 button:active {
 	background: var(--interactive_active_color);
 }
+button.inline {
+	display: inline-block;
+}
 button:disabled,
 input:disabled,
 textarea:disabled {
