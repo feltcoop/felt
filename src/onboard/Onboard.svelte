@@ -71,7 +71,7 @@
 		flex-direction: column;
 		align-items: stretch;
 		/* TODO should this be on `.column` ? */
-		border-left: 1px solid var(--plain_color);
-		border-right: 1px solid var(--plain_color);
+		border-left: var(--border);
+		border-right: var(--border);
 	}
 </style>

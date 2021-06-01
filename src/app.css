@@ -78,6 +78,7 @@
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
 	--border_accent3_style: dashed;
+	--border: var(--border_width_rg) var(--border_style) var(--plain_color);
 	--button_border_width: var(--border_width_lg);
 	--button_border_style: double;
 	--button_border_disabled_style: dashed;
