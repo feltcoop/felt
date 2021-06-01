@@ -305,6 +305,7 @@ textarea:focus:not(:disabled),
 button:focus,
 button:focus:not(:disabled) {
 	z-index: 2;
+	--input_border_color: var(--selected_color);
 	/* TODO refactor */
 	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--selected_color));
