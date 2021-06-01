@@ -295,3 +295,7 @@ nav {
 nav button {
 	flex: 1;
 }
+
+.column {
+	max-width: var(--column_width);
+}

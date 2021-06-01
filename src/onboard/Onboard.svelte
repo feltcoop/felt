@@ -35,10 +35,10 @@
 		<!-- TODO add a dev mode or smth <section>
 			<Machine_State {state} />
 		</section> -->
-		<section>
+		<section class="column">
 			<Onboard_State consent_type="unconsentful" {state} {send} />
 		</section>
-		<section>
+		<section class="column">
 			<Onboard_State consent_type="consentful" {state} {send} />
 		</section>
 	</div>
@@ -58,19 +58,18 @@
 	.content {
 		height: 100%;
 		display: flex;
+		justify-content: center;
 	}
 	section {
 		height: 100%;
 		flex: 1;
+		flex-shrink: 0; /* keep equal size regardless of content */
 		padding-top: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-	}
-	section:first-child {
-		border-right: 1px solid var(--plain_color);
-	}
-	section:nth-child(2) {
+		/* TODO should this be on `.column` ? */
 		border-left: 1px solid var(--plain_color);
+		border-right: 1px solid var(--plain_color);
 	}
 </style>
