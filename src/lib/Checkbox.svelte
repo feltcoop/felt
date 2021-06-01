@@ -46,8 +46,6 @@
 		justify-content: flex-start;
 	}
 	input {
-		width: var(--spacing_xl);
-		height: var(--spacing_xl);
 		margin: 0 var(--spacing_lg);
 	}
 </style>
