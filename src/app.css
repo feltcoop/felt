@@ -197,6 +197,9 @@ button::before {
 	border-style: var(--border_accent_style);
 	border-color: var(--border_color);
 }
+button.selected::before {
+	--border_color: var(--selected_color);
+}
 button:hover {
 	background: var(--interactive_hover_color);
 }
