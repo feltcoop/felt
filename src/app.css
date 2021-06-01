@@ -255,7 +255,9 @@ textarea {
 	max-width: var(--input_width_max);
 	min-width: var(--input_width_min);
 	min-height: var(--input_height);
-	outline-width: 0;
+	--outline_width: var(--border_width_sm);
+	--outline_style: var(--border_accent3_style);
+	outline-width: var(--outline_width);
 	outline-style: var(--outline_style);
 	outline-color: var(--outline_color);
 }
@@ -312,7 +314,8 @@ input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 3;
-	outline-width: var(--outline_width);
+	--outline_width: var(--spacing_md);
+	--outline_style: var(--border_accent_style);
 }
 
 .buttonlike:focus,
@@ -328,7 +331,8 @@ button:focus:not(:disabled) {
 	z-index: 2;
 	--input_border_color: var(--selected_color);
 	--outline_color: var(--selected_color);
-	outline-width: var(--outline_width);
+	--outline_width: var(--spacing_md);
+	--outline_style: var(--border_accent_style);
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
