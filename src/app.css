@@ -151,6 +151,9 @@ a:focus:not(:disabled) {
 a:active:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
 }
+a.selected {
+	text-decoration: var(--link_accent_text_decoration);
+}
 
 ul {
 	display: flex;
@@ -261,11 +264,11 @@ input[type='checkbox'] {
 	--outline_style: var(--border_accent2_style);
 }
 input[type='checkbox']:checked {
-	border-color: var(--selected_color);
+	--input_border_color: var(--selected_color);
 }
 input[type='checkbox']:active {
 	/* TODO this isn't applying when focused */
-	border-color: var(--active_color);
+	--input_border_color: var(--active_color);
 }
 input[type='checkbox']::before {
 	content: var(--content, '•');
