@@ -16,6 +16,7 @@
 	let signup_error_message: string | null = null;
 	let signup_helper_message: string | null = null;
 
+	// TODO extract to `src/providers` or `src/services` or something?
 	type Service_Provider = 'SOCIAL_CO' | 'TRACKER_CO' | 'TRUSTED_CO';
 	interface Service_Provider_Data {
 		id: Service_Provider;

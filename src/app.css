@@ -318,6 +318,9 @@ button:hover:not(:disabled) {
 	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
+input[type='checkbox']:hover:not(:disabled) {
+	--outline_style: var(--border_accent2_style);
+}
 
 .buttonlike:focus,
 .buttonlike:focus:not(:disabled),
@@ -335,6 +338,10 @@ button:focus:not(:disabled) {
 	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
+input[type='checkbox']:focus,
+input[type='checkbox']:focus:not(:disabled) {
+	--outline_style: var(--border_accent2_style);
+}
 
 /* TODO I'm failing to get this selector to apply to make it so
 when the user hits spacebar it turns the outline to the active color, like on a click
@@ -350,6 +357,10 @@ button:active:not(:disabled) {
 	z-index: 3;
 	--outline_width: calc(var(--spacing_md) + 2px);
 	--outline_color: var(--active_color);
+}
+
+input[type='checkbox']:active:not(:disabled) {
+	--outline_style: var(--border_accent2_style);
 }
 
 label {
