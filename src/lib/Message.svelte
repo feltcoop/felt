@@ -39,7 +39,7 @@
 			var(--message_color, var(--border_lighter_color));
 		border-bottom: var(--border_accent_width) var(--border_accent_style)
 			var(--message_color, var(--border_lighter_color));
-		padding: var(--spacing_md) 0;
+		padding: var(--spacing_md) var(--spacing_sm);
 		display: flex;
 		align-items: center;
 		justify-content: center;
