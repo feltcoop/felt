@@ -1,7 +1,4 @@
 <script lang="ts">
-	import {writable} from 'svelte/store';
-	import type {Writable} from 'svelte/store';
-
 	import type {Onboard_Data} from '../onboard';
 	import Markup from '$lib/Markup.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
@@ -18,7 +15,7 @@
 		id: string;
 		selected: boolean;
 	}
-	const email_contacts: Writable<Contact[]> = writable([
+	const email_contacts: Contact[] = [
 		{id: 'mom', selected: true},
 		{id: 'alice', selected: true},
 		{id: 'my_dentist', selected: true},
@@ -35,26 +32,25 @@
 		{id: 'random_stranger_who_typod_my_address', selected: true}, // TODO reward
 		{id: 'that_guy_from_the_thing_last_week', selected: true},
 		{id: 'a_dog_on_the_internet', selected: true},
-	]);
+	];
 
-	$: selected_contacts = $email_contacts.filter((c) => c.selected);
+	$: selected_contacts = email_contacts.filter((c) => c.selected);
 	$: selected_count = selected_contacts.length;
 
 	const toggle_selected = (
 		selected: boolean,
 		email_contact: Contact,
-		email_contacts: Writable<Contact[]>,
+		email_contacts: Contact[],
 	) => {
-		console.log(
-			'selected, email_contact, $email_contacts',
-			selected,
-			email_contact,
-			$email_contacts,
-		);
+		console.log('selected, email_contact, email_contacts', selected, email_contact, email_contacts);
 		// TODO wontfix? lol
 		// email_contacts.update((contacts) =>
 		// 	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
 		// );
+	};
+
+	const blast_emails = () => {
+		done();
 	};
 </script>
 
@@ -76,7 +72,7 @@
 	</Markup>
 </Checkbox>
 
-<button on:click={() => done()}>
+<button on:click={() => blast_emails()}>
 	<Markup>
 		email blast {selected_count} contacts!
 	</Markup>
@@ -90,7 +86,7 @@
 
 <form>
 	{#if !consenting}
-		{#each $email_contacts as email_contact (email_contact.id)}
+		{#each email_contacts as email_contact (email_contact.id)}
 			<Checkbox
 				checked={email_contact.selected}
 				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}

@@ -37,7 +37,7 @@
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
 	--text_lighter_color: hsl(0, 10%, 62%);
-	--text_disabled_color: var(var(--text_lighter_color));
+	--text_disabled_color: var(--text_lighter_color);
 	--line_height: 1.2;
 	--font_size_xxxxxl: 128px;
 	--font_size_xxxxl: 96px;
@@ -95,6 +95,7 @@
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
 	/* --border: var(--border_accent_width) var(--border_accent_style) hsla(0, 0%, 80%, var(--faded_md)); */
 	--button_border_color: var(--border_color);
+	--input_border_color: var(--button_border_color);
 }
 
 html,
@@ -208,7 +209,7 @@ textarea {
 	appearance: none;
 	font-size: var(--font_size_md);
 	padding: var(--input_padding_v, var(--spacing_sm)) var(--input_padding_h, var(--spacing_md));
-	border-color: var(--button_border_color);
+	border-color: var(--input_border_color);
 	border-style: var(--input_border_style);
 	border-width: var(--input_border_width);
 	width: var(--input_width_rg);
@@ -225,6 +226,10 @@ input[type='checkbox'] {
 }
 input[type='checkbox']:checked {
 	border-color: var(--selected_color);
+}
+input[type='checkbox']:active {
+	/* TODO this isn't applying when focused */
+	border-color: var(--active_color);
 }
 input[type='checkbox']::before {
 	content: var(--content, '•');
