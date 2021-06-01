@@ -10,11 +10,12 @@
 	--bg_color: #fff;
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
+	--orange_color: hsl(var(--orange_hue), 55%, 50%);
+	--red_color: hsl(var(--red_hue), 50%, 50%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
+	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
 	--tint_hue: var(--orange_hue);
 	--tint_saturation: 11%;
-	--red_color: hsl(var(--red_hue), 50%, 50%);
-	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
 	--plain_color: hsl(var(--tint_hue), var(--tint_saturation), 80%);
 	--interactive_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
 	--interactive_hover_color: hsl(var(--tint_hue), var(--tint_saturation), 93%);
