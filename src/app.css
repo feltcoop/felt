@@ -83,6 +83,7 @@
 	--border: var(--border_width_rg) var(--border_style) var(--plain_color);
 	--button_border_width: var(--border_width_lg);
 	--button_border_style: double;
+	--button_border_selected_style: solid;
 	--button_border_disabled_style: dashed;
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
@@ -192,8 +193,8 @@ textarea:disabled {
 button.selected {
 	z-index: 1;
 	border-color: var(--selected_color);
-	border-left-style: var(--button_border_style);
-	border-right-style: var(--button_border_style);
+	border-left-style: var(--button_border_selected_style);
+	border-right-style: var(--button_border_selected_style);
 	color: var(--selected_color);
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
 	text-decoration: var(--selected_text_decoration);
