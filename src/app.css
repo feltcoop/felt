@@ -10,9 +10,10 @@
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
+	--tint_saturation: 8%;
 	--red_color: hsl(var(--red_hue), 50%, 50%);
 	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
-	--interactive_color: hsl(0, 0%, 87%);
+	--interactive_color: hsl(0, var(--tint_saturation), 87%);
 	--interactive_hover_color: hsl(0, 0%, 93%);
 	--interactive_disabled_color: hsl(0, 0%, 97%);
 	--interactive_active_color: hsl(0, 0%, 100%);
@@ -48,7 +49,7 @@
 	--spacing_xxl: 48px;
 	--spacing_xl: 32px;
 	--spacing_lg: 20px;
-	--spacing_mdlg: 16px; /* TODO hack */
+	--spacing_mdlg: 14px; /* TODO hack */
 	--spacing_md: 12px;
 	--spacing_rg: 8px;
 	--spacing_sm: 6px;
@@ -62,7 +63,7 @@
 	--faded_md: 38%;
 	--faded_sm: 24%;
 	--faded_xs: 15%;
-	--border_color: rgba(0, 0, 0, var(--faded_md));
+	--border_color: hsla(0, var(--tint_saturation), 45%, var(--faded_md));
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
 	--border_active_color: var(--active_color);
