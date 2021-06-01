@@ -300,6 +300,9 @@ nav {
 nav button {
 	flex: 1;
 }
+nav a {
+	height: 100%;
+}
 
 .column {
 	max-width: var(--column_width);

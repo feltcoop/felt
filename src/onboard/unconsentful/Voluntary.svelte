@@ -29,7 +29,7 @@
 
 	const create = (username: string, _password: string) => {
 		selected_provider = null;
-		create_error_message = `We apologize for the inconvenience${
+		create_error_message = `Whoopsies, we can be so clumsy, sorry${
 			username ? `, ${username}` : ''
 		}! Our systems are acting up. Please click one of the buttons below. :-)`;
 	};

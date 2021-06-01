@@ -26,7 +26,9 @@
 	<header>
 		{#if principle}
 			<Consent_Principle_View {principle} />
-		{:else}
+		{:else if $state.value === 'begin'}
+			<h2>onboard—</h2>
+		{:else if $state.value === 'end'}
 			<h2>—</h2>
 		{/if}
 	</header>
