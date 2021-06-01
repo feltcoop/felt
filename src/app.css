@@ -127,12 +127,12 @@ a {
 }
 a:hover {
 	text-decoration: var(--link_hover_text_decoration);
-	z-index: 2;
+	z-index: 3;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
 }
 a:focus,
 a:focus:not(:disabled) {
-	z-index: 1;
+	z-index: 2;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--selected_color);
 }
 a:active:not(:disabled) {
@@ -249,7 +249,7 @@ hr {
 input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
-	z-index: 2;
+	z-index: 3;
 	/* TODO refactor */
 	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--interactive_hover_color));
@@ -265,7 +265,7 @@ textarea:focus,
 textarea:focus:not(:disabled),
 button:focus,
 button:focus:not(:disabled) {
-	z-index: 1;
+	z-index: 2;
 	/* TODO refactor */
 	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--selected_color));
@@ -282,7 +282,7 @@ when the user hits spacebar it turns the outline to the active color, like on a 
 input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
-	z-index: 2;
+	z-index: 3;
 	--outline_width: var(--outline_width2);
 	--outline_color: var(--active_color);
 }
