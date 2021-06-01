@@ -5,7 +5,7 @@
 > web tech that feels good 💚
 > [felt.dev](https://www.felt.dev)
 
-> **work in progress**
+> **work in progress**: pre-pre-alpha
 
 ## usage
 
