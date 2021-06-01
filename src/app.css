@@ -193,7 +193,9 @@ button::before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	border: var(--border_width_md) var(--border_accent_style) var(--border_color);
+	border-width: var(--border_width_md) 0;
+	border-style: var(--border_accent_style);
+	border-color: var(--border_color);
 }
 button:hover {
 	background: var(--interactive_hover_color);
