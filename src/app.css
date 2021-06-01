@@ -35,6 +35,7 @@
 	--link_font_weight: var(--font_weight_md);
 	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
+	--text_light_color: hsl(0, 10%, 38%);
 	--text_disabled_color: hsl(0, 10%, 38%);
 	--line_height: 1.2;
 	--font_size_xxxxxl: 128px;
@@ -297,11 +298,6 @@ label {
 	padding: var(--spacing_sm) var(--spacing_md);
 }
 
-blockquote {
-	padding: var(--spacing_lg);
-	border-left: var(--spacing_sm) solid var(--plain_color);
-}
-
 nav {
 	width: 100%;
 	display: flex;
@@ -318,4 +314,15 @@ nav a {
 
 .column {
 	max-width: var(--column_width);
+}
+
+blockquote {
+	padding: var(--spacing_lg);
+	border-left: var(--spacing_sm) solid var(--plain_color);
+	color: var(--text_light_color);
+}
+
+code,
+pre {
+	color: var(--text_light_color);
 }
