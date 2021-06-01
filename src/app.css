@@ -71,6 +71,7 @@
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
+	--border_accent3_style: dashed;
 	--button_border_width: var(--border_width_rg);
 	--button_border_style: solid;
 	--button_border_disabled_style: dashed;
@@ -227,8 +228,12 @@ input[type='checkbox']:checked::before {
 }
 
 hr {
-	border-top-width: var(--border_width_rg);
-	border-bottom-width: var(--border_width_rg);
+	border-top-width: var(--border_width_md);
+	border-bottom-width: var(--border_width_md);
+	border-top-color: var(--interactive_hover_color);
+	border-bottom-color: var(--interactive_color);
+	border-top-style: var(--border_accent3_style);
+	border-bottom-style: var(--border_style);
 }
 
 .buttonlike:hover:not(:disabled),
