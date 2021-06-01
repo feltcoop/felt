@@ -3,6 +3,7 @@
 	import Error_Message from '$lib/Error_Message.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
 	import Message from '$lib/Message.svelte';
+	import Markup from '$lib/Markup.svelte';
 
 	import {UnreachableError} from '../../utils/error';
 
@@ -117,8 +118,14 @@
 			disabled={!!selected_provider && selected_provider === provider}
 			class:selected={!!selected_provider && selected_provider === provider}
 		>
-			signup with {provider.id}</button
-		>
+			{#if provider.id === 'TRUSTED_CO'}
+				signup with {provider.id}
+			{:else}
+				<Markup>
+					signup with {provider.id}
+				</Markup>
+			{/if}
+		</button>
 	{/each}
 
 	{#if selected_provider === providers.SOCIAL_CO || selected_provider === providers.TRACKER_CO}
