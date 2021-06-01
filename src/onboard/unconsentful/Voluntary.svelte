@@ -78,16 +78,25 @@
 	let anything_else = '';
 	let anything_else_el: HTMLInputElement;
 
+	$: enable_create_button = !create_error_message;
 	$: enable_signup_button = phone_number && home_address && anything_else;
 </script>
 
 <form>
-	<input bind:value={username} placeholder="username" on:keydown={handle_keydown_create} />
-	<input bind:value={password} placeholder="password" on:keydown={handle_keydown_create} />
-	<button
-		type="button"
-		on:click={() => create(username, password)}
-		disabled={!!create_error_message}>create account</button
+	<input
+		bind:value={username}
+		placeholder="username"
+		on:keydown={handle_keydown_create}
+		disabled={!enable_create_button}
+	/>
+	<input
+		bind:value={password}
+		placeholder="password"
+		on:keydown={handle_keydown_create}
+		disabled={!enable_create_button}
+	/>
+	<button type="button" on:click={() => create(username, password)} disabled={!enable_create_button}
+		>create account</button
 	>
 
 	<div class="message" style="--message_min_height: 100px;">

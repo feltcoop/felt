@@ -15,6 +15,7 @@
 	const {state, send} = onboard;
 	// $: console.log('$state', $state);
 
+	// TODO types
 	$: principle =
 		($state.value as string) in principles
 			? principles[$state.value as Consent_Principle_Type]
