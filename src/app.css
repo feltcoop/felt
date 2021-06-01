@@ -3,21 +3,22 @@
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--nav_height: 32px;
 	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
+	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
 	--green_hue: 120;
 	--blue_hue: 210;
 	--bg_color: #fff;
-	--plain_color: #ccc;
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
-	--tint_hue: var(--red_hue);
-	--tint_saturation: 8%;
+	--tint_hue: var(--orange_hue);
+	--tint_saturation: 11%;
 	--red_color: hsl(var(--red_hue), 50%, 50%);
 	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--plain_color: hsl(var(--tint_hue), var(--tint_saturation), 80%);
 	--interactive_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
-	--interactive_hover_color: hsl(0, 0%, 93%);
-	--interactive_disabled_color: hsl(0, 0%, 97%);
-	--interactive_active_color: hsl(0, 0%, 100%);
+	--interactive_hover_color: hsl(var(--tint_hue), var(--tint_saturation), 93%);
+	--interactive_disabled_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
+	--interactive_active_color: hsl(var(--tint_hue), var(--tint_saturation), 100%);
 	--font_weight_dk: 900;
 	--font_weight_md: 700;
 	--font_weight_rg: 500;
