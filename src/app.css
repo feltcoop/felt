@@ -33,7 +33,7 @@
 	--link_color_hue: var(--blue_hue);
 	--link_color: hsl(var(--link_color_hue), 61%, 35%);
 	--link_text_decoration: none;
-	--link_hover_text_decoration: underline;
+	--link_accent_text_decoration: underline;
 	--link_font_weight: var(--font_weight_md);
 	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
@@ -136,7 +136,7 @@ a {
 	text-decoration: var(--link_text_decoration);
 }
 a:hover {
-	text-decoration: var(--link_hover_text_decoration);
+	text-decoration: var(--link_accent_text_decoration);
 	z-index: 3;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
 }
@@ -144,6 +144,7 @@ a:focus,
 a:focus:not(:disabled) {
 	z-index: 2;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--selected_color);
+	text-decoration: var(--link_accent_text_decoration);
 }
 a:active:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
@@ -171,6 +172,7 @@ form {
 }
 
 button {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -183,6 +185,15 @@ button {
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
 	color: var(--button_text_color);
+}
+button::before {
+	content: '';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: var(--border_width_md) var(--border_accent_style) var(--border_color);
 }
 button:hover {
 	background: var(--interactive_hover_color);
