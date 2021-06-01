@@ -198,8 +198,8 @@ button::before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	border-width: var(--border_width_md) 0;
-	border-style: var(--border_accent_style);
+	border-width: var(--border_width_rg) 0;
+	border-style: var(--border_style);
 	border-color: var(--border_color);
 }
 button.selected::before {
