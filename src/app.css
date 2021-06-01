@@ -63,7 +63,8 @@
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
 	--input_height: var(--spacing_xxl);
-	--input_width_rg: 400px;
+	--input_width_max: 400px;
+	--input_width_min: 100px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
 	--faded_sm: 24%;
@@ -220,7 +221,9 @@ textarea {
 	border-color: var(--input_border_color);
 	border-style: var(--input_border_style);
 	border-width: var(--input_border_width);
-	width: var(--input_width_rg);
+	width: 100%;
+	max-width: var(--input_width_max);
+	min-width: var(--input_width_min);
 	min-height: var(--input_height);
 }
 
