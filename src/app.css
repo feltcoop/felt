@@ -17,7 +17,7 @@
 	--plain_color: hsl(var(--tint_hue), var(--tint_saturation), 80%);
 	--interactive_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
 	--interactive_hover_color: hsl(var(--tint_hue), var(--tint_saturation), 93%);
-	--interactive_disabled_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
+	--interactive_disabled_color: hsl(var(--tint_hue), var(--tint_saturation), 95%);
 	--interactive_active_color: hsl(var(--tint_hue), var(--tint_saturation), 100%);
 	--font_weight_dk: 900;
 	--font_weight_md: 700;
