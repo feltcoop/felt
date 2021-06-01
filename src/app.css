@@ -35,7 +35,7 @@
 	--link_text_decoration: none;
 	--link_accent_text_decoration: underline;
 	--link_font_weight: var(--font_weight_md);
-	--selected_text_decoration: underline;
+	/* --selected_text_decoration: underline; */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
 	--text_lighter_color: hsl(0, 10%, 62%);
@@ -230,7 +230,6 @@ button.selected {
 	border-right-style: var(--button_border_selected_style);
 	color: var(--selected_color);
 	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
-	text-decoration: var(--selected_text_decoration);
 }
 
 input,
