@@ -231,6 +231,8 @@ input[type='checkbox'] {
 	position: relative;
 	width: var(--input_height);
 	height: var(--input_height);
+	max-width: var(--input_height);
+	min-width: var(--input_height);
 	--input_padding_v: 0;
 	--input_padding_h: 0;
 	--outline_style: dotted;
