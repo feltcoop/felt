@@ -80,14 +80,16 @@
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
-	--outline_width: var(--spacing_md);
-	--outline_width2: calc(var(--outline_width) + 2px);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_xs);
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
 	--border_accent3_style: dashed;
 	--border: var(--border_width_rg) var(--border_style) var(--plain_color);
+	--outline_width: var(--spacing_md);
+	--outline_width2: calc(var(--outline_width) + 2px);
+	--outline_style: var(--border_accent_style);
+	--outline_color: var(--interactive_hover_color);
 	--button_border_width: var(--border_width_lg);
 	--button_border_style: double;
 	--button_border_selected_style: solid;
@@ -185,6 +187,9 @@ button {
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
 	color: var(--button_text_color);
+	outline-width: 0;
+	outline-style: var(--outline_style);
+	outline-color: var(--outline_color);
 }
 button::before {
 	content: '';
@@ -241,6 +246,9 @@ textarea {
 	max-width: var(--input_width_max);
 	min-width: var(--input_width_min);
 	min-height: var(--input_height);
+	outline-width: 0;
+	outline-style: var(--outline_style);
+	outline-color: var(--outline_color);
 }
 
 input[type='checkbox'] {
@@ -251,7 +259,7 @@ input[type='checkbox'] {
 	min-width: var(--input_height);
 	--input_padding_v: 0;
 	--input_padding_h: 0;
-	--outline_style: dotted;
+	--outline_style: var(--border_accent2_style);
 }
 input[type='checkbox']:checked {
 	border-color: var(--selected_color);
@@ -284,14 +292,18 @@ hr {
 	border: var(--border_width_md) var(--border_accent_style) var(--border_light_color);
 }
 
+.buttonlike {
+	outline-width: 0;
+	outline-style: var(--outline_style);
+	outline-color: var(--outline_color);
+}
+
 .buttonlike:hover:not(:disabled),
 input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 3;
-	/* TODO refactor */
-	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
-		var(--outline_color, var(--interactive_hover_color));
+	outline-width: var(--outline_width);
 }
 
 .buttonlike:focus,
@@ -306,9 +318,8 @@ button:focus,
 button:focus:not(:disabled) {
 	z-index: 2;
 	--input_border_color: var(--selected_color);
-	/* TODO refactor */
-	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
-		var(--outline_color, var(--selected_color));
+	--outline_color: var(--selected_color);
+	outline-width: var(--outline_width);
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
