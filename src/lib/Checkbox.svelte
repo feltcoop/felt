@@ -27,7 +27,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		--border_style: double;
 		/* TODO wait should this JUST set variables, and buttonlike uses them? yes! */
 		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
 		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
