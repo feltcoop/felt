@@ -23,10 +23,9 @@
 		color: var(--message_color, var(--plain_color));
 		font-weight: bold;
 		font-size: var(--font_size_md);
-		border-top: var(--border_width_rg) var(--border_style)
-			var(--message_color, var(--border_lighter_color));
-		border-bottom: var(--border_width_rg) var(--border_style)
-			var(--message_color, var(--border_lighter_color));
+		border-width: var(--border_width_md);
+		border-style: var(--border_accent_style);
+		border-color: var(--message_color, var(--border_lighter_color));
 		display: flex;
 		align-items: stretch;
 	}
@@ -35,10 +34,9 @@
 	}
 	.text {
 		width: 100%;
-		border-top: var(--border_accent_width) var(--border_accent_style)
-			var(--message_color, var(--border_lighter_color));
-		border-bottom: var(--border_accent_width) var(--border_accent_style)
-			var(--message_color, var(--border_lighter_color));
+		border-width: 0 var(--border_accent_width);
+		border-style: var(--border_style);
+		border-color: var(--message_color, var(--border_lighter_color));
 		padding: var(--spacing_md) var(--spacing_sm);
 		display: flex;
 		align-items: center;

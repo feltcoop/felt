@@ -79,7 +79,7 @@
 	--outline_width: var(--spacing_md);
 	--outline_width2: calc(var(--outline_width) + 2px);
 	--border_style: solid;
-	--border_accent_width: var(--spacing_sm);
+	--border_accent_width: var(--spacing_xs);
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
 	--border_accent3_style: dashed;
