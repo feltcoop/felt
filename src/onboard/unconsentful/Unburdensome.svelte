@@ -18,20 +18,20 @@
 	const email_contacts: Contact[] = [
 		{id: 'mom', selected: true},
 		{id: 'alice', selected: true},
-		{id: 'my_dentist', selected: true},
-		{id: 'moms_email_from_the_90s', selected: true},
-		{id: 'childhood_friend_grandma', selected: true},
-		{id: 'noreply_at_every_website', selected: true},
-		{id: 'local_supermarket', selected: true},
-		{id: 'are_you_serious_?', selected: true},
+		{id: 'my dentist', selected: true},
+		{id: 'moms email from the 90s', selected: true},
+		{id: 'childhood friend grandma', selected: true},
+		{id: 'noreply at every website', selected: true},
+		{id: 'local supermarket', selected: true},
+		{id: 'are you serious ?', selected: true},
 		{id: 'barry', selected: true},
 		{id: 'bank', selected: true},
 		{id: 'who', selected: true},
-		{id: '1000_spammers', selected: true},
-		{id: 'a_friend_with_whom_i_want_to_share', selected: true},
-		{id: 'random_stranger_who_typod_my_address', selected: true}, // TODO reward
-		{id: 'that_guy_from_the_thing_last_week', selected: true},
-		{id: 'a_dog_on_the_internet', selected: true},
+		{id: '1000 spammers', selected: true},
+		{id: 'a friend with whom i want to share', selected: true},
+		{id: "random stranger who typo'd my address", selected: true}, // TODO reward
+		{id: 'that guy from the thing last week', selected: true},
+		{id: 'a dog on the internet', selected: true},
 	];
 
 	$: selected_contacts = email_contacts.filter((c) => c.selected);
