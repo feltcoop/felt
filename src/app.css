@@ -212,6 +212,7 @@ button:disabled::before {
 	outline-width: 0;
 }
 button.selected::before {
+	outline-width: var(--border_width_sm);
 	--border_color: var(--selected_color);
 }
 button:hover {
