@@ -106,7 +106,7 @@
 			<Message text=":-)" />
 		{/if}
 		{#if !create_error_message}
-			<Message text="or" />
+			<Message text="or ↷" />
 		{/if}
 	</div>
 
