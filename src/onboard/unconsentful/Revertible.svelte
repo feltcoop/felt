@@ -7,7 +7,9 @@
 </script>
 
 <Markup>
-	<p>Great! We'll never bother you about those things again unless our lawyers make us.</p>
+	<blockquote>
+		👍 Great! We'll never bother you about those things again unless our lawyers make us.
+	</blockquote>
 	<p>
 		Just checking, you accept all of that stuff, right? Our lawyers are making us ask, you know how
 		lawyers are.
