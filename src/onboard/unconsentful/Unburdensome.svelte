@@ -76,7 +76,11 @@
 	</Markup>
 </Checkbox>
 
-<button on:click={() => done()}>email blast {selected_count} contacts!</button>
+<button on:click={() => done()}>
+	<Markup>
+		email blast {selected_count} contacts!
+	</Markup>
+</button>
 
 {#if consenting}
 	<Message text=":-)" />
