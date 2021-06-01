@@ -48,7 +48,8 @@
 	--spacing_xxl: 48px;
 	--spacing_xl: 32px;
 	--spacing_lg: 20px;
-	--spacing_md: 10px;
+	--spacing_mdlg: 16px; /* TODO hack */
+	--spacing_md: 12px;
 	--spacing_rg: 8px;
 	--spacing_sm: 6px;
 	--spacing_xs: 4px;
@@ -69,6 +70,7 @@
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
+	--outline_width: var(--spacing_md);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
@@ -241,7 +243,7 @@ textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 2;
 	/* TODO refactor */
-	outline: var(--outline_width, var(--spacing_rg)) var(--outline_style, var(--border_accent_style))
+	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--interactive_hover_color));
 }
 
@@ -257,7 +259,7 @@ button:focus,
 button:focus:not(:disabled) {
 	z-index: 1;
 	/* TODO refactor */
-	outline: var(--outline_width, var(--spacing_rg)) var(--outline_style, var(--border_accent_style))
+	outline: var(--outline_width) var(--outline_style, var(--border_accent_style))
 		var(--outline_color, var(--selected_color));
 }
 
@@ -273,7 +275,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 2;
-	--outline_width: var(--spacing_md);
+	--outline_width: var(--spacing_mdlg);
 	--outline_color: var(--active_color);
 }
 
