@@ -33,6 +33,7 @@
 	--selected_text_decoration: underline;
 	--text_color: hsl(0, 10%, 16%);
 	--text_disabled_color: hsl(0, 10%, 38%);
+	--line_height: 1.2;
 	--font_size_xxxxxl: 128px;
 	--font_size_xxxxl: 96px;
 	--font_size_xxxl: 64px;
@@ -98,7 +99,7 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	line-height: 1.2;
+	line-height: var(--line_height);
 }
 
 ::selection {
@@ -222,7 +223,7 @@ input[type='checkbox']::before {
 	align-items: center;
 	justify-content: center;
 	overflow: var(--overflow, visible);
-	font-size: var(--font_size, var(--font_size_xxxl));
+	font-size: var(--font_size, var(--font_size_xxxxl));
 	color: var(--selected_color);
 	line-height: 1;
 }

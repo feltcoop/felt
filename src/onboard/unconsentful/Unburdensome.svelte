@@ -63,7 +63,12 @@
 	<p>Let's spread the good news:</p>
 </Markup>
 
-<Checkbox bind:checked={consenting} --content="'☻'" --overflow="hidden">
+<Checkbox
+	bind:checked={consenting}
+	--content="'☻'"
+	--overflow="hidden"
+	--font_size="var(--font_size_xxxl)"
+>
 	<Markup>
 		<div>Send marketing emails to</div>
 		<small>everyone I've ever emailed</small>
@@ -87,6 +92,7 @@
 				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}
 				--content="'☻'"
 				--overflow="hidden"
+				--font_size="var(--font_size_xxxl)"
 			>
 				{email_contact.id}
 			</Checkbox>

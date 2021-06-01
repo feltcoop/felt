@@ -48,6 +48,6 @@
 	input {
 		width: var(--spacing_xl);
 		height: var(--spacing_xl);
-		margin-right: var(--spacing_lg);
+		margin: 0 var(--spacing_lg);
 	}
 </style>
