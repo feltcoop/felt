@@ -9,11 +9,8 @@
 <Markup>
 	<p>Great! We'll never bother you about those things again unless our lawyers make us.</p>
 	<p>
-		Settings are so confusing right! That's why we're hard at work burying them as deep as we can,
-		because we put the customer* first.
+		Just checking, you accept all of that stuff, right? Our lawyers are making us ask, you know how
+		lawyers are.
 	</p>
-	<button on:click={() => done()}>continue →</button>
-	<p>
-		*<small>tee hee</small>
-	</p>
+	<button on:click={() => done()}>I accept →</button>
 </Markup>
