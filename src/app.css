@@ -49,8 +49,7 @@
 	--spacing_xxl: 48px;
 	--spacing_xl: 32px;
 	--spacing_lg: 20px;
-	--spacing_mdlg: 14px; /* TODO hack */
-	--spacing_md: 12px;
+	--spacing_md: 10px;
 	--spacing_rg: 8px;
 	--spacing_sm: 6px;
 	--spacing_xs: 4px;
@@ -73,6 +72,7 @@
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
 	--outline_width: var(--spacing_md);
+	--outline_width2: calc(var(--outline_width) + 2px);
 	--border_style: solid;
 	--border_accent_width: var(--spacing_sm);
 	--border_accent_style: double;
@@ -279,7 +279,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 2;
-	--outline_width: var(--spacing_mdlg);
+	--outline_width: var(--outline_width2);
 	--outline_color: var(--active_color);
 }
 
