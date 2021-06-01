@@ -221,6 +221,9 @@ input[type='checkbox'] {
 	--input_padding_h: 0;
 	--outline_style: dotted;
 }
+input[type='checkbox']:checked {
+	border-color: var(--selected_color);
+}
 input[type='checkbox']::before {
 	content: var(--content, '•');
 	position: absolute;
