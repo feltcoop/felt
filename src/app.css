@@ -56,6 +56,7 @@
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
+	--input_height: var(--spacing_xxl);
 	--input_width_rg: 400px;
 	--faded_rg: 62%;
 	--faded_md: 38%;
@@ -159,6 +160,7 @@ button {
 	align-items: center;
 	justify-content: center;
 	font-size: var(--font_size_md);
+	min-height: var(--input_height);
 	padding: var(--spacing_sm) var(--spacing_md);
 	background: var(--interactive_color);
 	border-width: var(--button_border_width);
@@ -203,12 +205,13 @@ textarea {
 	border-style: var(--input_border_style);
 	border-width: var(--input_border_width);
 	width: var(--input_width_rg);
+	min-height: var(--input_height);
 }
 
 input[type='checkbox'] {
 	position: relative;
-	width: var(--spacing_xxl);
-	height: var(--spacing_xxl);
+	width: var(--input_height);
+	height: var(--input_height);
 	--input_padding_v: 0;
 	--input_padding_h: 0;
 	--outline_style: dotted;
