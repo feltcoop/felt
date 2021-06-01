@@ -160,7 +160,7 @@ li {
 h1,
 h2,
 h3 {
-	font-weight: 300;
+	font-weight: var(--font_weight_lt);
 }
 
 form {

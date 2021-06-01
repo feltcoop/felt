@@ -5,7 +5,7 @@
 
 {#if text}
 	<div class="message">
-		<div class="text">
+		<div class="wrapper">
 			<span>
 				{#if icon}
 					<span class="icon">{icon}</span>
@@ -21,7 +21,7 @@
 		min-height: var(--message_min_height);
 		width: 100%;
 		color: var(--message_color, var(--plain_color));
-		font-weight: bold;
+		font-weight: var(--font_weight, var(--font_weight_md));
 		font-size: var(--font_size_md);
 		border-width: var(--border_width_md) var(--border_width_xxxl);
 		border-style: var(--border_accent_style);
@@ -32,7 +32,7 @@
 	.icon {
 		padding-right: var(--spacing_rg);
 	}
-	.text {
+	.wrapper {
 		width: 100%;
 		padding: var(--spacing_md) var(--spacing_sm);
 		display: flex;
