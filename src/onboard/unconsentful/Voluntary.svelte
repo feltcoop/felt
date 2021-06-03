@@ -38,14 +38,14 @@
 	const signup_with = (provider: Service_Provider_Data) => {
 		console.log('signup_with name', provider, data);
 		switch (provider.id) {
-			case 'SOCIAL_CO': {
-				selected_provider = providers.SOCIAL_CO;
+			case 'TRACKER_CO': {
+				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's sign you up with TRACKER_CO`;
 				break;
 			}
-			case 'TRACKER_CO': {
-				selected_provider = providers.TRACKER_CO;
+			case 'SOCIAL_CO': {
+				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's sign you up with SOCIAL_CO`;
 				break;
@@ -92,6 +92,7 @@
 		disabled={!enable_create_button}
 	/>
 	<input
+		type="password"
 		bind:value={password}
 		placeholder="password"
 		on:keydown={handle_keydown_create}
@@ -166,8 +167,8 @@
 				disabled={!enable_signup_button}
 				>call my phone<br />
 				to finish signup<br />with {selected_provider === providers.SOCIAL_CO
-					? providers.TRACKER_CO.id
-					: providers.SOCIAL_CO.id}
+					? providers.SOCIAL_CO.id
+					: providers.TRACKER_CO.id}
 			</button>
 		{/if}
 	{:else if selected_provider}
