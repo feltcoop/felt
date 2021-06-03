@@ -31,7 +31,7 @@
 		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
 		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
 	}
-	label:not(:hover):not(:active) {
+	label:not(:hover):not(:active):not(:focus) {
 		/* feels a bit hacky - removes `buttonlike` styling */
 		outline-color: transparent;
 	}
