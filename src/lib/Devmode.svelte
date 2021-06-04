@@ -26,6 +26,6 @@
 		content: 'devmode';
 	}
 	button:hover:after {
-		content: 'turn off devmode';
+		content: '✕ devmode';
 	}
 </style>
