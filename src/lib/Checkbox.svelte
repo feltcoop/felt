@@ -32,6 +32,7 @@
 		--outline_color: transparent;
 	}
 	.selected {
+		/* TODO vars */
 		border-color: var(--selected_color);
 	}
 	.selected:focus {
