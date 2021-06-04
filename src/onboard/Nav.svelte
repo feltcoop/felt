@@ -2,9 +2,12 @@
 	import type {Onboard_Send, Onboard_State} from './onboard';
 	import Machine_Controls from '../xstate/Machine_Controls.svelte';
 	import {onboard_machine} from './onboard';
+	import {use_devmode} from '$lib/devmode';
 
 	export let state: Onboard_State;
 	export let send: Onboard_Send;
+
+	const devmode = use_devmode();
 
 	// console.log('onboard_machine', onboard_machine);
 	$: state_ids = Object.keys(onboard_machine.states);
@@ -23,13 +26,15 @@
 </script>
 
 <div>
-	<nav class="buttons">
-		<Machine_Controls machine={onboard_machine} {state} {send} let:event_name>
-			{event_name === 'PREVIOUS' ? '←' : ''}
-			{event_name}
-			{event_name === 'NEXT' ? '→' : ''}
-		</Machine_Controls>
-	</nav>
+	{#if $devmode}
+		<nav class="buttons">
+			<Machine_Controls machine={onboard_machine} {state} {send} let:event_name>
+				{event_name === 'PREVIOUS' ? '←' : ''}
+				{event_name}
+				{event_name === 'NEXT' ? '→' : ''}
+			</Machine_Controls>
+		</nav>
+	{/if}
 	<nav>
 		{#each state_ids as state_id (state_id)}
 			<button

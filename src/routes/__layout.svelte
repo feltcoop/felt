@@ -1,6 +1,10 @@
 <script>
 	import '../app.css';
 	import Nav from '$lib/Nav.svelte';
+	import {provide_devmode} from '$lib/devmode';
+	import Devmode from '$lib/Devmode.svelte';
+
+	const devmode = provide_devmode(true);
 </script>
 
 <svelte:head>
@@ -11,6 +15,7 @@
 <main>
 	<slot />
 </main>
+<Devmode {devmode} />
 
 <style>
 	#nav {

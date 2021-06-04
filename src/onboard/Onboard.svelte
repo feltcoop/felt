@@ -4,7 +4,6 @@
 	import {principles} from '../consent/consent';
 	import type {Consent_Principle_Type} from '../consent/consent';
 	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
-
 	import {onboard_machine} from './onboard';
 	import Nav from './Nav.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
@@ -34,9 +33,6 @@
 	</header>
 	<Nav {state} {send} />
 	<div class="content">
-		<!-- TODO add a dev mode or smth <section>
-			<Machine_State {state} />
-		</section> -->
 		<section class="column">
 			<Onboard_State consent_type="unconsentful" {state} {send} />
 		</section>
