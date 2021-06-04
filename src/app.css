@@ -4,34 +4,52 @@
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--nav_height: 32px;
-	--bg_color: #fff;
+	--alpha: 0.89;
+	--bg: #fff;
 	--blue_hue: 210;
 	--blue_saturation: 50%;
 	--blue_lightness: 50%;
-	--blue: hsl(var(--blue_hue), var(--blue_saturation), var(--blue_lightness));
+	--blue_alpha: var(--alpha);
+	--blue: hsla(var(--blue_hue), var(--blue_saturation), var(--blue_lightness), var(--blue_alpha));
 	--green_hue: 120;
 	--green_saturation: 45%;
 	--green_lightness: 55%;
-	--green: hsl(var(--green_hue), var(--green_saturation), var(--green_lightness));
+	--green_alpha: var(--alpha);
+	--green: hsla(
+		var(--green_hue),
+		var(--green_saturation),
+		var(--green_lightness),
+		var(--green_alpha)
+	);
 	--violet_hue: 260;
 	--violet_saturation: 50%;
 	--violet_lightness: 50%;
-	--violet: hsl(var(--violet_hue), var(--violet_saturation), var(--violet_lightness));
+	--violet_alpha: var(--alpha);
+	--violet: hsla(
+		var(--violet_hue),
+		var(--violet_saturation),
+		var(--violet_lightness),
+		var(--violet_alpha)
+	);
 	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
 	--orange_saturation: 55%;
 	--orange_lightness: 50%;
-	--orange: hsl(var(--orange_hue), var(--orange_saturation), var(--orange_lightness));
+	--orange_alpha: var(--alpha);
+	--orange: hsla(
+		var(--orange_hue),
+		var(--orange_saturation),
+		var(--orange_lightness),
+		var(--orange_alpha)
+	);
 	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
 	--red_saturation: 50%;
 	--red_lightness: 50%;
-	--red: hsl(var(--red_hue), var(--red_saturation), var(--red_lightness));
-	--green_text_saturation: 40%;
-	--green_text_lightness: 40%;
+	--red_alpha: var(--alpha);
+	--red: hsla(var(--red_hue), var(--red_saturation), var(--red_lightness), var(--red_alpha));
 	--tint_hue: var(--orange_hue);
 	--tint_saturation: 11%;
 	--tint_lightness: 80%;
 	--tint_alpha: 1;
-	--alpha: 0.85;
 	--tint: hsla(var(--tint_hue), var(--tint_saturation), var(--tint_lightness), var(--tint_alpha));
 	--interactive_color: hsla(var(--tint_hue), var(--tint_saturation), 87%, var(--alpha));
 	--interactive_hover_color: hsla(var(--tint_hue), var(--tint_saturation), 93%, var(--alpha));
@@ -55,7 +73,7 @@
 	--selected_light_bg_saturation: 70%;
 	--selected_light_bg_lightness: 80%;
 	--selected_light_bg_alpha: 0.5;
-	--selected_light_bg_color: hsla(
+	--selected_light_bg: hsla(
 		var(--selected_hue),
 		var(--selected_light_bg_saturation),
 		var(--selected_light_bg_lightness),
@@ -152,7 +170,7 @@
 html,
 body {
 	height: 100%;
-	background-color: var(--bg_color);
+	background-color: var(--bg);
 }
 
 *,
@@ -165,7 +183,7 @@ body {
 }
 
 ::selection {
-	background: var(--selected_light_bg_color);
+	background: var(--selected_light_bg);
 }
 
 #svelte {
