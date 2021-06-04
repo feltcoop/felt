@@ -1,14 +1,15 @@
 <script lang="ts">
 	import {useMachine} from '@xstate/svelte';
 
-	import {principles} from '../consent/consent';
+	import {consent_principles} from '../consent/consent';
+	import type {Consent_Type} from '../consent/consent';
 	import type {Consent_Principle_Type} from '../consent/consent';
 	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
-	import {onboard_machine} from './onboard';
+	import {onboard_machine, onboard_data} from './onboard';
+	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
-	import Onboard_State from './Onboard_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
 	// console.log('onboard', onboard);
@@ -17,34 +18,67 @@
 
 	// TODO types
 	$: principle =
-		($state.value as string) in principles
-			? principles[$state.value as Consent_Principle_Type]
+		($state.value as string) in consent_principles
+			? consent_principles[$state.value as Consent_Principle_Type]
 			: null;
+
+	// TODO move to an xstate machine, somehow
+	let done_consentful = false;
+	let done_unconsentful = false;
+
+	const done = (consent_type: Consent_Type) => {
+		if (consent_type === 'consentful') {
+			done_consentful = true;
+			if (!done_unconsentful) return;
+		} else {
+			done_unconsentful = true;
+			if (!done_consentful) return;
+		}
+		send('NEXT');
+	};
+	const back = () => {
+		send('PREVIOUS');
+	};
+
+	$: update_state($state);
+
+	const update_state = (state: typeof $state) => {
+		done_consentful = false;
+		done_unconsentful = false;
+	};
+
+	$: consentful_data = onboard_data.consentful[$state.value as Onboard_State_Name]; // TODO fix type in ../onboard.ts
+	$: unconsentful_data = onboard_data.unconsentful[$state.value as Onboard_State_Name]; // TODO fix type in ../onboard.ts
 </script>
 
 <div class="onboard">
 	<header>
 		{#if principle}
 			<Consent_Principle_View {principle} />
-		{:else if $state.value === 'begin'}
-			<h2>onboard—</h2>
-		{:else if $state.value === 'end'}
-			<h2>→</h2>
+		{:else}
+			<h2>Felt.dev consentful onboard sketch</h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />
 	<div class="content">
-		<!-- TODO add a dev mode or smth <section>
-			<Machine_State {state} />
-		</section> -->
 		{#if $state.value === 'begin'}
 			<Begin {send} />
 		{:else}
-			<section class="column">
-				<Onboard_State consent_type="unconsentful" {state} {send} />
+			<section class="column" class:complete={done_unconsentful}>
+				<svelte:component
+					this={unconsentful_data.component}
+					data={unconsentful_data}
+					done={() => done('unconsentful')}
+					{back}
+				/>
 			</section>
-			<section class="column">
-				<Onboard_State consent_type="consentful" {state} {send} />
+			<section class="column" class:complete={done_consentful}>
+				<svelte:component
+					this={consentful_data.component}
+					data={consentful_data}
+					done={() => done('consentful')}
+					{back}
+				/>
 			</section>
 		{/if}
 	</div>
@@ -68,6 +102,7 @@
 		justify-content: center;
 	}
 	section {
+		position: relative;
 		height: 100%;
 		flex: 1;
 		flex-shrink: 0; /* keep equal size regardless of content */
@@ -78,5 +113,13 @@
 		/* TODO should this be on `.column` ? */
 		border-left: var(--border);
 		border-right: var(--border);
+	}
+	.complete::before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.8);
 	}
 </style>
