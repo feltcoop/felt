@@ -2,7 +2,9 @@
 
 copied from: https://consentful.systems/
 
-TODO add or rewrite descriptions
+TODO add descriptions
+
+TODO should "affirmative content" instead of "consent" in some places?
 
 */
 
