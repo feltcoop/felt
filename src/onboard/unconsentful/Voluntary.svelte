@@ -34,7 +34,7 @@
 		selected_provider = null;
 		create_error_message = `Whoopsies, our robots can be so clumsy! Sorry${
 			username ? `, ${username}` : ''
-		}! Systems're broken. Please click the buttons below. :-)`;
+		}! Systems're broken. Please click the buttons below :-)`;
 	};
 	const signup_with = (provider: Service_Provider_Data) => {
 		console.log('signup_with name', provider, data);
