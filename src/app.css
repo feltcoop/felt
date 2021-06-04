@@ -3,7 +3,6 @@
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
-	--nav_height: 32px;
 	--alpha: 0.89;
 	--bg: #fff;
 	--blue_hue: 210;
@@ -123,6 +122,7 @@
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
 	--input_height: var(--spacing_xxl);
+	--nav_height: var(--spacing_xl);
 	--input_width_max: 400px;
 	--input_width_min: 100px;
 	--faded_rg: 62%;
