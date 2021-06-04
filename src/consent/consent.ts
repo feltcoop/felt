@@ -37,10 +37,12 @@ export const principles_data: Consent_Principle[] = [
 	{type: 'unburdensome', name: 'Affirmative consent is unburdensome.', description: 'TODO'},
 ];
 
+const [voluntary, informed, revertible, specific, unburdensome] = principles_data;
+
 export const principles: Record<Consent_Principle_Type, Consent_Principle> = {
-	voluntary: principles_data[0],
-	informed: principles_data[1],
-	revertible: principles_data[2],
-	specific: principles_data[3],
-	unburdensome: principles_data[4],
+	voluntary,
+	informed,
+	revertible,
+	specific,
+	unburdensome,
 };
