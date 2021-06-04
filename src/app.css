@@ -121,8 +121,8 @@
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
-	--input_height: var(--spacing_xxl);
 	--nav_height: var(--spacing_xl);
+	--input_height: var(--spacing_xxl);
 	--input_width_max: 400px;
 	--input_width_min: 100px;
 	--faded_rg: 62%;
