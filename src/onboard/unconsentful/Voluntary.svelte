@@ -41,13 +41,13 @@
 			case 'TRACKER_CO': {
 				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with TRACKER_CO`;
+				signup_helper_message = `Great! Let's get you social with ${selected_provider.id}`;
 				break;
 			}
 			case 'SOCIAL_CO': {
 				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
-				signup_helper_message = `Great! Let's sign you up with SOCIAL_CO`;
+				signup_helper_message = `Great! Let's get you tracked with ${selected_provider.id}`;
 				break;
 			}
 			case 'TRUSTED_CO': {
@@ -166,9 +166,7 @@
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
 				>call my phone<br />
-				to finish signup<br />with {selected_provider === providers.SOCIAL_CO
-					? providers.SOCIAL_CO.id
-					: providers.TRACKER_CO.id}
+				to finish signup<br />with {selected_provider.id}
 			</button>
 		{/if}
 	{:else if selected_provider}
