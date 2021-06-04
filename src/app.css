@@ -4,17 +4,33 @@
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--nav_height: 32px;
-	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
-	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
-	--green_hue: 120;
-	--blue_hue: 210;
 	--bg_color: #fff;
+	--blue_hue: 210;
+	--blue_saturation: hsl(var(--blue_hue), 50%, 50%);
+	--blue_lightness: hsl(var(--blue_hue), 50%, 50%);
 	--blue_color: hsl(var(--blue_hue), 50%, 50%);
+	--green_hue: 120;
+	--green_saturation: hsl(var(--green_hue), 45%, 55%);
+	--green_lightness: hsl(var(--green_hue), 45%, 55%);
 	--green_color: hsl(var(--green_hue), 45%, 55%);
+	--violet_hue: 260;
+	--violet_saturation: hsl(var(--violet_hue), 50%, 50%);
+	--violet_lightness: hsl(var(--violet_hue), 50%, 50%);
+	--violet_color: hsl(var(--violet_hue), 50%, 50%);
+	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
+	--orange_saturation: hsl(var(--orange_hue), 55%, 50%);
+	--orange_lightness: hsl(var(--orange_hue), 55%, 50%);
 	--orange_color: hsl(var(--orange_hue), 55%, 50%);
+	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
+	--red_saturation: hsl(var(--red_hue), 50%, 50%);
+	--red_lightness: hsl(var(--red_hue), 50%, 50%);
 	--red_color: hsl(var(--red_hue), 50%, 50%);
+	--green_text_saturation: hsl(var(--green_hue), 40%, 40%);
+	--green_text_lightness: hsl(var(--green_hue), 40%, 40%);
 	--green_text_color: hsl(var(--green_hue), 40%, 40%);
-	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--blue_light_bg_saturation: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--blue_light_bg_lightness: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--blue_light_bg_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
 	--tint_hue: var(--orange_hue);
 	--tint_saturation: 11%;
 	--plain_color: hsl(var(--tint_hue), var(--tint_saturation), 80%);
@@ -124,7 +140,7 @@ body {
 }
 
 ::selection {
-	background: var(--blue_light_alpha_color);
+	background: var(--blue_light_bg_color);
 }
 
 #svelte {
