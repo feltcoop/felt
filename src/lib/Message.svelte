@@ -22,8 +22,8 @@
 	.message {
 		min-height: var(--message_min_height);
 		width: 100%;
-		color: var(--message_color, var(--plain_color));
-		font-weight: var(--font_weight, var(--font_weight_md));
+		color: var(--message_color, var(--tint));
+		font-weight: var(--font_weight, var(--font_weight_4));
 		font-size: var(--font_size_md);
 		border-width: var(--border_width_md) var(--border_width_xxl);
 		border-style: var(--border_accent_style);
