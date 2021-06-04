@@ -423,6 +423,7 @@ button:focus:not(:disabled) {
 	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
+
 input[type='checkbox']:focus,
 input[type='checkbox']:focus:not(:disabled) {
 	--outline_style: var(--border_accent2_style);
@@ -442,6 +443,11 @@ button:active:not(:disabled) {
 	z-index: 3;
 	--outline_width: calc(var(--spacing_md) + 2px);
 	--outline_color: var(--active_color);
+}
+.buttonlike:active:not(:disabled) button,
+button:active:not(:disabled) {
+	/* I don't love the inconsistency, but this is better */
+	--outline_color: var(--selected_color);
 }
 
 input[type='checkbox']:active:not(:disabled) {
