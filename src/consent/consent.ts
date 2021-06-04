@@ -25,16 +25,16 @@ export const consent_principle_types: Consent_Principle_Type[] = [
 
 export interface Consent_Principle {
 	type: Consent_Principle_Type;
-	title: string;
+	name: string;
 	description: string; // TODO licensing/copyright/etc
 }
 
 export const principles_data: Consent_Principle[] = [
-	{type: 'voluntary', title: 'Affirmative consent is voluntary.', description: 'TODO'},
-	{type: 'informed', title: 'Affirmative consent is informed.', description: 'TODO'},
-	{type: 'revertible', title: 'Affirmative consent is revertible.', description: 'TODO'},
-	{type: 'specific', title: 'Affirmative consent is specific.', description: 'TODO'},
-	{type: 'unburdensome', title: 'Affirmative consent is unburdensome.', description: 'TODO'},
+	{type: 'voluntary', name: 'Affirmative consent is voluntary.', description: 'TODO'},
+	{type: 'informed', name: 'Affirmative consent is informed.', description: 'TODO'},
+	{type: 'revertible', name: 'Affirmative consent is revertible.', description: 'TODO'},
+	{type: 'specific', name: 'Affirmative consent is specific.', description: 'TODO'},
+	{type: 'unburdensome', name: 'Affirmative consent is unburdensome.', description: 'TODO'},
 ];
 
 export const principles: Record<Consent_Principle_Type, Consent_Principle> = {
