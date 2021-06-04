@@ -11,6 +11,7 @@
 
 	export let data: Onboard_Data;
 	export let done: () => void;
+	export let back: () => void;
 
 	let create_error_message: string | null = null;
 	let signup_error_message: string | null = null;
