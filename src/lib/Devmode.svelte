@@ -13,7 +13,7 @@
 <svelte:window on:keydown={on_window_keydown} />
 
 {#if $devmode}
-	<button class="devmode" on:click={() => ($devmode = !$devmode)}>devmode</button>
+	<button class="devmode" on:click={() => ($devmode = !$devmode)} />
 {/if}
 
 <style>
@@ -21,5 +21,11 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+	}
+	button:after {
+		content: 'devmode';
+	}
+	button:hover:after {
+		content: 'turn off devmode';
 	}
 </style>
