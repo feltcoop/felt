@@ -1,15 +1,15 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {sortMap} from './map.js';
+import {sort_map} from './map.js';
 
-/* test_sortMap */
-const test_sortMap = suite('sortMap');
+/* test_sort_map */
+const test_sort_map = suite('sort_map');
 
-test_sortMap('basic behavior', () => {
+test_sort_map('basic behavior', () => {
 	t.equal(
 		Array.from(
-			sortMap(
+			sort_map(
 				new Map([
 					['A', 1],
 					['B', 1],
@@ -35,9 +35,9 @@ test_sortMap('basic behavior', () => {
 	);
 });
 
-test_sortMap('custom comparator', () => {
+test_sort_map('custom comparator', () => {
 	t.equal(
-		sortMap(
+		sort_map(
 			new Map([
 				['d', 1],
 				['a', 1],
@@ -55,5 +55,5 @@ test_sortMap('custom comparator', () => {
 	);
 });
 
-test_sortMap.run();
-/* /test_sortMap */
+test_sort_map.run();
+/* /test_sort_map */

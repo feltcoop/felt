@@ -1,13 +1,13 @@
 import {red, yellow, gray, black, magenta, bgYellow, bgRed} from '../utils/terminal.js';
-import {EMPTY_ARRAY, toArray} from './array.js';
-import {toEnvNumber} from './env.js';
+import {EMPTY_ARRAY, to_array} from './array.js';
+import {to_env_number} from './env.js';
 
 // TODO could use some refactoring
 
 // TODO track warnings/errors (or anything above a certain threshold)
 // and report at the end of each build (and other tasks)
 
-export enum LogLevel {
+export enum Log_Level {
 	Off = 0,
 	Error = 1,
 	Warn = 2,
@@ -15,8 +15,8 @@ export enum LogLevel {
 	Trace = 4,
 }
 
-export const ENV_LOG_LEVEL = toEnvNumber('GRO_LOG_LEVEL');
-export const DEFAULT_LOG_LEVEL = ENV_LOG_LEVEL ?? LogLevel.Trace;
+export const ENV_LOG_LEVEL = to_env_number('GRO_LOG_LEVEL');
+export const DEFAULT_LOG_LEVEL = ENV_LOG_LEVEL ?? Log_Level.Trace;
 
 /*
 
@@ -24,12 +24,12 @@ export const DEFAULT_LOG_LEVEL = ENV_LOG_LEVEL ?? LogLevel.Trace;
 to achieve a good mix of convenience and flexibility
 both for Felt and user code.
 It uses late binding to allow runtime mutations
-and it accepts a `LoggerState` argument for custom behavior.
+and it accepts a `Logger_State` argument for custom behavior.
 Though the code is more verbose and slower as a result,
 the tradeoffs make sense for logging in development.
 TODO use a different logger in production
 
-The default `LoggerState` is the `Logger` class itself.
+The default `Logger_State` is the `Logger` class itself.
 This pattern allows us to have globally mutable logger state
 without locking the code into the singleton pattern.
 Properties like the static `Logger.level` can be mutated
@@ -37,7 +37,7 @@ to affect all loggers that get instantiated with the default state,
 but loggers can also be instantiated with other state
 that isn't affected by these globally mutable values.
 
-Custom loggers like `SystemLogger` (see below)
+Custom loggers like `System_Logger` (see below)
 demonstrate extending `Logger` to partition logging concerns.
 User code is given a lot of control and flexibility.
 
@@ -57,37 +57,37 @@ TODO !
 
 export type Log = (...args: any[]) => void;
 
-export interface LoggerState {
-	level: LogLevel;
+export interface Logger_State {
+	level: Log_Level;
 	log: Log;
-	error: LogLevelDefaults;
-	warn: LogLevelDefaults;
-	info: LogLevelDefaults;
-	trace: LogLevelDefaults;
+	error: Log_Level_Defaults;
+	warn: Log_Level_Defaults;
+	info: Log_Level_Defaults;
+	trace: Log_Level_Defaults;
 }
 
-interface LogLevelDefaults {
+interface Log_Level_Defaults {
 	prefixes: any[];
 	suffixes: any[];
 }
 
-export class DevLogger {
+export class Dev_Logger {
 	readonly prefixes: readonly any[];
 	readonly suffixes: readonly any[];
-	readonly state: LoggerState; // can be the implementing class constructor
+	readonly state: Logger_State; // can be the implementing class constructor
 
 	constructor(
 		prefixes: readonly any[] | unknown,
 		suffixes: readonly any[] | unknown,
-		state: LoggerState,
+		state: Logger_State,
 	) {
-		this.prefixes = toArray(prefixes);
-		this.suffixes = toArray(suffixes);
+		this.prefixes = to_array(prefixes);
+		this.suffixes = to_array(suffixes);
 		this.state = state;
 	}
 
 	error(...args: any[]): void {
-		if (this.state.level < LogLevel.Error) return;
+		if (this.state.level < Log_Level.Error) return;
 		this.state.log(
 			...this.state.error.prefixes,
 			...this.prefixes,
@@ -98,7 +98,7 @@ export class DevLogger {
 	}
 
 	warn(...args: any[]): void {
-		if (this.state.level < LogLevel.Warn) return;
+		if (this.state.level < Log_Level.Warn) return;
 		this.state.log(
 			...this.state.warn.prefixes,
 			...this.prefixes,
@@ -109,7 +109,7 @@ export class DevLogger {
 	}
 
 	info(...args: any[]): void {
-		if (this.state.level < LogLevel.Info) return;
+		if (this.state.level < Log_Level.Info) return;
 		this.state.log(
 			...this.state.info.prefixes,
 			...this.prefixes,
@@ -120,7 +120,7 @@ export class DevLogger {
 	}
 
 	trace(...args: any[]): void {
-		if (this.state.level < LogLevel.Trace) return;
+		if (this.state.level < Log_Level.Trace) return;
 		this.state.log(
 			...this.state.trace.prefixes,
 			...this.prefixes,
@@ -139,33 +139,33 @@ export class DevLogger {
 	}
 }
 
-export class Logger extends DevLogger {
+export class Logger extends Dev_Logger {
 	constructor(
 		prefixes: readonly any[] | unknown = EMPTY_ARRAY,
 		suffixes: readonly any[] | unknown = EMPTY_ARRAY,
-		state: LoggerState = Logger,
+		state: Logger_State = Logger,
 	) {
 		super(prefixes, suffixes, state);
 	}
 
-	// These properties can be mutated at runtime (see `configureLogLevel`)
+	// These properties can be mutated at runtime (see `configureLog_Level`)
 	// to affect all loggers instantiated with the default `state`.
-	// See the comment on `LoggerState` for more.
-	static level: LogLevel = DEFAULT_LOG_LEVEL;
+	// See the comment on `Logger_State` for more.
+	static level: Log_Level = DEFAULT_LOG_LEVEL;
 	static log: Log = console.log.bind(console);
-	static error: LogLevelDefaults = {
+	static error: Log_Level_Defaults = {
 		prefixes: [red('➤'), black(bgRed(' 🞩 error 🞩 ')), red('\n➤')],
 		suffixes: ['\n ', black(bgRed(' 🞩🞩 '))],
 	};
-	static warn: LogLevelDefaults = {
+	static warn: Log_Level_Defaults = {
 		prefixes: [yellow('➤'), black(bgYellow(' ⚑ warning ⚑ ')), '\n' + yellow('➤')],
 		suffixes: ['\n ', black(bgYellow(' ⚑ '))],
 	};
-	static info: LogLevelDefaults = {
+	static info: Log_Level_Defaults = {
 		prefixes: [gray('➤')],
 		suffixes: [],
 	};
-	static trace: LogLevelDefaults = {
+	static trace: Log_Level_Defaults = {
 		prefixes: [gray('—')],
 		suffixes: [],
 	};
@@ -173,58 +173,58 @@ export class Logger extends DevLogger {
 
 /*
 
-The `SystemLogger` is distinct from the `Logger`
+The `System_Logger` is distinct from the `Logger`
 to cleanly separate Felt's logging from user logging, decoupling their log levels.
-Felt internally uses `SystemLogger`, not `Logger` directly.
+Felt internally uses `System_Logger`, not `Logger` directly.
 This allows user code to simply import and use `Logger`.
-`SystemLogger` is still made available to user code,
+`System_Logger` is still made available to user code,
 and users can always extend `Logger` with their own custom versions.
 
 */
-export class SystemLogger extends DevLogger {
+export class System_Logger extends Dev_Logger {
 	constructor(
 		prefixes: readonly any[] | unknown = EMPTY_ARRAY,
 		suffixes: readonly any[] | unknown = EMPTY_ARRAY,
-		state: LoggerState = SystemLogger,
+		state: Logger_State = System_Logger,
 	) {
 		super(prefixes, suffixes, state);
 	}
 
-	// These properties can be mutated at runtime (see `configureLogLevel`)
+	// These properties can be mutated at runtime (see `configureLog_Level`)
 	// to affect all loggers instantiated with the default `state`.
-	// See the comment on `LoggerState` for more.
-	static level: LogLevel = DEFAULT_LOG_LEVEL;
+	// See the comment on `Logger_State` for more.
+	static level: Log_Level = DEFAULT_LOG_LEVEL;
 	static log: Log = console.log.bind(console);
-	static error: LogLevelDefaults = {
+	static error: Log_Level_Defaults = {
 		prefixes: [red('➤'), black(bgRed(' 🞩 error 🞩 ')), red('\n➤')],
 		suffixes: ['\n ', black(bgRed(' 🞩🞩 '))],
 	};
-	static warn: LogLevelDefaults = {
+	static warn: Log_Level_Defaults = {
 		prefixes: [yellow('➤'), black(bgYellow(' ⚑ warning ⚑ ')), '\n' + yellow('➤')],
 		suffixes: ['\n ', black(bgYellow(' ⚑ '))],
 	};
-	static info: LogLevelDefaults = {
+	static info: Log_Level_Defaults = {
 		prefixes: [gray('➤')],
 		suffixes: [],
 	};
-	static trace: LogLevelDefaults = {
+	static trace: Log_Level_Defaults = {
 		prefixes: [gray('—')],
 		suffixes: [],
 	};
 }
 
-export const configureLogLevel = (
-	level: LogLevel,
-	configureMainLogger = true,
-	configureSystemLogger = true,
+export const configureLog_Level = (
+	level: Log_Level,
+	configure_main_logger = true,
+	configure_system_logger = true,
 ): void => {
-	if (configureMainLogger) {
+	if (configure_main_logger) {
 		Logger.level = level;
 	}
-	if (configureSystemLogger) {
-		SystemLogger.level = level;
+	if (configure_system_logger) {
+		System_Logger.level = level;
 	}
 };
 
-export const printLogLabel = (label: string, color = magenta): string =>
+export const print_log_label = (label: string, color = magenta): string =>
 	`${gray('[')}${color(label)}${gray(']')}`;

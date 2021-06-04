@@ -2,94 +2,94 @@ import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
 import {
-	replaceExtension,
-	toPathStem,
-	toPathParts,
-	toPathSegments,
-	toCommonBaseDir,
+	replace_extension,
+	to_path_stem,
+	to_path_parts,
+	to_path_segments,
+	to_common_base_dir,
 } from './path.js';
 
-/* test_replaceExtension */
-const test_replaceExtension = suite('replaceExtension');
+/* test_replace_extension */
+const test_replace_extension = suite('replace_extension');
 
-test_replaceExtension('basic behavior', () => {
-	t.is(replaceExtension('foo.ts', '.js'), 'foo.js');
-	t.is(replaceExtension('foo.ts', ''), 'foo');
-	t.is(replaceExtension('foo.ts', 'js'), 'foojs');
-	t.is(replaceExtension('foo', '.js'), 'foo.js');
+test_replace_extension('basic behavior', () => {
+	t.is(replace_extension('foo.ts', '.js'), 'foo.js');
+	t.is(replace_extension('foo.ts', ''), 'foo');
+	t.is(replace_extension('foo.ts', 'js'), 'foojs');
+	t.is(replace_extension('foo', '.js'), 'foo.js');
 });
 
-test_replaceExtension.run();
-/* /test_replaceExtension */
+test_replace_extension.run();
+/* /test_replace_extension */
 
-/* test_toPathStem */
-const test_toPathStem = suite('toPathStem');
+/* test_to_path_stem */
+const test_to_path_stem = suite('to_path_stem');
 
-test_toPathStem('basic behavior', () => {
-	t.is(toPathStem('foo.ts'), 'foo');
-	t.is(toPathStem('foo'), 'foo');
-	t.is(toPathStem('/absolute/bar/foo.ts'), 'foo');
-	t.is(toPathStem('./relative/bar/foo.ts'), 'foo');
-	t.is(toPathStem('relative/bar/foo.ts'), 'foo');
+test_to_path_stem('basic behavior', () => {
+	t.is(to_path_stem('foo.ts'), 'foo');
+	t.is(to_path_stem('foo'), 'foo');
+	t.is(to_path_stem('/absolute/bar/foo.ts'), 'foo');
+	t.is(to_path_stem('./relative/bar/foo.ts'), 'foo');
+	t.is(to_path_stem('relative/bar/foo.ts'), 'foo');
 });
 
-test_toPathStem.run();
-/* /test_toPathStem */
+test_to_path_stem.run();
+/* /test_to_path_stem */
 
-/* test_toPathSegments */
-const test_toPathSegments = suite('toPathSegments');
+/* test_to_path_segments */
+const test_to_path_segments = suite('to_path_segments');
 
-test_toPathSegments('basic behavior', () => {
-	t.equal(toPathSegments('foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
+test_to_path_segments('basic behavior', () => {
+	t.equal(to_path_segments('foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
 });
 
-test_toPathSegments('leading dot', () => {
-	t.equal(toPathSegments('./foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
+test_to_path_segments('leading dot', () => {
+	t.equal(to_path_segments('./foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
 });
 
-test_toPathSegments('leading two dots', () => {
-	t.equal(toPathSegments('../../foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
+test_to_path_segments('leading two dots', () => {
+	t.equal(to_path_segments('../../foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
 });
 
-test_toPathSegments('leading slash', () => {
-	t.equal(toPathSegments('/foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
+test_to_path_segments('leading slash', () => {
+	t.equal(to_path_segments('/foo/bar/baz.ts'), ['foo', 'bar', 'baz.ts']);
 });
 
-test_toPathSegments('trailing slash', () => {
-	t.equal(toPathSegments('foo/bar/baz/'), ['foo', 'bar', 'baz']);
+test_to_path_segments('trailing slash', () => {
+	t.equal(to_path_segments('foo/bar/baz/'), ['foo', 'bar', 'baz']);
 });
 
-test_toPathSegments.run();
-/* /test_toPathSegments */
+test_to_path_segments.run();
+/* /test_to_path_segments */
 
-/* test_toPathParts */
-const test_toPathParts = suite('toPathParts');
+/* test_to_path_parts */
+const test_to_path_parts = suite('to_path_parts');
 
-test_toPathParts('basic behavior', () => {
-	t.equal(toPathParts('foo/bar/baz.ts'), ['foo', 'foo/bar', 'foo/bar/baz.ts']);
+test_to_path_parts('basic behavior', () => {
+	t.equal(to_path_parts('foo/bar/baz.ts'), ['foo', 'foo/bar', 'foo/bar/baz.ts']);
 });
 
-test_toPathParts('leading dot', () => {
-	t.equal(toPathParts('./foo/bar/baz.ts'), ['foo', 'foo/bar', 'foo/bar/baz.ts']);
+test_to_path_parts('leading dot', () => {
+	t.equal(to_path_parts('./foo/bar/baz.ts'), ['foo', 'foo/bar', 'foo/bar/baz.ts']);
 });
 
-test_toPathParts('leading slash', () => {
-	t.equal(toPathParts('/foo/bar/baz.ts'), ['/foo', '/foo/bar', '/foo/bar/baz.ts']);
+test_to_path_parts('leading slash', () => {
+	t.equal(to_path_parts('/foo/bar/baz.ts'), ['/foo', '/foo/bar', '/foo/bar/baz.ts']);
 });
 
-test_toPathParts('trailing slash', () => {
-	t.equal(toPathParts('foo/bar/baz/'), ['foo', 'foo/bar', 'foo/bar/baz']);
+test_to_path_parts('trailing slash', () => {
+	t.equal(to_path_parts('foo/bar/baz/'), ['foo', 'foo/bar', 'foo/bar/baz']);
 });
 
-test_toPathParts.run();
-/* /test_toPathParts */
+test_to_path_parts.run();
+/* /test_to_path_parts */
 
-/* test_toCommonBaseDir */
-const test_toCommonBaseDir = suite('toCommonBaseDir');
+/* test_to_common_base_dir */
+const test_to_common_base_dir = suite('to_common_base_dir');
 
-test_toCommonBaseDir('basic behavior', () => {
-	t.is(toCommonBaseDir(['a/b/c.ts', 'a/b/c/d.ts', 'a/b/c/e.ts', 'a/b/c/e/f']), 'a/b');
+test_to_common_base_dir('basic behavior', () => {
+	t.is(to_common_base_dir(['a/b/c.ts', 'a/b/c/d.ts', 'a/b/c/e.ts', 'a/b/c/e/f']), 'a/b');
 });
 
-test_toCommonBaseDir.run();
-/* /test_toCommonBaseDir */
+test_to_common_base_dir.run();
+/* /test_to_common_base_dir */

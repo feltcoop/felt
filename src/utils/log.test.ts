@@ -1,20 +1,20 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {Logger, LogLevel, LoggerState} from './log.js';
+import {Logger, Log_Level, Logger_State} from './log.js';
 
 /* test_Logger */
-interface TestLoggerContext {
-	loggedArgs: any;
-	loggerState: LoggerState;
+interface Test_Logger_Context {
+	logged_args: any;
+	logger_state: Logger_State;
 }
-const createTestLoggerContext = (): TestLoggerContext => {
-	const ctx: TestLoggerContext = {
-		loggedArgs: undefined, // stores the result of the latest log call
-		loggerState: {
-			level: LogLevel.Trace,
-			log: (...logArgs: any[]) => {
-				ctx.loggedArgs = logArgs;
+const create_test_logger_context = (): Test_Logger_Context => {
+	const ctx: Test_Logger_Context = {
+		logged_args: undefined, // stores the result of the latest log call
+		logger_state: {
+			level: Log_Level.Trace,
+			log: (...log_args: any[]) => {
+				ctx.logged_args = log_args;
 			},
 			error: {
 				prefixes: ['error_p1', 'error_p2'],
@@ -36,13 +36,13 @@ const createTestLoggerContext = (): TestLoggerContext => {
 	};
 	return ctx;
 };
-const test_Logger = suite('Logger', createTestLoggerContext());
+const test_Logger = suite('Logger', create_test_logger_context());
 
 test_Logger('prefixes and suffixes', (ctx) => {
-	const log = new Logger(['p1', 'p2'], ['s1', 's2'], ctx.loggerState);
+	const log = new Logger(['p1', 'p2'], ['s1', 's2'], ctx.logger_state);
 
 	log.error('foo', 36);
-	t.equal(ctx.loggedArgs, [
+	t.equal(ctx.logged_args, [
 		'error_p1',
 		'error_p2',
 		'p1',
@@ -54,10 +54,10 @@ test_Logger('prefixes and suffixes', (ctx) => {
 		'error_s1',
 		'error_s2',
 	]);
-	ctx.loggedArgs = undefined;
+	ctx.logged_args = undefined;
 
 	log.warn('foo', 36);
-	t.equal(ctx.loggedArgs, [
+	t.equal(ctx.logged_args, [
 		'warn_p1',
 		'warn_p2',
 		'p1',
@@ -69,10 +69,10 @@ test_Logger('prefixes and suffixes', (ctx) => {
 		'warn_s1',
 		'warn_s2',
 	]);
-	ctx.loggedArgs = undefined;
+	ctx.logged_args = undefined;
 
 	log.info('foo', 36);
-	t.equal(ctx.loggedArgs, [
+	t.equal(ctx.logged_args, [
 		'info_p1',
 		'info_p2',
 		'p1',
@@ -84,10 +84,10 @@ test_Logger('prefixes and suffixes', (ctx) => {
 		'info_s1',
 		'info_s2',
 	]);
-	ctx.loggedArgs = undefined;
+	ctx.logged_args = undefined;
 
 	log.trace('foo', 36);
-	t.equal(ctx.loggedArgs, [
+	t.equal(ctx.logged_args, [
 		'trace_p1',
 		'trace_p2',
 		'p1',
@@ -99,52 +99,52 @@ test_Logger('prefixes and suffixes', (ctx) => {
 		'trace_s1',
 		'trace_s2',
 	]);
-	ctx.loggedArgs = undefined;
+	ctx.logged_args = undefined;
 });
 
 test_Logger('mutate logger state to change prefix and suffix', (ctx) => {
 	const log = new Logger(undefined, undefined, {
-		...ctx.loggerState,
+		...ctx.logger_state,
 		info: {
 			prefixes: ['p1', 'p2'],
 			suffixes: ['s1', 's2'],
 		},
 	});
 	log.info('foo', 36);
-	t.equal(ctx.loggedArgs, ['p1', 'p2', 'foo', 36, 's1', 's2']);
-	ctx.loggedArgs = undefined;
+	t.equal(ctx.logged_args, ['p1', 'p2', 'foo', 36, 's1', 's2']);
+	ctx.logged_args = undefined;
 
 	// mutate the prefixes and suffixes
 	log.state.info.prefixes.pop();
 	log.state.info.suffixes.shift();
 
 	log.info('foo', 36);
-	t.equal(ctx.loggedArgs, ['p1', 'foo', 36, 's2']);
-	ctx.loggedArgs = undefined;
+	t.equal(ctx.logged_args, ['p1', 'foo', 36, 's2']);
+	ctx.logged_args = undefined;
 });
 
 test_Logger('mutate logger state to change log level', (ctx) => {
 	const state = {
-		...ctx.loggerState,
+		...ctx.logger_state,
 		info: {prefixes: [], suffixes: []},
 		warn: {prefixes: [], suffixes: []},
 	};
 	const log = new Logger(undefined, undefined, state);
 
 	log.info('foo');
-	t.equal(ctx.loggedArgs, ['foo']);
-	ctx.loggedArgs = undefined;
+	t.equal(ctx.logged_args, ['foo']);
+	ctx.logged_args = undefined;
 
-	state.level = LogLevel.Warn;
+	state.level = Log_Level.Warn;
 
 	// `info` should now be silenced
 	log.info('foo');
-	t.equal(ctx.loggedArgs, undefined);
+	t.equal(ctx.logged_args, undefined);
 
 	// `warn` is not silenced though
 	log.warn('foo');
-	t.equal(ctx.loggedArgs, ['foo']);
-	ctx.loggedArgs = undefined;
+	t.equal(ctx.logged_args, ['foo']);
+	ctx.logged_args = undefined;
 });
 
 test_Logger.run();

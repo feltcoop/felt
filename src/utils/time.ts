@@ -5,7 +5,7 @@ export interface Stopwatch {
 }
 
 // tracks elapsed time in milliseconds
-export const createStopwatch = (decimals = 2): Stopwatch => {
+export const create_stopwatch = (decimals = 2): Stopwatch => {
 	let start = process.hrtime.bigint();
 	return (reset = false) => {
 		const end = process.hrtime.bigint();
@@ -25,7 +25,7 @@ export class Timings<T extends string | number = string | number> {
 		if (!replace && this.stopwatches.has(key)) {
 			throw Error(`Timing key is already in use: ${key}`);
 		}
-		this.stopwatches.set(key, createStopwatch(decimals));
+		this.stopwatches.set(key, create_stopwatch(decimals));
 		this.timings.set(key, undefined!); // initializing to preserve order
 		return () => this._stop(key);
 	}

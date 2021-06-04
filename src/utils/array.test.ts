@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {last, toArray} from './array.js';
+import {last, to_array} from './array.js';
 
 /* test_last */
 const test_last = suite('last');
@@ -15,15 +15,15 @@ test_last('basic behavior', () => {
 test_last.run();
 /* /test_last */
 
-/* test_toArray */
-const test_toArray = suite('toArray');
+/* test_to_array */
+const test_to_array = suite('to_array');
 
-test_toArray('basic behavior', () => {
+test_to_array('basic behavior', () => {
 	const array = [1, 2, 3];
-	t.is(array, toArray(array));
-	t.equal([1], toArray(1));
-	t.equal([{a: 1}], toArray({a: 1}));
+	t.is(array, to_array(array));
+	t.equal([1], to_array(1));
+	t.equal([{a: 1}], to_array({a: 1}));
 });
 
-test_toArray.run();
-/* /test_toArray */
+test_to_array.run();
+/* /test_to_array */

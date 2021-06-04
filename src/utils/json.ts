@@ -1,14 +1,14 @@
 export type Json = string | number | boolean | null | {[prop: string]: Json} | Json[];
 
-export type JsonType = 'string' | 'number' | 'boolean' | 'null' | 'object' | 'array';
+export type Json_Type = 'string' | 'number' | 'boolean' | 'null' | 'object' | 'array';
 
-export const getJsonType = (value: Json): JsonType => {
-	const valueType = typeof value;
-	switch (valueType) {
+export const get_json_type = (value: Json): Json_Type => {
+	const value_type = typeof value;
+	switch (value_type) {
 		case 'string':
 		case 'number':
 		case 'boolean':
-			return valueType;
+			return value_type;
 		case 'object': {
 			if (value === null) {
 				return 'null';
@@ -20,7 +20,7 @@ export const getJsonType = (value: Json): JsonType => {
 		}
 		default: {
 			// "undefined" | "function" | "bigint" | "symbol"
-			throw Error(`Invalid json value type "${valueType}": ${value}`);
+			throw Error(`Invalid json value type "${value_type}": ${value}`);
 		}
 	}
 };
