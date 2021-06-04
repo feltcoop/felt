@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FeltHeart from '$lib/FeltHeart.svelte';
+	import Felt_Heart from '$lib/Felt_Heart.svelte';
 </script>
 
 <h1>@feltcoop/felt</h1>
@@ -9,7 +9,7 @@
 	<div class="learn">
 		<a href="https://www.felt.social/about">
 			<div>learn → about ← Felt</div>
-			<FeltHeart />
+			<Felt_Heart />
 		</a>
 	</div>
 </section>
