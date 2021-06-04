@@ -20,12 +20,12 @@
 	// TODO extract to `src/providers` or `src/services` or something?
 	type Service_Provider = 'SOCIAL_CO' | 'TRACKER_CO' | 'TRUSTED_CO';
 	interface Service_Provider_Data {
-		id: Service_Provider;
+		name: Service_Provider;
 	}
 	const providers: Record<Service_Provider, Service_Provider_Data> = {
-		SOCIAL_CO: {id: 'SOCIAL_CO'},
-		TRACKER_CO: {id: 'TRACKER_CO'},
-		TRUSTED_CO: {id: 'TRUSTED_CO'},
+		SOCIAL_CO: {name: 'SOCIAL_CO'},
+		TRACKER_CO: {name: 'TRACKER_CO'},
+		TRUSTED_CO: {name: 'TRUSTED_CO'},
 	};
 	const provider_list = Object.values(providers);
 	let selected_provider: Service_Provider_Data | null = null;
@@ -38,7 +38,7 @@
 	};
 	const signup_with = (provider: Service_Provider_Data) => {
 		console.log('signup_with name', provider, data);
-		switch (provider.id) {
+		switch (provider.name) {
 			case 'SOCIAL_CO': {
 				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
@@ -57,7 +57,7 @@
 				break;
 			}
 			default:
-				throw new UnreachableError(provider.id);
+				throw new UnreachableError(provider.name);
 		}
 	};
 
@@ -113,18 +113,18 @@
 		{/if}
 	</div>
 
-	{#each provider_list as provider (provider.id)}
+	{#each provider_list as provider (provider.name)}
 		<button
 			type="button"
 			on:click={() => signup_with(provider)}
 			disabled={!!selected_provider && selected_provider === provider}
 			class:selected={!!selected_provider && selected_provider === provider}
 		>
-			{#if provider.id === 'TRUSTED_CO'}
-				signup with {provider.id}
+			{#if provider.name === 'TRUSTED_CO'}
+				signup with {provider.name}
 			{:else}
 				<Markup>
-					signup with {provider.id}
+					signup with {provider.name}
 				</Markup>
 			{/if}
 		</button>
@@ -167,8 +167,8 @@
 				disabled={!enable_signup_button}
 				>call my phone<br />
 				to finish signup<br />with {selected_provider === providers.SOCIAL_CO
-					? providers.TRACKER_CO.id
-					: providers.SOCIAL_CO.id}
+					? providers.TRACKER_CO.name
+					: providers.SOCIAL_CO.name}
 			</button>
 		{/if}
 	{:else if selected_provider}
