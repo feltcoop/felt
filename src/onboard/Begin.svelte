@@ -7,13 +7,21 @@
 </script>
 
 <Markup>
-	<h1>Welcome to the Felt consentful systems onboarding sketch!</h1>
-	<p>This sketch is a proof of concept, side-by-side comparsion between two onboarding flows.</p>
-	<p>The left column uses dark patterns of design that create an unconsentful experience.</p>
-	<p>
-		The one on the right uses the consentful design framework laid out by
-		<a href="https://consentful.systems">consentful.systems</a>
-	</p>
+	<h1>
+		Welcome to the <a href="https://felt.dev">Felt.dev</a> consentful systems onboarding sketch!
+	</h1>
+	<p>This sketch is a proof of concept, side-by-side comparsion between two onboarding flows:</p>
+	<ul>
+		<li>
+			<p>The left column uses dark patterns of design that create an unconsentful experience.</p>
+		</li>
+		<li>
+			<p>
+				The one on the right uses the consentful design framework described by
+				<a href="https://consentful.systems">consentful.systems</a>
+			</p>
+		</li>
+	</ul>
 	<p>
 		The goal here is to compare and contrast the two design patterns & highlight effective patterns
 		of consent.
