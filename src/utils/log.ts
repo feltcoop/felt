@@ -148,7 +148,7 @@ export class Logger extends Dev_Logger {
 		super(prefixes, suffixes, state);
 	}
 
-	// These properties can be mutated at runtime (see `configureLog_Level`)
+	// These properties can be mutated at runtime (see `configure_log_level`)
 	// to affect all loggers instantiated with the default `state`.
 	// See the comment on `Logger_State` for more.
 	static level: Log_Level = DEFAULT_LOG_LEVEL;
@@ -190,7 +190,7 @@ export class System_Logger extends Dev_Logger {
 		super(prefixes, suffixes, state);
 	}
 
-	// These properties can be mutated at runtime (see `configureLog_Level`)
+	// These properties can be mutated at runtime (see `configure_log_level`)
 	// to affect all loggers instantiated with the default `state`.
 	// See the comment on `Logger_State` for more.
 	static level: Log_Level = DEFAULT_LOG_LEVEL;
@@ -213,7 +213,7 @@ export class System_Logger extends Dev_Logger {
 	};
 }
 
-export const configureLog_Level = (
+export const configure_log_level = (
 	level: Log_Level,
 	configure_main_logger = true,
 	configure_system_logger = true,

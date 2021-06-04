@@ -5,7 +5,7 @@
 	import Message from '$lib/Message.svelte';
 	import Markup from '$lib/Markup.svelte';
 
-	import {UnreachableError} from '../../utils/error';
+	import {Unreachable_Error} from '../../utils/error';
 
 	// TODO refactor to an xstate machine
 
@@ -57,7 +57,7 @@
 				break;
 			}
 			default:
-				throw new UnreachableError(provider.name);
+				throw new Unreachable_Error(provider.name);
 		}
 	};
 
