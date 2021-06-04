@@ -1,7 +1,9 @@
-<strong>TODO proper credits</strong>
+<h3>TODO proper credits</h3>
 <p>
-	This study is inspired by <a href="https://consentful.systems">consentful.systems</a> ✨
+	This sketch is inspired by
+	<a href="https://consentful.systems"> consentful.systems </a> ✨
 </p>
 <p>
-	permissive open source code at <a href="https://github.com/feltcoop/felt">github</a> 💚
+	Open source permissive code at
+	<a href="https://github.com/feltcoop/felt"> github.com/feltcoop/felt </a> 💚
 </p>
