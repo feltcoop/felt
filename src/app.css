@@ -128,7 +128,6 @@
 	--border_color: hsla(var(--tint_hue), var(--tint_saturation), 45%, var(--faded_md));
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
-	--border_active_color: var(--active_color);
 	--border_width_xxxl: 14px;
 	--border_width_xxl: var(--spacing_md);
 	--border_width_xl: var(--spacing_rg);

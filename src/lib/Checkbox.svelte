@@ -27,19 +27,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		/* TODO wait should this JUST set variables, and buttonlike uses them? yes! */
 		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
 		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
-	}
-	label:not(:hover):not(:active):not(:focus) {
-		/* feels a bit hacky - removes `buttonlike` styling */
-		outline-color: transparent;
+		--outline_color: transparent;
 	}
 	.selected {
 		border-color: var(--selected_color);
 	}
+	.selected:focus {
+		--outline_color: var(--selected_color);
+	}
 	.selected:active {
-		border-color: var(--border_active_color);
+		border-color: var(--active_color);
+		--outline_color: var(--active_color);
 	}
 	.content {
 		width: var(--column_width);
