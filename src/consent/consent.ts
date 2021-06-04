@@ -27,7 +27,7 @@ export const consent_principle_types: Consent_Principle_Type[] = [
 
 export interface Consent_Principle {
 	type: Consent_Principle_Type;
-	description: string; // TODO licensing/copyright/etc
+	description: string;
 }
 
 export const consent_principles_data: Consent_Principle[] = [
