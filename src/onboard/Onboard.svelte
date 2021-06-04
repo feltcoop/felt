@@ -51,6 +51,7 @@
 	header {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		padding: var(--spacing_sm);
 	}
 	.content {
