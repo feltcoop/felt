@@ -58,6 +58,7 @@
 	--selected_saturation: var(--blue_saturation);
 	--selected_lightness: var(--blue_lightness);
 	--selected_alpha: var(--alpha); /* TODO maybe add a base alpha/transparency var? */
+	/* --selected_text_decoration: underline; */
 	--selected_color: hsla(
 		var(--selected_hue),
 		var(--selected_saturation),
@@ -79,17 +80,11 @@
 	--link_hue: var(--blue_hue);
 	--link_saturation: 61%;
 	--link_lightness: 35%;
-	--link_alpha: 1;
-	--link_color: hsla(
-		var(--link_hue),
-		var(--link_saturation),
-		var(--link_lightness),
-		var(--link_alpha)
-	);
+	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
 	--link_accent_text_decoration: underline;
 	--link_font_weight: var(--font_weight_4);
-	/* --selected_text_decoration: underline; */
+	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
 	--text_lighter_color: hsl(0, 10%, 62%);
