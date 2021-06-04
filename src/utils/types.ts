@@ -1,6 +1,6 @@
 /*
 
-These are convenient global types that can be used in both Gro and user code.
+These are convenient global types that can be used in both Felt and user code.
 It probably makes more sense to give this file a `.d.ts` extension,
 but that complicates the build because TypeScript does not output them.
 

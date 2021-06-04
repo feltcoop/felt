@@ -22,7 +22,7 @@ export const DEFAULT_LOG_LEVEL = ENV_LOG_LEVEL ?? LogLevel.Trace;
 
 `Logger` uses a special pattern
 to achieve a good mix of convenience and flexibility
-both for Gro and user code.
+both for Felt and user code.
 It uses late binding to allow runtime mutations
 and it accepts a `LoggerState` argument for custom behavior.
 Though the code is more verbose and slower as a result,
@@ -49,7 +49,7 @@ the data management layer.
 
 Logging in and around tests is a motivating use case for this design.
 See the usage of `TestLogger` in the test framework code for more.
-Scratch that: that code is gone now after we replaced Gro's `oki` with `uvu`.
+Scratch that: that code is gone now after we replaced Felt's `oki` with `uvu`.
 How should we integrate the test logger with `uvu`? 
 TODO !
 
@@ -174,8 +174,8 @@ export class Logger extends DevLogger {
 /*
 
 The `SystemLogger` is distinct from the `Logger`
-to cleanly separate Gro's logging from user logging, decoupling their log levels.
-Gro internally uses `SystemLogger`, not `Logger` directly.
+to cleanly separate Felt's logging from user logging, decoupling their log levels.
+Felt internally uses `SystemLogger`, not `Logger` directly.
 This allows user code to simply import and use `Logger`.
 `SystemLogger` is still made available to user code,
 and users can always extend `Logger` with their own custom versions.
