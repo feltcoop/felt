@@ -4,7 +4,6 @@
 	import {principles} from '../consent/consent';
 	import type {Consent_Principle_Type} from '../consent/consent';
 	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
-
 	import {onboard_machine} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
@@ -60,6 +59,7 @@
 	header {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		padding: var(--spacing_sm);
 	}
 	.content {

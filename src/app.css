@@ -1,41 +1,115 @@
 /* TODO some is haphazard & inconsistent */
 :root {
+	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
-	--nav_height: 32px;
-	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
-	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
-	--green_hue: 120;
+	--alpha: 0.89;
+	--bg: #fff;
 	--blue_hue: 210;
-	--bg_color: #fff;
-	--blue_color: hsl(var(--blue_hue), 50%, 50%);
-	--green_color: hsl(var(--green_hue), 45%, 55%);
-	--orange_color: hsl(var(--orange_hue), 55%, 50%);
-	--red_color: hsl(var(--red_hue), 50%, 50%);
-	--green_text_color: hsl(var(--green_hue), 40%, 40%);
-	--blue_light_alpha_color: hsla(var(--blue_hue), 70%, 80%, 0.5);
+	--blue_saturation: 50%;
+	--blue_lightness: 50%;
+	--blue_alpha: var(--alpha);
+	--blue: hsla(var(--blue_hue), var(--blue_saturation), var(--blue_lightness), var(--blue_alpha));
+	--green_hue: 120;
+	--green_saturation: 45%;
+	--green_lightness: 55%;
+	--green_alpha: var(--alpha);
+	--green: hsla(
+		var(--green_hue),
+		var(--green_saturation),
+		var(--green_lightness),
+		var(--green_alpha)
+	);
+	--violet_hue: 260;
+	--violet_saturation: 50%;
+	--violet_lightness: 50%;
+	--violet_alpha: var(--alpha);
+	--violet: hsla(
+		var(--violet_hue),
+		var(--violet_saturation),
+		var(--violet_lightness),
+		var(--violet_alpha)
+	);
+	--orange_hue: 24; /* TODO this is too "red", but not sure which direction to go */
+	--orange_saturation: 55%;
+	--orange_lightness: 50%;
+	--orange_alpha: var(--alpha);
+	--orange: hsla(
+		var(--orange_hue),
+		var(--orange_saturation),
+		var(--orange_lightness),
+		var(--orange_alpha)
+	);
+	--red_hue: 0; /* TODO this is too "red", but not sure which direction to go */
+	--red_saturation: 50%;
+	--red_lightness: 50%;
+	--red_alpha: var(--alpha);
+	--red: hsla(var(--red_hue), var(--red_saturation), var(--red_lightness), var(--red_alpha));
 	--tint_hue: var(--orange_hue);
 	--tint_saturation: 11%;
-	--plain_color: hsl(var(--tint_hue), var(--tint_saturation), 80%);
-	--interactive_color: hsl(var(--tint_hue), var(--tint_saturation), 87%);
-	--interactive_hover_color: hsl(var(--tint_hue), var(--tint_saturation), 93%);
-	--interactive_disabled_color: hsl(var(--tint_hue), var(--tint_saturation), 95%);
-	--interactive_active_color: hsl(var(--tint_hue), var(--tint_saturation), 100%);
-	--font_weight_dk: 900;
-	--font_weight_md: 700;
-	--font_weight_rg: 500;
-	--font_weight_lt: 300;
-	--font_weight_xlt: 100;
-	--selected_color: var(--blue_color);
-	--active_color: var(--green_color);
-	--help_color: var(--green_color);
-	--error_color: var(--red_color);
-	--link_color_hue: var(--blue_hue);
-	--link_color: hsl(var(--link_color_hue), 61%, 35%);
+	--tint_lightness1: 80%;
+	--tint_lightness2: 87%;
+	--tint_lightness3: 93%;
+	--tint_lightness4: 95%;
+	--tint_lightness5: 100%;
+	--tint_dark_lightness: 45%;
+	--tint_alpha: 1;
+	--tint: hsla(var(--tint_hue), var(--tint_saturation), var(--tint_lightness1), var(--tint_alpha));
+	--interactive_color: hsla(
+		var(--tint_hue),
+		var(--tint_saturation),
+		var(--tint_lightness2),
+		var(--alpha)
+	);
+	--interactive_hover_color: hsla(
+		var(--tint_hue),
+		var(--tint_saturation),
+		var(--tint_lightness3),
+		var(--alpha)
+	);
+	--interactive_disabled_color: hsla(
+		var(--tint_hue),
+		var(--tint_saturation),
+		var(--tint_lightness4),
+		var(--alpha)
+	);
+	--interactive_active_color: hsla(
+		var(--tint_hue),
+		var(--tint_saturation),
+		var(--tint_lightness5),
+		var(--alpha)
+	);
+	--selected_hue: var(--blue_hue);
+	--selected_saturation: var(--blue_saturation);
+	--selected_lightness: var(--blue_lightness);
+	--selected_alpha: var(--alpha); /* TODO maybe add a base alpha/transparency var? */
+	/* --selected_text_decoration: underline; */
+	--selected_color: hsla(
+		var(--selected_hue),
+		var(--selected_saturation),
+		var(--selected_lightness),
+		var(--selected_alpha)
+	);
+	--selected_light_bg_saturation: 70%;
+	--selected_light_bg_lightness: 80%;
+	--selected_light_bg_alpha: 0.5;
+	--selected_light_bg: hsla(
+		var(--selected_hue),
+		var(--selected_light_bg_saturation),
+		var(--selected_light_bg_lightness),
+		var(--selected_light_bg_alpha)
+	);
+	--active_color: var(--green);
+	--help_color: var(--green);
+	--error_color: var(--red);
+	--link_hue: var(--blue_hue);
+	--link_saturation: 61%;
+	--link_lightness: 35%;
+	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
 	--link_accent_text_decoration: underline;
-	--link_font_weight: var(--font_weight_md);
-	/* --selected_text_decoration: underline; */
+	--link_font_weight: var(--font_weight_4);
+	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
 	--text_lighter_color: hsl(0, 10%, 62%);
@@ -49,6 +123,11 @@
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
 	--font_size_rg: 16px;
+	--font_weight_5: 900;
+	--font_weight_4: 700;
+	--font_weight_3: 500;
+	--font_weight_2: 300;
+	--font_weight_1: 100;
 	--spacing_xxxxxl: 128px;
 	--spacing_xxxxl: 96px;
 	--spacing_xxxl: 64px;
@@ -62,6 +141,8 @@
 	--spacing_xxs: 2px;
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
+	--nav_height: var(--spacing_xl);
+	--avatar_height: var(--spacing_xxl);
 	--input_height: var(--spacing_xxl);
 	--input_width_max: 400px;
 	--input_width_min: 100px;
@@ -69,10 +150,14 @@
 	--faded_md: 38%;
 	--faded_sm: 24%;
 	--faded_xs: 15%;
-	--border_color: hsla(var(--tint_hue), var(--tint_saturation), 45%, var(--faded_md));
+	--border_color: hsla(
+		var(--tint_hue),
+		var(--tint_saturation),
+		var(--tint_dark_lightness),
+		var(--faded_md)
+	);
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
-	--border_active_color: var(--active_color);
 	--border_width_xxxl: 14px;
 	--border_width_xxl: var(--spacing_md);
 	--border_width_xl: var(--spacing_rg);
@@ -85,7 +170,7 @@
 	--border_accent_style: double;
 	--border_accent2_style: dotted;
 	--border_accent3_style: dashed;
-	--border: var(--border_width_rg) var(--border_style) var(--plain_color);
+	--border: var(--border_width_rg) var(--border_style) var(--tint);
 	--outline_width: var(--spacing_md);
 	--outline_width2: calc(var(--outline_width) + 2px);
 	--outline_style: var(--border_accent_style);
@@ -94,7 +179,7 @@
 	--button_border_style: double;
 	--button_border_selected_style: solid;
 	--button_border_disabled_style: dashed;
-	--button_font_weight: var(--font_weight_md);
+	--button_font_weight: var(--font_weight_4);
 	--button_text_color: var(--text_light_color);
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
@@ -110,20 +195,20 @@
 html,
 body {
 	height: 100%;
-	background-color: var(--bg_color);
+	background-color: var(--bg);
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
 	line-height: var(--line_height);
 }
 
 ::selection {
-	background: var(--blue_light_alpha_color);
+	background: var(--selected_light_bg);
 }
 
 #svelte {
@@ -167,7 +252,7 @@ li {
 h1,
 h2,
 h3 {
-	font-weight: var(--font_weight_lt);
+	font-weight: var(--font_weight_2);
 }
 
 form {
@@ -338,6 +423,7 @@ button:focus:not(:disabled) {
 	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
+
 input[type='checkbox']:focus,
 input[type='checkbox']:focus:not(:disabled) {
 	--outline_style: var(--border_accent2_style);
@@ -357,6 +443,11 @@ button:active:not(:disabled) {
 	z-index: 3;
 	--outline_width: calc(var(--spacing_md) + 2px);
 	--outline_color: var(--active_color);
+}
+.buttonlike:active:not(:disabled) button,
+button:active:not(:disabled) {
+	/* I don't love the inconsistency, but this is better */
+	--outline_color: var(--selected_color);
 }
 
 input[type='checkbox']:active:not(:disabled) {
@@ -390,7 +481,7 @@ nav a {
 
 blockquote {
 	padding: var(--spacing_lg);
-	border-left: var(--spacing_sm) solid var(--plain_color);
+	border-left: var(--spacing_sm) solid var(--tint);
 	color: var(--text_light_color);
 }
 

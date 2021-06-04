@@ -1,19 +1,19 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {createStopwatch, Timings} from './time.js';
+import {create_stopwatch, Timings} from './time.js';
 
-/* test_createStopwatch */
-const test_createStopwatch = suite('createStopwatch');
+/* test_create_stopwatch */
+const test_create_stopwatch = suite('create_stopwatch');
 
-test_createStopwatch('basic behavior', () => {
-	const stopwatch = createStopwatch(4);
+test_create_stopwatch('basic behavior', () => {
+	const stopwatch = create_stopwatch(4);
 	const elapsed = stopwatch();
 	t.ok(elapsed.toString().split('.')[1].length <= 4);
 });
 
-test_createStopwatch.run();
-/* /test_createStopwatch */
+test_create_stopwatch.run();
+/* /test_create_stopwatch */
 
 /* test_Timings */
 const test_Timings = suite('Timings');
@@ -40,26 +40,26 @@ test_Timings('start and stop', () => {
 
 test_Timings('start with stop callback', () => {
 	const timings = new Timings<'foo'>(4);
-	const timingToFoo = timings.start('foo');
-	const elapsed = timingToFoo();
+	const timing = timings.start('foo');
+	const elapsed = timing();
 	t.ok(elapsed.toString().split('.')[1].length <= 4);
-	t.throws(() => timingToFoo());
-	t.throws(() => timingToFoo());
+	t.throws(() => timing());
+	t.throws(() => timing());
 	t.is(elapsed, timings.get('foo'));
 });
 
 test_Timings('merge timings', () => {
 	const a = new Timings(10);
 	const b = new Timings(10);
-	const timingA = a.start('test');
-	const aTiming = timingA();
-	t.ok(aTiming);
-	const timingB = b.start('test');
-	const bTiming = timingB();
-	t.ok(bTiming);
+	const timing_a = a.start('test');
+	const a_timing = timing_a();
+	t.ok(a_timing);
+	const timing_b = b.start('test');
+	const b_timing = timing_b();
+	t.ok(b_timing);
 	a.merge(b);
-	t.is(a.get('test'), aTiming + bTiming);
-	t.is(b.get('test'), bTiming);
+	t.is(a.get('test'), a_timing + b_timing);
+	t.is(b.get('test'), b_timing);
 });
 
 test_Timings.run();

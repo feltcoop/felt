@@ -13,7 +13,7 @@
 	</blockquote>
 	<p>
 		Just checking, you accept all of that stuff, right? Our lawyers are making us ask, you know how
-		lawyers are. 🙄
+		lawyers are 🙄
 	</p>
 	<button on:click={() => done()} />
 </Markup>

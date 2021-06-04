@@ -14,6 +14,6 @@
 		>
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
-	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨✨</blockquote>
+	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨</blockquote>
 	<button on:click={() => done()}>yes I understand →</button>
 </Markup>

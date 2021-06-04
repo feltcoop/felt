@@ -2,9 +2,9 @@ import {red, yellow, green, cyan, blue, magenta} from 'kleur/colors';
 
 export * from 'kleur/colors';
 
-const rainbowColors = [red, yellow, green, cyan, blue, magenta];
+const rainbow_colors = [red, yellow, green, cyan, blue, magenta];
 
 export const rainbow = (str: string): string =>
 	Array.from(str)
-		.map((char, i) => rainbowColors[i % rainbowColors.length](char))
+		.map((char, i) => rainbow_colors[i % rainbow_colors.length](char))
 		.join('');

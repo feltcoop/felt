@@ -3,22 +3,22 @@ import {lazy} from './function.js';
 
 // TODO validation?
 
-interface ToEnvString {
+interface To_Env_String {
 	(key: string): string | undefined;
 	(key: string, fallback: string | Lazy<string>): string;
 }
 
-export const toEnvString: ToEnvString = (key: string, fallback?: string | Lazy<string>) => {
+export const to_env_string: To_Env_String = (key: string, fallback?: string | Lazy<string>) => {
 	const value = process.env[key];
 	return typeof value === 'string' ? value : lazy(fallback)!;
 };
 
-interface ToEnvNumber {
+interface To_Env_Number {
 	(key: string): number | undefined;
 	(key: string, fallback: number | Lazy<number>): number;
 }
 
-export const toEnvNumber: ToEnvNumber = (key: string, fallback?: number | Lazy<number>) => {
+export const to_env_number: To_Env_Number = (key: string, fallback?: number | Lazy<number>) => {
 	const value = parseInt(process.env[key] || '', 10);
 	return Number.isNaN(value) ? lazy(fallback)! : value;
 };

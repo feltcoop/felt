@@ -11,4 +11,4 @@
 
 <h2>{principle.type}</h2>
 —
-{principle.title}
+{principle.name}

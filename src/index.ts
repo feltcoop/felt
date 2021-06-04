@@ -9,23 +9,22 @@ export * from './utils/types.js';
 // for now we're preferring deep imports to specific modules -
 // these are Gro's old exports:
 // // utils
-// export type {AsyncStatus} from './utils/async.js';
+// export type {Async_Status} from './utils/async.js';
 // export {wait, wrap} from './utils/async.js';
-// export type {SpawnedProcess, SpawnResult} from './utils/process.js';
+// export type {Spawned_Process, Spawn_Result} from './utils/process.js';
 // export type {Lazy} from './utils/function.js';
-// export type {ErrorClass} from './utils/error.js';
-// export {UnreachableError} from './utils/error.js';
-// export {last, toArray, EMPTY_ARRAY} from './utils/array.js';
-// export type {Log, LoggerState} from './utils/log.js';
+// export {Unreachable_Error} from './utils/error.js';
+// export {last, to_array, EMPTY_ARRAY} from './utils/array.js';
+// export type {Log, Logger_State} from './utils/log.js';
 // export {
-// 	LogLevel,
+// 	Log_Level,
 // 	Logger,
-// 	SystemLogger,
-// 	DevLogger,
+// 	System_Logger,
+// 	Dev_Logger,
 // 	ENV_LOG_LEVEL,
 // 	DEFAULT_LOG_LEVEL,
-// 	configureLogLevel,
-// 	printLogLabel,
+// 	configure_log_level,
+// 	print_log_label,
 // } from './utils/log.js';
-// export {Timings, createStopwatch} from './utils/time.js';
+// export {Timings, create_stopwatch} from './utils/time.js';
 // export type {Stopwatch} from './utils/time.js';

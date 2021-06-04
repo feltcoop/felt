@@ -5,3 +5,5 @@
 	export let done: () => void;
 	export let back: () => void;
 </script>
+
+<button on:click={() => back()}>←</button>

@@ -1,14 +1,14 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {createLock} from './lock.js';
+import {create_lock} from './lock.js';
 
-/* test_createLock */
-const test_createLock = suite('createLock');
+/* test_create_lock */
+const test_create_lock = suite('create_lock');
 
-test_createLock('basic behavior', () => {
-	const lock = createLock();
-	const runLifecycle = (key: any) => {
+test_create_lock('basic behavior', () => {
+	const lock = create_lock();
+	const run_lifecycle = (key: any) => {
 		t.not.ok(lock.has(key));
 		t.not.ok(lock.unlock(key));
 		t.is(lock.peek(), null);
@@ -26,12 +26,12 @@ test_createLock('basic behavior', () => {
 	};
 	const key1 = {};
 	// lock lifecycle
-	runLifecycle(key1);
+	run_lifecycle(key1);
 	// lock lifecycle again
-	runLifecycle(key1);
+	run_lifecycle(key1);
 	// lock lifecycle again with a new key
-	runLifecycle({});
+	run_lifecycle({});
 });
 
-test_createLock.run();
-/* /test_createLock */
+test_create_lock.run();
+/* /test_create_lock */

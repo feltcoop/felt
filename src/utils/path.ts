@@ -1,21 +1,21 @@
 import {extname, basename, dirname} from 'path';
 
-export const stripTrailingSlash = (p: string): string =>
+export const strip_trailing_slash = (p: string): string =>
 	p[p.length - 1] === '/' ? p.substring(0, p.length - 1) : p;
 
-// Note this treats `foo.d.ts` as `.ts` - compound extensions should use `stripEnd`
-export const replaceExtension = (path: string, newExtension: string): string => {
+// Note this treats `foo.d.ts` as `.ts` - compound extensions should use `strip_end`
+export const replace_extension = (path: string, newExtension: string): string => {
 	const {length} = extname(path);
 	return (length === 0 ? path : path.substring(0, path.length - length)) + newExtension;
 };
 
 // Gets the stem of a path, the "b" of "/a/b.c".
-export const toPathStem = (path: string): string => replaceExtension(basename(path), '');
+export const to_path_stem = (path: string): string => replace_extension(basename(path), '');
 
 // Designed for the `cheap-watch` API.
-// toPathParts('./foo/bar/baz.ts') => ['foo', 'foo/bar', 'foo/bar/baz.ts']
-export const toPathParts = (path: string): string[] => {
-	const segments = toPathSegments(path);
+// to_path_parts('./foo/bar/baz.ts') => ['foo', 'foo/bar', 'foo/bar/baz.ts']
+export const to_path_parts = (path: string): string[] => {
+	const segments = to_path_segments(path);
 	let currentPath = path[0] === '/' ? '/' : '';
 	return segments.map((segment) => {
 		if (currentPath && currentPath !== '/') {
@@ -27,14 +27,14 @@ export const toPathParts = (path: string): string[] => {
 };
 
 // Gets the individual parts of a path, ignoring dots and separators.
-// toPathSegments('/foo/bar/baz.ts') => ['foo', 'bar', 'baz.ts']
-export const toPathSegments = (path: string): string[] =>
+// to_path_segments('/foo/bar/baz.ts') => ['foo', 'bar', 'baz.ts']
+export const to_path_segments = (path: string): string[] =>
 	path.split('/').filter((s) => s && s !== '.' && s !== '..');
 
 // Note that this operates on file paths, not directories.
 // It will strip the basename of any directories, which seems surprising.
 // The algorithm will be really slow for any big large array sizes. Don't do that.
-export const toCommonBaseDir = (filePaths: string[]): string => {
+export const to_common_base_dir = (filePaths: string[]): string => {
 	const dirs = filePaths.map((p) => dirname(p));
 	if (dirs.length === 1) return dirs[0];
 	const longest = [dirs[0]];

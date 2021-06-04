@@ -1,8 +1,13 @@
 # changelog
 
+## 0.2.0
+
+- **break**: convert to snake_case from camelCase
+  ([#50](https://github.com/feltcoop/felt/pull/50))
+
 ## 0.1.5
 
-- add first pass at onboarding study
+- add first pass at onboarding sketch
   ([#32](https://github.com/feltcoop/felt/pull/32))
 
 ## 0.1.4

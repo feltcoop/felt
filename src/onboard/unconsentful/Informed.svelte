@@ -49,4 +49,4 @@
 	</Markup>
 </button>
 
-<Help_Message text="This is legally binding but do not worry about it. :-)" />
+<Help_Message text="This is legally binding but do not worry about it :-)" />

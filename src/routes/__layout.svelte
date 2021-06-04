@@ -1,6 +1,17 @@
 <script>
+	import {page} from '$app/stores';
+
 	import '../app.css';
 	import Nav from '$lib/Nav.svelte';
+	import {provide_devmode} from '$lib/devmode';
+	import Devmode from '$lib/Devmode.svelte';
+
+	$: path = $page.path;
+
+	const devmode = provide_devmode(false);
+	$: if (path === '/onboard') {
+		$devmode = true;
+	}
 </script>
 
 <svelte:head>
@@ -11,6 +22,7 @@
 <main>
 	<slot />
 </main>
+<Devmode {devmode} />
 
 <style>
 	#nav {
