@@ -29,7 +29,8 @@
 		justify-content: center;
 		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
 		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
-		--outline_color: transparent;
+		--outline_style: var(--border_accent3_style);
+		--outline_width: var(--border_width_sm);
 	}
 	.selected {
 		/* TODO vars */
