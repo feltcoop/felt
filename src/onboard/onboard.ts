@@ -2,14 +2,13 @@ import {createMachine as create_machine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 import type {SvelteComponent} from 'svelte';
 
-import Consentful_Begin from './consentful/Begin.svelte';
+import Begin from './Begin.svelte';
 import Consentful_Voluntary from './consentful/Voluntary.svelte';
 import Consentful_Informed from './consentful/Informed.svelte';
 import Consentful_Revertible from './consentful/Revertible.svelte';
 import Consentful_Specific from './consentful/Specific.svelte';
 import Consentful_Unburdensome from './consentful/Unburdensome.svelte';
 import Consentful_End from './consentful/End.svelte';
-import Unconsentful_Begin from './unconsentful/Begin.svelte';
 import Unconsentful_Voluntary from './unconsentful/Voluntary.svelte';
 import Unconsentful_Informed from './unconsentful/Informed.svelte';
 import Unconsentful_Revertible from './unconsentful/Revertible.svelte';
@@ -80,7 +79,7 @@ export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboa
 	consentful: {
 		begin: {
 			id: 'begin',
-			component: Consentful_Begin,
+			component: Begin,
 		},
 		voluntary: {
 			id: 'voluntary',
@@ -110,7 +109,7 @@ export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboa
 	unconsentful: {
 		begin: {
 			id: 'begin',
-			component: Unconsentful_Begin,
+			component: Begin,
 		},
 		voluntary: {
 			id: 'voluntary',

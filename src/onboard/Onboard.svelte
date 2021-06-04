@@ -7,6 +7,7 @@
 
 	import {onboard_machine} from './onboard';
 	import Nav from './Nav.svelte';
+	import Begin from './Begin.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
 	import Onboard_State from './Onboard_State.svelte';
 
@@ -37,12 +38,16 @@
 		<!-- TODO add a dev mode or smth <section>
 			<Machine_State {state} />
 		</section> -->
-		<section class="column">
-			<Onboard_State consent_type="unconsentful" {state} {send} />
-		</section>
-		<section class="column">
-			<Onboard_State consent_type="consentful" {state} {send} />
-		</section>
+		{#if $state.value === 'begin'}
+			<Begin {send} />
+		{:else}
+			<section class="column">
+				<Onboard_State consent_type="unconsentful" {state} {send} />
+			</section>
+			<section class="column">
+				<Onboard_State consent_type="consentful" {state} {send} />
+			</section>
+		{/if}
 	</div>
 </div>
 
