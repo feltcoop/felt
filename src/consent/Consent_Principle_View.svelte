@@ -10,5 +10,5 @@
 </script>
 
 <h2>{principle.type}</h2>
-—
-{principle.name}
+:
+{principle.description}
