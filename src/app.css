@@ -54,11 +54,6 @@
 	--interactive_hover_color: hsla(var(--tint_hue), var(--tint_saturation), 93%, var(--alpha));
 	--interactive_disabled_color: hsla(var(--tint_hue), var(--tint_saturation), 95%, var(--alpha));
 	--interactive_active_color: hsla(var(--tint_hue), var(--tint_saturation), 100%, var(--alpha));
-	--font_weight_dk: 900;
-	--font_weight_md: 700;
-	--font_weight_rg: 500;
-	--font_weight_lt: 300;
-	--font_weight_xlt: 100;
 	--selected_hue: var(--blue_hue);
 	--selected_saturation: var(--blue_saturation);
 	--selected_lightness: var(--blue_lightness);
@@ -93,7 +88,7 @@
 	);
 	--link_text_decoration: none;
 	--link_accent_text_decoration: underline;
-	--link_font_weight: var(--font_weight_md);
+	--link_font_weight: var(--font_weight_4);
 	/* --selected_text_decoration: underline; */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
@@ -108,6 +103,11 @@
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
 	--font_size_rg: 16px;
+	--font_weight_5: 900;
+	--font_weight_4: 700;
+	--font_weight_3: 500;
+	--font_weight_2: 300;
+	--font_weight_1: 100;
 	--spacing_xxxxxl: 128px;
 	--spacing_xxxxl: 96px;
 	--spacing_xxxl: 64px;
@@ -122,6 +122,7 @@
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
 	--nav_height: var(--spacing_xl);
+	--avatar_height: var(--spacing_xxl);
 	--input_height: var(--spacing_xxl);
 	--input_width_max: 400px;
 	--input_width_min: 100px;
@@ -154,7 +155,7 @@
 	--button_border_style: double;
 	--button_border_selected_style: solid;
 	--button_border_disabled_style: dashed;
-	--button_font_weight: var(--font_weight_md);
+	--button_font_weight: var(--font_weight_4);
 	--button_text_color: var(--text_light_color);
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
@@ -227,7 +228,7 @@ li {
 h1,
 h2,
 h3 {
-	font-weight: var(--font_weight_lt);
+	font-weight: var(--font_weight_2);
 }
 
 form {

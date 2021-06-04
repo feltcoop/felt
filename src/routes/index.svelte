@@ -41,10 +41,10 @@
 	}
 	a {
 		font-size: var(--font_size_lg);
-		font-weight: var(--font_weight_lt);
+		font-weight: var(--font_weight_2);
 	}
 	.links {
 		font-size: var(--font_size_lg);
-		font-weight: var(--font_weight_lt);
+		font-weight: var(--font_weight_2);
 	}
 </style>
