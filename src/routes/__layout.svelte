@@ -9,7 +9,9 @@
 	$: path = $page.path;
 
 	const devmode = provide_devmode(false);
-	$: if (path === '/onboard') $devmode = true;
+	$: if (path === '/onboard') {
+		$devmode = true;
+	}
 </script>
 
 <svelte:head>
