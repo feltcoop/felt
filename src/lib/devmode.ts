@@ -6,8 +6,8 @@ const KEY = {};
 
 export const use_devmode = (): Writable<boolean> => getContext(KEY);
 
-export const provide_devmode = (value: boolean = false): Writable<boolean> => {
-	const store = writable(value);
+export const provide_devmode = (value: boolean | Writable<boolean> = false): Writable<boolean> => {
+	const store = typeof value === 'boolean' ? writable(value) : value;
 	setContext(KEY, store);
 	return store;
 };
