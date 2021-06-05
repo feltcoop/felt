@@ -22,7 +22,7 @@
 		<p>
 			Here's <a href="/deal">a link to the documents</a> for the future, and you can always find
 			help in your <a href="/account">account settings</a>
-			<button class="inline" on:click={() => done()}>got it →</button>
+			<button class="inline" on:click={() => done()}> got it → </button>
 		</p>
 	{/if}
 </Markup>
