@@ -13,7 +13,7 @@
 	<p>This sketch is a proof of concept, side-by-side comparsion between two onboarding flows:</p>
 	<ul>
 		<li>
-			<p>The left column uses dark patterns of design that create an unconsentful experience.</p>
+			<p>The left column uses dark design patterns that create an unconsentful experience.</p>
 		</li>
 		<li>
 			<p>
