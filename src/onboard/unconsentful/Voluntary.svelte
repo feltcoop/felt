@@ -43,12 +43,14 @@
 				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's get you social with ${selected_provider.name}`;
+				phone_number_el.focus();
 				break;
 			}
 			case 'SOCIAL_CO': {
 				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's get you tracked with ${selected_provider.name}`;
+				phone_number_el.focus();
 				break;
 			}
 			case 'TRUSTED_CO': {
