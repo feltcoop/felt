@@ -22,10 +22,10 @@
 		right: 0;
 		top: 0;
 	}
-	button:after {
+	button::after {
 		content: 'devmode';
 	}
-	button:hover:after {
+	button:hover::after {
 		content: '✕ devmode';
 	}
 </style>
