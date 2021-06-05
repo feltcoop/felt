@@ -17,7 +17,7 @@
 	</p>
 	<button on:click={() => back()}>← go back and learn</button>
 	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨</blockquote>
-	<button on:click={() => (understood = true)} disabled={understood}>yes I understand →</button>
+	<button on:click={() => (understood = true)} disabled={understood}> yes I understand → </button>
 	{#if understood}
 		<p>
 			Here's <a href="/deal">a link to the documents</a> for the future, and you can always find
