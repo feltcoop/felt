@@ -57,7 +57,7 @@
 		{#if principle}
 			<Consent_Principle_View {principle} />
 		{:else}
-			<h2>/sketches/onboard</h2>
+			<h2>/<a href="sketch">sketch</a>/<a href="sketch/onboard">onboard</a></h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />
