@@ -57,10 +57,12 @@
 		align-items: center;
 	}
 	a {
+		z-index: 1;
 		padding-right: var(--spacing_sm);
 		padding-left: var(--spacing_sm);
 	}
 	.separator {
+		z-index: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
