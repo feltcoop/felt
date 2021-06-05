@@ -2,26 +2,58 @@
 	export let path: string;
 
 	// TODO
-	const to_parts = (path: string): string => path.split('/');
+	const to_parts = (path: string): string[] => path.split('/').filter(Boolean);
 
-	type Segment_Type = 'space' | 'spacer';
-	interface Segment {
-		type: Segment_Type;
-		content: string;
-	}
+	type Segment =
+		| {
+				type: 'space';
+				name: string;
+		  }
+		| {
+				type: 'spacer';
+		  };
 	const segments_cache = new Map<string, Segment[]>();
 	const to_segments = (path: string): Segment[] => {
 		// TODO normalize path?
 		if (segments_cache.has(path)) return segments_cache.get(path)!;
 		// ..
 		let segments: Segment[] = [];
-		for (const part of to_parts(path)) {
+		const parts = to_parts(path);
+		const last_part = parts[parts.length - 1];
+		for (const part of parts) {
+			segments.push({type: 'space', name: part});
+			if (part !== last_part) segments.push({type: 'spacer'});
 		}
+		return segments;
 	};
 
 	$: segments = to_segments(path);
 </script>
 
-{#each segments as segment (segment)}
-	<a href="segment">{segment}</a>
-{/each}
+<div>
+	{#each segments as segment}
+		{#if segment.type === 'space'}
+			<a href="segment">{segment.name}</a>
+		{:else}
+			<span>/</span>
+		{/if}
+	{/each}
+</div>
+
+<style>
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	a {
+		padding-right: var(--spacing_sm);
+		padding-left: var(--spacing_sm);
+	}
+	span {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 0;
+	}
+</style>
