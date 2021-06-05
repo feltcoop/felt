@@ -57,7 +57,7 @@
 		{#if principle}
 			<Consent_Principle_View {principle} />
 		{:else}
-			<h2>Felt.dev consentful onboard sketch</h2>
+			<h2>/sketches/onboard</h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />
