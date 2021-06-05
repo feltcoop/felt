@@ -11,6 +11,8 @@
 	<h2>welcome to Felt.dev!</h2>
 </Markup>
 
+<blockquote>need help? <a href="https://www.felt.dev/help">felt.dev/help</a></blockquote>
+
 <button on:click={() => done()}>
 	<Markup>let's go →</Markup>
 </button>
