@@ -24,7 +24,7 @@
 </div>
 <div class="nav">
 	<h1>
-		<Link_Path path={$page.path} />
+		<Link_Path path={$page.path} selected_path={$page.path} />
 	</h1>
 </div>
 <main>

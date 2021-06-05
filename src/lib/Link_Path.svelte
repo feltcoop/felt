@@ -2,6 +2,7 @@
 	import {to_path_segments} from '../util/path_parsing';
 
 	export let path: string;
+	export let selected_path: string | null = null;
 
 	// TODO track active status
 
@@ -25,11 +26,11 @@
 		const path_segments = to_path_segments(raw_path);
 		const last_part = path_segments[path_segments.length - 1];
 		let path = '';
-		for (const part of path_segments) {
-			if (path) path += '/';
-			path += part;
-			segments.push({type: 'space', name: part, path});
-			if (part !== last_part) {
+		for (const path_segment of path_segments) {
+			path += '/';
+			path += path_segment;
+			segments.push({type: 'space', name: path_segment, path});
+			if (path_segment !== last_part) {
 				segments.push({type: 'spacer', path});
 			}
 		}
@@ -43,7 +44,7 @@
 <div class="path">
 	{#each segments as segment}
 		{#if segment.type === 'space'}
-			<a href="/{segment.path}">{segment.name}</a>
+			<a href={segment.path} class:selected={segment.path === selected_path}>{segment.name}</a>
 		{:else}
 			<div class="separator">/</div>
 		{/if}

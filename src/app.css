@@ -118,6 +118,8 @@
 	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
 	--link_hover_decoration: underline;
+	--link_selected_decoration: underline;
+	--link_selected_color: var(--text_color);
 	--link_font_weight: var(--font_weight_4);
 	--link_cursor: default; /* because we have other visual affordances */
 	/* these don't use alpha because it affects performance (unless that changed) */
@@ -249,7 +251,8 @@ a:active:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
 }
 a.selected {
-	text-decoration: var(--link_hover_decoration);
+	color: var(--link_selected_color);
+	text-decoration: var(--link_selected_decoration);
 }
 
 ul {

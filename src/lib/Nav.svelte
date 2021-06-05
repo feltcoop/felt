@@ -24,8 +24,4 @@
 		align-items: center;
 		padding: 0 10px;
 	}
-	.selected {
-		opacity: 1;
-		color: var(--text_color);
-	}
 </style>
