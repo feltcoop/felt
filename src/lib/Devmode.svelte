@@ -13,7 +13,7 @@
 <svelte:window on:keydown={on_window_keydown} />
 
 {#if $devmode}
-	<button class="devmode" on:click={() => ($devmode = !$devmode)} />
+	<button on:click={() => ($devmode = !$devmode)} />
 {/if}
 
 <style>
@@ -21,6 +21,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+		opacity: var(--faded_md);
 	}
 	button::after {
 		content: 'devmode';
