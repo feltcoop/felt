@@ -35,6 +35,7 @@
 <style>
 	button {
 		font-size: var(--spacing_xxl);
+		font-weight: var(--font_weight_2);
 		text-align: center;
 		color: var(--text_disabled_color);
 	}
