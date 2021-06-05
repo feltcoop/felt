@@ -33,7 +33,7 @@
 
 	const create = (username: string, _password: string): void => {
 		selected_provider = null;
-		create_error_message = `Whoopsies, our robots can be so clumsy! Sorry${
+		create_error_message = `Oopsies, our robots can be so clumsy! Sorry${
 			username ? `, ${username}` : ''
 		}! Systems're broken. Please click the buttons below :-)`;
 	};
