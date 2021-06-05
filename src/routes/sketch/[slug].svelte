@@ -1,7 +1,5 @@
 <script lang="ts">
-	import {page} from '$app/stores';
+	import Onboard from '../../onboard/Onboard.svelte';
 </script>
 
-<h1>
-	{$page.params.slug}
-</h1>
+<Onboard />

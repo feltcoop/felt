@@ -27,6 +27,7 @@
 	</p>
 	<p>
 		Now click the win button!!! <button
+			class="inline"
 			on:click={() =>
 				alert(
 					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more rewards! :-)',

@@ -1,5 +1,6 @@
 <script>
 	import {page} from '$app/stores';
+	import Link_Path from '$lib/Link_Path.svelte';
 
 	import '../app.css';
 	import Nav from '$lib/Nav.svelte';
@@ -9,7 +10,7 @@
 	$: path = $page.path;
 
 	const devmode = provide_devmode(false);
-	$: if (path === '/onboard') {
+	$: if (path === '/sketch/onboard') {
 		$devmode = true;
 	}
 </script>
@@ -18,14 +19,21 @@
 	<link rel="shortcut icon" href="favicon.png" />
 </svelte:head>
 
-<div id="nav"><Nav /></div>
+<div class="nav">
+	<Nav />
+</div>
+<div class="nav">
+	<h1>
+		<Link_Path path={$page.path} />
+	</h1>
+</div>
 <main>
 	<slot />
 </main>
 <Devmode {devmode} />
 
 <style>
-	#nav {
+	.nav {
 		width: 100%;
 		height: var(--nav_height);
 		display: flex;

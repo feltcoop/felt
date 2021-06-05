@@ -3,7 +3,6 @@
 
 	import {consent_principles} from '../consent/consent';
 	import type {Consent_Type, Consent_Principle_Type} from '../consent/consent';
-	import Link_Path from '$lib/Link_Path.svelte';
 	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
 	import {onboard_machine, onboard_data} from './onboard';
 	import type {Onboard_State_Name} from './onboard';
@@ -57,9 +56,7 @@
 		{#if principle}
 			<Consent_Principle_View {principle} />
 		{:else}
-			<h2>
-				<Link_Path path="sketch/onboard" />
-			</h2>
+			<h2>—</h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />
