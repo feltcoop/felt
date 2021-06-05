@@ -19,7 +19,7 @@ The top-level API ([see src/index.ts](src/index.ts)) is a work in progress:
 import type {Result} from '@feltcoop/felt';
 
 // for now, you'll typically use deep imports to specific modules:
-import {random_int} from '@feltcoop/felt/utils/random.js';
+import {random_int} from '@feltcoop/felt/util/random.js';
 ```
 
 ## develop

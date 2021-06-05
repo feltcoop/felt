@@ -6,7 +6,7 @@
 	import Help_Message from '$lib/Help_Message.svelte';
 	import Message from '$lib/Message.svelte';
 	import Markup from '$lib/Markup.svelte';
-	import {Unreachable_Error} from '../../utils/error';
+	import {Unreachable_Error} from '../../util/error';
 
 	// TODO refactor to an xstate machine
 

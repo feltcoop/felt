@@ -410,7 +410,6 @@ input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 3;
-	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
 input[type='checkbox']:hover:not(:disabled) {
@@ -430,13 +429,23 @@ button:focus:not(:disabled) {
 	z-index: 2;
 	--input_border_color: var(--selected_color);
 	--outline_color: var(--selected_color);
-	--outline_width: var(--spacing_md);
 	--outline_style: var(--border_accent_style);
 }
 
 input[type='checkbox']:focus,
 input[type='checkbox']:focus:not(:disabled) {
 	--outline_style: var(--border_accent2_style);
+}
+
+.buttonlike:active,
+.buttonlike:active input,
+.buttonlike:active textarea,
+.buttonlike:active button,
+input:active,
+textarea:active,
+button:active {
+	z-index: 3;
+	--outline_width: calc(var(--spacing_md) + 2px);
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -451,7 +460,6 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 3;
-	--outline_width: calc(var(--spacing_md) + 2px);
 	--outline_color: var(--active_color);
 }
 .buttonlike:active:not(:disabled) button,
