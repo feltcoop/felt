@@ -40,18 +40,18 @@
 	$: segments = to_segments(path);
 </script>
 
-<div>
+<div class="path">
 	{#each segments as segment}
 		{#if segment.type === 'space'}
 			<a href={segment.path}>{segment.name}</a>
 		{:else}
-			<span>/</span>
+			<div class="separator">/</div>
 		{/if}
 	{/each}
 </div>
 
 <style>
-	div {
+	.path {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -60,7 +60,7 @@
 		padding-right: var(--spacing_sm);
 		padding-left: var(--spacing_sm);
 	}
-	span {
+	.separator {
 		display: flex;
 		justify-content: center;
 		align-items: center;
