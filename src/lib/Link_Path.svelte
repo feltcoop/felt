@@ -1,10 +1,9 @@
 <script lang="ts">
 	export let path: string;
 
-	// TODO
-	const to_parts = (path: string): string[] => path.split('/').filter(Boolean);
-
 	// TODO track active status
+
+	const to_parts = (path: string): string[] => path.split('/').filter(Boolean);
 
 	type Segment =
 		| {
@@ -34,6 +33,7 @@
 				segments.push({type: 'spacer', path});
 			}
 		}
+		segments_cache.set(raw_path, segments);
 		return segments;
 	};
 
