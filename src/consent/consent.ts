@@ -4,7 +4,7 @@ copied from: https://consentful.systems/
 
 TODO add descriptions
 
-TODO should "affirmative content" instead of "consent" in some places?
+TODO should "affirmative consent" instead of "consent" in some places?
 
 */
 
