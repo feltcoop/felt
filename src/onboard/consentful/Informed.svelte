@@ -10,4 +10,4 @@
 <Markup>
 	<p>well this is awkward</p>
 </Markup>
-<button on:click={() => done()}>I agree</button>
+<button on:click={() => done()}> I agree </button>

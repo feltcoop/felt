@@ -40,8 +40,10 @@
 			<button
 				disabled={!$devmode || state_id === $state.value}
 				class:selected={state_id === $state.value}
-				on:click={$devmode ? () => select(state_id) : undefined}>{state_id}</button
+				on:click={$devmode ? () => select(state_id) : undefined}
 			>
+				{state_id}
+			</button>
 		{/each}
 	</nav>
 </div>

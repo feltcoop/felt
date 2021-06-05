@@ -11,12 +11,19 @@
 	let consenting = true; // :-)
 
 	$: enable_continue_button = consenting;
+
+	const on_click_privacy = () => alert('lol');
+	const on_click_terms = () => alert('dont u dare');
 </script>
 
 <Markup>
 	<p>
-		Here is our <small><a href="privacy">privacy policy</a></small> and
-		<small><a href="terms">terms of service</a></small>. We care about you, really.
+		Here is our <small
+			><a href="privacy" on:click|preventDefault={on_click_privacy}>privacy policy</a></small
+		>
+		and
+		<small><a href="terms" on:click|preventDefault={on_click_terms}>terms of service</a></small>. We
+		care about you, really.
 	</p>
 	<p>
 		Now click the win button!!! <button

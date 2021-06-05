@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type {Consent_Principle} from './consent';
 
-	// TODO display `description` property, see `./consent` for why it's not there
-
 	// TODO remove/rename the `_View` in `Consent_Principle_View` probably,
 	// but how to avoid name clash with interface?
 
@@ -11,4 +9,4 @@
 
 <h2>{principle.type}</h2>
 :
-{principle.description}
+{principle.summary}

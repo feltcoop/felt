@@ -19,5 +19,5 @@
 <form>
 	<input bind:value={username} placeholder="username" />
 	<input type="password" bind:value={password} placeholder="password" />
-	<button type="button" on:click={create}>create account</button>
+	<button type="button" on:click={create}> create account </button>
 </form>
