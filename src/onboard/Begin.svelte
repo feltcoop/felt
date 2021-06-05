@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {Onboard_Data} from '../onboard';
+	import type {Onboard_Send} from './onboard';
 	import Markup from '$lib/Markup.svelte';
 	import Credits from './Credits.svelte';
 

@@ -64,7 +64,7 @@
 	bind:checked={consenting}
 	--content="'☻'"
 	--overflow="hidden"
-	--font_size="var(--font_size_xxxl)"
+	--font_size="var(--font_size_xl3)"
 >
 	<Markup>
 		<div>Send marketing emails to</div>
@@ -93,7 +93,7 @@
 				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}
 				--content="'☻'"
 				--overflow="hidden"
-				--font_size="var(--font_size_xxxl)"
+				--font_size="var(--font_size_xl3)"
 			>
 				{email_contact.id}
 			</Checkbox>

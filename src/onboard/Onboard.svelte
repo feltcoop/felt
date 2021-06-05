@@ -29,7 +29,7 @@
 	const done = (consent_type: Consent_Type) => {
 		if (consent_type === 'consentful') {
 			done_consentful = true;
-			if (!done_unconsentful) return;
+			if (!done_unconsentful && $state.value !== 'specific') return; // TODO remove hack when 'specific' has content
 		} else {
 			done_unconsentful = true;
 			if (!done_consentful) return;
@@ -42,7 +42,8 @@
 
 	$: update_state($state);
 
-	const update_state = (state: typeof $state) => {
+	// reset the local state -- TODO move to xstate
+	const update_state = (_state: typeof $state) => {
 		done_consentful = false;
 		done_unconsentful = false;
 	};
@@ -115,11 +116,24 @@
 		border-right: var(--border);
 	}
 	.complete::before {
+		z-index: 10;
 		position: absolute;
 		left: 0;
 		top: 0;
 		height: 100%;
 		width: 100%;
-		background: rgba(255, 255, 255, 0.8);
+		background: var(--tint_overlay);
+		content: '';
+	}
+	.complete::after {
+		z-index: 10;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		color: var(--help_color);
+		font-size: var(--font_size_xl7);
+		text-align: center;
+		content: '☑';
 	}
 </style>
