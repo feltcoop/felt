@@ -159,10 +159,12 @@
 				bind:this={anything_else_el}
 				placeholder="anything else you would like to share? :-)"
 				on:keydown={(e) => {
-					if (enable_signup_button) {
-						signup(data, selected_provider);
-					} else if (e.key === 'Enter') {
-						phone_number_el.focus();
+					if (e.key === 'Enter') {
+						if (enable_signup_button) {
+							signup(data, selected_provider);
+						} else {
+							phone_number_el.focus();
+						}
 					}
 				}}
 			/>
