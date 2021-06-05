@@ -27,7 +27,7 @@
 		of consent.
 	</p>
 
-	<button on:click={() => send('NEXT')}>Click here to start →</button>
+	<button on:click={() => send('NEXT')}> Click here to start → </button>
 
 	<Credits />
 </Markup>

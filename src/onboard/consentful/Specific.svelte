@@ -6,4 +6,4 @@
 	export let back: () => void;
 </script>
 
-<button on:click={() => done()}> →</button>
+<button on:click={() => done()}> → </button>

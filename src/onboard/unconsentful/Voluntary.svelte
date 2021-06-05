@@ -99,9 +99,13 @@
 		on:keydown={handle_keydown_create}
 		disabled={!enable_create_button}
 	/>
-	<button type="button" on:click={() => create(username, password)} disabled={!enable_create_button}
-		>create account</button
+	<button
+		type="button"
+		on:click={() => create(username, password)}
+		disabled={!enable_create_button}
 	>
+		create account
+	</button>
 
 	<div class="message" style="--message_min_height: 100px;">
 		{#if !selected_provider}
@@ -166,7 +170,8 @@
 				type="button"
 				on:click={() => signup(data, selected_provider)}
 				disabled={!enable_signup_button}
-				>call my phone<br />
+			>
+				call my phone<br />
 				to finish signup<br />with {selected_provider.name}
 			</button>
 		{/if}
