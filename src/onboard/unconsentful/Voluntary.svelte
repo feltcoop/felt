@@ -1,10 +1,11 @@
 <script lang="ts">
+	import {tick} from 'svelte';
+
 	import type {Onboard_Data} from '../onboard';
 	import Error_Message from '$lib/Error_Message.svelte';
 	import Help_Message from '$lib/Help_Message.svelte';
 	import Message from '$lib/Message.svelte';
 	import Markup from '$lib/Markup.svelte';
-
 	import {Unreachable_Error} from '../../utils/error';
 
 	// TODO refactor to an xstate machine
@@ -30,27 +31,28 @@
 	const provider_list = Object.values(providers);
 	let selected_provider: Service_Provider_Data | null = null;
 
-	const create = (username: string, _password: string) => {
+	const create = (username: string, _password: string): void => {
 		selected_provider = null;
 		create_error_message = `Whoopsies, our robots can be so clumsy! Sorry${
 			username ? `, ${username}` : ''
 		}! Systems're broken. Please click the buttons below :-)`;
 	};
-	const signup_with = (provider: Service_Provider_Data) => {
+	const signup_with = async (provider: Service_Provider_Data): Promise<void> => {
 		console.log('signup_with name', provider, data);
+		let should_focus = false;
 		switch (provider.name) {
 			case 'TRACKER_CO': {
 				selected_provider = providers.TRACKER_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's get you social with ${selected_provider.name}`;
-				phone_number_el.focus();
+				should_focus = true;
 				break;
 			}
 			case 'SOCIAL_CO': {
 				selected_provider = providers.SOCIAL_CO;
 				signup_error_message = '';
 				signup_helper_message = `Great! Let's get you tracked with ${selected_provider.name}`;
-				phone_number_el.focus();
+				should_focus = true;
 				break;
 			}
 			case 'TRUSTED_CO': {
@@ -60,6 +62,10 @@
 			}
 			default:
 				throw new Unreachable_Error(provider.name);
+		}
+		if (should_focus) {
+			await tick();
+			phone_number_el.focus();
 		}
 	};
 
