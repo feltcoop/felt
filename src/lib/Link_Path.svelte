@@ -1,9 +1,9 @@
 <script lang="ts">
+	import {to_path_segments} from '../util/path_parsing';
+
 	export let path: string;
 
 	// TODO track active status
-
-	const to_parts = (path: string): string[] => path.split('/').filter(Boolean);
 
 	type Segment =
 		| {
@@ -22,10 +22,10 @@
 			return segments_cache.get(raw_path)!;
 		}
 		let segments: Segment[] = [];
-		const parts = to_parts(raw_path);
-		const last_part = parts[parts.length - 1];
+		const path_segments = to_path_segments(raw_path);
+		const last_part = path_segments[path_segments.length - 1];
 		let path = '';
-		for (const part of parts) {
+		for (const part of path_segments) {
 			if (path) path += '/';
 			path += part;
 			segments.push({type: 'space', name: part, path});
@@ -43,7 +43,7 @@
 <div class="path">
 	{#each segments as segment}
 		{#if segment.type === 'space'}
-			<a href={segment.path}>{segment.name}</a>
+			<a href="/{segment.path}">{segment.name}</a>
 		{:else}
 			<div class="separator">/</div>
 		{/if}

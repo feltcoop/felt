@@ -12,25 +12,6 @@ export const replace_extension = (path: string, newExtension: string): string =>
 // Gets the stem of a path, the "b" of "/a/b.c".
 export const to_path_stem = (path: string): string => replace_extension(basename(path), '');
 
-// Designed for the `cheap-watch` API.
-// to_path_parts('./foo/bar/baz.ts') => ['foo', 'foo/bar', 'foo/bar/baz.ts']
-export const to_path_parts = (path: string): string[] => {
-	const segments = to_path_segments(path);
-	let currentPath = path[0] === '/' ? '/' : '';
-	return segments.map((segment) => {
-		if (currentPath && currentPath !== '/') {
-			currentPath += '/';
-		}
-		currentPath += segment;
-		return currentPath;
-	});
-};
-
-// Gets the individual parts of a path, ignoring dots and separators.
-// to_path_segments('/foo/bar/baz.ts') => ['foo', 'bar', 'baz.ts']
-export const to_path_segments = (path: string): string[] =>
-	path.split('/').filter((s) => s && s !== '.' && s !== '..');
-
 // Note that this operates on file paths, not directories.
 // It will strip the basename of any directories, which seems surprising.
 // The algorithm will be really slow for any big large array sizes. Don't do that.

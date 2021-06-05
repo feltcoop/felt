@@ -12,8 +12,6 @@
 	}
 	.markup :global(ul) {
 		padding-left: var(--spacing_xl);
-	}
-	.markup :global(li) {
 		list-style: disc;
 	}
 	.markup :global(p) {

@@ -1,13 +1,8 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {
-	replace_extension,
-	to_path_stem,
-	to_path_parts,
-	to_path_segments,
-	to_common_base_dir,
-} from './path.js';
+import {replace_extension, to_path_stem, to_common_base_dir} from './path.js';
+import {to_path_parts, to_path_segments} from './path_parsing.js';
 
 /* test_replace_extension */
 const test_replace_extension = suite('replace_extension');

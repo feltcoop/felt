@@ -117,8 +117,9 @@
 	--link_lightness: 35%;
 	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
-	--link_accent_text_decoration: underline;
+	--link_hover_decoration: underline;
 	--link_font_weight: var(--font_weight_4);
+	--link_cursor: default; /* because we have other visual affordances */
 	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
@@ -233,29 +234,27 @@ a {
 	text-decoration: var(--link_text_decoration);
 }
 a:hover {
-	text-decoration: var(--link_accent_text_decoration);
+	text-decoration: var(--link_hover_decoration);
 	z-index: 3;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
+	cursor: var(--link_cursor);
 }
 a:focus,
 a:focus:not(:disabled) {
 	z-index: 2;
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--selected_color);
-	text-decoration: var(--link_accent_text_decoration);
+	text-decoration: var(--link_hover_decoration);
 }
 a:active:not(:disabled) {
 	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
 }
 a.selected {
-	text-decoration: var(--link_accent_text_decoration);
+	text-decoration: var(--link_hover_decoration);
 }
 
 ul {
 	display: flex;
 	flex-direction: column;
-}
-
-li {
 	list-style: none;
 }
 
