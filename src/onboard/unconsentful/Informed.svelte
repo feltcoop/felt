@@ -25,14 +25,13 @@
 		</small>.
 	</p>
 	<p>
-		Now click the win button!!! <button class="inline" disabled={won} on:click={() => (won = true)}>
+		Now click the win button! <button class="inline" disabled={won} on:click={() => (won = true)}>
 			win!!!
 		</button>
 	</p>
 	{#if won}
-		<p>wow you did it! you win!</p>
 		<p>
-			Hey look a doggy:
+			Wow you did it! You win a doggy:
 			<span class="dog">🐕</span>
 		</p>
 		<p>Keep playing for more rewards :-)</p>
