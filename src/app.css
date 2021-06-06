@@ -273,6 +273,11 @@ h3 {
 	--font_weight: var(--font_weight_2);
 	font-weight: var(--font_weight);
 }
+h1 a,
+h2 a,
+h3 a {
+	--font_weight: var(--font_weight_3);
+}
 
 form {
 	display: flex;
