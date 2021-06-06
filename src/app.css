@@ -1,8 +1,5 @@
 /* TODO some is haphazard & inconsistent */
 :root {
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
 	--alpha: 0.89;
 	--faded_rg: 62%;
 	--faded_md: 38%;
@@ -205,6 +202,12 @@
 	/* --border: var(--border_accent_width) var(--border_accent_style) hsla(0, 0%, 80%, var(--faded_md)); */
 	--button_border_color: var(--border_color);
 	--input_border_color: var(--button_border_color);
+
+	/* TODO move these? */
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: var(--font_size_rg);
 }
 
 html,
@@ -510,4 +513,8 @@ blockquote {
 code,
 pre {
 	color: var(--text_light_color);
+}
+
+small {
+	font-size: var(--font_size_sm);
 }

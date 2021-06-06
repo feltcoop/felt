@@ -3,7 +3,6 @@
 	import Link_Path from '$lib/Link_Path.svelte';
 
 	import '../app.css';
-	import Nav from '$lib/Nav.svelte';
 	import {provide_devmode} from '$lib/devmode';
 	import Devmode from '$lib/Devmode.svelte';
 
@@ -20,11 +19,12 @@
 </svelte:head>
 
 <div class="nav">
-	<Nav />
-</div>
-<div class="nav">
 	<h1>
-		<Link_Path path={$page.path} selected_path={$page.path} />
+		{#if $page.path === '/'}
+			<a href="/" class="selected">Felt.dev</a>
+		{:else}
+			<Link_Path path={$page.path} selected_path={$page.path} />
+		{/if}
 	</h1>
 </div>
 <main>
