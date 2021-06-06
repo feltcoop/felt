@@ -30,7 +30,7 @@
 				href="/account"
 				on:click|preventDefault={() => alert('TODO -- thank you for being interested!')}
 				>account settings</a
-			>
+			>.
 			<button class="inline" on:click={() => done()}> got it → </button>
 		</p>
 	{/if}
