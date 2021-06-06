@@ -1,6 +1,5 @@
 <script lang="ts">
 	import {to_path_segments} from '../util/path_parsing';
-	import {greenheart} from '$lib/icons';
 
 	export let path: string;
 	export let selected_path: string | null = null;
@@ -43,7 +42,7 @@
 </script>
 
 <div class="path">
-	<small><a href="/">{greenheart}</a></small>
+	<slot />
 	{#each segments as segment}
 		{#if segment.type === 'space'}
 			<a href={segment.path} class:selected={segment.path === selected_path}>{segment.name}</a>
@@ -70,8 +69,5 @@
 		justify-content: center;
 		align-items: center;
 		width: 0;
-	}
-	small {
-		font-size: var(--font_size_rg);
 	}
 </style>
