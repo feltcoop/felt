@@ -16,7 +16,7 @@
 		id: string;
 		selected: boolean;
 	}
-	let email_contacts: Contact[] = [
+	const email_contacts: Contact[] = [
 		{id: 'mom', selected: true},
 		{id: 'your ex', selected: true},
 		{id: 'your dentist', selected: true},
@@ -45,11 +45,6 @@
 	const toggle_selected = (selected: boolean, email_contact: Contact) => {
 		email_contact.selected = selected;
 		selected_contacts = email_contacts.filter((c) => c.selected);
-		console.log('selected, email_contact, email_contacts', selected, email_contact, email_contacts);
-		// TODO wontfix? lol
-		//email_contacts.update((contacts) =>
-		//	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
-		//);
 	};
 
 	const blast_emails = () => {
