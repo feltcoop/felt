@@ -8,6 +8,7 @@
 	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
+	import End from './End.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
@@ -63,7 +64,9 @@
 	<div class="content">
 		{#if $state.value === 'begin'}
 			<Begin {send} />
-		{:else}
+		{:else if $state.value === 'end'}
+			<End />
+		{:else if unconsentful_data.component && consentful_data.component}
 			<section class="column" class:complete={done_unconsentful}>
 				<svelte:component
 					this={unconsentful_data.component}
@@ -80,6 +83,8 @@
 					{back}
 				/>
 			</section>
+		{:else}
+			error: unexpected `null` components
 		{/if}
 	</div>
 </div>
