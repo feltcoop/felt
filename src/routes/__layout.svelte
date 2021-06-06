@@ -35,7 +35,7 @@
 <style>
 	.nav {
 		width: 100%;
-		height: var(--nav_height);
+		min-height: var(--nav_height);
 		display: flex;
 		justify-content: center;
 		flex-shrink: 0;

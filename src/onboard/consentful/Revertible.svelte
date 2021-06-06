@@ -20,8 +20,13 @@
 	<button on:click={() => (understood = true)} disabled={understood}> yes I understand → </button>
 	{#if understood}
 		<p>
-			Here's <a href="/deal">a link to the documents</a> for the future, and you can always find
-			help in your <a href="/account">account settings</a>
+			Here's <a href="/deal" on:click|preventDefault={() => alert('uh let me get back to you')}
+				>a link to the documents</a
+			>
+			for the future, and you can always find help in your
+			<a href="/account" on:click|preventDefault={() => alert('stay tuned sorry for the wait')}
+				>account settings</a
+			>
 			<button class="inline" on:click={() => done()}> got it → </button>
 		</p>
 	{/if}

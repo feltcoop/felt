@@ -11,7 +11,7 @@
 			<Markup>
 				<li>
 					<h2>
-						<a href="sketch/{sketch.name}">{sketch.name}</a>
+						<a href="/sketch/{sketch.name}">{sketch.name}</a>
 					</h2>
 				</li>
 			</Markup>
