@@ -15,10 +15,6 @@
 </h1>
 
 <style>
-	h1,
-	h1 :global(a) {
-		--font_weight: var(--font_weight_2);
-	}
 	small {
 		/* TODO shouldn't be needed if they composed from the parent context, like by using % */
 		font-size: var(--font_size_rg);
