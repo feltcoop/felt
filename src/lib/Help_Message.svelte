@@ -4,5 +4,5 @@
 	export let text: string | null;
 </script>
 
-<!-- TODO auto foward props? -->
+<!-- TODO redesign? maybe just make `help` an option on `Message`? -->
 <Message {text} icon="ⓘ" --message_color="var(--help_color)" />

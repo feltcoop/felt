@@ -33,7 +33,7 @@
 
 	const create = (_username: string, _password: string): void => {
 		selected_provider = null;
-		create_error_message = `Oopsies — our robots can be so clumsy!<br />Please click the buttons below :-)`;
+		create_error_message = `Oopsies — our robots can be so clumsy! Please click the buttons below :-)`;
 	};
 	const signup_with = async (provider: Service_Provider_Data): Promise<void> => {
 		console.log('signup_with name', provider, data);

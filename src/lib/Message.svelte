@@ -12,7 +12,7 @@
 						<span class="icon">{icon}</span>
 					{/if}
 					<!-- TODO probably make this a slot instead -->
-					{@html text}
+					{text}
 				</span>
 			</div>
 		</div>
