@@ -60,6 +60,6 @@
 
 <style>
 	small {
-		font-size: 10px;
+		font-size: var(--font_size_xs);
 	}
 </style>
