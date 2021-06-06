@@ -16,38 +16,40 @@
 		id: string;
 		selected: boolean;
 	}
-	const email_contacts: Contact[] = [
+	let email_contacts: Contact[] = [
 		{id: 'mom', selected: true},
-		{id: 'alice', selected: true},
-		{id: 'my dentist', selected: true},
+		{id: 'your ex', selected: true},
+		{id: 'your dentist', selected: true},
 		{id: 'moms email from the 90s', selected: true},
 		{id: 'childhood friend grandma', selected: true},
 		{id: 'noreply at every website', selected: true},
 		{id: 'local supermarket', selected: true},
-		{id: 'are you serious ?', selected: true},
-		{id: 'barry', selected: true},
-		{id: 'bank', selected: true},
-		{id: 'who', selected: true},
+		{id: 'your bank', selected: true},
+		{id: 'who is this?', selected: true},
 		{id: '1000 spammers', selected: true},
-		{id: 'a friend with whom i will word of mouth irl', selected: true},
+		{id: 'a friend with whom i will talk about this irl with', selected: true},
+		{id: 'the friend who invited me in the first place', selected: true},
 		{id: "random stranger who typo'd my address", selected: true}, // TODO reward
 		{id: 'that guy from the thing last week', selected: true},
 		{id: 'a dog on the internet', selected: true},
+		{id: 'alice', selected: true},
+		{id: 'barry', selected: true},
+		{id: 'chaz', selected: true},
+		{id: 'daniel', selected: true},
+		{id: 'are you serious ?', selected: true},
 	];
 
-	$: selected_contacts = email_contacts.filter((c) => c.selected);
+	let selected_contacts = email_contacts.filter((c) => c.selected);
 	$: selected_count = selected_contacts.length;
 
-	const toggle_selected = (
-		selected: boolean,
-		email_contact: Contact,
-		email_contacts: Contact[],
-	) => {
+	const toggle_selected = (selected: boolean, email_contact: Contact) => {
+		email_contact.selected = selected;
+		selected_contacts = email_contacts.filter((c) => c.selected);
 		console.log('selected, email_contact, email_contacts', selected, email_contact, email_contacts);
 		// TODO wontfix? lol
-		// email_contacts.update((contacts) =>
-		// 	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
-		// );
+		//email_contacts.update((contacts) =>
+		//	contacts.map((contact) => (contact === email_contact ? {...contact, selected} : contact)),
+		//);
 	};
 
 	const blast_emails = () => {
@@ -67,9 +69,11 @@
 	--font_size="var(--font_size_xl3)"
 >
 	<Markup>
-		<div>Send marketing emails to</div>
-		<small>everyone I've ever emailed</small>
+		<div>Invite your friends</div>
+		<div class="smallprint">and everyone you've ever emailed</div>
 		<div>so they can join the fun!</div>
+		<div>We already made an account for them!</div>
+		<div class="smallprint">Or click the smiley face to choose who to invite</div>
 	</Markup>
 </Checkbox>
 
@@ -90,7 +94,7 @@
 		{#each email_contacts as email_contact (email_contact.id)}
 			<Checkbox
 				checked={email_contact.selected}
-				on_change={(checked) => toggle_selected(checked, email_contact, email_contacts)}
+				on_change={(checked) => toggle_selected(checked, email_contact)}
 				--content="'☻'"
 				--overflow="hidden"
 				--font_size="var(--font_size_xl3)"
@@ -107,5 +111,8 @@
 	}
 	p {
 		font-size: var(--font_size_md);
+	}
+	.smallprint {
+		font-size: xx-small;
 	}
 </style>
