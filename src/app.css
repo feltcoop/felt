@@ -465,7 +465,7 @@ input:active,
 textarea:active,
 button:active {
 	z-index: 3;
-	--outline_width: var(--outline3_width);
+	--outline_width: var(--outline2_width);
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -480,6 +480,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 3;
+	--outline_width: var(--outline3_width);
 	--outline_color: var(--active_color);
 }
 .buttonlike:active:not(:disabled) button,
