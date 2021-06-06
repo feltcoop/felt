@@ -11,7 +11,8 @@
 					{#if icon}
 						<span class="icon">{icon}</span>
 					{/if}
-					{text}
+					<!-- TODO probably make this a slot instead -->
+					{@html text}
 				</span>
 			</div>
 		</div>
