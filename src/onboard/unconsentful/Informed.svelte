@@ -15,14 +15,13 @@
 
 <Markup>
 	<p>
-		Here is our <small
-			><a href="/privacy" on:click|preventDefault={() => alert('lol')}>privacy policy</a></small
-		>
-		and
-		<small
-			><a href="/terms" on:click|preventDefault={() => alert('dont u dare')}>terms of service</a
-			></small
-		>. We care about you, really.
+		<small>
+			Here is our <a href="/privacy" on:click|preventDefault={() => alert('lol')}>
+				privacy policy
+			</a>
+			and
+			<a href="/terms" on:click|preventDefault={() => alert('dont u dare')}> terms of service </a>
+		</small>.
 	</p>
 	<p>
 		Now click the win button!!! <button
