@@ -15,7 +15,7 @@
 	need help? <a
 		href="/help"
 		on:click|preventDefault={() =>
-			alert('can we get back to you on that? your interest is inspiring')}>felt.dev/help</a
+			alert('We're still working on this bit, but please email us at info@felt.social')}>felt.dev/help</a
 	>
 </blockquote>
 
