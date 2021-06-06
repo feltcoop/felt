@@ -31,8 +31,10 @@
 	</p>
 	{#if won}
 		<p>wow you did it! you win!</p>
-		<p>Hey look a doggy:</p>
-		<p>🐕</p>
+		<p>
+			Hey look a doggy:
+			<span class="dog">🐕</span>
+		</p>
 		<p>Keep playing for more rewards :-)</p>
 		<p>Now click "I acknowledge..." below!</p>
 	{/if}
@@ -62,5 +64,8 @@
 <style>
 	small {
 		font-size: var(--font_size_xs);
+	}
+	.dog {
+		font-size: var(--font_size_xl4);
 	}
 </style>
