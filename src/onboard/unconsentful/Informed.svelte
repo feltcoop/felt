@@ -9,6 +9,7 @@
 	export let back: () => void;
 
 	let consenting = true; // :-)
+	let won = false; // you did it!
 
 	$: enable_continue_button = consenting;
 </script>
@@ -24,16 +25,17 @@
 		</small>.
 	</p>
 	<p>
-		Now click the win button!!! <button
-			class="inline"
-			on:click={() =>
-				alert(
-					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more rewards! :-)',
-				)}
-		>
+		Now click the win button!!! <button class="inline" disabled={won} on:click={() => (won = true)}>
 			win!!!
 		</button>
 	</p>
+	{#if won}
+		<p>wow you did it! you win!</p>
+		<p>Hey look a doggy:</p>
+		<p>🐕</p>
+		<p>Keep playing for more rewards :-)</p>
+		<p>Now click "I acknowledge..." below!</p>
+	{/if}
 </Markup>
 
 <Checkbox bind:checked={consenting} --content="'✗'">
