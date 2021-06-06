@@ -340,15 +340,6 @@ button:active {
 button.inline {
 	display: inline-block;
 }
-button:disabled,
-input:disabled,
-textarea:disabled {
-	opacity: 1; /* for some browsers */
-	background: var(--interactive_disabled_color);
-	color: var(--text_disabled_color);
-	border-left-style: var(--button_border_disabled_style);
-	border-right-style: var(--button_border_disabled_style);
-}
 button.selected {
 	z-index: 1;
 	border-color: var(--selected_color);
@@ -491,6 +482,17 @@ button:active:not(:disabled) {
 
 input[type='checkbox']:active:not(:disabled) {
 	--outline_style: var(--border3_style);
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled {
+	--outline_width: 0;
+	opacity: 1; /* for some browsers */
+	background: var(--interactive_disabled_color);
+	color: var(--text_disabled_color);
+	border-left-style: var(--button_border_disabled_style);
+	border-right-style: var(--button_border_disabled_style);
 }
 
 label {
