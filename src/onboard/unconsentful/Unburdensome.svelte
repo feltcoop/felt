@@ -108,4 +108,7 @@
 	p {
 		font-size: var(--font_size_md);
 	}
+	small {
+		font-size: var(--font_size_sm);
+	}
 </style>
