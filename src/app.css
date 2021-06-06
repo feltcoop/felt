@@ -109,15 +109,6 @@
 	--active_color: var(--green);
 	--help_color: var(--green);
 	--error_color: var(--red);
-	--link_hue: var(--blue_hue);
-	--link_saturation: 61%;
-	--link_lightness: 35%;
-	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
-	--link_text_decoration: none;
-	--link_hover_decoration: underline;
-	--link_selected_decoration: underline;
-	--link_selected_color: var(--text_color);
-	--link_cursor: default; /* because we have other visual affordances */
 	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
@@ -144,6 +135,15 @@
 	--font_weight_2: 300;
 	--font_weight_1: 100;
 	--font_weight: var(--font_weight_3);
+	--link_hue: var(--blue_hue);
+	--link_saturation: 61%;
+	--link_lightness: 35%;
+	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
+	--link_text_decoration: none;
+	--link_hover_decoration: underline;
+	--link_selected_decoration: underline;
+	--link_selected_color: var(--text_color);
+	--link_cursor: default; /* because we have other visual affordances */
 	/* TODO maybe spacing 1-N ? */
 	--spacing_xxxxxl: 128px;
 	--spacing_xxxxl: 96px;
@@ -503,17 +503,15 @@ label {
 }
 
 nav {
+	min-height: var(--nav_height);
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 	flex-wrap: wrap;
 }
 nav button {
 	flex: 1;
-}
-nav a {
-	height: 100%;
 }
 
 .column {

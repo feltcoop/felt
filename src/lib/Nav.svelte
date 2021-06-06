@@ -5,21 +5,16 @@
 </script>
 
 <!-- TODO probably change to ul/li once styles are right -->
-<div>
+<Link_Path path={$page.path} selected_path={$page.path}>
 	{#if $page.path === '/'}
 		<a href="/" class="selected">Felt.dev</a>
 	{:else}
-		<Link_Path path={$page.path} selected_path={$page.path}>
-			<a href="/">{greenheart}</a>
-		</Link_Path>
+		<a href="/" class="heart">{greenheart}</a>
 	{/if}
-</div>
+</Link_Path>
 
 <style>
-	a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	.heart {
 		min-width: var(--nav_height);
 		font-size: var(--font_size_rg);
 	}

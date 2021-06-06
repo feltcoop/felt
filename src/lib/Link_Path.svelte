@@ -54,14 +54,18 @@
 
 <style>
 	.path {
+		/* TODO maybe `position: relative`  */
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
 	}
-	a {
+	/* TODO how to improve this? is global to select slots */
+	.path :global(a) {
 		z-index: 1;
 		padding-right: var(--spacing_sm);
 		padding-left: var(--spacing_sm);
+		display: flex;
+		align-items: center;
 	}
 	.separator {
 		z-index: 0;

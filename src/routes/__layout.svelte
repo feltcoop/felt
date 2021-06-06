@@ -28,11 +28,7 @@
 
 <style>
 	nav {
-		width: 100%;
-		min-height: var(--nav_height);
-		display: flex;
-		justify-content: center;
-		flex-shrink: 0;
+		font-size: var(--font_size_lg);
 	}
 	main {
 		flex: 1;
