@@ -117,7 +117,6 @@
 	--link_hover_decoration: underline;
 	--link_selected_decoration: underline;
 	--link_selected_color: var(--text_color);
-	--link_font_weight: var(--font_weight_4);
 	--link_cursor: default; /* because we have other visual affordances */
 	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
@@ -144,6 +143,7 @@
 	--font_weight_3: 500;
 	--font_weight_2: 300;
 	--font_weight_1: 100;
+	--font_weight: var(--font_weight_3);
 	--spacing_xxxxxl: 128px;
 	--spacing_xxxxl: 96px;
 	--spacing_xxxl: 64px;
@@ -237,7 +237,8 @@ body {
 
 a {
 	color: var(--link_color);
-	font-weight: var(--link_font_weight);
+	--font_weight: var(--font_weight_4);
+	font-weight: var(--font_weight);
 	text-decoration: var(--link_text_decoration);
 }
 a:hover {
@@ -269,7 +270,8 @@ ul {
 h1,
 h2,
 h3 {
-	font-weight: var(--font_weight_2);
+	--font_weight: var(--font_weight_2);
+	font-weight: var(--font_weight);
 }
 
 form {
