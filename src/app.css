@@ -388,8 +388,8 @@ input[type='checkbox']:focus {
 input[type='checkbox']:checked {
 	--input_border_color: var(--active_color);
 }
+.buttonlike:active input[type='checkbox'],
 input[type='checkbox']:active {
-	/* TODO this isn't applying when focused */
 	--input_border_color: var(--active2_color);
 }
 input[type='checkbox']::before {
@@ -452,7 +452,7 @@ textarea:active,
 button:active {
 	z-index: 3;
 	/* TODO do we want these two vars at all? or should we use selectors+vars? */
-	--input_border_color: var(--active2_color);
+	--input_border_color: var(--active_color);
 	--button_border_color: var(--active_color);
 	--outline_color: var(--active_color);
 	/* TODO ? */
