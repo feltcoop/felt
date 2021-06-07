@@ -19,8 +19,8 @@
 		</li>
 	</ul>
 	<p>
-		The goal here is to compare and contrast the two design patterns. While you're going through
-		hthis experience, ask yourself: which would you prefer?
+		The goal here is to compare and contrast the two design patterns. While you're going through the
+		experience, ask yourself: which would you prefer?
 	</p>
 
 	<button on:click={() => send('NEXT')}> click here to start → </button>
