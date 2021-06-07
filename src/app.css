@@ -7,13 +7,13 @@
 	--faded_xs: 15%;
 	--bg: #fff;
 	--blue_hue: 210;
-	--blue_saturation: 50%;
+	--blue_saturation: 55%;
 	--blue_lightness: 50%;
 	--blue_alpha: var(--alpha);
 	--blue: hsla(var(--blue_hue), var(--blue_saturation), var(--blue_lightness), var(--blue_alpha));
 	--green_hue: 120;
-	--green_saturation: 45%;
-	--green_lightness: 55%;
+	--green_saturation: 55%;
+	--green_lightness: 45%;
 	--green_alpha: var(--alpha);
 	--green: hsla(
 		var(--green_hue),
@@ -91,7 +91,7 @@
 	--selected_lightness: var(--blue_lightness);
 	--selected_alpha: var(--alpha); /* TODO maybe add a base alpha/transparency var? */
 	/* --selected_text_decoration: underline; */
-	--selected_color: hsla(
+	--active_color: hsla(
 		var(--selected_hue),
 		var(--selected_saturation),
 		var(--selected_lightness),
@@ -106,7 +106,7 @@
 		var(--selected_light_bg_lightness),
 		var(--selected_light_bg_alpha)
 	);
-	--active_color: var(--green);
+	--active2_color: var(--green);
 	--help_color: var(--green);
 	--error_color: var(--red);
 	/* these don't use alpha because it affects performance (unless that changed) */
@@ -142,13 +142,17 @@
 	--link_text_decoration: none;
 	--link_hover_decoration: underline;
 	--link_selected_decoration: underline;
-	--link_selected_color: var(--text_color);
+	--link_active_color: var(--text_color);
 	--link_cursor: default; /* because we have other visual affordances */
 	/* TODO maybe spacing 1-N ? */
-	--spacing_xxxxxl: 128px;
-	--spacing_xxxxl: 96px;
-	--spacing_xxxl: 64px;
-	--spacing_xxl: 48px;
+	--spacing_xl9: 512px;
+	--spacing_xl8: 384px;
+	--spacing_xl7: 256px;
+	--spacing_xl6: 196px;
+	--spacing_xl5: 128px;
+	--spacing_xl4: 96px;
+	--spacing_xl3: 64px;
+	--spacing_xl2: 48px;
 	--spacing_xl: 32px;
 	--spacing_lg: 20px;
 	--spacing_md: 10px;
@@ -159,8 +163,8 @@
 	--spacing_xxxs: 1px;
 	--column_width: 600px;
 	--nav_height: var(--spacing_xl);
-	--avatar_height: var(--spacing_xxl);
-	--input_height: var(--spacing_xxl);
+	--avatar_height: var(--spacing_xl2);
+	--input_height: var(--spacing_xl2);
 	--input_width_max: 400px;
 	--input_width_min: 100px;
 	--border_color: hsla(
@@ -254,19 +258,18 @@ a:hover {
 	--outline_color: var(--interactive_hover_color);
 	cursor: var(--link_cursor);
 }
-a:focus,
-a:focus:not(:disabled) {
+a:focus {
 	z-index: 2;
 	--outline_width: var(--outline2_width);
-	--outline_color: var(--selected_color);
+	--outline_color: var(--active_color);
 	text-decoration: var(--link_hover_decoration);
 }
-a:active:not(:disabled) {
+a:active {
 	--outline_width: var(--outline2_width);
-	--outline_color: var(--active_color);
+	--outline_color: var(--active2_color);
 }
 a.selected {
-	color: var(--link_selected_color);
+	color: var(--link_active_color);
 	text-decoration: var(--link_selected_decoration);
 }
 
@@ -329,7 +332,7 @@ button:disabled::before {
 }
 button.selected::before {
 	--outline_width: var(--border_width_sm);
-	--border_color: var(--selected_color);
+	--border_color: var(--active_color);
 }
 button:hover {
 	background: var(--interactive_hover_color);
@@ -340,12 +343,13 @@ button:active {
 button.inline {
 	display: inline-block;
 }
-button.selected {
+button.selected,
+button:disabled.selected {
 	z-index: 1;
-	border-color: var(--selected_color);
+	border-color: var(--active_color);
 	border-left-style: var(--button_border_selected_style);
 	border-right-style: var(--button_border_selected_style);
-	color: var(--selected_color);
+	color: var(--active_color);
 	outline: var(--spacing_rg) var(--border2_style) var(--interactive_hover_color);
 }
 
@@ -378,11 +382,11 @@ input[type='checkbox'] {
 	--outline_style: var(--border3_style);
 }
 input[type='checkbox']:checked {
-	--input_border_color: var(--selected_color);
+	--input_border_color: var(--active_color);
 }
 input[type='checkbox']:active {
 	/* TODO this isn't applying when focused */
-	--input_border_color: var(--active_color);
+	--input_border_color: var(--active2_color);
 }
 input[type='checkbox']::before {
 	content: var(--content, '•');
@@ -397,7 +401,7 @@ input[type='checkbox']::before {
 	justify-content: center;
 	overflow: var(--overflow, visible);
 	font-size: var(--font_size, var(--font_size_xl4));
-	color: var(--selected_color);
+	color: var(--active_color);
 	line-height: 1;
 }
 input[type='checkbox']:checked::before {
@@ -414,37 +418,31 @@ hr {
 	outline-color: var(--outline_color);
 }
 
-.buttonlike:hover:not(:disabled),
-input:hover:not(:disabled),
-textarea:hover:not(:disabled),
-button:hover:not(:disabled) {
+.buttonlike:hover,
+input:hover,
+textarea:hover,
+button:hover {
 	z-index: 3;
 	--outline_style: var(--border2_style);
 	--outline_width: var(--outline2_width);
 }
-input[type='checkbox']:hover:not(:disabled) {
+input[type='checkbox']:hover {
 	--outline_style: var(--border3_style);
 }
 
 .buttonlike:focus,
-.buttonlike:focus:not(:disabled),
 .buttonlike:focus-within,
-.buttonlike:focus-within:not(:disabled),
 input:focus,
-input:focus:not(:disabled),
 textarea:focus,
-textarea:focus:not(:disabled),
-button:focus,
-button:focus:not(:disabled) {
+button:focus {
 	z-index: 2;
-	--input_border_color: var(--selected_color);
-	--outline_color: var(--selected_color);
+	--input_border_color: var(--active_color);
+	--outline_color: var(--active_color);
 	--outline_style: var(--border2_style);
 	--outline_width: var(--outline2_width);
 }
 
-input[type='checkbox']:focus,
-input[type='checkbox']:focus:not(:disabled) {
+input[type='checkbox']:focus {
 	--outline_style: var(--border3_style);
 }
 
@@ -456,31 +454,21 @@ input:active,
 textarea:active,
 button:active {
 	z-index: 3;
-	--outline_width: var(--outline2_width);
-}
-
-/* TODO I'm failing to get this selector to apply to make it so
-when the user hits spacebar it turns the outline to the active color, like on a click
-.buttonlike:focus-within(input:active:not(:disabled)),
- */
-.buttonlike:active:not(:disabled),
-.buttonlike:active:not(:disabled) input,
-.buttonlike:active:not(:disabled) textarea,
-.buttonlike:active:not(:disabled) button,
-input:active:not(:disabled),
-textarea:active:not(:disabled),
-button:active:not(:disabled) {
-	z-index: 3;
+	/* TODO do we want these two vars at all? or should we use selectors+vars? */
+	--input_border_color: var(--active2_color);
+	--button_border_color: var(--active_color);
+	--outline_color: var(--active_color);
+	/* TODO ? */
+	/* --outline_width: var(--outline2_width); */
 	--outline_width: var(--outline3_width);
+}
+.buttonlike:active input,
+input:active {
+	/* TODO ? */
 	--outline_color: var(--active_color);
 }
-.buttonlike:active:not(:disabled) button,
-button:active:not(:disabled) {
-	/* I don't love the inconsistency, but this is better */
-	--outline_color: var(--selected_color);
-}
 
-input[type='checkbox']:active:not(:disabled) {
+input[type='checkbox']:active {
 	--outline_style: var(--border3_style);
 }
 

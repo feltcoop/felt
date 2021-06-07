@@ -57,7 +57,7 @@
 		{#if principle}
 			<Consent_Principle_View {principle} />
 		{:else}
-			<h2>—</h2>
+			<h2>&nbsp;</h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />

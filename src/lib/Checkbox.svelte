@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	// TODO extract helper
 	let id_count = 0;
 	const to_id = (): string => `Checkbox_${id_count++}`;
 </script>
@@ -34,14 +35,14 @@
 	}
 	.selected {
 		/* TODO vars */
-		border-color: var(--selected_color);
+		border-color: var(--active_color);
 	}
 	.selected:focus {
-		--outline_color: var(--selected_color);
+		--outline_color: var(--active_color);
 	}
 	.selected:active {
-		border-color: var(--active_color);
-		--outline_color: var(--active_color);
+		border-color: var(--active2_color);
+		--outline_color: var(--active2_color);
 	}
 	.content {
 		width: var(--column_width);
