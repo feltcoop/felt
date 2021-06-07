@@ -439,6 +439,12 @@ button:focus {
 	--outline_style: var(--border2_style);
 	--outline_width: var(--outline2_width);
 }
+.buttonlike:focus-within {
+	--input_border_color: var(--border_color);
+}
+.buttonlike.selected {
+	--input_border_color: var(--active_color);
+}
 
 .buttonlike:active,
 .buttonlike:active input,
@@ -460,18 +466,6 @@ button:active {
 input:active {
 	/* TODO ? */
 	--outline_color: var(--active_color);
-}
-
-.buttonlike.selected {
-	/* TODO vars */
-	border-color: var(--active_color);
-}
-.buttonlike.selected:focus {
-	--outline_color: var(--active_color);
-}
-.buttonlike.selected:active {
-	border-color: var(--active2_color);
-	--outline_color: var(--active2_color);
 }
 
 input[type='checkbox']:focus {

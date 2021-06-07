@@ -28,8 +28,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-top: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
-		border-bottom: var(--border_width_lg) var(--border_style) var(--border_lighter_color);
+		border-width: var(--input_border_width);
+		border-style: var(--input_border_style);
+		border-color: var(--input_border_color);
+		border-left-width: 0;
+		border-right-width: 0;
 		--outline_style: var(--border4_style);
 		--outline_width: var(--border_width_sm);
 	}
