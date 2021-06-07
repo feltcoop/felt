@@ -265,12 +265,19 @@ a:focus {
 	text-decoration: var(--link_hover_decoration);
 }
 a:active {
-	--outline_width: var(--outline2_width);
+	--outline_width: var(--outline3_width);
 	--outline_color: var(--active2_color);
 }
 a.selected {
 	color: var(--link_active_color);
+	--outline_color: var(--border_color);
 	text-decoration: var(--link_selected_decoration);
+}
+a.selected:focus {
+	--outline_color: var(--active_color);
+}
+a.selected:active {
+	--outline_color: var(--border_color);
 }
 
 ul {

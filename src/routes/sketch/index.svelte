@@ -11,11 +11,15 @@
 		{#each sketches as sketch (sketch.name)}
 			<Markup>
 				<li>
-					<h2>
-						<a href={sketch.id}>{sketch.name}</a>
-					</h2>
+					<a href={sketch.id}>{sketch.name}</a>
 				</li>
 			</Markup>
 		{/each}
 	</ol>
 </nav>
+
+<style>
+	li {
+		font-size: var(--font_size_xl2);
+	}
+</style>
