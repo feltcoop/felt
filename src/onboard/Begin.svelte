@@ -14,13 +14,13 @@
 	<ul>
 		<li>The left column uses dark design patterns that create an unconsentful experience.</li>
 		<li>
-			The one on the right uses the consentful design framework described by
+			The one on the right uses the affirmative consent design framework described by
 			<a href="https://consentful.systems">consentful.systems</a>
 		</li>
 	</ul>
 	<p>
-		The goal here is to compare and contrast the two design patterns & highlight effective patterns
-		of consent.
+		The goal here is to compare and contrast the two design patterns. While you're going through
+		hthis experience, ask yourself: which would you prefer?
 	</p>
 
 	<button on:click={() => send('NEXT')}> click here to start → </button>
