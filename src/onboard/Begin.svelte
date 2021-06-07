@@ -12,14 +12,10 @@
 	</h1>
 	<p>This sketch is a proof of concept, side-by-side comparsion between two onboarding flows:</p>
 	<ul>
+		<li>The left column uses dark design patterns that create an unconsentful experience.</li>
 		<li>
-			<p>The left column uses dark design patterns that create an unconsentful experience.</p>
-		</li>
-		<li>
-			<p>
-				The one on the right uses the consentful design framework described by
-				<a href="https://consentful.systems">consentful.systems</a>
-			</p>
+			The one on the right uses the consentful design framework described by
+			<a href="https://consentful.systems">consentful.systems</a>
 		</li>
 	</ul>
 	<p>

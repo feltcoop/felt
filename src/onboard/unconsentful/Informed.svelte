@@ -34,7 +34,7 @@
 			Wow you did it! You win a doggy:
 			<span class="dog">🐕</span>
 		</p>
-		<p>Now click "I acknowledge..." below for more rewards :-)</p>
+		<p>Now click "I acknowledge" below for more rewards :-)</p>
 	{/if}
 </Markup>
 
