@@ -33,17 +33,6 @@
 		--outline_style: var(--border4_style);
 		--outline_width: var(--border_width_sm);
 	}
-	.selected {
-		/* TODO vars */
-		border-color: var(--active_color);
-	}
-	.selected:focus {
-		--outline_color: var(--active_color);
-	}
-	.selected:active {
-		border-color: var(--active2_color);
-		--outline_color: var(--active2_color);
-	}
 	.content {
 		width: var(--column_width);
 		padding: var(--spacing_md) 0;

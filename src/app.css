@@ -455,6 +455,18 @@ input:active {
 	--outline_color: var(--active_color);
 }
 
+.buttonlike.selected {
+	/* TODO vars */
+	border-color: var(--active_color);
+}
+.buttonlike.selected:focus {
+	--outline_color: var(--active_color);
+}
+.buttonlike.selected:active {
+	border-color: var(--active2_color);
+	--outline_color: var(--active2_color);
+}
+
 input[type='checkbox']:focus {
 	--input_border_color: var(--border_color);
 }
