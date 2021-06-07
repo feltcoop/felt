@@ -382,16 +382,6 @@ input[type='checkbox'] {
 	/* setting `outine_style` here instead would force us to override active/focus states */
 	outline-style: var(--border3_style);
 }
-input[type='checkbox']:focus {
-	--input_border_color: var(--border_color);
-}
-input[type='checkbox']:checked {
-	--input_border_color: var(--active_color);
-}
-.buttonlike:active input[type='checkbox'],
-input[type='checkbox']:active {
-	--input_border_color: var(--active2_color);
-}
 input[type='checkbox']::before {
 	content: var(--content, '•');
 	position: absolute;
@@ -465,8 +455,15 @@ input:active {
 	--outline_color: var(--active_color);
 }
 
-input[type='checkbox']:active {
-	--outline_style: var(--border3_style);
+input[type='checkbox']:focus {
+	--input_border_color: var(--border_color);
+}
+input[type='checkbox']:checked {
+	--input_border_color: var(--active_color);
+}
+.buttonlike:active input[type='checkbox'],
+input:active {
+	--input_border_color: var(--active2_color);
 }
 
 button:disabled,
