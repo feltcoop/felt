@@ -65,10 +65,10 @@
 >
 	<Markup>
 		<div>Invite your friends</div>
-		<div class="smallprint">and everyone you've ever emailed</div>
+		<small>and everyone you've ever emailed</small>
 		<div>so they can join the fun!</div>
 		<div>We already made an account for them!</div>
-		<div class="smallprint">Or click the smiley face to choose who to invite</div>
+		<small>Or click the smiley face to choose who to invite</small>
 	</Markup>
 </Checkbox>
 
@@ -107,7 +107,7 @@
 	p {
 		font-size: var(--font_size_md);
 	}
-	.smallprint {
-		font-size: xx-small;
+	small {
+		font-size: var(--font_size_xs);
 	}
 </style>

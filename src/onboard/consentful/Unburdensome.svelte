@@ -8,13 +8,19 @@
 </script>
 
 <Markup>
-	<h2>Felt.dev is more fun with people to talk to!</h2>
+	<h2>welcome to Felt.dev!</h2>
 </Markup>
 
 <blockquote>
-	Send this link to people to invite them to join: <a>http://felt.dev/onboard/invite</a>
+	need help? <a
+		href="/help"
+		on:click|preventDefault={() =>
+			alert(
+				"We're still working on this, but if you actually want help you can email us at team@felt.social",
+			)}>felt.dev/help</a
+	>
 </blockquote>
 
 <button on:click={() => done()}>
-	<Markup>No thanks, let's move on →</Markup>
+	<Markup>let's get started →</Markup>
 </button>
