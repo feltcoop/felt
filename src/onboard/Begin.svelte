@@ -8,12 +8,12 @@
 
 <Markup>
 	<h1>
-		Welcome to the <a href="https://www.felt.dev">Felt.dev</a> consentful systems onboarding sketch!
+		Welcome to the <a href="/">Felt.dev</a> consentful systems onboarding sketch!
 	</h1>
 	<p>This sketch is a proof of concept, side-by-side comparsion between two onboarding flows:</p>
 	<ul>
 		<li>
-			<p>The left column uses dark patterns of design that create an unconsentful experience.</p>
+			<p>The left column uses dark design patterns that create an unconsentful experience.</p>
 		</li>
 		<li>
 			<p>
@@ -35,6 +35,7 @@
 <style>
 	button {
 		font-size: var(--spacing_xxl);
+		font-weight: var(--font_weight_2);
 		text-align: center;
 		color: var(--text_disabled_color);
 	}

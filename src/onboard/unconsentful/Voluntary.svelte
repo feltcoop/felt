@@ -6,7 +6,7 @@
 	import Help_Message from '$lib/Help_Message.svelte';
 	import Message from '$lib/Message.svelte';
 	import Markup from '$lib/Markup.svelte';
-	import {Unreachable_Error} from '../../utils/error';
+	import {Unreachable_Error} from '../../util/error';
 
 	// TODO refactor to an xstate machine
 
@@ -33,7 +33,7 @@
 
 	const create = (username: string, _password: string): void => {
 		selected_provider = null;
-		create_error_message = `Whoopsies, our robots can be so clumsy! Sorry${
+		create_error_message = `Oopsies — our robots can be so clumsy! Sorry${
 			username ? `, ${username}` : ''
 		}! Systems're broken. Please click the buttons below :-)`;
 	};
@@ -165,7 +165,7 @@
 			<input
 				bind:value={anything_else}
 				bind:this={anything_else_el}
-				placeholder="anything else you would like to share? :-)"
+				placeholder="anything else you want to share? :-)"
 				on:keydown={(e) => {
 					if (e.key === 'Enter') {
 						if (enable_signup_button) {

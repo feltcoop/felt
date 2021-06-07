@@ -9,32 +9,35 @@
 	export let back: () => void;
 
 	let consenting = true; // :-)
+	let won = false; // you did it!
 
 	$: enable_continue_button = consenting;
-
-	const on_click_privacy = () => alert('lol');
-	const on_click_terms = () => alert('dont u dare');
 </script>
 
 <Markup>
 	<p>
-		Here is our <small
-			><a href="privacy" on:click|preventDefault={on_click_privacy}>privacy policy</a></small
-		>
-		and
-		<small><a href="terms" on:click|preventDefault={on_click_terms}>terms of service</a></small>. We
-		care about you, really.
+		<small>
+			Here is our <a href="/privacy" on:click|preventDefault={() => alert('lol')}>
+				privacy policy
+			</a>
+			and
+			<a href="/terms" on:click|preventDefault={() => alert('dont u dare')}> terms of service </a>
+		</small>.
 	</p>
 	<p>
-		Now click the win button!!! <button
-			on:click={() =>
-				alert(
-					'wow you did it! you win! \n\nhey look a doggy \n\n🐕\n\nkeep playing for more rewards! :-)',
-				)}
-		>
+		Now click the win button!!! <button class="inline" disabled={won} on:click={() => (won = true)}>
 			win!!!
 		</button>
 	</p>
+	{#if won}
+		<p>wow you did it! you win!</p>
+		<p>
+			Hey look a doggy:
+			<span class="dog">🐕</span>
+		</p>
+		<p>Keep playing for more rewards :-)</p>
+		<p>Now click "I acknowledge..." below!</p>
+	{/if}
 </Markup>
 
 <Checkbox bind:checked={consenting} --content="'✗'">
@@ -57,3 +60,12 @@
 </button>
 
 <Help_Message text="This is legally binding but do not worry about it :-)" />
+
+<style>
+	small {
+		font-size: var(--font_size_xs);
+	}
+	.dog {
+		font-size: var(--font_size_xl4);
+	}
+</style>

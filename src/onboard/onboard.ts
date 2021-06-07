@@ -2,19 +2,16 @@ import {createMachine as create_machine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 import type {SvelteComponent} from 'svelte';
 
-import Begin from './Begin.svelte';
 import Consentful_Voluntary from './consentful/Voluntary.svelte';
 import Consentful_Informed from './consentful/Informed.svelte';
 import Consentful_Revertible from './consentful/Revertible.svelte';
 import Consentful_Specific from './consentful/Specific.svelte';
 import Consentful_Unburdensome from './consentful/Unburdensome.svelte';
-import Consentful_End from './consentful/End.svelte';
 import Unconsentful_Voluntary from './unconsentful/Voluntary.svelte';
 import Unconsentful_Informed from './unconsentful/Informed.svelte';
 import Unconsentful_Revertible from './unconsentful/Revertible.svelte';
 import Unconsentful_Specific from './unconsentful/Specific.svelte';
 import Unconsentful_Unburdensome from './unconsentful/Unburdensome.svelte';
-import Unconsentful_End from './unconsentful/End.svelte';
 import type {Consent_Type} from 'src/consent/consent';
 
 // TODO copypasta with src/xstate/machine.ts
@@ -71,7 +68,7 @@ export type Onboard_State_Name =
 	| 'end';
 export interface Onboard_Data {
 	id: string;
-	component: typeof SvelteComponent;
+	component: typeof SvelteComponent | null;
 }
 
 // TODO does this belong in the machine context?
@@ -79,7 +76,7 @@ export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboa
 	consentful: {
 		begin: {
 			id: 'begin',
-			component: Begin,
+			component: null,
 		},
 		voluntary: {
 			id: 'voluntary',
@@ -103,13 +100,13 @@ export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboa
 		},
 		end: {
 			id: 'end',
-			component: Consentful_End,
+			component: null,
 		},
 	},
 	unconsentful: {
 		begin: {
 			id: 'begin',
-			component: Begin,
+			component: null,
 		},
 		voluntary: {
 			id: 'voluntary',
@@ -133,7 +130,7 @@ export const onboard_data: Record<Consent_Type, Record<Onboard_State_Name, Onboa
 		},
 		end: {
 			id: 'end',
-			component: Unconsentful_End,
+			component: null,
 		},
 	},
 };

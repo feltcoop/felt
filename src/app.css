@@ -1,8 +1,5 @@
 /* TODO some is haphazard & inconsistent */
 :root {
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
 	--alpha: 0.89;
 	--faded_rg: 62%;
 	--faded_md: 38%;
@@ -117,8 +114,10 @@
 	--link_lightness: 35%;
 	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
-	--link_accent_text_decoration: underline;
-	--link_font_weight: var(--font_weight_4);
+	--link_hover_decoration: underline;
+	--link_selected_decoration: underline;
+	--link_selected_color: var(--text_color);
+	--link_cursor: default; /* because we have other visual affordances */
 	/* these don't use alpha because it affects performance (unless that changed) */
 	--text_color: hsl(0, 10%, 16%);
 	--text_light_color: hsl(0, 10%, 38%);
@@ -137,11 +136,15 @@
 	--font_size_lg: 24px;
 	--font_size_md: 20px;
 	--font_size_rg: 16px;
+	--font_size_sm: 13px;
+	--font_size_xs: 10px;
 	--font_weight_5: 900;
 	--font_weight_4: 700;
 	--font_weight_3: 500;
 	--font_weight_2: 300;
 	--font_weight_1: 100;
+	--font_weight: var(--font_weight_3);
+	/* TODO maybe spacing 1-N ? */
 	--spacing_xxxxxl: 128px;
 	--spacing_xxxxl: 96px;
 	--spacing_xxxl: 64px;
@@ -175,15 +178,17 @@
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xxs);
 	--border_width_sm: var(--spacing_xxxs);
+	--border2_width: var(--spacing_xs);
 	--border_style: solid;
-	--border_accent_width: var(--spacing_xs);
-	--border_accent_style: double;
-	--border_accent2_style: dotted;
-	--border_accent3_style: dashed;
+	--border2_style: double;
+	--border3_style: dotted;
+	--border4_style: dashed;
 	--border: var(--border_width_rg) var(--border_style) var(--tint);
-	--outline_width: var(--spacing_md);
-	--outline_width2: calc(var(--outline_width) + 2px);
-	--outline_style: var(--border_accent_style);
+	--outline_width: 0;
+	--outline2_width: var(--spacing_rg);
+	--outline3_width: var(--spacing_md);
+	--outline_style: var(--border2_style);
+	--outline2_style: var(--border3_style);
 	--outline_color: var(--interactive_hover_color);
 	--button_border_width: var(--border_width_lg);
 	--button_border_style: double;
@@ -193,13 +198,19 @@
 	--button_text_color: var(--text_light_color);
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
-	--border_alert: var(--border_accent_width) var(--border_accent_style)
+	--border_alert: var(--border2_width) var(--border2_style)
 		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
-	--border_help: var(--border_accent_width) var(--border_accent_style)
+	--border_help: var(--border2_width) var(--border2_style)
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
-	/* --border: var(--border_accent_width) var(--border_accent_style) hsla(0, 0%, 80%, var(--faded_md)); */
+	/* --border: var(--border2_width) var(--border2_style) hsla(0, 0%, 80%, var(--faded_md)); */
 	--button_border_color: var(--border_color);
 	--input_border_color: var(--button_border_color);
+
+	/* TODO move these? */
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: var(--font_size_rg);
 }
 
 html,
@@ -229,40 +240,52 @@ body {
 
 a {
 	color: var(--link_color);
-	font-weight: var(--link_font_weight);
+	--font_weight: var(--font_weight_4);
+	font-weight: var(--font_weight);
 	text-decoration: var(--link_text_decoration);
+	/* TODO not sure about this pattern, experimenting */
+	--outline_style: var(--outline2_style);
+	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 a:hover {
-	text-decoration: var(--link_accent_text_decoration);
+	text-decoration: var(--link_hover_decoration);
 	z-index: 3;
-	outline: var(--spacing_rg) var(--border_accent2_style) var(--interactive_hover_color);
+	--outline_width: var(--outline2_width);
+	--outline_color: var(--interactive_hover_color);
+	cursor: var(--link_cursor);
 }
 a:focus,
 a:focus:not(:disabled) {
 	z-index: 2;
-	outline: var(--spacing_rg) var(--border_accent2_style) var(--selected_color);
-	text-decoration: var(--link_accent_text_decoration);
+	--outline_width: var(--outline2_width);
+	--outline_color: var(--selected_color);
+	text-decoration: var(--link_hover_decoration);
 }
 a:active:not(:disabled) {
-	outline: var(--spacing_rg) var(--border_accent2_style) var(--active_color);
+	--outline_width: var(--outline2_width);
+	--outline_color: var(--active_color);
 }
 a.selected {
-	text-decoration: var(--link_accent_text_decoration);
+	color: var(--link_selected_color);
+	text-decoration: var(--link_selected_decoration);
 }
 
 ul {
 	display: flex;
 	flex-direction: column;
-}
-
-li {
 	list-style: none;
 }
 
 h1,
 h2,
 h3 {
-	font-weight: var(--font_weight_2);
+	--font_weight: var(--font_weight_2);
+	font-weight: var(--font_weight);
+}
+h1 a,
+h2 a,
+h3 a {
+	--font_weight: var(--font_weight_3);
 }
 
 form {
@@ -285,10 +308,7 @@ button {
 	border-color: var(--button_border_color);
 	border-style: var(--button_border_style);
 	color: var(--button_text_color);
-	--outline_width: 0;
-	outline-width: var(--outline_width);
-	outline-style: var(--outline_style);
-	outline-color: var(--outline_color);
+	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 button::before {
 	content: '';
@@ -301,7 +321,7 @@ button::before {
 	border-style: var(--border_style);
 	border-color: var(--border_color);
 	outline-width: var(--border_width_sm);
-	outline-style: var(--border_accent3_style);
+	outline-style: var(--border4_style);
 	outline-color: var(--outline_color);
 }
 button:disabled::before {
@@ -320,22 +340,13 @@ button:active {
 button.inline {
 	display: inline-block;
 }
-button:disabled,
-input:disabled,
-textarea:disabled {
-	opacity: 1; /* for some browsers */
-	background: var(--interactive_disabled_color);
-	color: var(--text_disabled_color);
-	border-left-style: var(--button_border_disabled_style);
-	border-right-style: var(--button_border_disabled_style);
-}
 button.selected {
 	z-index: 1;
 	border-color: var(--selected_color);
 	border-left-style: var(--button_border_selected_style);
 	border-right-style: var(--button_border_selected_style);
 	color: var(--selected_color);
-	outline: var(--spacing_rg) var(--border_accent_style) var(--interactive_hover_color);
+	outline: var(--spacing_rg) var(--border2_style) var(--interactive_hover_color);
 }
 
 input,
@@ -352,10 +363,8 @@ textarea {
 	min-width: var(--input_width_min);
 	min-height: var(--input_height);
 	--outline_width: var(--border_width_sm);
-	--outline_style: var(--border_accent3_style);
-	outline-width: var(--outline_width);
-	outline-style: var(--outline_style);
-	outline-color: var(--outline_color);
+	--outline_style: var(--border4_style);
+	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 
 input[type='checkbox'] {
@@ -366,7 +375,7 @@ input[type='checkbox'] {
 	min-width: var(--input_height);
 	--input_padding_v: 0;
 	--input_padding_h: 0;
-	--outline_style: var(--border_accent2_style);
+	--outline_style: var(--border3_style);
 }
 input[type='checkbox']:checked {
 	--input_border_color: var(--selected_color);
@@ -396,7 +405,7 @@ input[type='checkbox']:checked::before {
 }
 
 hr {
-	border: var(--border_width_md) var(--border_accent_style) var(--border_light_color);
+	border: var(--border_width_md) var(--border2_style) var(--border_light_color);
 }
 
 .buttonlike {
@@ -410,11 +419,11 @@ input:hover:not(:disabled),
 textarea:hover:not(:disabled),
 button:hover:not(:disabled) {
 	z-index: 3;
-	--outline_width: var(--spacing_md);
-	--outline_style: var(--border_accent_style);
+	--outline_style: var(--border2_style);
+	--outline_width: var(--outline2_width);
 }
 input[type='checkbox']:hover:not(:disabled) {
-	--outline_style: var(--border_accent2_style);
+	--outline_style: var(--border3_style);
 }
 
 .buttonlike:focus,
@@ -430,13 +439,24 @@ button:focus:not(:disabled) {
 	z-index: 2;
 	--input_border_color: var(--selected_color);
 	--outline_color: var(--selected_color);
-	--outline_width: var(--spacing_md);
-	--outline_style: var(--border_accent_style);
+	--outline_style: var(--border2_style);
+	--outline_width: var(--outline2_width);
 }
 
 input[type='checkbox']:focus,
 input[type='checkbox']:focus:not(:disabled) {
-	--outline_style: var(--border_accent2_style);
+	--outline_style: var(--border3_style);
+}
+
+.buttonlike:active,
+.buttonlike:active input,
+.buttonlike:active textarea,
+.buttonlike:active button,
+input:active,
+textarea:active,
+button:active {
+	z-index: 3;
+	--outline_width: var(--outline2_width);
 }
 
 /* TODO I'm failing to get this selector to apply to make it so
@@ -451,7 +471,7 @@ input:active:not(:disabled),
 textarea:active:not(:disabled),
 button:active:not(:disabled) {
 	z-index: 3;
-	--outline_width: calc(var(--spacing_md) + 2px);
+	--outline_width: var(--outline3_width);
 	--outline_color: var(--active_color);
 }
 .buttonlike:active:not(:disabled) button,
@@ -461,7 +481,18 @@ button:active:not(:disabled) {
 }
 
 input[type='checkbox']:active:not(:disabled) {
-	--outline_style: var(--border_accent2_style);
+	--outline_style: var(--border3_style);
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled {
+	--outline_width: 0;
+	opacity: 1; /* for some browsers */
+	background: var(--interactive_disabled_color);
+	color: var(--text_disabled_color);
+	border-left-style: var(--button_border_disabled_style);
+	border-right-style: var(--button_border_disabled_style);
 }
 
 label {
@@ -498,4 +529,8 @@ blockquote {
 code,
 pre {
 	color: var(--text_light_color);
+}
+
+small {
+	font-size: var(--font_size_sm);
 }

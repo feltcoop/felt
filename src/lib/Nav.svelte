@@ -1,31 +1,28 @@
 <script lang="ts">
+	import {greenheart} from '$lib/icons';
 	import {page} from '$app/stores';
-
-	const path_infos = [
-		{path: '/', content: 'home'},
-		// TODO add this back when we're ready to publish
-		// {path: '/onboard', content: 'onboard'},
-		{path: '/icons', content: 'icons'},
-	];
-
-	$: path = $page.path;
+	import Link_Path from '$lib/Link_Path.svelte';
 </script>
 
-<nav>
-	{#each path_infos as path_info (path_info)}
-		<a class:selected={path === path_info.path} href={path_info.path}>{path_info.content}</a>
-	{/each}
-</nav>
+<h1>
+	{#if $page.path === '/'}
+		<a href="/" class="selected">Felt.dev</a>
+	{:else}
+		<Link_Path path={$page.path} selected_path={$page.path}>
+			<small><a href="/">{greenheart}</a></small>
+		</Link_Path>
+	{/if}
+</h1>
 
 <style>
+	small {
+		/* TODO shouldn't be needed if they composed from the parent context, like by using % */
+		font-size: var(--font_size_rg);
+	}
 	a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0 10px;
-	}
-	.selected {
-		opacity: 1;
-		color: var(--text_color);
+		min-width: var(--nav_height);
 	}
 </style>

@@ -2,13 +2,13 @@
 	import {useMachine} from '@xstate/svelte';
 
 	import {consent_principles} from '../consent/consent';
-	import type {Consent_Type} from '../consent/consent';
-	import type {Consent_Principle_Type} from '../consent/consent';
+	import type {Consent_Type, Consent_Principle_Type} from '../consent/consent';
 	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
 	import {onboard_machine, onboard_data} from './onboard';
 	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
+	import End from './End.svelte';
 	// import Machine_State from '../xstate/Machine_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
@@ -57,14 +57,16 @@
 		{#if principle}
 			<Consent_Principle_View {principle} />
 		{:else}
-			<h2>/sketches/onboard</h2>
+			<h2>—</h2>
 		{/if}
 	</header>
 	<Nav {state} {send} />
 	<div class="content">
 		{#if $state.value === 'begin'}
 			<Begin {send} />
-		{:else}
+		{:else if $state.value === 'end'}
+			<End />
+		{:else if unconsentful_data.component && consentful_data.component}
 			<section class="column" class:complete={done_unconsentful}>
 				<svelte:component
 					this={unconsentful_data.component}
@@ -81,6 +83,8 @@
 					{back}
 				/>
 			</section>
+		{:else}
+			error: unexpected `null` components
 		{/if}
 	</div>
 </div>

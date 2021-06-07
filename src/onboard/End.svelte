@@ -1,11 +1,6 @@
 <script lang="ts">
-	import type {Onboard_Data} from '../onboard';
 	import Markup from '$lib/Markup.svelte';
-	import Credits from '../Credits.svelte';
-
-	export let data: Onboard_Data;
-	export let done: () => void;
-	export let back: () => void;
+	import Credits from './Credits.svelte';
 </script>
 
 <Markup>

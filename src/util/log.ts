@@ -1,4 +1,4 @@
-import {red, yellow, gray, black, magenta, bgYellow, bgRed} from '../utils/terminal.js';
+import {red, yellow, gray, black, magenta, bgYellow, bgRed} from '../util/terminal.js';
 import {EMPTY_ARRAY, to_array} from './array.js';
 import {to_env_number} from './env.js';
 
