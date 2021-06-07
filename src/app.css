@@ -86,25 +86,25 @@
 		var(--tint_lightness5),
 		var(--alpha)
 	);
-	--selected_hue: var(--blue_hue);
-	--selected_saturation: var(--blue_saturation);
-	--selected_lightness: var(--blue_lightness);
-	--selected_alpha: var(--alpha); /* TODO maybe add a base alpha/transparency var? */
-	/* --selected_text_decoration: underline; */
+	--active_hue: var(--blue_hue);
+	--active_saturation: var(--blue_saturation);
+	--active_lightness: var(--blue_lightness);
+	--active_alpha: var(--alpha); /* TODO maybe add a base alpha/transparency var? */
+	/* --active_text_decoration: underline; */
 	--active_color: hsla(
-		var(--selected_hue),
-		var(--selected_saturation),
-		var(--selected_lightness),
-		var(--selected_alpha)
+		var(--active_hue),
+		var(--active_saturation),
+		var(--active_lightness),
+		var(--active_alpha)
 	);
-	--selected_light_bg_saturation: 70%;
-	--selected_light_bg_lightness: 80%;
-	--selected_light_bg_alpha: 0.5;
-	--selected_light_bg: hsla(
+	--active_light_bg_saturation: 70%;
+	--active_light_bg_lightness: 80%;
+	--active_light_bg_alpha: 0.5;
+	--active_light_bg: hsla(
 		var(--selected_hue),
-		var(--selected_light_bg_saturation),
-		var(--selected_light_bg_lightness),
-		var(--selected_light_bg_alpha)
+		var(--active_light_bg_saturation),
+		var(--active_light_bg_lightness),
+		var(--active_light_bg_alpha)
 	);
 	--active2_color: var(--green);
 	--help_color: var(--green);
@@ -233,7 +233,7 @@ body {
 }
 
 ::selection {
-	background: var(--selected_light_bg);
+	background: var(--active_light_bg);
 }
 
 #svelte {
