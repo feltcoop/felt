@@ -208,7 +208,7 @@
 		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
 	/* --border: var(--border2_width) var(--border2_style) hsla(0, 0%, 80%, var(--faded_md)); */
 	--button_border_color: var(--border_color);
-	--input_border_color: var(--button_border_color);
+	--input_border_color: var(--border_color);
 
 	/* TODO move these? */
 	box-sizing: border-box;
@@ -470,6 +470,7 @@ button:disabled,
 input:disabled,
 textarea:disabled {
 	--outline_width: 0;
+	--input_border_color: var(--border_color);
 	opacity: 1; /* for some browsers */
 	background: var(--interactive_disabled_color);
 	color: var(--text_disabled_color);
