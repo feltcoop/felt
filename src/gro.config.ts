@@ -19,6 +19,7 @@ const files = [
 	'util/object.ts',
 	'util/obtainable.ts',
 	'util/path.ts',
+	'util/path_parsing.ts',
 	'util/print.ts',
 	'util/process.ts',
 	'util/random.ts',
