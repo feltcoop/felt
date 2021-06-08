@@ -33,9 +33,7 @@ export const config: Gro_Config_Creator = async () => {
 	const partial: Gro_Config_Partial = {
 		builds: [{name: 'library', platform: 'node', input: files}],
 		adapt: async () => [
-			// TODO this is bugged in Gro, could be hackfixed with a simple in-between adapter but w/e --
-			// for now to publish Felt to npm, these two lines need to be swapped
-			// (await import('@feltcoop/gro/dist/adapt/gro-adapter-sveltekit-frontend.js')).create_adapter(),
+			(await import('@feltcoop/gro/dist/adapt/gro-adapter-sveltekit-frontend.js')).create_adapter(),
 			(await import('@feltcoop/gro/dist/adapt/gro-adapter-node-library.js')).create_adapter(),
 		],
 	};
