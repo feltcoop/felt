@@ -1,15 +1,15 @@
 <script lang="ts">
 	import {useMachine} from '@xstate/svelte';
 
-	import {consent_principles} from '../consent/consent';
-	import type {Consent_Type, Consent_Principle_Type} from '../consent/consent';
-	import Consent_Principle_View from '../consent/Consent_Principle_View.svelte';
+	import {consent_principles} from '$lib/consent/consent';
+	import type {Consent_Type, Consent_Principle_Type} from '$lib/consent/consent';
+	import Consent_Principle_View from '$lib/consent/Consent_Principle_View.svelte';
 	import {onboard_machine, onboard_data} from './onboard';
 	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
 	import End from './End.svelte';
-	// import Machine_State from '../xstate/Machine_State.svelte';
+	// import Machine_State from '$lib/xstate/Machine_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
 	// console.log('onboard', onboard);

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Markup from '$lib/Markup.svelte';
-	import {to_sketch_id} from '../../sketch/sketch';
-	import type {Sketch} from '../../sketch/sketch';
+	import {to_sketch_id} from '$lib/sketch/sketch';
+	import type {Sketch} from '$lib/sketch/sketch';
 
 	const sketches: Sketch[] = ['onboard'].map((name) => ({name, id: to_sketch_id(name)}));
 </script>

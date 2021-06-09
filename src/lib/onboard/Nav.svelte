@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type {Onboard_Send, Onboard_State} from './onboard';
-	import Machine_Controls from '../xstate/Machine_Controls.svelte';
+	import Machine_Controls from '$lib/xstate/Machine_Controls.svelte';
 	import {onboard_machine} from './onboard';
 	import {use_devmode} from '$lib/devmode';
 

@@ -3,7 +3,7 @@
 export * as icons from './lib/icons.js';
 
 // types
-export * from './util/types.js';
+export * from './lib/util/types.js';
 
 // TODO consider what top-level public API makes sense -
 // for now we're preferring deep imports to specific modules -

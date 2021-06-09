@@ -12,7 +12,7 @@ import Unconsentful_Informed from './unconsentful/Informed.svelte';
 import Unconsentful_Revertible from './unconsentful/Revertible.svelte';
 import Unconsentful_Specific from './unconsentful/Specific.svelte';
 import Unconsentful_Unburdensome from './unconsentful/Unburdensome.svelte';
-import type {Consent_Type} from 'src/consent/consent';
+import type {Consent_Type} from '$lib/consent/consent';
 
 // TODO copypasta with src/xstate/machine.ts
 
