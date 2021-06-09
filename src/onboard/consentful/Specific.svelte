@@ -7,59 +7,63 @@
 	export let done: () => void;
 	export let back: () => void;
 
-	interface Community {
-		id: string;
+	interface Space {
+		name: string;
 		selected: boolean;
-		tags: string[];
+		summary: string;
 	}
 
-	const communities: Community[] = [
+	const spaces: Space[] = [
 		{
-			id: 'Svelte Social',
+			name: 'announcements',
 			selected: false,
-			tags: ['programming', 'example-code', 'javascript', 'front-end', '1000+ users'],
+			summary: 'the Felt team posts updates here once or twice a month',
 		},
 		{
-			id: 'Denver Developers',
+			name: 'tool design',
 			selected: false,
-			tags: ['<1000 users', 'local-politics', 'job-postings', 'dogs', 'beer'],
+			summary: 'anyone who uses Felt may be interested in its design',
 		},
 		{
-			id: 'Anne Arbor Academics',
+			name: 'technical webdev',
 			selected: false,
-			tags: ['flowers', 'animation', 'dance', '1000+ users', 'computer-human-interaction'],
+			summary: 'for web programmers making apps, bots, games, and other coding projects',
 		},
 		{
-			id: 'Darknet Discussion',
+			name: 'community governance',
 			selected: false,
-			tags: ['unmoderated', 'anonymous', 'crime', 'global-politics', '10000+ users'],
+			summary: 'for people who want to work with other people to make better decisions and systems',
 		},
 	];
 
-	let selected_communities = communities.filter((c) => c.selected);
-	$: selected_count = selected_communities.length;
+	let selected_spaces = spaces.filter((c) => c.selected);
+	$: selected_count = selected_spaces.length;
 
-	const toggle_selected = (selected: boolean, community: Community) => {
-		community.selected = selected;
-		selected_communities = communities.filter((c) => c.selected);
+	const toggle_selected = (selected: boolean, space: Space) => {
+		space.selected = selected;
+		selected_spaces = spaces.filter((c) => c.selected);
 	};
 </script>
 
 <Markup>
-	<p>Now it's time to join a community or two!</p>
+	<p>Felt.dev has many spaces for people. Want to join some now?</p>
 </Markup>
 
-{#each communities as community (community.id)}
+{#each spaces as space (space.name)}
 	<Checkbox
-		checked={community.selected}
-		on_change={(checked) => toggle_selected(checked, community)}
+		checked={space.selected}
+		on_change={(checked) => toggle_selected(checked, space)}
 		--overflow="hidden"
-		--font_size="var(--font_size_xl3)"
-		--text_align="center"
 	>
-		{community.id} | {#each community.tags as tag (tag)}
-			<small>{tag}</small> |
-		{/each}
+		<Markup>
+			<!-- TODO what semantic element? I think h2/h3 is wrong -->
+			<div class="name">
+				{space.name}
+			</div>
+			<p class="summary">
+				{space.summary}
+			</p>
+		</Markup>
 	</Checkbox>
 {/each}
 
@@ -70,3 +74,12 @@
 		join these communites →
 	{/if}
 </button>
+
+<style>
+	.name {
+		font-size: var(--font_size_lg);
+	}
+	.summary {
+		font-size: var(--font_size_rg);
+	}
+</style>

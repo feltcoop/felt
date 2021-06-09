@@ -11,11 +11,11 @@
 		align-items: stretch;
 	}
 	.markup :global(ul) {
-		padding-left: var(--spacing_xl);
+		padding: var(--spacing_rg) 0 var(--spacing_rg) var(--spacing_xl);
 		list-style: disc;
 	}
 	.markup :global(p) {
-		padding: var(--spacing_lg) 0;
+		padding: var(--spacing_rg) 0;
 	}
 	.markup :global(h1) {
 		padding-bottom: var(--spacing_lg);
