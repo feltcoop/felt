@@ -29,13 +29,7 @@
 </Markup>
 
 {#each spaces as space (space.name)}
-	<Checkbox
-		checked={space.selected}
-		on_change={(checked) => toggle_selected(checked, space)}
-		--overflow="hidden"
-		--font_size="var(--font_size_xl3)"
-		--text_align="center"
-	>
+	<Checkbox checked={space.selected} on_change={(checked) => toggle_selected(checked, space)}>
 		{space.name}
 	</Checkbox>
 {/each}
