@@ -47,7 +47,7 @@
 </script>
 
 <Markup>
-	<p>Felt.dev has many spaces for people. Want to join some now?</p>
+	<p>Felt.dev has a few spaces for various interests. Want to join some now?</p>
 </Markup>
 
 {#each spaces as space (space.name)}
