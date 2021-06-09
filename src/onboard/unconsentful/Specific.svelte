@@ -40,4 +40,6 @@
 	</Checkbox>
 {/each}
 
-<button on:click={() => done()}> Let's get to posting...</button>
+<button on:click={() => done()}>
+	<Markup>let's start posting →</Markup>
+</button>
