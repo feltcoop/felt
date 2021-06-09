@@ -68,8 +68,8 @@
 		<div>Invite your friends</div>
 		<small>and everyone you've ever emailed</small>
 		<div>so they can join the fun!</div>
+		<small>or click the smiley face to choose who to invite</small>
 		<div>We already made an account for them!</div>
-		<small>Or click the smiley face to choose who to invite</small>
 	</Markup>
 </Checkbox>
 
