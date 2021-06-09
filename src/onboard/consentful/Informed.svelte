@@ -8,6 +8,22 @@
 </script>
 
 <Markup>
-	<p>well this is awkward</p>
+	<h1>Here are the terms of use for this sketch:</h1>
+	<div>
+		<ol>
+			<h2><li>this is fake</li></h2>
+			<h2><li>we are not collecting big data</li></h2>
+			<h2>
+				<li>you will not have an account at the end of all this</li>
+			</h2>
+		</ol>
+	</div>
 </Markup>
+
 <button on:click={() => done()}> I agree </button>
+
+<style>
+	div {
+		list-style-position: inside;
+	}
+</style>
