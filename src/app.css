@@ -350,21 +350,25 @@ button:active {
 button.inline {
 	display: inline-block;
 }
-/* TODO do we need the 2nd disabled selector? */
-button.selected,
 button:disabled.selected {
 	z-index: 1;
-	border-color: var(--active_color);
 	border-left-style: var(--button_border_selected_style);
 	border-right-style: var(--button_border_selected_style);
 	color: var(--active_color);
+	/* TODO experimental, not sure about these patterns */
+	--button_border_color: var(--active_color);
+	--border_color: var(--active_color);
 	--outline_width: var(--outline2_width);
 	--outline_style: var(--border2_style);
 	--outline_color: var(--interactive_hover_color);
 }
-button.selected:active,
-button:disabled.selected:active {
+button.selected:active {
 	--outline_width: var(--outline3_width);
+}
+button:disabled:not(.selected):active {
+	/* TODO hmm maybe delete `button_border_color`? */
+	--border_color: var(--error_color);
+	--button_border_color: var(--error_color);
 }
 
 input,
