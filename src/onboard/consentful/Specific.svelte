@@ -8,61 +8,61 @@
 	export let done: () => void;
 	export let back: () => void;
 
-	interface Community {
-		id: string;
+	interface Space {
+		name: string;
 		selected: boolean;
 		tags: string[];
 	}
 
-	const communities: Community[] = [
+	const spaces: Space[] = [
 		{
-			id: 'Svelte Social',
+			name: 'Svelte Social',
 			selected: false,
 			tags: ['programming', 'example-code', 'javascript', 'front-end', '1000+ users'],
 		},
 		{
-			id: 'Denver Developers',
+			name: 'Denver Developers',
 			selected: false,
 			tags: ['<1000 users', 'local-politics', 'job-postings', 'dogs', 'beer'],
 		},
 		{
-			id: 'Anne Arbor Academics',
+			name: 'Anne Arbor Academics',
 			selected: false,
 			tags: ['flowers', 'animation', 'dance', '1000+ users', 'computer-human-interaction'],
 		},
 		{
-			id: 'Darknet Discussion',
+			name: 'Gamer Group',
 			selected: false,
-			tags: ['unmoderated', 'anonymous', 'crime', 'global-politics', '10000+ users'],
+			tags: ['indie-dev', 'social', 'off-topic', '<50 users', 'fanart'],
 		},
 	];
 
-	let selected_communities = communities.filter((c) => c.selected);
-	$: selected_count = selected_communities.length;
+	let selected_spaces = spaces.filter((c) => c.selected);
+	$: selected_count = selected_spaces.length;
 
-	const toggle_selected = (selected: boolean, community: Community) => {
-		community.selected = selected;
-		selected_communities = communities.filter((c) => c.selected);
+	const toggle_selected = (selected: boolean, space: Space) => {
+		space.selected = selected;
+		selected_spaces = spaces.filter((c) => c.selected);
 	};
 </script>
 
 <Markup>
-	<p>Now it's time to join a community or two!</p>
+	<p>Now it's time to join a place to talk or two!</p>
 </Markup>
 
-{#each communities as community (community.id)}
+{#each spaces as space (space.name)}
 	<Checkbox
-		checked={community.selected}
-		on_change={(checked) => toggle_selected(checked, community)}
+		checked={space.selected}
+		on_change={(checked) => toggle_selected(checked, space)}
 		--overflow="hidden"
 		--font_size="var(--font_size_xl3)"
 		--text_align="center"
 	>
 		<div>
-			{community.id}
+			{space.name}
 		</div>
 		<ul class="tags">
-			{#each community.tags as tag (tag)}
+			{#each space.tags as tag (tag)}
 				<li class="tag">
 					<Tag name={tag} />
 				</li>
@@ -73,10 +73,10 @@
 
 <button on:click={() => done()}>
 	<Markup>
-		{#if selected_count < 1}
-			maybe later →
+		{#if selected_count}
+			join these spaces →
 		{:else}
-			join these communites →
+			maybe later →
 		{/if}
 	</Markup>
 </button>

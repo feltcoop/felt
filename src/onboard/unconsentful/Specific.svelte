@@ -7,36 +7,36 @@
 	export let done: () => void;
 	export let back: () => void;
 
-	interface Community {
-		id: string;
+	interface Space {
+		name: string;
 		selected: boolean;
 	}
 
-	const communities: Community[] = [
-		{id: 'GOOD NEWS', selected: true},
-		{id: 'BAD NEWS', selected: true},		
-		{id: 'DOPAMINE DRIP', selected: true},
-		{id: 'RAGE FACTORY', selected: true},
+	const spaces: Space[] = [
+		{name: 'GOOD NEWS', selected: true},
+		{name: 'BAD NEWS', selected: true},
+		{name: 'DOPAMINE DRIP', selected: true},
+		{name: 'RAGE FACTORY', selected: true},
 	];
 
-	const toggle_selected = (selected: boolean, community: Community) => {
-		community.selected = selected;
+	const toggle_selected = (selected: boolean, space: Space) => {
+		space.selected = selected;
 	};
 </script>
 
 <Markup>
-	<p>Now it's time to join a community or two!</p>
+	<p>Now it's time to join a place to talk or two!</p>
 </Markup>
 
-{#each communities as community (community.id)}
+{#each spaces as space (space.name)}
 	<Checkbox
-		checked={community.selected}
-		on_change={(checked) => toggle_selected(checked, community)}
+		checked={space.selected}
+		on_change={(checked) => toggle_selected(checked, space)}
 		--overflow="hidden"
 		--font_size="var(--font_size_xl3)"
 		--text_align="center"
 	>
-		{community.id}
+		{space.name}
 	</Checkbox>
 {/each}
 
