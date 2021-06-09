@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {to_path_segments} from '../util/path_parsing';
+	import {to_path_segments} from '$lib/util/path_parsing';
 
 	export let path: string;
 	export let selected_path: string | null = null;

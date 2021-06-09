@@ -1,7 +1,7 @@
 import {spawn as spawn_child_process} from 'child_process';
 import type {SpawnOptions, ChildProcess} from 'child_process';
 
-import {gray, green, red} from '../util/terminal.js';
+import {gray, green, red} from './terminal.js';
 import {print_log_label, System_Logger} from './log.js';
 import {print_error, print_key_value} from './print.js';
 import {wait} from './async.js';
