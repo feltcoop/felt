@@ -8,22 +8,21 @@
 </script>
 
 <Markup>
-	<h1>Here are the terms of use for this sketch:</h1>
-	<div>
-		<ol>
-			<h2><li>this is fake</li></h2>
-			<h2><li>we are not collecting big data</li></h2>
-			<h2>
-				<li>you will not have an account at the end of all this</li>
-			</h2>
-		</ol>
-	</div>
+	<h1>Here are the terms of use and privacy policy for this sketch:</h1>
+	<ol>
+		<li>this is fake</li>
+		<li>we are not collecting any data, big or little</li>
+		<li>you will not have an account at the end of all this</li>
+	</ol>
 </Markup>
 
-<button on:click={() => done()}> I agree </button>
+<button on:click={() => done()}> I accept ✓ </button>
 
 <style>
-	div {
+	li {
+		font-size: var(--font_size_lg);
+	}
+	ol {
 		list-style-position: inside;
 	}
 </style>
