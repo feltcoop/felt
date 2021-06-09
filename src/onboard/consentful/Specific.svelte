@@ -16,17 +16,17 @@
 
 	const spaces: Space[] = [
 		{
-			name: 'Svelte Social',
+			name: 'Open Source Web Devs',
 			selected: false,
 			tags: ['programming', 'example-code', 'javascript', 'front-end', '1000+ users'],
 		},
 		{
-			name: 'Denver Developers',
+			name: 'Local Developers',
 			selected: false,
 			tags: ['<1000 users', 'local-politics', 'job-postings', 'dogs', 'beer'],
 		},
 		{
-			name: 'Anne Arbor Academics',
+			name: 'Online Academics',
 			selected: false,
 			tags: ['flowers', 'animation', 'dance', '1000+ users', 'computer-human-interaction'],
 		},
