@@ -41,7 +41,6 @@
 		padding: var(--spacing_md) 0;
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
 	}
 	input {
 		margin: 0 var(--spacing_lg);
