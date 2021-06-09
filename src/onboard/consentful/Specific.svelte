@@ -2,6 +2,7 @@
 	import type {Onboard_Data} from '../onboard';
 	import Markup from '$lib/Markup.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';
+	import Tag from '$lib/Tag.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
@@ -57,9 +58,16 @@
 		--font_size="var(--font_size_xl3)"
 		--text_align="center"
 	>
-		{community.id} | {#each community.tags as tag (tag)}
-			<small>{tag}</small> |
-		{/each}
+		<div>
+			{community.id}
+		</div>
+		<ul class="tags">
+			{#each community.tags as tag (tag)}
+				<li class="tag">
+					<Tag name={tag} />
+				</li>
+			{/each}
+		</ul>
 	</Checkbox>
 {/each}
 
@@ -70,3 +78,16 @@
 		join these communites →
 	{/if}
 </button>
+
+<style>
+	.tags {
+		flex: 1;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		padding-left: var(--spacing_rg);
+	}
+	.tag {
+		display: flex;
+	}
+</style>
