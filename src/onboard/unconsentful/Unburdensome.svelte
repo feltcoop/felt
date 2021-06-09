@@ -60,6 +60,7 @@
 <Checkbox
 	bind:checked={consenting}
 	--content="'☻'"
+	--content_empty="'☹'"
 	--overflow="hidden"
 	--font_size="var(--font_size_xl3)"
 >
@@ -91,6 +92,7 @@
 				checked={email_contact.selected}
 				on_change={(checked) => toggle_selected(checked, email_contact)}
 				--content="'☻'"
+				--content_empty="'☹'"
 				--overflow="hidden"
 				--font_size="var(--font_size_xl3)"
 			>
