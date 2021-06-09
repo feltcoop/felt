@@ -32,7 +32,6 @@
 	<Checkbox
 		checked={community.selected}
 		on_change={(checked) => toggle_selected(checked, community)}
-		--overflow="hidden"
 	>
 		{community.id}
 	</Checkbox>

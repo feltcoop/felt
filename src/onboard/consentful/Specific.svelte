@@ -50,11 +50,7 @@
 </Markup>
 
 {#each spaces as space (space.name)}
-	<Checkbox
-		checked={space.selected}
-		on_change={(checked) => toggle_selected(checked, space)}
-		--overflow="hidden"
-	>
+	<Checkbox checked={space.selected} on_change={(checked) => toggle_selected(checked, space)}>
 		<Markup>
 			<!-- TODO what semantic element? I think h2/h3 is wrong -->
 			<div class="name">
