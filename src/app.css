@@ -365,6 +365,7 @@ button:disabled.selected {
 button.selected:active {
 	--outline_width: var(--outline3_width);
 }
+/* TODO simplify this selector? */
 button:disabled:not(.selected):active {
 	/* TODO hmm maybe delete `button_border_color`? */
 	--border_color: var(--error_color);
@@ -500,6 +501,10 @@ textarea:disabled {
 	color: var(--text_disabled_color);
 	border-left-style: var(--button_border_disabled_style);
 	border-right-style: var(--button_border_disabled_style);
+}
+input:disabled:active,
+textarea:disabled:active {
+	--border_color: var(--error_color);
 }
 
 label {
