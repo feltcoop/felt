@@ -33,8 +33,6 @@
 		checked={community.selected}
 		on_change={(checked) => toggle_selected(checked, community)}
 		--overflow="hidden"
-		--font_size="var(--font_size_xl3)"
-		--text_align="center"
 	>
 		{community.id}
 	</Checkbox>
