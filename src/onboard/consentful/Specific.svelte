@@ -65,10 +65,10 @@
 
 <button on:click={() => done()}>
 	<Markup>
-		{#if selected_count < 1}
-			maybe later →
-		{:else}
+		{#if selected_count}
 			join these communites →
+		{:else}
+			maybe later →
 		{/if}
 	</Markup>
 </button>
