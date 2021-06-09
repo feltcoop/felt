@@ -72,11 +72,13 @@
 {/each}
 
 <button on:click={() => done()}>
-	{#if selected_count < 1}
-		maybe later →
-	{:else}
-		join these communites →
-	{/if}
+	<Markup>
+		{#if selected_count < 1}
+			maybe later →
+		{:else}
+			join these communites →
+		{/if}
+	</Markup>
 </button>
 
 <style>
