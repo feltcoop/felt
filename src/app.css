@@ -183,6 +183,7 @@
 	);
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
+	--border_radius_md: 25px;
 	--border_width_xxxl: 14px;
 	--border_width_xxl: var(--spacing_md);
 	--border_width_xl: var(--spacing_rg);

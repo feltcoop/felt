@@ -13,8 +13,8 @@
 	}
 
 	const communities: Community[] = [
-		{id: 'BAD NEWS', selected: true},
 		{id: 'GOOD NEWS', selected: true},
+		{id: 'BAD NEWS', selected: true},		
 		{id: 'DOPAMINE DRIP', selected: true},
 		{id: 'RAGE FACTORY', selected: true},
 	];

@@ -12,5 +12,6 @@
 		padding: 0 var(--spacing_rg);
 		background-color: var(--tint_highlight);
 		white-space: nowrap;
+		border-radius: var(--border_radius_md);
 	}
 </style>
