@@ -29,7 +29,7 @@
 	const done = (consent_type: Consent_Type) => {
 		if (consent_type === 'consentful') {
 			done_consentful = true;
-			if (!done_unconsentful && $state.value !== 'specific') return; // TODO remove hack when 'specific' has content
+			if (!done_unconsentful) return;
 		} else {
 			done_unconsentful = true;
 			if (!done_consentful) return;

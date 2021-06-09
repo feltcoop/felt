@@ -13,10 +13,10 @@
 	}
 
 	const communities: Community[] = [
-		{id: 'BAD NEWS', selected: false},
-		{id: 'GOOD NEWS', selected: false},
-		{id: 'DOPAMINE DRIP', selected: false},
-		{id: 'HATE MACHINE', selected: false},
+		{id: 'BAD NEWS', selected: true},
+		{id: 'GOOD NEWS', selected: true},
+		{id: 'DOPAMINE DRIP', selected: true},
+		{id: 'RAGE FACTORY', selected: true},
 	];
 
 	const toggle_selected = (selected: boolean, community: Community) => {

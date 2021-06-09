@@ -10,33 +10,38 @@
 	interface Community {
 		id: string;
 		selected: boolean;
+		tags: string[];
 	}
 
 	const communities: Community[] = [
 		{
 			id: 'Svelte Social',
 			selected: false,
-			metatags: ['programming', 'example-code', 'javascript', 'front-end', '1000+ users'],
+			tags: ['programming', 'example-code', 'javascript', 'front-end', '1000+ users'],
 		},
 		{
 			id: 'Denver Developers',
 			selected: false,
-			metatags: ['<1000 users', 'local-politics', 'job-postings', 'dogs', 'beer'],
+			tags: ['<1000 users', 'local-politics', 'job-postings', 'dogs', 'beer'],
 		},
 		{
 			id: 'Anne Arbor Academics',
 			selected: false,
-			metatags: ['flowers', 'animation', 'dance', '1000+ users', 'computer-human-interaction'],
+			tags: ['flowers', 'animation', 'dance', '1000+ users', 'computer-human-interaction'],
 		},
 		{
 			id: 'Darknet Discussion',
 			selected: false,
-			metatags: ['unmoderated', 'anonymous', 'crime', 'global-politics', '10000+ users'],
+			tags: ['unmoderated', 'anonymous', 'crime', 'global-politics', '10000+ users'],
 		},
 	];
 
+	let selected_communities = communities.filter((c) => c.selected);
+	$: selected_count = selected_communities.length;
+
 	const toggle_selected = (selected: boolean, community: Community) => {
 		community.selected = selected;
+		selected_communities = communities.filter((c) => c.selected);
 	};
 </script>
 
@@ -52,10 +57,16 @@
 		--font_size="var(--font_size_xl3)"
 		--text_align="center"
 	>
-		{community.id} | {#each community.metatags as metatag (metatag)}
-			<small>{metatag}</small> |
+		{community.id} | {#each community.tags as tag (tag)}
+			<small>{tag}</small> |
 		{/each}
 	</Checkbox>
 {/each}
 
-<button on:click={() => done()}> Let's get to posting!</button>
+<button on:click={() => done()}>
+	{#if selected_count < 1}
+		maybe later →
+	{:else}
+		join these communites →
+	{/if}
+</button>
