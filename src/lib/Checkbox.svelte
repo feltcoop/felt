@@ -5,6 +5,7 @@
 </script>
 
 <script lang="ts">
+	// TODO rethink this API, probably use events instead
 	export let checked: boolean;
 	export let on_change: ((checked: boolean) => void) | null = null;
 
