@@ -14,6 +14,9 @@
 		padding: var(--spacing_rg) 0 var(--spacing_rg) var(--spacing_xl);
 		list-style: disc;
 	}
+	.markup :global(li) {
+		display: list-item;
+	}
 	.markup :global(p) {
 		padding: var(--spacing_rg) 0;
 	}
