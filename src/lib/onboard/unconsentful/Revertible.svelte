@@ -22,15 +22,15 @@
 		</a>.
 	</p>
 	<button on:click={() => done()}>
-		<Markup><span class="text" /></Markup>
+		<Markup><span class="button-text" /></Markup>
 	</button>
 </Markup>
 
 <style>
-	.text::after {
+	.button-text::after {
 		content: 'continue →';
 	}
-	button:hover .text::after {
+	button:hover .button-text::after {
 		content: 'do I have a choice?';
 	}
 </style>
