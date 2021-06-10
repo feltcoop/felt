@@ -8,7 +8,7 @@
 </script>
 
 <Markup>
-	<header>Here are the terms of use and privacy policy for this sketch:</header>
+	<p>Here are the terms of use and privacy policy for this sketch:</p>
 	<ol>
 		<li>this is fake</li>
 		<li>we are not collecting any data, big or little</li>
@@ -19,8 +19,11 @@
 <button on:click={() => done()}> <Markup>I accept ✓</Markup> </button>
 
 <style>
+	p {
+		font-size: var(--font_size_md);
+	}
 	li {
-		font-size: var(--font_size_lg);
+		font-size: var(--font_size_md);
 	}
 	ol {
 		list-style-position: inside;
