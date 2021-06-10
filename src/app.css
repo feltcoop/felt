@@ -551,6 +551,7 @@ blockquote {
 code,
 pre {
 	color: var(--text_light_color);
+	background-color: var(--tint_highlight);
 }
 
 small {

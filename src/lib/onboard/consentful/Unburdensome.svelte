@@ -8,7 +8,7 @@
 </script>
 
 <Markup>
-	<h2>welcome to Felt.dev!</h2>
+	<h2>Welcome to Felt.dev!</h2>
 </Markup>
 
 <blockquote>

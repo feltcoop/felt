@@ -35,5 +35,5 @@
 {/each}
 
 <button on:click={() => done()}>
-	<Markup>Let's get to posting...</Markup>
+	<Markup>let's start posting...</Markup>
 </button>

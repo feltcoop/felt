@@ -4,7 +4,7 @@
 	import {consent_principles} from '$lib/consent/consent';
 	import type {Consent_Type, Consent_Principle_Type} from '$lib/consent/consent';
 	import Consent_Principle_View from '$lib/consent/Consent_Principle_View.svelte';
-	import {onboard_machine, onboard_data} from './onboard';
+	import {onboard_machine, onboard_data, persist_state} from './onboard';
 	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
@@ -41,6 +41,7 @@
 	};
 
 	$: update_state($state);
+	$: persist_state($state.value as any); // TODO type -- also TODO better pattern?
 
 	// reset the local state -- TODO move to xstate
 	const update_state = (_state: typeof $state) => {
