@@ -12,12 +12,14 @@
 		👍 Great! We'll never bother you about those things again unless our lawyers make us.
 	</blockquote>
 	<p>
-		If you change your mind you can delete you account <a
+		If you change your mind you can delete you account
+		<a
 			href="/account"
 			on:click|preventDefault={() =>
 				alert('Thank you for calling support. Please hold until you give up.')}
-			>by calling support</a
-		>.
+		>
+			by calling support
+		</a>.
 	</p>
 	<button on:click={() => done()}>
 		<Markup><span class="text" /></Markup>
