@@ -30,7 +30,7 @@ const to_use_onboard_machine = () =>
 	useMachine<Onboard_Context, Onboard_Event, Onboard_Typestate>(null!);
 
 const INITIAL_VALUE = 'begin';
-export const ONBOARD_STATE_KEY = 'felt_onboard_state';
+const ONBOARD_STATE_KEY = 'felt_onboard_state';
 const load_initial_value = (): string => {
 	if (typeof localStorage === 'undefined') return INITIAL_VALUE;
 	return localStorage.getItem(ONBOARD_STATE_KEY) || INITIAL_VALUE;
