@@ -34,7 +34,7 @@
 			Wow you did it! You win a doggy:
 			<span class="dog">🐕</span>
 		</p>
-		<p>Now click "I acknowledge" below for more rewards :-)</p>
+		<p>Now click "I accept" below for more rewards :-)</p>
 	{/if}
 </Markup>
 
@@ -51,7 +51,7 @@
 
 <button on:click={() => done()} disabled={!enable_continue_button}>
 	<Markup>
-		I acknowledge I am legally bound to the above
+		I accept I am legally bound to the above
 		<br />
 		and my only recourse is complaining on social media
 	</Markup>
