@@ -11,8 +11,7 @@
 		align-items: stretch;
 	}
 	.markup :global(ul) {
-		padding: var(--spacing_rg);
-		padding-left: var(--spacing_xl);
+		padding: var(--spacing_rg) 0 var(--spacing_rg) var(--spacing_xl);
 		list-style: disc;
 	}
 	.markup :global(li) {
@@ -22,6 +21,6 @@
 		padding: var(--spacing_rg) 0;
 	}
 	.markup :global(h1) {
-		padding-bottom: var(--spacing_lg);
+		padding-bottom: var(--spacing_rg) 0 var(--spacing_lg);
 	}
 </style>
