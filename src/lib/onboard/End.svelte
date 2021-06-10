@@ -17,10 +17,10 @@
 		<a href="https://github.com/feltcoop/felt">on GitHub</a>
 	</blockquote>
 	<Credits />
-	<p>
-		If you'd like to explore freely, press the <code>Backtick</code> key or click this button:
+	<blockquote>
+		if you'd like to explore freely, press the <code>Backtick</code> key or click this button:
 		<button class="inline" on:click={() => ($devmode = !$devmode)}>
 			{$devmode ? 'disable' : 'enable'} devmode
 		</button>
-	</p>
+	</blockquote>
 </Markup>

@@ -548,10 +548,14 @@ blockquote {
 	color: var(--text_light_color);
 }
 
-code,
-pre {
+code {
 	color: var(--text_light_color);
 	background-color: var(--tint_highlight);
+	padding: 0 var(--spacing_sm);
+}
+
+pre {
+	color: var(--text_light_color);
 }
 
 small {
