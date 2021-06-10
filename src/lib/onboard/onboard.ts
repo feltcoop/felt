@@ -31,12 +31,13 @@ const to_use_onboard_machine = () =>
 
 const INITIAL_VALUE = 'begin';
 export const ONBOARD_STATE_KEY = 'felt_onboard_state';
-const load_initial_value = (): string =>
-	(typeof localStorage !== 'undefined' && localStorage.getItem(ONBOARD_STATE_KEY)) || INITIAL_VALUE;
+const load_initial_value = (): string => {
+	if (typeof localStorage === 'undefined') return INITIAL_VALUE;
+	return localStorage.getItem(ONBOARD_STATE_KEY) || INITIAL_VALUE;
+};
 export const save_state = (value: string): void => {
-	if (typeof localStorage !== 'undefined') {
-		localStorage.setItem(ONBOARD_STATE_KEY, value);
-	}
+	if (typeof localStorage === 'undefined') return;
+	localStorage.setItem(ONBOARD_STATE_KEY, value);
 };
 
 export const onboard_machine = create_machine({
