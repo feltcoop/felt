@@ -14,9 +14,7 @@
 	<br />
 	<span
 		>if you have any questions or comments, please email us at
-		<a href="info@felt.social?subject=Thought about Consentful Onboarding Sketch"
-			>info@felt.social</a
-		> or leave a comment on the github repo</span
+		<a href="mailto:team@felt.social">team@felt.social</a> or leave a comment on the github repo</span
 	>
 	<Credits />
 </Markup>
