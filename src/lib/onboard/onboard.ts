@@ -30,9 +30,9 @@ const to_use_onboard_machine = () =>
 	useMachine<Onboard_Context, Onboard_Event, Onboard_Typestate>(null!);
 
 export const ONBOARD_STATE_KEY = 'felt_onboard_state';
-const get_initial_value = (): string =>
+const load_initial_value = (): string =>
 	(typeof localStorage !== 'undefined' && localStorage.getItem(ONBOARD_STATE_KEY)) || 'begin';
-export const persist_state = (value: string): void => {
+export const save_state = (value: string): void => {
 	if (typeof localStorage !== 'undefined') {
 		localStorage.setItem(ONBOARD_STATE_KEY, value);
 	}
@@ -40,7 +40,7 @@ export const persist_state = (value: string): void => {
 
 export const onboard_machine = create_machine({
 	id: 'onboard',
-	initial: get_initial_value(),
+	initial: load_initial_value(),
 	states: {
 		begin: {
 			on: {NEXT: 'voluntary'},
