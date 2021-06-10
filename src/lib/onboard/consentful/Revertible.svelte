@@ -11,13 +11,21 @@
 
 <Markup>
 	<p>
-		Are you sure you understand the deal? <button disabled title="TODO" class="inline">
+		Before we create your (fake) account, are you sure you understand the deal?
+		<!-- TODO maybe have this button quiz the user? -->
+		<!-- <button
+			disabled
+			title="TODO"
+			class="inline"
+		>
 			test my knowledge!
-		</button>
+		</button> -->
 	</p>
-	<button on:click={() => back()}> ← go back and learn </button>
+	<button on:click={() => back()}> <Markup>← go back and learn</Markup> </button>
 	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨</blockquote>
-	<button on:click={() => (understood = true)} disabled={understood}> yes I understand → </button>
+	<button on:click={() => (understood = true)} disabled={understood}>
+		<Markup>yes I understand →</Markup>
+	</button>
 	{#if understood}
 		<p>
 			Here's <a
@@ -31,7 +39,7 @@
 				on:click|preventDefault={() => alert('TODO -- thank you for being interested!')}
 				>account settings</a
 			>.
-			<button class="inline" on:click={() => done()}> got it → </button>
 		</p>
+		<button on:click={() => done()}> create my account → </button>
 	{/if}
 </Markup>

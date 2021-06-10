@@ -16,7 +16,7 @@
 	</ol>
 </Markup>
 
-<button on:click={() => done()}> I accept ✓ </button>
+<button on:click={() => done()}> <Markup>I accept ✓</Markup> </button>
 
 <style>
 	li {
