@@ -108,7 +108,7 @@
 	--active_light_bg_lightness: 80%;
 	--active_light_bg_alpha: 0.5;
 	--active_light_bg: hsla(
-		var(--selected_hue),
+		var(--active_hue),
 		var(--active_light_bg_saturation),
 		var(--active_light_bg_lightness),
 		var(--active_light_bg_alpha)
