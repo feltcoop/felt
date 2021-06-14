@@ -1,18 +1,14 @@
 <script>
-	import {page} from '$app/stores';
-
 	import '../app.css';
 	import {provide_devmode} from '$lib/devmode';
 	import Devmode from '$lib/Devmode.svelte';
 	import Nav from '$lib/Nav.svelte';
 
-	$: path = $page.path;
-
 	const devmode = provide_devmode(false);
 </script>
 
 <svelte:head>
-	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="shortcut icon" href="/favicon.png" />
 </svelte:head>
 
 <nav>
