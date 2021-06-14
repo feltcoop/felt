@@ -2,7 +2,7 @@ import {typescript} from 'svelte-preprocess-esbuild';
 import staticAdapter from '@sveltejs/adapter-static';
 import {readFileSync} from 'fs';
 
-const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+const pkg = JSON.parse(readFileSync(new URL('package.json', import.meta.url), 'utf8'));
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
