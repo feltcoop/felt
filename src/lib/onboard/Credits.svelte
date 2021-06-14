@@ -1,7 +1,9 @@
 <p class="todo">TODO proper credits</p>
 <p>
-	This sketch is inspired by
-	<a href="https://consentful.systems"> consentful.systems </a> ✨
+	The five principles of consent are from <a href="https://consentful.systems">
+		consentful.systems
+	</a>
+	(research led by <a href="https://imjane.net"> Jane Im </a>) ✨
 </p>
 <p>
 	Open source permissive code at
