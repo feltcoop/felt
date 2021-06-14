@@ -119,72 +119,71 @@
 		{:else if create_error_message}
 			<Message text=":-)" />
 		{/if}
-		{#if !create_error_message}
-			<Message text="or ↷" />
-		{/if}
 	</div>
 
-	{#each provider_list as provider (provider.name)}
-		<button
-			type="button"
-			on:click={() => signup_with(provider)}
-			disabled={!!selected_provider && selected_provider === provider}
-			class:selected={!!selected_provider && selected_provider === provider}
-		>
-			{#if provider.name === 'TRUSTED_CO'}
-				signup with {provider.name}
-			{:else}
-				<Markup>
-					signup with {provider.name}
-				</Markup>
-			{/if}
-		</button>
-	{/each}
-
-	{#if selected_provider === providers.SOCIAL_CO || selected_provider === providers.TRACKER_CO}
-		{#if selected_provider && selected_provider !== providers.TRUSTED_CO}
-			<Help_Message text={signup_helper_message} />
-			<input
-				bind:value={phone_number}
-				bind:this={phone_number_el}
-				placeholder="your phone number"
-				on:keydown={(e) => {
-					if (e.key === 'Enter') home_address_el.focus();
-				}}
-			/>
-			<input
-				bind:value={home_address}
-				bind:this={home_address_el}
-				placeholder="your home address"
-				on:keydown={(e) => {
-					if (e.key === 'Enter') anything_else_el.focus();
-				}}
-			/>
-			<input
-				bind:value={anything_else}
-				bind:this={anything_else_el}
-				placeholder="anything else you want to share? :-)"
-				on:keydown={(e) => {
-					if (e.key === 'Enter') {
-						if (enable_signup_button) {
-							signup(data, selected_provider);
-						} else {
-							phone_number_el.focus();
-						}
-					}
-				}}
-			/>
+	{#if create_error_message}
+		{#each provider_list as provider (provider.name)}
 			<button
 				type="button"
-				on:click={() => signup(data, selected_provider)}
-				disabled={!enable_signup_button}
+				on:click={() => signup_with(provider)}
+				disabled={!!selected_provider && selected_provider === provider}
+				class:selected={!!selected_provider && selected_provider === provider}
 			>
-				call my phone<br />
-				to finish signup<br />with {selected_provider.name}
+				{#if provider.name === 'TRUSTED_CO'}
+					signup with {provider.name}
+				{:else}
+					<Markup>
+						signup with {provider.name}
+					</Markup>
+				{/if}
 			</button>
+		{/each}
+
+		{#if selected_provider === providers.SOCIAL_CO || selected_provider === providers.TRACKER_CO}
+			{#if selected_provider && selected_provider !== providers.TRUSTED_CO}
+				<Help_Message text={signup_helper_message} />
+				<input
+					bind:value={phone_number}
+					bind:this={phone_number_el}
+					placeholder="your phone number"
+					on:keydown={(e) => {
+						if (e.key === 'Enter') home_address_el.focus();
+					}}
+				/>
+				<input
+					bind:value={home_address}
+					bind:this={home_address_el}
+					placeholder="your home address"
+					on:keydown={(e) => {
+						if (e.key === 'Enter') anything_else_el.focus();
+					}}
+				/>
+				<input
+					bind:value={anything_else}
+					bind:this={anything_else_el}
+					placeholder="anything else you want to share? :-)"
+					on:keydown={(e) => {
+						if (e.key === 'Enter') {
+							if (enable_signup_button) {
+								signup(data, selected_provider);
+							} else {
+								phone_number_el.focus();
+							}
+						}
+					}}
+				/>
+				<button
+					type="button"
+					on:click={() => signup(data, selected_provider)}
+					disabled={!enable_signup_button}
+				>
+					call my phone<br />
+					to finish signup<br />with {selected_provider.name}
+				</button>
+			{/if}
+		{:else if selected_provider}
+			<Error_Message text={signup_error_message} />
 		{/if}
-	{:else if selected_provider}
-		<Error_Message text={signup_error_message} />
 	{/if}
 </form>
 
