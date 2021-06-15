@@ -84,8 +84,6 @@
 					{back}
 				/>
 			</section>
-		{:else}
-			error: unexpected `null` components
 		{/if}
 	</div>
 </div>
