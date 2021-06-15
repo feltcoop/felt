@@ -27,7 +27,7 @@
 		{id: 'your bank', selected: true},
 		{id: 'who is this?', selected: true},
 		{id: '1000 spammers', selected: true},
-		{id: 'a friend with whom i will talk about this irl', selected: true},
+		{id: 'a friend with whom you will talk about this app irl', selected: true},
 		{id: 'the friend who invited me in the first place', selected: true},
 		{id: "random stranger who typo'd my address", selected: true}, // TODO reward
 		{id: 'that guy from the thing last week', selected: true},
