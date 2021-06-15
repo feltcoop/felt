@@ -29,7 +29,7 @@
 		{id: '1000 spammers', selected: true},
 		{id: 'a friend with whom you will talk about this app irl', selected: true},
 		{id: 'the friend who invited you in the first place', selected: true},
-		{id: "random stranger who typo'd my address", selected: true}, // TODO reward
+		{id: "random stranger who typo'd your address", selected: true}, // TODO reward
 		{id: 'that guy from the thing last week', selected: true},
 		{id: 'a dog on the internet', selected: true},
 		{id: 'alice', selected: true},
