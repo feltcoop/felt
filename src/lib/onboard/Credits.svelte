@@ -1,4 +1,7 @@
-<p class="todo">TODO proper credits</p>
+<p>
+	Created by <a href="https://github.com/feltcoop"> @feltcoop </a> with contributions from
+	<a href="https://imjane.net"> Jane Im </a>
+</p>
 <p>
 	The five principles of consent are from <a href="https://consentful.systems">
 		consentful.systems
@@ -9,11 +12,3 @@
 	Open source permissive code at
 	<a href="https://github.com/feltcoop/felt"> github.com/feltcoop/felt </a> 💚
 </p>
-
-<style>
-	/* TODO remove */
-	.todo {
-		font-size: var(--font_size_lg);
-		opacity: 0.4;
-	}
-</style>
