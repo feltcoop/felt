@@ -1,5 +1,5 @@
 <p>
-	Created by <a href="https://github.com/feltcoop"> @feltcoop </a> with contributions from
+	Made by <a href="https://github.com/feltcoop"> @feltcoop </a> with contributions from
 	<a href="https://imjane.net"> Jane Im </a>
 </p>
 <p>
