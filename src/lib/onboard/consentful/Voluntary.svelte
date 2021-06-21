@@ -5,21 +5,12 @@
 	export let done: () => void;
 	export let back: () => void;
 
-	// TODO validate?
-
 	let username = '';
 	let password = '';
-	let disabled = false;
-
-	const create = () => {
-		console.log('create');
-		disabled = true;
-		done();
-	};
 </script>
 
 <form>
 	<input bind:value={username} placeholder="username" />
 	<input type="password" bind:value={password} placeholder="password" />
-	<button type="button" {disabled} on:click={create}> create account </button>
+	<button type="button" on:click={() => done()}> create account </button>
 </form>
