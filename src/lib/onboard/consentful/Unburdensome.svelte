@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
 	import Markup from '$lib/Markup.svelte';
+	import {arrow_right} from '$lib/icons';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
@@ -22,5 +23,5 @@
 </blockquote>
 
 <button on:click={() => done()}>
-	<Markup>let's get started →</Markup>
+	<Markup>let's get started {arrow_right}</Markup>
 </button>

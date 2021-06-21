@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Felt_Heart from '$lib/Felt_Heart.svelte';
+	import {arrow_left, arrow_right} from '$lib/icons';
 </script>
 
 <h1>@feltcoop/felt</h1>
@@ -8,7 +9,7 @@
 <section>
 	<div class="learn">
 		<a href="https://www.felt.social/about">
-			<div>learn → about ← Felt</div>
+			<div>learn {arrow_right} about {arrow_left} Felt</div>
 			<Felt_Heart />
 		</a>
 	</div>

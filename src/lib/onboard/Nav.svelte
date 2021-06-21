@@ -3,6 +3,7 @@
 	import Machine_Controls from '$lib/xstate/Machine_Controls.svelte';
 	import {onboard_machine} from './onboard';
 	import {use_devmode} from '$lib/devmode';
+	import {arrow_left, arrow_right} from '$lib/icons';
 
 	export let state: Onboard_State;
 	export let send: Onboard_Send;
@@ -29,9 +30,9 @@
 	{#if $devmode}
 		<nav class="buttons">
 			<Machine_Controls machine={onboard_machine} {state} {send} let:event_name>
-				{event_name === 'PREVIOUS' ? '←' : ''}
+				{event_name === 'PREVIOUS' ? arrow_left : ''}
 				{event_name}
-				{event_name === 'NEXT' ? '→' : ''}
+				{event_name === 'NEXT' ? arrow_right : ''}
 			</Machine_Controls>
 		</nav>
 	{/if}

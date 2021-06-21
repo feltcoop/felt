@@ -28,6 +28,7 @@
 
 <style>
 	.button-text::after {
+		/* TODO arrow_right var -- as a CSS var? or just refactor? */
 		content: 'continue →';
 	}
 	button:hover .button-text::after {

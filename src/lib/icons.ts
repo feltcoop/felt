@@ -97,3 +97,6 @@ export const bus = '🚌';
 export const car = '🚗';
 export const ship = '🚢';
 export const rocket = '🚀';
+
+export const arrow_left = '←';
+export const arrow_right = '→';

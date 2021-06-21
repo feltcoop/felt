@@ -1,8 +1,9 @@
 /* TODO some is haphazard & inconsistent */
 :root {
 	--alpha: 0.89;
-	--faded_rg: 62%;
-	--faded_md: 38%;
+	--faded_lg: 81%;
+	--faded_md: 62%;
+	--faded_rg: 38%;
 	--faded_sm: 24%;
 	--faded_xs: 15%;
 	--bg: #fff;
@@ -13,7 +14,7 @@
 	--blue: hsla(var(--blue_hue), var(--blue_saturation), var(--blue_lightness), var(--blue_alpha));
 	--green_hue: 120;
 	--green_saturation: 55%;
-	--green_lightness: 45%;
+	--green_lightness: 42%;
 	--green_alpha: var(--alpha);
 	--green: hsla(
 		var(--green_hue),
@@ -61,13 +62,13 @@
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_lightness1),
-		var(--faded_rg)
+		var(--faded_lg)
 	);
 	--tint_highlight: hsla(
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_lightness3),
-		var(--faded_rg)
+		var(--faded_md)
 	);
 	--interactive_color: hsla(
 		var(--tint_hue),
@@ -179,7 +180,7 @@
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_dark_lightness),
-		var(--faded_md)
+		var(--faded_rg)
 	);
 	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
 	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
@@ -212,10 +213,10 @@
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
 	--border_alert: var(--border2_width) var(--border2_style)
-		hsla(var(--red_hue), 100%, 50%, var(--faded_md));
+		hsla(var(--red_hue), 100%, 50%, var(--faded_rg));
 	--border_help: var(--border2_width) var(--border2_style)
-		hsla(var(--green_hue), 100%, 25%, var(--faded_md));
-	/* --border: var(--border2_width) var(--border2_style) hsla(0, 0%, 80%, var(--faded_md)); */
+		hsla(var(--green_hue), 100%, 25%, var(--faded_rg));
+	/* --border: var(--border2_width) var(--border2_style) hsla(0, 0%, 80%, var(--faded_rg)); */
 	--button_border_color: var(--border_color);
 	--input_border_color: var(--border_color);
 
@@ -363,7 +364,6 @@ button.inline {
 	display: inline-block;
 }
 button:disabled.selected {
-	z-index: 1;
 	border-left-style: var(--button_border_selected_style);
 	border-right-style: var(--button_border_selected_style);
 	color: var(--active_color);
@@ -397,8 +397,6 @@ textarea {
 	max-width: var(--input_width_max);
 	min-width: var(--input_width_min);
 	min-height: var(--input_height);
-	--outline_width: var(--border_width_sm);
-	--outline_style: var(--border4_style);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 
@@ -506,6 +504,7 @@ input:active {
 button:disabled,
 input:disabled,
 textarea:disabled {
+	z-index: 0;
 	--outline_width: 0;
 	--input_border_color: var(--border_color);
 	opacity: 1; /* for some browsers */

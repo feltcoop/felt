@@ -3,12 +3,13 @@
 
 	import {consent_principles} from '$lib/consent/consent';
 	import type {Consent_Type, Consent_Principle_Type} from '$lib/consent/consent';
-	import Consent_Principle_View from '$lib/consent/Consent_Principle_View.svelte';
+	import Consent_Principle_Summary from '$lib/consent/Consent_Principle_Summary.svelte';
 	import {onboard_machine, onboard_data, save_state} from './onboard';
 	import type {Onboard_State_Name} from './onboard';
 	import Nav from './Nav.svelte';
 	import Begin from './Begin.svelte';
 	import End from './End.svelte';
+	import Side_Complete from './Side_Complete.svelte';
 	// import Machine_State from '$lib/xstate/Machine_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
@@ -56,7 +57,7 @@
 <div class="onboard">
 	<header>
 		{#if principle}
-			<Consent_Principle_View {principle} />
+			<Consent_Principle_Summary {principle} />
 		{:else}
 			<h2>&nbsp;</h2>
 		{/if}
@@ -68,21 +69,27 @@
 		{:else if $state.value === 'end'}
 			<End />
 		{:else if unconsentful_data.component && consentful_data.component}
-			<section class="column" class:complete={done_unconsentful}>
+			<section class="column">
 				<svelte:component
 					this={unconsentful_data.component}
 					data={unconsentful_data}
 					done={() => done('unconsentful')}
 					{back}
 				/>
+				{#if done_unconsentful}
+					<Side_Complete left={true} />
+				{/if}
 			</section>
-			<section class="column" class:complete={done_consentful}>
+			<section class="column">
 				<svelte:component
 					this={consentful_data.component}
 					data={consentful_data}
 					done={() => done('consentful')}
 					{back}
 				/>
+				{#if done_consentful}
+					<Side_Complete left={false} />
+				{/if}
 			</section>
 		{:else}
 			error: unexpected `null` components
@@ -119,26 +126,5 @@
 		/* TODO should this be on `.column` ? */
 		border-left: var(--border);
 		border-right: var(--border);
-	}
-	.complete::before {
-		z-index: 10;
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		background: var(--tint_overlay);
-		content: '';
-	}
-	.complete::after {
-		z-index: 10;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		color: var(--help_color);
-		font-size: var(--font_size_xl7);
-		text-align: center;
-		content: '☑';
 	}
 </style>

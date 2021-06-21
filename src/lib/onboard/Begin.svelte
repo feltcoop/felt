@@ -2,6 +2,7 @@
 	import type {Onboard_Send} from './onboard';
 	import Markup from '$lib/Markup.svelte';
 	import Credits from './Credits.svelte';
+	import {arrow_right} from '$lib/icons';
 
 	export let send: Onboard_Send;
 </script>
@@ -23,7 +24,7 @@
 		yourself: which would you prefer?
 	</p>
 
-	<button on:click={() => send('NEXT')}> click here to start → </button>
+	<button on:click={() => send('NEXT')}> click here to start {arrow_right} </button>
 
 	<Credits />
 </Markup>

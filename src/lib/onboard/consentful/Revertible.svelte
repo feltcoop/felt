@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
 	import Markup from '$lib/Markup.svelte';
+	import {arrow_left, arrow_right} from '$lib/icons';
 
 	export let data: Onboard_Data;
 	export let done: () => void;
@@ -21,10 +22,10 @@
 			test my knowledge!
 		</button> -->
 	</p>
-	<button on:click={() => back()}> <Markup>← go back and learn</Markup> </button>
+	<button on:click={() => back()}> <Markup>{arrow_left} go back and learn</Markup> </button>
 	<blockquote>🌈✨ if you don't know the deal, it's not consentful✨✨</blockquote>
 	<button on:click={() => (understood = true)} disabled={understood}>
-		<Markup>yes I understand →</Markup>
+		<Markup>yes I understand {arrow_right}</Markup>
 	</button>
 	{#if understood}
 		<p>
@@ -40,6 +41,6 @@
 				>account settings</a
 			>.
 		</p>
-		<button on:click={() => done()}> create my account → </button>
+		<button on:click={() => done()}> create my account {arrow_right} </button>
 	{/if}
 </Markup>

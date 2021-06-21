@@ -33,8 +33,6 @@
 		border-color: var(--input_border_color);
 		border-left-width: 0;
 		border-right-width: 0;
-		--outline_style: var(--border4_style);
-		--outline_width: var(--border_width_sm);
 	}
 	.content {
 		width: var(--column_width);

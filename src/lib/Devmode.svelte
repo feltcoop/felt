@@ -21,7 +21,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		opacity: var(--faded_md);
+		opacity: var(--faded_rg);
 	}
 	button::after {
 		content: 'devmode';
