@@ -48,7 +48,7 @@
 </script>
 
 <Markup>
-	<p>Now it's time to join a place to talk or two!</p>
+	<p>Now it's time to join some communities!</p>
 </Markup>
 
 {#each spaces as space (space.name)}
