@@ -2,13 +2,13 @@
 	import type {Onboard_Send, Onboard_State} from './onboard';
 	import Machine_Controls from '$lib/xstate/Machine_Controls.svelte';
 	import {onboard_machine} from './onboard';
-	import {use_devmode} from '$lib/devmode';
+	import {get_devmode} from '$lib/devmode';
 	import {arrow_left, arrow_right} from '$lib/icons';
 
 	export let state: Onboard_State;
 	export let send: Onboard_Send;
 
-	const devmode = use_devmode();
+	const devmode = get_devmode();
 
 	// console.log('onboard_machine', onboard_machine);
 	$: state_ids = Object.keys(onboard_machine.states);

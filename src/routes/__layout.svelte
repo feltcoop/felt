@@ -1,10 +1,10 @@
 <script>
 	import '../app.css';
-	import {provide_devmode} from '$lib/devmode';
+	import {set_devmode} from '$lib/devmode';
 	import Devmode from '$lib/Devmode.svelte';
 	import Nav from '$lib/Nav.svelte';
 
-	const devmode = provide_devmode(false);
+	const devmode = set_devmode(false);
 </script>
 
 <svelte:head>
