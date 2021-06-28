@@ -1,7 +1,7 @@
 /*
 
 The five principles of consent are from https://consentful.systems/
-(research led by Jane Im - https://imjane.net)
+(research by Jane Im and colleagues - https://imjane.net)
 
 */
 

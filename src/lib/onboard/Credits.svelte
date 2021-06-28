@@ -6,7 +6,7 @@
 	The five principles of consent are from <a href="https://consentful.systems">
 		consentful.systems
 	</a>
-	(research led by <a href="https://imjane.net"> Jane Im </a>) ✨
+	(research by <a href="https://imjane.net"> Jane Im </a> and colleagues) ✨
 </p>
 <p>
 	Open source permissive code at
