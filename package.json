@@ -18,7 +18,7 @@
     "test": "gro test"
   },
   "devDependencies": {
-    "@feltcoop/gro": "^0.27.0",
+    "@feltcoop/gro": "^0.27.3",
     "@sveltejs/adapter-static": "^1.0.0-next.13",
     "@sveltejs/kit": "^1.0.0-next.115",
     "@xstate/svelte": "^0.1.0",
