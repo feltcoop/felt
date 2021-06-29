@@ -1,5 +1,10 @@
 # changelog
 
+## 0.3.0
+
+- **break**: swap the names of `spawn` and `spawn_process`
+  ([#63](https://github.com/feltcoop/felt/pull/63))
+
 ## 0.2.2
 
 - fix another issue with published types

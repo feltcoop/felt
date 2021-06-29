@@ -81,7 +81,7 @@ interface To_Error_Label {
 // Wraps the normal Node `child_process.spawn` with graceful child shutdown behavior.
 // Also returns a convenient `closed` promise.
 // If you only need `closed`, prefer the shorthand function `spawn_process`.
-export const spawn = (
+export const spawn_process = (
 	command: string,
 	args: readonly string[] = [],
 	options?: SpawnOptions,
@@ -97,11 +97,11 @@ export const spawn = (
 	return {closed, child};
 };
 
-// This is just a convenient promise wrapper around `child_process.spawn`
-// that's intended for commands that have an end, not long running-processes.
-// Any more advanced usage should use `spawn` directly to have access to the `child`.
-export const spawn_process = (...args: Parameters<typeof spawn>): Promise<Spawn_Result> =>
-	spawn(...args).closed;
+// This is just a convenient promise wrapper around `spawn_process`
+// that's intended for commands that have an end, not long running-processes like watchers.
+// Any more advanced usage should use `spawn_process` directly for access to the `child` process.
+export const spawn = (...args: Parameters<typeof spawn_process>): Promise<Spawn_Result> =>
+	spawn_process(...args).closed;
 
 export const print_spawn_result = (result: Spawn_Result): string => {
 	if (result.ok) return 'ok';
