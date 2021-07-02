@@ -2,7 +2,7 @@ import type {Gro_Config_Creator, Gro_Config_Partial} from '@feltcoop/gro';
 
 const files = [
 	// top level API: `import {...} from '@feltcoop/felt';`
-	'index.ts',
+	'lib/index.ts',
 
 	// TODO refactor
 	// deep imports available to external consumers

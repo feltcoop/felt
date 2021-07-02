@@ -13,7 +13,7 @@
 npm i @feltcoop/felt
 ```
 
-The top-level API ([see src/index.ts](src/index.ts)) is a work in progress:
+The top-level API ([see src/lib/index.ts](src/lib/index.ts)) is a work in progress:
 
 ```ts
 import type {Result} from '@feltcoop/felt';
