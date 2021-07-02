@@ -26,7 +26,7 @@ const files = [
 	'lib/util/random.ts',
 	'lib/util/string.ts',
 	'lib/util/terminal.ts',
-	'lib/util/time.ts',
+	'lib/util/timings.ts',
 	'lib/util/types.ts',
 	'lib/util/uuid.ts',
 ];

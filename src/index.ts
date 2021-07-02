@@ -26,5 +26,5 @@ export * from './lib/util/types.js';
 // 	configure_log_level,
 // 	print_log_label,
 // } from './util/log.js';
-// export {Timings, create_stopwatch} from './util/time.js';
-// export type {Stopwatch} from './util/time.js';
+// export {Timings, create_stopwatch} from './util/timings.js';
+// export type {Stopwatch} from './util/timings.js';

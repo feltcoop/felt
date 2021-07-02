@@ -46,14 +46,14 @@ export class Timings<T extends string | number = string | number> {
 		}
 		return timing;
 	}
-	getAll(): IterableIterator<[T, number]> {
+	get_all(): IterableIterator<[T, number]> {
 		return this.timings.entries();
 	}
 
 	// Merges other timings into this one,
 	// adding together values with identical keys.
 	merge(timings: Timings<T>): void {
-		for (const [key, timing] of timings.getAll()) {
+		for (const [key, timing] of timings.get_all()) {
 			this.timings.set(key, (this.timings.get(key) || 0) + timing);
 		}
 	}

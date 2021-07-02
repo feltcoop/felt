@@ -1,7 +1,7 @@
 import {gray, white, green, yellow} from './terminal.js';
 import {round} from './math.js';
 import {truncate} from './string.js';
-import type {Timings} from './time.js';
+import type {Timings} from './timings.js';
 import type {Logger} from './log.js';
 import {arrow_left} from '$lib/icons.js';
 
@@ -43,7 +43,7 @@ export const print_timing = (key: string | number, timing: number): string =>
 	`${print_ms(timing)} ${gray(arrow_left)} ${gray(key)}`;
 
 export const print_timings = (timings: Timings, log: Logger): void => {
-	for (const [key, timing] of timings.getAll()) {
+	for (const [key, timing] of timings.get_all()) {
 		log.trace(print_timing(key, timing));
 	}
 };

@@ -4,6 +4,10 @@
 
 - **break**: swap the names of `spawn` and `spawn_process`
   ([#63](https://github.com/feltcoop/felt/pull/63))
+- **break**: rename `util/timings.ts` from `util/time.ts`
+  ([#63](https://github.com/feltcoop/felt/pull/63))
+- **break**: rename `Timings.get_all` from `Timings.getAll`
+  ([#63](https://github.com/feltcoop/felt/pull/63))
 - upgrade Gro to 0.28.0
   ([#63](https://github.com/feltcoop/felt/pull/63))
 
