@@ -2,7 +2,7 @@
 
 ## 0.4.0
 
-- **break**: remove camelcase terminal color exports and rename from `bg_color` to `color_bg`
+- **break**: remove camelcase terminal color exports and rename `color_bg` from `bg_color`
   ([#88](https://github.com/feltcoop/felt/pull/88))
 - **break**: rename `avocado` from `avacado` 🥑
   ([#88](https://github.com/feltcoop/felt/pull/88))
