@@ -4,6 +4,8 @@
 
 - upgrade Gro to 0.28.2
   ([#87](https://github.com/feltcoop/felt/pull/87))
+- change `random_item` return type to exclude `undefined`
+  ([#88](https://github.com/feltcoop/felt/pull/88))
 
 ## 0.3.0
 
