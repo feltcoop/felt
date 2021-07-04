@@ -1,10 +1,7 @@
 // public API for `@feltcoop/felt`:
 
-export {unwrap} from './util/types.js';
-
-import * as icons from './icons.js';
-
-export {icons};
+export * as icons from './icons.js';
+export * from './util/types.js';
 
 // TODO consider what top-level public API makes sense -
 // for now we're preferring deep imports to specific modules -

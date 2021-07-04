@@ -1,13 +1,15 @@
 # changelog
 
-## 0.3.1
+## 0.4.0
 
-- upgrade Gro to 0.28.2
-  ([#87](https://github.com/feltcoop/felt/pull/87))
-- remove wildcard exports to fix Vite
+- **break**: remove camelcase terminal color exports and rename from `bg_color` to `color_bg`
+  ([#88](https://github.com/feltcoop/felt/pull/88))
+- **break**: rename `avocado` from `avacado` 🥑
   ([#88](https://github.com/feltcoop/felt/pull/88))
 - change `random_item` return type to exclude `undefined`
   ([#88](https://github.com/feltcoop/felt/pull/88))
+- upgrade Gro to 0.28.2
+  ([#87](https://github.com/feltcoop/felt/pull/87))
 
 ## 0.3.0
 
