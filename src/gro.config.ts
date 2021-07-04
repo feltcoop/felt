@@ -4,7 +4,6 @@ const files = [
 	// top level API: `import {...} from '@feltcoop/felt';`
 	'lib/index.ts',
 
-	// TODO refactor
 	// deep imports available to external consumers
 	'lib/util/array.ts',
 	'lib/util/async.ts',
