@@ -3,7 +3,7 @@
 ## 0.3.1
 
 - upgrade Gro to 0.28.2
-  ([#63](https://github.com/feltcoop/felt/pull/63))
+  ([#87](https://github.com/feltcoop/felt/pull/87))
 
 ## 0.3.0
 
