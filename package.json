@@ -17,6 +17,11 @@
     "start": "gro start",
     "test": "gro test"
   },
+  "dependencies": {
+    "@lukeed/uuid": "^2.0.0",
+    "dequal": "^2.0.2",
+    "kleur": "^4.1.4"
+  },
   "devDependencies": {
     "@feltcoop/gro": "^0.28.3",
     "@sveltejs/adapter-static": "^1.0.0-next.13",
@@ -49,10 +54,5 @@
         }
       }
     ]
-  },
-  "dependencies": {
-    "@lukeed/uuid": "^2.0.0",
-    "dequal": "^2.0.2",
-    "kleur": "^4.1.4"
   }
 }
