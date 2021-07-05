@@ -6,6 +6,8 @@
   ([#88](https://github.com/feltcoop/felt/pull/88))
 - **break**: rename `avocado` from `avacado` 🥑
   ([#88](https://github.com/feltcoop/felt/pull/88))
+- add `random_bool` to `util/random.ts`
+  ([#88](https://github.com/feltcoop/felt/pull/88))
 - change `random_item` return type to exclude `undefined`
   ([#88](https://github.com/feltcoop/felt/pull/88))
 - upgrade Gro to 0.28.2
