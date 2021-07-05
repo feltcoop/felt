@@ -64,14 +64,14 @@ const handle_fatal_error = async (err: Error, label = 'handle_fatal_error'): Pro
 	process.exit(1);
 };
 
-const handle_unhandled_rejection = (to_error_label?: To_Error_Label) => (
-	err: Error | any,
-): Promise<void> => {
-	const label = (to_error_label && to_error_label(err)) || 'unhandledRejection';
-	return err instanceof Error
-		? handle_fatal_error(err, label)
-		: handle_fatal_error(new Error(err), label);
-};
+const handle_unhandled_rejection =
+	(to_error_label?: To_Error_Label) =>
+	(err: Error | any): Promise<void> => {
+		const label = (to_error_label && to_error_label(err)) || 'unhandledRejection';
+		return err instanceof Error
+			? handle_fatal_error(err, label)
+			: handle_fatal_error(new Error(err), label);
+	};
 
 interface To_Error_Label {
 	(err: Error | any): string | null;

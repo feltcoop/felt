@@ -38,7 +38,7 @@ export type Result<T_Value = {}, T_Error = {}> = ({ok: true} & T_Value) | ({ok: 
 export const unwrap = <
 	T_Value extends {value: T_Wrapped_Value},
 	T_Wrapped_Value,
-	T_Error extends {reason?: string}
+	T_Error extends {reason?: string},
 >(
 	result: Result<T_Value, T_Error>,
 ): T_Wrapped_Value => {
