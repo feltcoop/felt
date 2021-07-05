@@ -40,7 +40,6 @@
     "singleQuote": true,
     "trailingComma": "all",
     "bracketSpacing": false,
-    "svelteSortOrder": "options-scripts-markup-styles",
     "svelteBracketNewLine": true,
     "overrides": [
       {
