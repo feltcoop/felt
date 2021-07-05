@@ -4,16 +4,16 @@
 
 <div class="column">
 	<Help_Message text="todo" />
-	<h2>
+	<div>
 		<a href="https://github.com/feltcoop/felt/issues">github.com/feltcoop/felt/issues</a>
-	</h2>
+	</div>
 </div>
 
 <style>
 	.column {
 		margin: auto;
 	}
-	h2 {
+	div {
 		padding: var(--spacing_lg) 0;
 		text-align: center;
 	}

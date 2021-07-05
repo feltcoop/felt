@@ -40,7 +40,7 @@ export const save_state = (value: string): void => {
 	localStorage.setItem(STORAGE_KEY, value);
 };
 
-export const onboard_machine = create_machine({
+export const onboard_machine = create_machine<object>({
 	id: 'onboard',
 	initial: load_initial_value(),
 	states: {

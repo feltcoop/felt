@@ -9,6 +9,7 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
+		"noImplicitOverride": false,
 		"noFallthroughCasesInSwitch": true,
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,

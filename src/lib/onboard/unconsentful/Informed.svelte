@@ -21,7 +21,12 @@
 				privacy policy
 			</a>
 			and
-			<a href="/terms" on:click|preventDefault={() => alert('dont u dare')}> terms of service </a>
+			<a
+				href="/terms"
+				on:click|preventDefault={() => alert('We The Company do whatever we want. Deal?')}
+			>
+				terms of service
+			</a>
 		</small>.
 	</p>
 	<p>
