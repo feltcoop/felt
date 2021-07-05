@@ -7,7 +7,6 @@ export default {
 	kit: {
 		adapter: staticAdapter(),
 		target: '#svelte',
-		appDir: 'app', // because the default '_app' is ignored by GitHub pages by default
 		files: {assets: 'src/static'},
 	},
 };
