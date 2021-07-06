@@ -8,7 +8,7 @@
 </script>
 
 <Markup>
-	<p>Here are the terms of use and privacy policy for this sketch:</p>
+	<p>Here is the privacy policy and terms of service for this sketch:</p>
 	<ol>
 		<li>this is fake</li>
 		<li>we are not collecting any data, big or little</li>
