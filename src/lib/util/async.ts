@@ -1,6 +1,7 @@
 export type Async_Status = 'initial' | 'pending' | 'success' | 'failure';
 
-export const wait = (duration = 0) => new Promise<void>((resolve) => setTimeout(resolve, duration));
+export const wait = (duration: number = 0): Promise<void> =>
+	new Promise((resolve) => setTimeout(resolve, duration));
 
 interface Wrap_After {
 	(cb: Wrap_After_Callback): void;

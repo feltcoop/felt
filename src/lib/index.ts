@@ -3,12 +3,13 @@
 export * as icons from './icons.js';
 export * from './util/types.js';
 
+export type {Async_Status} from './util/async.js';
+export {wait} from './util/async.js';
+
 // TODO consider what top-level public API makes sense -
 // for now we're preferring deep imports to specific modules -
 // these are Gro's old exports:
 // // utils
-// export type {Async_Status} from './util/async.js';
-// export {wait, wrap} from './util/async.js';
 // export type {Spawned_Process, Spawn_Result} from './util/process.js';
 // export type {Lazy} from './util/function.js';
 // export {Unreachable_Error} from './util/error.js';

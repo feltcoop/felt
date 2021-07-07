@@ -1,5 +1,10 @@
 # changelog
 
+## 0.4.1
+
+- export `Async_Status` and `wait` from root
+  ([#89](https://github.com/feltcoop/felt/pull/89))
+
 ## 0.4.0
 
 - **break**: remove camelCase terminal color exports and rename `color_bg` from `bg_color`
