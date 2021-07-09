@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {to_obtainable} from './obtainable.js';
+import {to_obtainable} from '$lib/util/obtainable.js';
 
 /* test_to_obtainable */
 const test_to_obtainable = suite('to_obtainable');

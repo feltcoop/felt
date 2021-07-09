@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {create_lock} from './lock.js';
+import {create_lock} from '$lib/util/lock.js';
 
 /* test_create_lock */
 const test_create_lock = suite('create_lock');

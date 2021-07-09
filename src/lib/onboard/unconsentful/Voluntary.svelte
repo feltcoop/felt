@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {tick} from 'svelte';
 
-	import type {Onboard_Data} from '../onboard';
+	import type {Onboard_Data} from '$lib/onboard/onboard';
 	import Error_Message from '$lib/ui/Error_Message.svelte';
 	import Help_Message from '$lib/ui/Help_Message.svelte';
 	import Message from '$lib/ui/Message.svelte';

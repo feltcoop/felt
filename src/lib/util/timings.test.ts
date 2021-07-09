@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {create_stopwatch, Timings} from './timings.js';
+import {create_stopwatch, Timings} from '$lib/util/timings.js';
 
 /* test_create_stopwatch */
 const test_create_stopwatch = suite('create_stopwatch');

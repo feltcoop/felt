@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {Onboard_Data} from '../onboard';
+	import type {Onboard_Data} from '$lib/onboard/onboard';
 
 	export let data: Onboard_Data;
 	export let done: () => void;

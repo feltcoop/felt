@@ -1,6 +1,6 @@
 import {v4} from '@lukeed/uuid';
 
-import type {Flavored} from './types.js';
+import type {Flavored} from '$lib/util/types.js';
 
 export type Uuid = Flavored<string, 'Uuid'>;
 

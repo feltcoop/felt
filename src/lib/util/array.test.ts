@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {last, to_array} from './array.js';
+import {last, to_array} from '$lib/util/array.js';
 
 /* test_last */
 const test_last = suite('last');

@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {uuid, is_uuid} from './uuid.js';
+import {uuid, is_uuid} from '$lib/util/uuid.js';
 
 /* test_uuid */
 const test_uuid = suite('uuid');

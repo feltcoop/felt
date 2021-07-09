@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {State_Machine, State, Send} from './machine';
+	import type {State_Machine, State, Send} from '$lib/xstate/machine';
 
 	export let machine: State_Machine | null = null;
 	export let state: State;

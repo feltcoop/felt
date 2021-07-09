@@ -1,6 +1,6 @@
-import {red, yellow, gray, black, magenta, yellow_bg, red_bg} from './terminal.js';
-import {EMPTY_ARRAY, to_array} from './array.js';
-import {to_env_number} from './env.js';
+import {red, yellow, gray, black, magenta, yellow_bg, red_bg} from '$lib/util/terminal.js';
+import {EMPTY_ARRAY, to_array} from '$lib/util/array.js';
+import {to_env_number} from '$lib/util/env.js';
 
 // TODO could use some refactoring
 

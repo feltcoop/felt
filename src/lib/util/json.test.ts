@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {get_json_type} from './json.js';
+import {get_json_type} from '$lib/util/json.js';
 
 /* test_get_json_type */
 const test_get_json_type = suite('get_json_type');

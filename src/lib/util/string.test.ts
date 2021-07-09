@@ -11,7 +11,7 @@ import {
 	ensure_start,
 	ensure_end,
 	deindent,
-} from './string.js';
+} from '$lib/util/string.js';
 
 /* test_truncate */
 const test_truncate = suite('truncate');

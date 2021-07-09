@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type {Onboard_Send, Onboard_State} from './onboard';
+	import type {Onboard_Send, Onboard_State} from '$lib/onboard/onboard';
 	import Machine_Controls from '$lib/xstate/Machine_Controls.svelte';
-	import {onboard_machine} from './onboard';
+	import {onboard_machine} from '$lib/onboard/onboard';
 	import {get_devmode} from '$lib/ui/devmode';
 	import {arrow_left, arrow_right} from '$lib/ui/icons';
 

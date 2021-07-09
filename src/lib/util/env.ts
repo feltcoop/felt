@@ -1,5 +1,5 @@
-import type {Lazy} from './function.js';
-import {lazy} from './function.js';
+import type {Lazy} from '$lib/util/function.js';
+import {lazy} from '$lib/util/function.js';
 
 // TODO validation?
 

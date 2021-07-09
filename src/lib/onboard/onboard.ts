@@ -2,16 +2,16 @@ import {createMachine as create_machine} from 'xstate';
 import {useMachine} from '@xstate/svelte'; // TODO should be a type import
 import type {SvelteComponent} from 'svelte';
 
-import Consentful_Voluntary from './consentful/Voluntary.svelte';
-import Consentful_Informed from './consentful/Informed.svelte';
-import Consentful_Revertible from './consentful/Revertible.svelte';
-import Consentful_Specific from './consentful/Specific.svelte';
-import Consentful_Unburdensome from './consentful/Unburdensome.svelte';
-import Unconsentful_Voluntary from './unconsentful/Voluntary.svelte';
-import Unconsentful_Informed from './unconsentful/Informed.svelte';
-import Unconsentful_Revertible from './unconsentful/Revertible.svelte';
-import Unconsentful_Specific from './unconsentful/Specific.svelte';
-import Unconsentful_Unburdensome from './unconsentful/Unburdensome.svelte';
+import Consentful_Voluntary from '$lib/onboard/consentful/Voluntary.svelte';
+import Consentful_Informed from '$lib/onboard/consentful/Informed.svelte';
+import Consentful_Revertible from '$lib/onboard/consentful/Revertible.svelte';
+import Consentful_Specific from '$lib/onboard/consentful/Specific.svelte';
+import Consentful_Unburdensome from '$lib/onboard/consentful/Unburdensome.svelte';
+import Unconsentful_Voluntary from '$lib/onboard/unconsentful/Voluntary.svelte';
+import Unconsentful_Informed from '$lib/onboard/unconsentful/Informed.svelte';
+import Unconsentful_Revertible from '$lib/onboard/unconsentful/Revertible.svelte';
+import Unconsentful_Specific from '$lib/onboard/unconsentful/Specific.svelte';
+import Unconsentful_Unburdensome from '$lib/onboard/unconsentful/Unburdensome.svelte';
 import type {Consent_Type} from '$lib/consent/consent';
 
 // TODO we're currently using only a fraction of the xstate functionality that we want to

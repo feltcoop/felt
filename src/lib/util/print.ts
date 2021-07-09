@@ -1,8 +1,8 @@
-import {gray, white, green, yellow} from './terminal.js';
-import {round} from './math.js';
-import {truncate} from './string.js';
-import type {Timings} from './timings.js';
-import type {Logger} from './log.js';
+import {gray, white, green, yellow} from '$lib/util/terminal.js';
+import {round} from '$lib/util/math.js';
+import {truncate} from '$lib/util/string.js';
+import type {Timings} from '$lib/util/timings.js';
+import type {Logger} from '$lib/util/log.js';
 import {arrow_left} from '$lib/ui/icons.js';
 
 export const print_key_value = (key: string, val: string | number): string =>

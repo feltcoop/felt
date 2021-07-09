@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {mix, round} from './math.js';
+import {mix, round} from '$lib/util/math.js';
 
 /* test_mix */
 const test_mix = suite('mix');

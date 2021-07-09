@@ -1,10 +1,10 @@
 import {spawn as spawn_child_process} from 'child_process';
 import type {SpawnOptions, ChildProcess} from 'child_process';
 
-import {gray, green, red} from './terminal.js';
-import {print_log_label, System_Logger} from './log.js';
-import {print_error, print_key_value} from './print.js';
-import type {Result} from './types.js';
+import {gray, green, red} from '$lib/util/terminal.js';
+import {print_log_label, System_Logger} from '$lib/util/log.js';
+import {print_error, print_key_value} from '$lib/util/print.js';
+import type {Result} from '$lib/util/types.js';
 
 const log = new System_Logger(print_log_label('process'));
 

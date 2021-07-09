@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {to_env_string, to_env_number} from './env.js';
+import {to_env_string, to_env_number} from '$lib/util/env.js';
 
 /* test_to_env_string */
 const test_to_env_string = suite('to_env_string');

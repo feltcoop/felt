@@ -1,7 +1,7 @@
 import {suite} from 'uvu';
 import * as t from 'uvu/assert';
 
-import {wait, wrap} from './async.js';
+import {wait, wrap} from '$lib/util/async.js';
 
 /* test_wait */
 const test_wait = suite('wait');

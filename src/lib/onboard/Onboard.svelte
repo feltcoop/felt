@@ -4,12 +4,12 @@
 	import {consent_principles} from '$lib/consent/consent';
 	import type {Consent_Type, Consent_Principle_Type} from '$lib/consent/consent';
 	import Consent_Principle_Summary from '$lib/consent/Consent_Principle_Summary.svelte';
-	import {onboard_machine, onboard_data, save_state} from './onboard';
-	import type {Onboard_State_Name} from './onboard';
-	import Nav from './Nav.svelte';
-	import Begin from './Begin.svelte';
-	import End from './End.svelte';
-	import Side_Complete from './Side_Complete.svelte';
+	import {onboard_machine, onboard_data, save_state} from '$lib/onboard/onboard';
+	import type {Onboard_State_Name} from '$lib/onboard/onboard';
+	import Nav from '$lib/onboard/Nav.svelte';
+	import Begin from '$lib/onboard/Begin.svelte';
+	import End from '$lib/onboard/End.svelte';
+	import Side_Complete from '$lib/onboard/Side_Complete.svelte';
 	// import Machine_State from '$lib/xstate/Machine_State.svelte';
 
 	const onboard = useMachine(onboard_machine);
