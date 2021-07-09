@@ -2,10 +2,10 @@
 	import {tick} from 'svelte';
 
 	import type {Onboard_Data} from '../onboard';
-	import Error_Message from '$lib/Error_Message.svelte';
-	import Help_Message from '$lib/Help_Message.svelte';
-	import Message from '$lib/Message.svelte';
-	import Markup from '$lib/Markup.svelte';
+	import Error_Message from '$lib/ui/Error_Message.svelte';
+	import Help_Message from '$lib/ui/Help_Message.svelte';
+	import Message from '$lib/ui/Message.svelte';
+	import Markup from '$lib/ui/Markup.svelte';
 	import {Unreachable_Error} from '$lib/util/error';
 
 	// TODO refactor to an xstate machine

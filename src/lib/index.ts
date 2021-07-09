@@ -1,6 +1,6 @@
 // public API for `@feltcoop/felt`:
 
-export * as icons from './icons.js';
+export * as icons from '$lib/ui/icons.js';
 export * from './util/types.js';
 
 export type {Async_Status} from './util/async.js';

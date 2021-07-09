@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Icons from '$lib/Icons.svelte';
-	import * as icons_by_name from '$lib/icons';
+	import Icons from '$lib/ui/Icons.svelte';
+	import * as icons_by_name from '$lib/ui/icons';
 
 	$: icons = Object.entries(icons_by_name)
 		.map(([name, icon]) => ({name, icon}))

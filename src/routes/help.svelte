@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Help_Message from '$lib/Help_Message.svelte';
+	import Help_Message from '$lib/ui/Help_Message.svelte';
 </script>
 
 <div class="column">

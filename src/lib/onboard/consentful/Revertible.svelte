@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
-	import Markup from '$lib/Markup.svelte';
-	import {arrow_left, arrow_right} from '$lib/icons';
+	import Markup from '$lib/ui/Markup.svelte';
+	import {arrow_left, arrow_right} from '$lib/ui/icons';
 
 	export let data: Onboard_Data;
 	export let done: () => void;

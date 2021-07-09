@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Message from './Message.svelte';
+	import Message from '$lib/ui/Message.svelte';
 
 	export let text: string | null;
 </script>

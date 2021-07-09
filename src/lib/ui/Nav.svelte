@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {greenheart} from '$lib/icons';
+	import {greenheart} from '$lib/ui/icons';
 	import {page} from '$app/stores';
-	import Link_Path from '$lib/Link_Path.svelte';
+	import Link_Path from '$lib/ui/Link_Path.svelte';
 </script>
 
 <!-- TODO probably change to ul/li once styles are right -->

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type {Onboard_Send} from './onboard';
-	import Markup from '$lib/Markup.svelte';
+	import Markup from '$lib/ui/Markup.svelte';
 	import Credits from './Credits.svelte';
-	import {arrow_right} from '$lib/icons';
+	import {arrow_right} from '$lib/ui/icons';
 
 	export let send: Onboard_Send;
 </script>

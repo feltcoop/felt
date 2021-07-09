@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Felt_Heart from '$lib/Felt_Heart.svelte';
-	import {arrow_left, arrow_right} from '$lib/icons';
+	import Felt_Heart from '$lib/ui/Felt_Heart.svelte';
+	import {arrow_left, arrow_right} from '$lib/ui/icons';
 </script>
 
 <h1>@feltcoop/felt</h1>

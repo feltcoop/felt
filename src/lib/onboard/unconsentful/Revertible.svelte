@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
-	import Markup from '$lib/Markup.svelte';
+	import Markup from '$lib/ui/Markup.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;

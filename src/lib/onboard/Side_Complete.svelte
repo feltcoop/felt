@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {arrow_left, arrow_right} from '$lib/icons';
+	import {arrow_left, arrow_right} from '$lib/ui/icons';
 
 	export let left: boolean;
 </script>

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type {Onboard_Data} from '../onboard';
-	import Markup from '$lib/Markup.svelte';
-	import Checkbox from '$lib/Checkbox.svelte';
-	import Help_Message from '$lib/Help_Message.svelte';
-	import Message from '$lib/Message.svelte';
+	import Markup from '$lib/ui/Markup.svelte';
+	import Checkbox from '$lib/ui/Checkbox.svelte';
+	import Help_Message from '$lib/ui/Help_Message.svelte';
+	import Message from '$lib/ui/Message.svelte';
 
 	export let data: Onboard_Data;
 	export let done: () => void;

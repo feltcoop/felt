@@ -1,8 +1,8 @@
 <script>
 	import '../app.css';
-	import {set_devmode} from '$lib/devmode';
-	import Devmode from '$lib/Devmode.svelte';
-	import Nav from '$lib/Nav.svelte';
+	import {set_devmode} from '$lib/ui/devmode';
+	import Devmode from '$lib/ui/Devmode.svelte';
+	import Nav from '$lib/ui/Nav.svelte';
 
 	const devmode = set_devmode(false);
 </script>

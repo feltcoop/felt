@@ -1,8 +1,8 @@
 <script lang="ts">
-	import {grin} from '$lib/icons';
-	import Markup from '$lib/Markup.svelte';
+	import {grin} from '$lib/ui/icons';
+	import Markup from '$lib/ui/Markup.svelte';
 	import Credits from './Credits.svelte';
-	import {get_devmode} from '$lib/devmode';
+	import {get_devmode} from '$lib/ui/devmode';
 
 	const devmode = get_devmode();
 </script>

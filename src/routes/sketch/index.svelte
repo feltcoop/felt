@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Markup from '$lib/Markup.svelte';
+	import Markup from '$lib/ui/Markup.svelte';
 	import {to_sketch_id} from '$lib/sketch/sketch';
 	import type {Sketch} from '$lib/sketch/sketch';
 

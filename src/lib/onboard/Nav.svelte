@@ -2,8 +2,8 @@
 	import type {Onboard_Send, Onboard_State} from './onboard';
 	import Machine_Controls from '$lib/xstate/Machine_Controls.svelte';
 	import {onboard_machine} from './onboard';
-	import {get_devmode} from '$lib/devmode';
-	import {arrow_left, arrow_right} from '$lib/icons';
+	import {get_devmode} from '$lib/ui/devmode';
+	import {arrow_left, arrow_right} from '$lib/ui/icons';
 
 	export let state: Onboard_State;
 	export let send: Onboard_Send;

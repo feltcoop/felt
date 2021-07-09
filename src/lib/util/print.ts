@@ -3,7 +3,7 @@ import {round} from './math.js';
 import {truncate} from './string.js';
 import type {Timings} from './timings.js';
 import type {Logger} from './log.js';
-import {arrow_left} from '$lib/icons.js';
+import {arrow_left} from '$lib/ui/icons.js';
 
 export const print_key_value = (key: string, val: string | number): string =>
 	gray(`${key}(`) + val + gray(')');
