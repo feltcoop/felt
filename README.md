@@ -35,7 +35,7 @@ npm run build
 npm start
 ```
 
-## credits :turtle:<sub>:turtle:</sub><sub><sub>:turtle:</sub></sub>
+## credits 🐢<sub>🐢</sub><sub><sub>🐢</sub></sub>
 
 [TypeScript](https://github.com/microsoft/TypeScript) ∙
 [Svelte](https://github.com/sveltejs/svelte) ∙
