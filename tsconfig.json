@@ -13,6 +13,7 @@
 		"noFallthroughCasesInSwitch": true,
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
+		"resolveJsonModule": true,
 		"sourceMap": true,
 		"importHelpers": true,
 		"esModuleInterop": true,
