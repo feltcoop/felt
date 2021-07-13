@@ -1,5 +1,10 @@
 # changelog
 
+## 0.4.2
+
+- publish component `ui/Pending_Animation.svelte`
+  ([#91](https://github.com/feltcoop/felt/pull/91))
+
 ## 0.4.1
 
 - export `Async_Status` and `wait` from root

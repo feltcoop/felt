@@ -5,6 +5,13 @@ const files = [
 	'lib/index.ts',
 
 	// deep imports available to external consumers
+
+	// ui components, styles, etc
+	'lib/ui/Pending_Animation.svelte',
+	// TODO add reusable styles
+	// 'lib/ui/styles.css',
+
+	// utils
 	'lib/util/array.ts',
 	'lib/util/async.ts',
 	'lib/util/env.ts',
