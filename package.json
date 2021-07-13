@@ -9,8 +9,6 @@
     "url": "https://felt.social"
   },
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
   "scripts": {
     "dev": "gro dev",
     "build": "gro build",
