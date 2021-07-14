@@ -19,6 +19,8 @@ The top-level API ([see src/lib/index.ts](src/lib/index.ts)) is a work in progre
 import type {Result} from '@feltcoop/felt';
 
 // for now, you'll typically use deep imports to specific modules:
+import '@feltcoop/felt/ui/style.css';
+import Markup from '@feltcoop/felt/ui/Markup.svelte';
 import {random_int} from '@feltcoop/felt/util/random.js';
 ```
 
