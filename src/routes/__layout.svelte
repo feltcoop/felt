@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import '$lib/ui/style.css';
 	import {set_devmode} from '$lib/ui/devmode';
 	import Devmode from '$lib/ui/Devmode.svelte';
 	import Nav from '$lib/ui/Nav.svelte';
