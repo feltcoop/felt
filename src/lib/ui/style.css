@@ -212,8 +212,10 @@
 	--outline_style_2: var(--border_style_3);
 	--outline_color: var(--interactive_color_hover);
 	--button_border_color: var(--border_color);
-	--button_border_width: var(--border_width_lg);
-	--button_border_style: double;
+	--button_border_width: var(--border_width_md);
+	--button_border_width_inner: var(--border_width_md);
+	--button_border_style: solid;
+	--button_border_style_inner: double;
 	--button_border_style_selected: solid;
 	--button_border_style_disabled: dashed;
 	--button_font_weight: var(--font_weight_4);
@@ -222,7 +224,7 @@
 	--input_width_max: 400px;
 	--input_width_min: 100px;
 	--input_border_color: var(--border_color);
-	--input_border_width: var(--button_border_width);
+	--input_border_width: var(--border_width_lg);
 	--input_border_style: solid;
 }
 
@@ -351,12 +353,9 @@ button::before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	border-width: var(--border_width_rg) 0;
-	border-style: var(--border_style);
-	border-color: var(--border_color);
-	outline-width: var(--border_width_sm);
-	outline-style: var(--border_style_4);
-	outline-color: var(--outline_color);
+	border-width: var(--button_border_width_inner) 0;
+	border-style: var(--button_border_style_inner);
+	border-color: var(--button_border_color);
 }
 button:disabled::before {
 	outline-width: 0;
