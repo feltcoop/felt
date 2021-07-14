@@ -27,8 +27,8 @@
 		font-weight: var(--font_weight, var(--font_weight_4));
 		font-size: var(--font_size_md);
 		border-width: var(--border_width_md) var(--border_width_xxl);
-		border-style: var(--border2_style);
-		border-color: var(--message_color, var(--border_lighter_color));
+		border-style: var(--border_style_2);
+		border-color: var(--message_color, var(--border_color_lighter));
 		display: flex;
 		align-items: stretch;
 	}
@@ -40,8 +40,8 @@
 		padding: var(--spacing_md) var(--spacing_sm);
 		display: flex;
 		border-width: 0 var(--border_width_lg);
-		border-style: var(--border2_style);
-		border-color: var(--message_color, var(--border_lighter_color));
+		border-style: var(--border_style_2);
+		border-color: var(--message_color, var(--border_color_lighter));
 	}
 	.wrapper2 {
 		width: 100%;

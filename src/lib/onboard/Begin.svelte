@@ -34,6 +34,6 @@
 		font-size: var(--spacing_xl2);
 		font-weight: var(--font_weight_2);
 		text-align: center;
-		color: var(--text_disabled_color);
+		color: var(--text_color_disabled);
 	}
 </style>

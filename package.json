@@ -21,7 +21,7 @@
     "kleur": "^4.1.4"
   },
   "devDependencies": {
-    "@feltcoop/gro": "^0.34.1",
+    "@feltcoop/gro": "^0.34.2",
     "@sveltejs/adapter-static": "^1.0.0-next.13",
     "@sveltejs/kit": "^1.0.0-next.120",
     "@xstate/svelte": "^0.1.0",

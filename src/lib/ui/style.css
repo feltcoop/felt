@@ -1,5 +1,7 @@
-/* TODO some is haphazard & inconsistent */
+/* TODO still a work in progress */
 :root {
+	color-scheme: light dark;
+
 	--alpha: 0.89;
 	--faded_lg: 81%;
 	--faded_md: 62%;
@@ -55,7 +57,7 @@
 	--tint_lightness4: 94%;
 	--tint_lightness5: 100%;
 	--tint_lightness: var(--tint_lightness1);
-	--tint_dark_lightness: 45%;
+	--tint_lightness_dark: 45%;
 	--tint_alpha: 1;
 	--tint: hsla(var(--tint_hue), var(--tint_saturation), var(--tint_lightness), var(--tint_alpha));
 	--tint_overlay: hsla(
@@ -76,19 +78,19 @@
 		var(--tint_lightness2),
 		var(--alpha)
 	);
-	--interactive_hover_color: hsla(
+	--interactive_color_hover: hsla(
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_lightness4),
 		var(--alpha)
 	);
-	--interactive_disabled_color: hsla(
+	--interactive_color_disabled: hsla(
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_lightness4),
 		var(--alpha)
 	);
-	--interactive_active_color: hsla(
+	--interactive_color_active: hsla(
 		var(--tint_hue),
 		var(--tint_saturation),
 		var(--tint_lightness5),
@@ -105,24 +107,27 @@
 		var(--active_lightness),
 		var(--active_alpha)
 	);
-	--active_light_bg_saturation: 70%;
-	--active_light_bg_lightness: 80%;
-	--active_light_bg_alpha: 0.5;
-	--active_light_bg: hsla(
+	--active_saturation_bg_light: 70%;
+	--active_lightness_bg_light: 80%;
+	--active_alpha_bg_light: 0.5;
+	--active_color_bg_light: hsla(
 		var(--active_hue),
-		var(--active_light_bg_saturation),
-		var(--active_light_bg_lightness),
-		var(--active_light_bg_alpha)
+		var(--active_saturation_bg_light),
+		var(--active_lightness_bg_light),
+		var(--active_alpha_bg_light)
 	);
-	--active2_color: var(--green);
+	--active_color_2: var(--green);
 	--help_color: var(--green);
 	--error_color: var(--red);
-	/* these don't use alpha because it affects performance (unless that changed) */
+	/* text colors don't use alpha because it affects performance */
 	--text_color: hsl(0, 10%, 16%);
-	--text_light_color: hsl(0, 10%, 38%);
-	--text_lighter_color: hsl(0, 10%, 62%);
-	--text_disabled_color: var(--text_lighter_color);
+	--text_color_light: hsl(0, 10%, 38%);
+	--text_color_lighter: hsl(0, 10%, 62%);
+	--text_color_disabled: var(--text_color_lighter);
 	--line_height: 1.2;
+	--font_family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font_family_mono: 'Fira Mono', monospace;
 	--font_size_xl9: 512px;
 	--font_size_xl8: 384px;
 	--font_size_xl7: 256px;
@@ -148,9 +153,9 @@
 	--link_lightness: 35%;
 	--link_color: hsl(var(--link_hue), var(--link_saturation), var(--link_lightness));
 	--link_text_decoration: none;
-	--link_hover_decoration: underline;
-	--link_selected_decoration: underline;
-	--link_active_color: var(--text_color);
+	--link_text_decoration_hover: underline;
+	--link_text_decoration_selected: underline;
+	--link_color_active: var(--text_color);
 	--link_cursor: default; /* because we have other visual affordances */
 	/* TODO maybe spacing 1-N ? */
 	--spacing_xl9: 512px;
@@ -173,17 +178,14 @@
 	--column_width: 600px;
 	--nav_height: var(--spacing_xl);
 	--avatar_height: var(--spacing_xl2);
-	--input_height: var(--spacing_xl2);
-	--input_width_max: 400px;
-	--input_width_min: 100px;
 	--border_color: hsla(
 		var(--tint_hue),
 		var(--tint_saturation),
-		var(--tint_dark_lightness),
+		var(--tint_lightness_dark),
 		var(--faded_rg)
 	);
-	--border_light_color: rgba(0, 0, 0, var(--faded_sm));
-	--border_lighter_color: rgba(0, 0, 0, var(--faded_xs));
+	--border_color_light: rgba(0, 0, 0, var(--faded_sm));
+	--border_color_lighter: rgba(0, 0, 0, var(--faded_xs));
 	--border_radius_md: 25px;
 	--border_width_xxxl: 14px;
 	--border_width_xxl: var(--spacing_md);
@@ -192,58 +194,63 @@
 	--border_width_md: var(--spacing_xs);
 	--border_width_rg: var(--spacing_xs3);
 	--border_width_sm: var(--spacing_xs4);
-	--border2_width: var(--spacing_xs);
+	--border_width_2: var(--spacing_xs);
 	--border_style: solid;
-	--border2_style: double;
-	--border3_style: dotted;
-	--border4_style: dashed;
+	--border_style_2: double;
+	--border_style_3: dotted;
+	--border_style_4: dashed;
 	--border: var(--border_width_rg) var(--border_style) var(--tint);
+	--border_alert: var(--border_width_2) var(--border_style_2)
+		hsla(var(--red_hue), 100%, 50%, var(--faded_rg));
+	--border_help: var(--border_width_2) var(--border_style_2)
+		hsla(var(--green_hue), 100%, 25%, var(--faded_rg));
+	/* --border: var(--border_width_2) var(--border_style_2) hsla(0, 0%, 80%, var(--faded_rg)); */
 	--outline_width: 0;
-	--outline2_width: var(--spacing_rg);
-	--outline3_width: var(--spacing_md);
-	--outline_style: var(--border2_style);
-	--outline2_style: var(--border3_style);
-	--outline_color: var(--interactive_hover_color);
+	--outline_width_2: var(--spacing_rg);
+	--outline_width_3: var(--spacing_md);
+	--outline_style: var(--border_style_2);
+	--outline_style_2: var(--border_style_3);
+	--outline_color: var(--interactive_color_hover);
+	--button_border_color: var(--border_color);
 	--button_border_width: var(--border_width_lg);
 	--button_border_style: double;
-	--button_border_selected_style: solid;
-	--button_border_disabled_style: dashed;
+	--button_border_style_selected: solid;
+	--button_border_style_disabled: dashed;
 	--button_font_weight: var(--font_weight_4);
-	--button_text_color: var(--text_light_color);
+	--button_text_color: var(--text_color_light);
+	--input_height: var(--spacing_xl2);
+	--input_width_max: 400px;
+	--input_width_min: 100px;
+	--input_border_color: var(--border_color);
 	--input_border_width: var(--button_border_width);
 	--input_border_style: solid;
-	--border_alert: var(--border2_width) var(--border2_style)
-		hsla(var(--red_hue), 100%, 50%, var(--faded_rg));
-	--border_help: var(--border2_width) var(--border2_style)
-		hsla(var(--green_hue), 100%, 25%, var(--faded_rg));
-	/* --border: var(--border2_width) var(--border2_style) hsla(0, 0%, 80%, var(--faded_rg)); */
-	--button_border_color: var(--border_color);
-	--input_border_color: var(--border_color);
-
-	/* TODO move these? */
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: var(--font_size_rg);
 }
 
-html,
+html {
+	height: 100%;
+	width: 100%;
+}
+
 body {
 	height: 100%;
+	width: 100%;
+	font-family: var(--font_family);
+	font-size: var(--font_size_rg);
+	text-rendering: optimizeSpeed;
 	background-color: var(--bg);
+	line-height: var(--line_height);
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	line-height: var(--line_height);
 }
 
 ::selection {
-	background: var(--active_light_bg);
+	background: var(--active_color_bg_light);
 }
 
 #svelte {
@@ -258,30 +265,30 @@ a {
 	font-weight: var(--font_weight);
 	text-decoration: var(--link_text_decoration);
 	/* TODO not sure about this pattern, experimenting */
-	--outline_style: var(--outline2_style);
+	--outline_style: var(--outline_style_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 a:hover {
-	text-decoration: var(--link_hover_decoration);
+	text-decoration: var(--link_text_decoration_hover);
 	z-index: 3;
-	--outline_width: var(--outline2_width);
-	--outline_color: var(--interactive_hover_color);
+	--outline_width: var(--outline_width_2);
+	--outline_color: var(--interactive_color_hover);
 	cursor: var(--link_cursor);
 }
 a:focus {
 	z-index: 2;
-	--outline_width: var(--outline2_width);
+	--outline_width: var(--outline_width_2);
 	--outline_color: var(--active_color);
-	text-decoration: var(--link_hover_decoration);
+	text-decoration: var(--link_text_decoration_hover);
 }
 a:active {
-	--outline_width: var(--outline3_width);
-	--outline_color: var(--active2_color);
+	--outline_width: var(--outline_width_3);
+	--outline_color: var(--active_color_2);
 }
 a.selected {
-	color: var(--link_active_color);
+	color: var(--link_color_active);
 	--outline_color: var(--border_color);
-	text-decoration: var(--link_selected_decoration);
+	text-decoration: var(--link_text_decoration_selected);
 }
 a.selected:focus {
 	--outline_color: var(--active_color);
@@ -290,7 +297,8 @@ a.selected:active {
 	--outline_color: var(--border_color);
 }
 
-ul {
+ul,
+ol {
 	display: flex;
 	flex-direction: column;
 	list-style: none;
@@ -318,10 +326,13 @@ form {
 }
 
 button {
+	-webkit-appearance: none;
+	appearance: none;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font: inherit;
 	font-size: var(--font_size_md);
 	font-weight: var(--button_font_weight);
 	min-height: var(--input_height);
@@ -344,7 +355,7 @@ button::before {
 	border-style: var(--border_style);
 	border-color: var(--border_color);
 	outline-width: var(--border_width_sm);
-	outline-style: var(--border4_style);
+	outline-style: var(--border_style_4);
 	outline-color: var(--outline_color);
 }
 button:disabled::before {
@@ -355,27 +366,27 @@ button.selected::before {
 	--border_color: var(--active_color);
 }
 button:hover {
-	background: var(--interactive_hover_color);
+	background: var(--interactive_color_hover);
 }
 button:active {
-	background: var(--interactive_active_color);
+	background: var(--interactive_color_active);
 }
 button.inline {
 	display: inline-block;
 }
 button:disabled.selected {
-	border-left-style: var(--button_border_selected_style);
-	border-right-style: var(--button_border_selected_style);
+	border-left-style: var(--button_border_style_selected);
+	border-right-style: var(--button_border_style_selected);
 	color: var(--active_color);
 	/* TODO experimental, not sure about these patterns */
 	--button_border_color: var(--active_color);
 	--border_color: var(--active_color);
-	--outline_width: var(--outline2_width);
-	--outline_style: var(--border2_style);
-	--outline_color: var(--interactive_hover_color);
+	--outline_width: var(--outline_width_2);
+	--outline_style: var(--border_style_2);
+	--outline_color: var(--interactive_color_hover);
 }
 button.selected:active {
-	--outline_width: var(--outline3_width);
+	--outline_width: var(--outline_width_3);
 }
 /* TODO simplify this selector? */
 button:disabled:not(.selected):active {
@@ -385,9 +396,11 @@ button:disabled:not(.selected):active {
 }
 
 input,
-textarea {
+textarea,
+select {
 	-webkit-appearance: none;
 	appearance: none;
+	font: inherit;
 	font-size: var(--font_size_md);
 	padding: var(--input_padding_v, var(--spacing_sm)) var(--input_padding_h, var(--spacing_md));
 	border-color: var(--input_border_color);
@@ -409,7 +422,7 @@ input[type='checkbox'] {
 	--input_padding_v: 0;
 	--input_padding_h: 0;
 	/* setting `outine_style` here instead would force us to override active/focus states */
-	outline-style: var(--border3_style);
+	outline-style: var(--border_style_3);
 }
 input[type='checkbox']::before {
 	content: var(--content_empty, '');
@@ -432,7 +445,7 @@ input[type='checkbox']:checked::before {
 }
 
 hr {
-	border: var(--border_width_md) var(--border2_style) var(--border_light_color);
+	border: var(--border_width_md) var(--border_style_2) var(--border_color_light);
 }
 
 .buttonlike {
@@ -446,8 +459,8 @@ input:hover,
 textarea:hover,
 button:hover {
 	z-index: 3;
-	--outline_style: var(--border2_style);
-	--outline_width: var(--outline2_width);
+	--outline_style: var(--border_style_2);
+	--outline_width: var(--outline_width_2);
 }
 
 .buttonlike:focus,
@@ -458,8 +471,8 @@ button:focus {
 	z-index: 2;
 	--input_border_color: var(--active_color);
 	--outline_color: var(--active_color);
-	--outline_style: var(--border2_style);
-	--outline_width: var(--outline2_width);
+	--outline_style: var(--border_style_2);
+	--outline_width: var(--outline_width_2);
 }
 .buttonlike:focus-within {
 	--input_border_color: var(--border_color);
@@ -481,8 +494,8 @@ button:active {
 	--button_border_color: var(--active_color);
 	--outline_color: var(--active_color);
 	/* TODO ? */
-	/* --outline_width: var(--outline2_width); */
-	--outline_width: var(--outline3_width);
+	/* --outline_width: var(--outline_width_2); */
+	--outline_width: var(--outline_width_3);
 }
 .buttonlike:active input,
 input:active {
@@ -498,7 +511,7 @@ input[type='checkbox']:checked {
 }
 .buttonlike:active input[type='checkbox'],
 input:active {
-	--input_border_color: var(--active2_color);
+	--input_border_color: var(--active_color_2);
 }
 
 button:disabled,
@@ -508,10 +521,10 @@ textarea:disabled {
 	--outline_width: 0;
 	--input_border_color: var(--border_color);
 	opacity: 1; /* for some browsers */
-	background: var(--interactive_disabled_color);
-	color: var(--text_disabled_color);
-	border-left-style: var(--button_border_disabled_style);
-	border-right-style: var(--button_border_disabled_style);
+	background: var(--interactive_color_disabled);
+	color: var(--text_color_disabled);
+	border-left-style: var(--button_border_style_disabled);
+	border-right-style: var(--button_border_style_disabled);
 }
 input:disabled:active,
 textarea:disabled:active {
@@ -544,19 +557,26 @@ nav button {
 blockquote {
 	padding: var(--spacing_lg);
 	border-left: var(--spacing_sm) solid var(--tint);
-	color: var(--text_light_color);
+	color: var(--text_color_light);
 }
 
 code {
-	color: var(--text_light_color);
+	font-family: var(--font_family_mono);
+	color: var(--text_color_light);
 	background-color: var(--tint_highlight);
 	padding: 0 var(--spacing_sm);
 }
 
 pre {
-	color: var(--text_light_color);
+	font-family: var(--font_family_mono);
+	color: var(--text_color_light);
 }
 
 small {
 	font-size: var(--font_size_sm);
+}
+
+img {
+	display: block;
+	max-width: 100%;
 }

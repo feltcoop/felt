@@ -4,15 +4,19 @@
 
 <style>
 	.markup {
+		overflow-wrap: break-word;
 		padding: var(--spacing_lg);
-		/* hmm font-size: var(--font_size_md) */
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 	}
-	.markup :global(ul) {
+	.markup :global(ul),
+	.markup :global(ol) {
 		padding: var(--spacing_rg) 0 var(--spacing_rg) var(--spacing_xl);
 		list-style: disc;
+	}
+	.markup :global(ol) {
+		list-style: decimal;
 	}
 	.markup :global(li) {
 		display: list-item;
