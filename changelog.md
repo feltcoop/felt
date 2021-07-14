@@ -1,5 +1,10 @@
 # changelog
 
+## 0.4.3
+
+- fix published types
+  ([#92](https://github.com/feltcoop/felt/pull/92))
+
 ## 0.4.2
 
 - publish component `ui/Pending_Animation.svelte`
