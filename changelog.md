@@ -1,5 +1,10 @@
 # changelog
 
+## 0.4.4
+
+- publish `ui/style.css`
+  ([#93](https://github.com/feltcoop/felt/pull/93))
+
 ## 0.4.3
 
 - fix published types
