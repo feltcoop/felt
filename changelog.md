@@ -2,7 +2,7 @@
 
 ## 0.4.4
 
-- publish `ui/style.css`
+- publish `ui/style.css` and `ui/Markup.svelte`
   ([#93](https://github.com/feltcoop/felt/pull/93))
 
 ## 0.4.3
