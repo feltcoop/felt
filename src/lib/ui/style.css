@@ -228,21 +228,6 @@
 	--input_border_style: solid;
 }
 
-html {
-	height: 100%;
-	width: 100%;
-}
-
-body {
-	height: 100%;
-	width: 100%;
-	font-family: var(--font_family);
-	font-size: var(--font_size_rg);
-	text-rendering: optimizeSpeed;
-	background-color: var(--bg);
-	line-height: var(--line_height);
-}
-
 *,
 *::before,
 *::after {
@@ -255,10 +240,25 @@ body {
 	background: var(--active_color_bg_light);
 }
 
-#svelte {
+html {
 	height: 100%;
+	width: 100%;
+}
+
+body {
+	min-height: 100%;
+	min-width: 100%;
+	font-family: var(--font_family);
+	font-size: var(--font_size_rg);
+	text-rendering: optimizeSpeed;
+	background-color: var(--bg);
+	line-height: var(--line_height);
+}
+
+#svelte {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 a {
